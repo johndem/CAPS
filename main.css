@@ -1,20 +1,23 @@
+body {
+ height: 100%;   
+}
 .masthead {
     color: white;
-    background-color: aqua;
+    background-color: #19C5FF;
     width: auto;
     height: 200px;
 }
 
 .content {
     color: white;
-    background-color: #CCCCCC;
+    background-color: white;
     width: auto;
-    height: 500px;
+    height: 700px;
 }
 
 .navigation {
     text-align: center;
-    background-color: aqua;
+    background-color: #19C5FF;
 }
 
 .navigation ul {
@@ -28,13 +31,17 @@
 	display: inline;
 }
 
+.navigation li a:hover {
+    background-color: white;   
+}
+
 .navigation a {
     font-family: 'Open Sans';
     color: #525252;
     padding: 7px 7px 1px 7px;
 	text-decoration: none;
-	font-size: 20px;
-    font-weight: bold;
+	font-size: 15px;
+    font-weight:bold;
     margin-right: 5px;
     background-color: #ABABAB;
     border-top-right-radius: 5px;
@@ -42,20 +49,16 @@
 }
 
 #selected a {
-    background-color: #CCCCCC;
-}
-
-.footer {
-    color: white;
-    background-color: aqua;
-    width: auto;
-    height: 100px;
+    background-color: white;
+    
+    
 }
 
 #title {
     font-family: 'Open Sans';
     font-weight: bold;
     text-align: center;
+    font-size: 50px;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -66,6 +69,8 @@
 }
 
 #links a {
+    
+    
     color: white;
     font-weight: bold;
     text-decoration: none;
@@ -81,3 +86,62 @@
     text-align: center;
     
 }
+
+#categories {
+    border-radius: 10px;
+    width: 860px;
+    margin: 0 auto;
+    text-align: center;
+    
+    border-width: 5px;
+    border-color: 	#DCD7D7;
+    
+}
+
+.cat {
+    display: inline-block;
+    padding: 10px;
+    margin: 15px;
+    width:230px;
+    height: 230px;
+   border-style: solid;
+    border-width: 2px;
+    border-color: #696969;  
+    border-radius: 20px;
+}
+
+
+
+#btnOpp {
+    margin: 0 auto;
+    text-align: center;
+    width: 200px;
+    height: 26px;
+    color: black;
+    font-family: 'Open Sans';
+    background-color: #19C5FF;
+    border-radius: 10px;
+
+
+}
+#btnOpp a {
+ display: inline-block;
+ text-decoration: none;
+ padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+
+}
+
+#btnOpp a:visited {
+}
+
+
+.footer {
+    color: white;
+    background-color: #19C5FF;
+    width: auto;
+    height: 100px;
+    
+}
+

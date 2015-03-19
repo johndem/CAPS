@@ -15,12 +15,14 @@ body {
     height: 700px;
 }
 
+
 .navigation {
     text-align: center;
     background-color: #19C5FF;
 }
 
 .navigation ul {
+      
 	list-style-type: none;
 	width: 100%;
 	margin: 0;
@@ -36,23 +38,28 @@ body {
 }
 
 .navigation a {
+    background-color: #ABABAB;
     font-family: 'Open Sans';
     color: #525252;
-    padding: 7px 7px 1px 7px;
+    padding: 7px 7px 0px 7px;
 	text-decoration: none;
 	font-size: 15px;
     font-weight:bold;
     margin-right: 5px;
-    background-color: #ABABAB;
+   
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
+
 
 #selected a {
     background-color: white;
     
     
 }
+
+
+
 
 #title {
     font-family: 'Open Sans';
@@ -124,6 +131,7 @@ body {
 
 
 }
+
 #btnOpp a {
  display: inline-block;
  text-decoration: none;
@@ -145,3 +153,6 @@ body {
     
 }
 
+.change {
+        background-color: black;
+}

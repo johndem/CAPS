@@ -31,7 +31,7 @@
             <!-- navigation -->
             <div class="navigation">
                 <ul>
-                    <li id="selected"><a href="index.html">HOME</a></li>
+                    <li><a href="index.html">HOME</a></li>
                     <li><a href="volunteers.html">VOLUNTEERS</a></li>
                     <li><a href="organisations.html">ORGANISATIONS</a></li>
                     <li><a href="calendar.html">CALENDAR</a></li>
@@ -43,25 +43,37 @@
             <div class="content">
                 <p> </p>
                 
-                <div id="categories">
-            
-                    <div class="cat">
-                    </div>
-                    <div class="cat">
-                    </div>
-                    <div class="cat">
-                    </div>
-                    <div class="cat">
-                    </div>
-                    <div class="cat">
-                    </div>
-                    <div class="cat">
-                    </div>
+                <div id="login">
+                    <div><p>Not yet registered? Signing up is easy and takes less than 5 minutes. <a href="register.html">Click here to get started</a></p></div>
+                    
+                    <form>
+                        <div>
+                            <div>
+                                <p>Username or Email:</p>
+                            </div>
+                            <div>
+                                <input maxlength="50" name="user" id="user" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" size="15" type="text" value="" />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div>
+                                <p>Password:</p>
+                            </div>
+                            <div>
+                                <input maxlength="50" name="pass" id="pass" size="15" type="password" value="" />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <input type="submit" name="submit" value="Go" />
+                        </div>
+                    </form>
+                    
+                    <div><a href="">Forgot your password?</a></div>
+                    
                 </div>
                 
-                <div id="btnOpp">
-                    <h3><a href="">More Opportunities!</a></h3>
-                </div>
                 
             </div>
             

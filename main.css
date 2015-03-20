@@ -1,5 +1,9 @@
 body {
- height: 100%;   
+    height: 100%;  
+}
+
+p {
+    color: black;
 }
 
 .masthead {
@@ -10,20 +14,19 @@ body {
 }
 
 .content {
+    font-family: 'Open Sans';
     color: white;
     background-color: white;
     width: auto;
     height: 700px;
 }
 
-
 .navigation {
     text-align: center;
     background-color: #19C5FF;
 }
 
-.navigation ul {
-      
+.navigation ul { 
 	list-style-type: none;
 	width: 100%;
 	margin: 0;
@@ -70,8 +73,6 @@ body {
 }
 
 #links a {
-    
-    
     color: white;
     font-weight: bold;
     text-decoration: none;
@@ -85,7 +86,6 @@ body {
 
 #copyright {
     text-align: center;
-    
 }
 
 #categories {
@@ -93,7 +93,6 @@ body {
     width: 880px;
     margin: 0 auto;
     text-align: center;
-    
     border-width: 5px;
     border-color: 	#DCD7D7;
     
@@ -105,13 +104,11 @@ body {
     margin: 15px;
     width:230px;
     height: 230px;
-   border-style: solid;
+    border-style: solid;
     border-width: 4px;
     border-color: #BFBFBF;  
     border-radius: 20px;
 }
-
-
 
 #btnOpp {
     margin: 0 auto;
@@ -122,31 +119,79 @@ body {
     font-family: 'Open Sans';
     background-color: #19C5FF;
     border-radius: 10px;
-
-
 }
 
 #btnOpp a {
- display: inline-block;
- text-decoration: none;
- padding-left: 10px;
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 10px;
     padding-right: 10px;
     color: white;
-
 }
 
 #btnOpp a:visited {
+    
 }
-
 
 .footer {
     color: white;
     background-color: #19C5FF;
     width: auto;
-    height: 100px;
-    
+    height: 100px;  
 }
 
 .change {
-        background-color: #78DDFF;
+    background-color: #78DDFF;
+}
+
+.registration {
+    background-color: #19C5FF;
+}
+
+.registration ul { 
+    list-style-type: none;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.registration li {
+	display: inline;
+}
+
+.reg {
+    width: 100px;
+    height: 50px;
+    float: right;
+    margin: 0 auto;
+    text-align: center
+}
+
+.reg a {
+    background-color: #ABABAB;
+    font-family: 'Open Sans';
+    color: #525252;
+    padding: 0px 7px 5px 7px;
+	text-decoration: none;
+	font-size: 17px;
+    font-weight: bold;;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#login {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.inline {
+    display: inline;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }

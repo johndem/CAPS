@@ -7,7 +7,7 @@ body {
 }
 
 p {
-    color: black;
+    color: #525252;
 }
 
 .masthead {
@@ -26,7 +26,7 @@ p {
 .content {
     overflow: hidden;
     font-family: 'Open Sans';
-    color: white;
+    color: #525252;
     background-color: white;
     width: auto;
     height: 700px;
@@ -185,17 +185,37 @@ p {
 
 #login {
     margin: 0 auto;
+    text-align: center;  
+}
+
+.row {
+    
+}
+
+.label {
+    display: inline-block;
+    margin-right: 20px;
+}
+.inpat {
+        display: inline-block;
+
+}
+.label p {
+    text-align: left;
+}
+
+.logInput {
+    display: block;
+    margin-top: 16px;
+}
+
+#go {
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.center-title {
+    color: #525252;
     text-align: center;
-}
-
-.inline {
-    display: inline;
-}
-
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
+    background-color: #DBDBDB;
 }

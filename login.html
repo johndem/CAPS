@@ -41,33 +41,25 @@
             
             <!-- content -->
             <div class="content">
-                <p> </p>
+                <h1 class="center-title">Login</h1>
                 
                 <div id="login">
                     <div><p>Not yet registered? Signing up is easy and takes less than 5 minutes. <a href="register.html">Click here to get started</a></p></div>
                     
                     <form>
-                        <div>
-                            <div>
-                                <p>Username or Email:</p>
-                            </div>
-                            <div>
-                                <input maxlength="50" name="user" id="user" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" size="15" type="text" value="" />
-                            </div>
+                        <div class="label">
+                            <p> Username or Email: </p>
+                            <p> Password: </p>
                         </div>
-                        
-                        <div>
-                            <div>
-                                <p>Password:</p>
-                            </div>
-                            <div>
-                                <input maxlength="50" name="pass" id="pass" size="15" type="password" value="" />
-                            </div>
+
+                        <div class="inpat">
+                             <input class="logInput" maxlength="50" name="user" id="user" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" size="15" type="text" value="" />
+                             <input class="logInput" maxlength="50" name="pass" id="pass" size="15" type="password" value="" />
                         </div>
-                        
-                        <div>
+                       
+                        <div id="go">
                             <input type="submit" name="submit" value="Go" />
-                        </div>
+                        </div> 
                     </form>
                     
                     <div><a href="">Forgot your password?</a></div>

@@ -126,12 +126,33 @@ p {
     border-radius: 10px;
 }
 
+#btnReg {
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+    height: 50px;
+    color: black;
+    font-family: 'Open Sans';
+    background-color: #33D900;
+    border-radius: 10px;
+}
+
 #btnOpp a {
     display: inline-block;
     text-decoration: none;
     padding-left: 10px;
     padding-right: 10px;
     color: white;
+}
+
+#btnReg a {
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    color: white;
+    font-size: 21px;
 }
 
 #btnOpp a:visited {}
@@ -183,30 +204,56 @@ p {
     border-bottom-left-radius: 10px;
 }
 
-#login {
+.aligner {
     margin: 0 auto;
     text-align: center;  
 }
 
 .row {
-    
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .label {
     display: inline-block;
     margin-right: 20px;
 }
-.inpat {
-        display: inline-block;
 
+.regLabel {
+    display: inline-block;
+    margin-right: 20px;
 }
+
+.inpat {
+    display: inline-block;
+}
+
 .label p {
     text-align: left;
+}
+
+.regLabel p {
+    text-align: left;
+    margin-top: 30px;
 }
 
 .logInput {
     display: block;
     margin-top: 16px;
+}
+
+.regInput {
+    display: block;
+    margin-top: 31px;
+}
+
+#special {
+    margin-top: 99px;
+    padding-bottom: 100px;
+}
+
+.for-text-area {
+    margin-top: 31px;
 }
 
 #go {

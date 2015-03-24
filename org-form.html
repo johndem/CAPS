@@ -41,23 +41,46 @@
             
             <!-- content -->
             <div class="content">
-                <h1 class="center-title">Register</h1>
+                <h1 class="center-title">Organisation registration</h1>
                 
-                <div>
-                    <div class="aligner row">
-                        <h2>Click here to register as a Volunteer</h2>
-                        <div id="btnReg">
-                            <h3><a href="vol-form.html">Register as a volunteer!</a></h3>
+                <div class="aligner">
+                    
+                    <form>
+                        <div class="regLabel">
+                            <p> Username: </p>
+                            <p> Email: </p>
+                            <p> Password: </p>
+                            <p> Confirm password: </p>
+                            <p> Organisation name: </p>
+                            <p> Website: </p>
+                            <p> Facebook: </p>
+                            <p> Twitter: </p>
+                            <p> Other: </p>
+                            <p id="special"> Organisation description: </p>
                         </div>
-                    </div>
-                    <div class="aligner row">
-                        <h2>Click here to register your organisation</h2>
-                        <div id="btnReg">
-                            <h3><a href="org-form.html">Register as an organisation!</a></h3>
+
+                        <div class="inpat">
+                             <input class="regInput" maxlength="50" name="user" size="30" type="text" value="" />
+                             <input class="regInput" maxlength="50" name="email" size="30" type="email" value="" />
+                             <input class="regInput" maxlength="50" name="pass" size="30" type="password" value=""
+                            />
+                             <input class="regInput" maxlength="50" name="con-pass" size="30" type="password" value=""
+                            />
+                             <input class="regInput" maxlength="50" name="name" size="30" type="text" value="" />
+                             <input class="regInput" maxlength="50" name="website" size="30" type="url" value="" />
+                             <input class="regInput" maxlength="50" name="facebook" size="30" type="url" value="" />
+                             <input class="regInput" maxlength="50" name="twitter" size="30" type="url" value="" />
+                             <input class="regInput" maxlength="50" name="other" size="30" type="url" value="" />
+                             <textarea class="for-text-area" cols="50" name="description" rows="5" ></textarea>
+                             
                         </div>
-                    </div>
+                       
+                        <div id="go">
+                            <input type="submit" name="submit" value="Register" />
+                        </div> 
+                    </form>
+                    
                 </div>
-                
                 
                 
             </div>

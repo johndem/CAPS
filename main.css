@@ -2,7 +2,7 @@ body {
     position: absolute;
     right: 0;
     left: 0;
-    background-color: #33D900;
+    background-color: #31D100;
     margin: 0 auto;
 }
 
@@ -13,14 +13,14 @@ p {
 .masthead {
     overflow: hidden;
     color: white;
-    background-color: #33D900;
+    background-color: #31D100;
     width: auto;
     height: 200px;
 }
 
 .navigation {
     text-align: center;
-    background-color: #33D900;
+    background-color: #31D100;
 }
 
 .content {
@@ -29,7 +29,7 @@ p {
     color: #525252;
     background-color: white;
     width: auto;
-    height: 700px;
+    
 }
 
 .navigation ul {
@@ -44,7 +44,7 @@ p {
 }
 
 .navigation li a:hover {
-    background-color: white;
+    background-color: #E2E6E1;
 }
 
 .navigation a {
@@ -61,7 +61,7 @@ p {
 }
 
 #selected a {
-    background-color: white;
+    background-color: #E2E6E1;
 }
 
 #title {
@@ -159,7 +159,7 @@ p {
 
 .footer {
     color: white;
-    background-color: #33D900;
+    background-color: #31D100;
     width: auto;
     height: 100px;
 }
@@ -247,13 +247,12 @@ p {
     margin-top: 31px;
 }
 
-#special {
-    margin-top: 99px;
-    padding-bottom: 100px;
+.special {
+   visibility: hidden;
 }
 
 .for-text-area {
-    margin-top: 31px;
+   
 }
 
 #go {
@@ -263,6 +262,9 @@ p {
 
 .center-title {
     color: #525252;
+    margin-top: 0;
+    height: 80px;
+    padding-top: 35px;
     text-align: center;
-    background-color: #DBDBDB;
+    background-color: #E2E6E1; 
 }

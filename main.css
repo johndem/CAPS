@@ -2,7 +2,7 @@ body {
     position: absolute;
     right: 0;
     left: 0;
-    background-color: #31D100;
+    <!-- background-color: #31D100; -->
     margin: 0 auto;
 }
 
@@ -29,7 +29,6 @@ p {
     color: #525252;
     background-color: white;
     width: auto;
-    
 }
 
 .navigation ul {
@@ -69,7 +68,7 @@ p {
     font-weight: bold;
     text-align: center;
     font-size: 50px;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 50px;
 }
 
@@ -118,8 +117,8 @@ p {
 #btnOpp {
     margin: 0 auto;
     text-align: center;
-    width: 200px;
-    height: 26px;
+    width: 220px;
+    height: 30px;
     color: black;
     font-family: 'Open Sans';
     background-color: #33D900;
@@ -161,7 +160,7 @@ p {
     color: white;
     background-color: #31D100;
     width: auto;
-    height: 100px;
+    height: 150px;
 }
 
 .change {
@@ -169,7 +168,9 @@ p {
 }
 
 .registration {
-    background-color: #19C5FF;
+    background-color: #31D100;
+    position: relative;
+    overflow: hidden;
 }
 
 .registration ul {
@@ -199,7 +200,6 @@ p {
     text-decoration: none;
     font-size: 17px;
     font-weight: bold;
-    ;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -207,6 +207,18 @@ p {
 .aligner {
     margin: 0 auto;
     text-align: center;  
+}
+
+.aligner div a {
+    text-decoration: none;
+    color: #31D100;
+}
+
+.aligner div a:visited {
+}
+
+.aligner div a:hover {
+    text-decoration: underline;
 }
 
 .row {
@@ -228,23 +240,23 @@ p {
     display: inline-block;
 }
 
-.label p {
+.label h3 {
     text-align: left;
 }
 
-.regLabel p {
+.regLabel h3 {
     text-align: left;
     margin-top: 30px;
 }
 
 .logInput {
     display: block;
-    margin-top: 16px;
+    margin-top: 23px;
 }
 
 .regInput {
     display: block;
-    margin-top: 31px;
+    margin-top: 31.5px;
 }
 
 .special {
@@ -267,4 +279,44 @@ p {
     padding-top: 35px;
     text-align: center;
     background-color: #E2E6E1; 
+}
+
+#login-blanket {
+    height: 340px;
+}
+
+#home-blanket {
+    height: 100px;
+}
+
+input {
+    height: 20px;
+    font-family: 'Open Sans';
+    font-size: 15px;
+}
+
+textarea {
+    font-family: 'Open Sans';
+    font-size: 15px;
+}
+
+#register-blanket {
+    height: 295px;
+}
+
+.submitBtn {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 20px;
+    color: white;
+    font-family: 'Open Sans';
+    background-color: #33D900;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button-hover {
+    color: #33D900;
+    background-color: #E2E6E1;
 }

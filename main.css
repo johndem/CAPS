@@ -256,7 +256,7 @@ p {
 
 .regInput {
     display: block;
-    margin-top: 31.5px;
+    margin-top: 29px;
 }
 
 .special {
@@ -264,7 +264,7 @@ p {
 }
 
 .for-text-area {
-   
+
 }
 
 #go {
@@ -308,7 +308,6 @@ textarea {
     width: 100px;
     height: 40px;
     font-size: 20px;
-    margin-top: 20px;
     color: white;
     font-family: 'Open Sans';
     background-color: #33D900;
@@ -319,4 +318,29 @@ textarea {
 .button-hover {
     color: #33D900;
     background-color: #E2E6E1;
+}
+
+.label-in {
+    border-color: white;
+    border-style: dashed;
+    clear: both;
+    margin: 0 auto;
+    text-align: center;
+    width: 450px;
+    margin-bottom: 50px;
+}
+
+.in {
+    display: inline;
+    float: right;
+}
+
+.h3 {
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#reg-blanket {
+    margin-bottom: 60px;
 }

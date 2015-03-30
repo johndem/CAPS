@@ -263,9 +263,6 @@ p {
    visibility: hidden;
 }
 
-.for-text-area {
-
-}
 
 #go {
     margin-bottom: 20px;
@@ -343,4 +340,8 @@ textarea {
 
 #reg-blanket {
     margin-bottom: 60px;
+}
+
+#blanket {
+    margin-top: 350px;
 }

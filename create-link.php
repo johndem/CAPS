@@ -1,12 +1,12 @@
 <?php
-$servername = "localhost";
-$username = "admin";
-$password = "caps";
-$dbname = "caps";
+    $servername = "localhost";
+    $username = "admin";
+    $password = "caps";
+    $dbname = "caps";
 
-$link = mysqli_connect($servername, $username, $password, $dbname);
+    $link = mysqli_connect($servername, $username, $password, $dbname);
 
-if (!$link) {
- die("Connection failed");
-}
+    if (!$link) {
+        die("Connection failed");
+    }
 ?>

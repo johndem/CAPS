@@ -1,6 +1,7 @@
 <?php
 
     include 'create-link.php';
+    
     $user = mysqli_real_escape_string($link,$_POST['user']);
     $user = htmlspecialchars($user, ENT_QUOTES);
 
@@ -31,7 +32,9 @@
     $description = mysqli_real_escape_string($link,$_POST['description']);
     $description = htmlspecialchars($description, ENT_QUOTES);
 
+    $query = "INSERT INTO organisations (username,email,password,name,website,facebook,twitter,other,description) VALUES ('$user', '$email','$pass','$name','$website','$facebook','$twitter', '$other','$description')";
     mysqli_query($link,$query);
+    @mysqli_close($link);
     echo "<script> window.open('confirm.html','_self')</script>";
 
 ?>

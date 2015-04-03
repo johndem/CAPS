@@ -1,6 +1,7 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
-    
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,8 +13,7 @@
         <script src="jq.js"></script>
     </head>
     <body>
-        
-        <div>
+
         
             <!-- registration -->
             <div class="registration">
@@ -23,11 +23,12 @@
                 </ul>
             </div>
             
+
             <!-- masthead -->
             <div class="masthead">
                 <h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>
             </div>
-            
+
             <!-- navigation -->
             <div class="navigation">
                 <ul>
@@ -38,62 +39,37 @@
                     <li><a href="account.html">ACCOUNT</a></li>
                 </ul>
             </div>
-            
+
             <!-- content -->
             <div class="content">
-                <h1 class="center-title">Login</h1>
+                <?php echo '<h1 class="center-title">Welcome ' . $_SESSION['username'] . '!</h1>' ?>
                 
-                <div class="aligner">
-                    <div><p>Not yet registered? Signing up is easy and takes less than 5 minutes. <a href="register.html">Click here to get started</a> »</p></div>
-                    
-                    <form id="form" action="log.php" target="_self" method="post" name="log-form">
-                       
-                       <div class="label-in">
-                         <div class="h3"> Username or Email: </div>
-                            <input class="in" maxlength="50" name="user" id="user" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" size="25" type="text" value="" />
-                        </div> 
-                        
-                        <div class="label-in">
-                         <div class="h3">Password: </div>
-                            <input class="in" maxlength="50" name="pass" id="pass" size="25" type="password" value="" />
-                        </div>
-                       
-                        <div id="go">
-                            <input type="submit" class="submitBtn" name="submit" value="Go" />
-                        </div> 
-                    </form>
-                    
-                    <div><a href="">Forgot your password?</a></div>
-                    
-                </div>
+
                 
-                <div id="login-blanket">
+                <div id="blanket">
                 
                 </div>
-                
-                
+
             </div>
-            
+
             <!-- footer -->
             <div class="footer">
-                
+
                 <div id="links">
                     <a href="">Login</a>
                     <a href="">Terms and Conditions</a>
                     <a href="">Privacy Policy</a>
                 </div>
-                
+
                 <div id="copyright">
                     <p>Copyright &copy; 2015 JayTee. All Rights Reserved.</p>
                 </div>
-                
-                
-            
+
             </div>
-            
-        </div>
-       
+
+        
+
     </body>
-    
-   
+
+
 </html>

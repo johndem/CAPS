@@ -290,11 +290,15 @@ input {
     height: 20px;
     font-family: 'Open Sans';
     font-size: 15px;
+    border-radius: 5px;
+    
 }
 
 textarea {
     font-family: 'Open Sans';
     font-size: 15px;
+    border-radius: 5px;
+
 }
 
 #register-blanket {
@@ -344,4 +348,17 @@ textarea {
 
 #blanket {
     margin-top: 350px;
+}
+
+.red {
+    color: red;
+}
+
+#results {
+    color: red;
+     clear: both;
+    margin: 0 auto;
+    text-align: left;
+    width: 250px;
+    margin-bottom: 50px;
 }

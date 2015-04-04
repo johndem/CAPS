@@ -362,3 +362,12 @@ textarea {
     width: 250px;
     margin-bottom: 50px;
 }
+
+.border {
+    border: solid 2px red;
+}
+
+#pass-span {
+display: inline;
+    float: right;
+}

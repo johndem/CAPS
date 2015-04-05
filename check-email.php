@@ -1,7 +1,8 @@
 <?php
 
     include 'create-link.php';
-
+	
+	
     if(isset($_POST["email"]))
 	{
 	
@@ -25,11 +26,11 @@
 		
 		//if value is more than 0, username is not available
 		if ($email_exist > 0) {
-			echo "<img src='X.jpg'>";
+			echo "0";
 		} else {
-			echo "<img src='check.jpg'>";
+			echo "1";
 		}
 		
 	}
-
+	
 ?>

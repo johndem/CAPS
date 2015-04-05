@@ -2,6 +2,7 @@ function checkpass() {
     var elpass =  document.getElementById("password");
     var elconf = document.getElementById('con-pass');
     var span = document.getElementById('pass-span');
+	var button = document.getElementById("sButton");
     var pass = elpass.value;
     var conf = elconf.value;
     console.log(pass + " " + conf);
@@ -9,19 +10,30 @@ function checkpass() {
     if (conf != pass) {
         elconf.style.border = "solid 2px red";
         span.innerHTML = "<img src='X.jpg'>";
-        
+        //button.disabled = true;
     }
     else {
         elconf.style.border = "solid 2px green";
         span.innerHTML = "<img src='check.jpg'>";
+		//button.disabled = false;
     }
 }
 
+/*
 function checkuser() {
     $("#username").keyup(function () {
         var username = $(this).val();
         $.post('check-username.php', {'username':username}, function(data) {
-            $("#user-span").html(data);
+			if (data == '1') {
+				//$("#sButton").attr("disabled", false);
+				$("#user-span").html("<img src='check.jpg'>");
+				$('#username').css('border', 'solid 2px green');
+			}
+			else {
+				//$("#sButton").attr("disabled", true);
+				$("#user-span").html("<img src='X.jpg'>");
+				$('#username').css('border', 'solid 2px red');
+			}
         });
     });
 }
@@ -30,12 +42,21 @@ function checkemail() {
     $("#email").keyup(function () {
         var email = $(this).val();
         $.post('check-email.php', {'email':email}, function(data) {
-            $("#email-span").html(data);
+            if (data == '1') {
+				$("#sButton").attr("disabled", false);
+				$("#email-span").html("<img src='check.jpg'>");
+				$('#email').css('border', 'solid 2px green');
+			}
+			else {
+				$("#sButton").attr("disabled", true);
+				$("#email-span").html("<img src='X.jpg'>");
+				$('#email').css('border', 'solid 2px red');
+			}
         });
     });
 }
+*/
 
-/*
 var http = getXMLHttpRequest();
 
 function getXMLHttpRequest()
@@ -50,7 +71,7 @@ function getXMLHttpRequest()
 
 
 function getResponse() {
-  var myurl = "volregi.php";
+  var myurl = "check-username.php";
   var usernamevalue= encodeURIComponent(document.getElementById("username").value);
   var emailvalue=encodeURIComponent(document.getElementById("email").value);
   var parameters="username="+usernamevalue+"&email="+emailvalue;
@@ -71,4 +92,3 @@ function useHttpResponse() {
       }
   }
 }
-*/

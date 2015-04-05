@@ -10,8 +10,9 @@
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
-        <script src="volreg.js"></script>
-        <script src="password-check.js"></script>
+        <script src="form-check.js"></script>
+        <!-- <script src="volreg.js"></script>
+        <script src="field-check.js"></script> -->
     </head>
     <body>
         
@@ -65,13 +66,14 @@
                         
                         <div class="label-in">
                          <div class="h3"> Username: </div>
-                             <input id="username" class="in" maxlength="50" name="user" size="30" type="text" value="" />
-
+                             <input id="username" onkeyup="checkuser()" class="in" maxlength="50" name="user" size="30" type="text" value="" />
+                            <div id="user-span"></div>
                         </div>
                         
                         <div class="label-in">
                          <div class="h3"> Email: </div>
-                             <input id="email" class="in" maxlength="50" name="email" size="30" type="email" value="" />
+                             <input id="email" onkeyup="checkemail()" class="in" maxlength="50" name="email" size="30" type="email" value="" />
+                            <div id="email-span"></div>
                         </div>
                         
                         <div class="label-in">
@@ -81,7 +83,8 @@
                         
                         <div class="label-in">
                          <div class="h3"> Confirm password: </div>
-                               <input id="con-pass" onkeyup="checkpass()" class="in" maxlength="50" name="con-pass" size="30" type="password" value="" /><div id="pass-span"></div>
+                                <input id="con-pass" onkeyup="checkpass()" class="in" maxlength="50" name="con-pass" size="30" type="password" value="" />
+                                <div id="pass-span"></div>
                         </div>
                         
                         <div class="label-in">

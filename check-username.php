@@ -1,7 +1,39 @@
 <?php
 
-include 'create-link.php';
+    include 'create-link.php';
 
+    if(isset($_POST["username"]))
+	{
+	
+		//check if its an ajax request, exit if not
+		if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
+			die();
+		}
+		
+		//trim username
+		$username = trim($_POST["username"]); 
+    
+		//sanitize username
+		$username = filter_var($username, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+		
+		$query = "SELECT username FROM user WHERE username = '$username'";
+   
+		$result = mysqli_query($link, $query);
+
+		//return total count
+		$username_exist = mysqli_num_rows($result); //total records
+		
+		//if value is more than 0, username is not available
+		if ($username_exist > 0) {
+			echo "<img src='X.jpg'>";
+		} else {
+			echo "<img src='check.jpg'>";
+		}
+		
+	}
+
+
+/*
 $username = $_POST['username'];
 $email = $_POST['email'];
 
@@ -33,6 +65,6 @@ mysqli_close($link);
 $results = $results . "</ul>" . $results2;
 
 echo $results;
- 
+*/ 
 
 ?>

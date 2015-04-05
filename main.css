@@ -263,7 +263,6 @@ p {
    visibility: hidden;
 }
 
-
 #go {
     margin-bottom: 20px;
     margin-top: 5px;
@@ -356,7 +355,7 @@ textarea {
 
 #results {
     color: red;
-     clear: both;
+    clear: both;
     margin: 0 auto;
     text-align: left;
     width: 250px;
@@ -368,6 +367,16 @@ textarea {
 }
 
 #pass-span {
-display: inline;
+    display: inline;
+    float: right;
+}
+
+#user-span {
+    display: inline;
+    float: right;
+}
+
+#email-span {
+    display: inline;
     float: right;
 }

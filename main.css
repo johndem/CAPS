@@ -380,3 +380,32 @@ textarea {
     display: inline;
     float: right;
 }
+
+#news {
+    margin: 0 auto;
+    text-align: center;
+    width: 880px;
+    margin-top: 70px;
+}
+
+#news img {
+    float: left;
+    width: 200px;
+    height: 180px;
+    margin-right: 30px;
+}
+
+.new-text {
+    text-align: left;
+}
+
+.new {
+    margin-bottom: 70px;
+    padding-bottom: 85px;
+    border-bottom: solid 1px #525252;
+}
+
+.new-text a {
+    text-decoration: none;
+    color: #31D100;
+}

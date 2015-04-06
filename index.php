@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,8 +12,7 @@
         <script src="jq.js"></script>
     </head>
     <body>
-        
-        <div>
+
         
             <!-- registration -->
             <div class="registration">
@@ -23,67 +22,87 @@
                 </ul>
             </div>
             
+
             <!-- masthead -->
             <div class="masthead">
                 <h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>
             </div>
-            
+
             <!-- navigation -->
             <div class="navigation">
                 <ul>
-                    <li><a href="index.php">HOME</a></li>
+                    <li id="selected"><a href="index.html">HOME</a></li>
                     <li><a href="volunteers.html">VOLUNTEERS</a></li>
                     <li><a href="organisations.html">ORGANISATIONS</a></li>
                     <li><a href="calendar.html">CALENDAR</a></li>
                     <li><a href="account.html">ACCOUNT</a></li>
                 </ul>
             </div>
-            
+
             <!-- content -->
             <div class="content">
-                <h1 class="center-title">Register</h1>
-                
-                <div>
-                    <div class="aligner row">
-                        <h2>I want to become a Volunteer!</h2>
-                        <div id="btnReg">
-                            <h3><a href="vol-form.html">Register as a volunteer!</a></h3>
-                        </div>
+                <h1 class="center-title">Choose a category and get started!</h1>
+
+                <div id="categories">
+
+                    <div class="cat">
                     </div>
-                    <div class="aligner row">
-                        <h2>Our Organisation is seeking volunteers!</h2>
-                        <div id="btnReg">
-                            <h3><a href="org-form.html">Register as an organisation!</a></h3>
-                        </div>
+                    <div class="cat">
+                    </div>
+                    <div class="cat">
+                    </div>
+                    <div class="cat">
+                    </div>
+                    <div class="cat">
+                    </div>
+                    <div class="cat">
                     </div>
                 </div>
+
+                <div id="btnOpp">
+                    <h3><a href="">More Opportunities!</a></h3>
+                </div>
                 
-                <div id="register-blanket">
+                
+                
+                <div id="news">
+                    
+                    <?php 
+                        include 'display-news.php';
+                    ?>
+                    
+                    
+                    
                 
                 </div>
                 
+                
+                
+                
+                <div id="home-blanket">
+                
+                </div>
+
             </div>
-            
+
             <!-- footer -->
             <div class="footer">
-                
+
                 <div id="links">
                     <a href="">Login</a>
                     <a href="">Terms and Conditions</a>
                     <a href="">Privacy Policy</a>
                 </div>
-                
+
                 <div id="copyright">
                     <p>Copyright &copy; 2015 JayTee. All Rights Reserved.</p>
                 </div>
-                
-                
-            
+
             </div>
-            
-        </div>
-       
+
+        
+
     </body>
-    
-   
+
+
 </html>

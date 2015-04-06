@@ -382,7 +382,6 @@ textarea {
     float: right;
 }
 
-<<<<<<< HEAD
 #news {
     margin: 0 auto;
     text-align: center;
@@ -410,12 +409,10 @@ textarea {
 .new-text a {
     text-decoration: none;
     color: #31D100;
-=======
 
 .cat-img {
     overflow: hidden;
     cursor: pointer;
     height: inherit;
     width: inherit;
->>>>>>> origin/master
 }

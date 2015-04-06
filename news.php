@@ -41,10 +41,18 @@
 
             <!-- content -->
             <div class="content">
-                <h1 class="center-title">Congratulations!</h1>
+                <h1 class="center-title">News</h1>
 
-                <p style="font-size:20px;" class="aligner">Your account has been successfully created!</p>
-                <p style="font-size:20px;" class="aligner"> <a href="login.html">Login </a> to your account and get started.</p>
+                <?php include 'find-news.php'; ?>
+                
+                <div id="news-body">
+                    <h2><?php echo "$row[1]"; ?></h2>
+                    <img class="news-img" src="<?php echo "$row[3]"; ?>" />
+                    <?php 
+                        echo '<p>' . $row[2] . '</p>'; 
+                        echo '<p>' . $row[4] . '</p>'; 
+                    ?>
+                </div>
                 
                 <div id="blanket">
                 

@@ -389,7 +389,7 @@ textarea {
     margin-top: 70px;
 }
 
-#news img {
+.news-img {
     float: left;
     width: 200px;
     height: 180px;
@@ -416,4 +416,14 @@ textarea {
     cursor: pointer;
     height: inherit;
     width: inherit;
+}
+
+#news-body {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#news-body p {
+    text-align: left;
 }

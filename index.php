@@ -53,9 +53,9 @@
                     </div>
                     <div class="cat"><img id="env" class="cat-img" src="env-green.png"/>
                     </div>
-                    <div class="cat"><img id="hc" class="cat-img" src="edu-green.png"/>
+                    <div class="cat"><img id="com" class="cat-img" src="com-green.png"/>
                     </div>
-                    <div class="cat"><img id="hc" class="cat-img" src="edu-green.png"/>
+                    <div class="cat"><img id="an" class="cat-img" src="an-green.png"/>
                     </div>
                 </div>
 

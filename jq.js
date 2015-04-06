@@ -35,6 +35,25 @@ $("#env").on({
     this.src='env-green.png';
   }
 });
+    
+ $("#com").on({
+ "mouseover" : function() {
+    this.src = 'com-gray.png';
+  },
+  "mouseout" : function() {
+    this.src='com-green.png';
+  }
+});
+
+$("#an").on({
+ "mouseover" : function() {
+    this.src = 'an-gray.png';
+  },
+  "mouseout" : function() {
+    this.src='an-green.png';
+  }
+});
+
 
     
 /*$('.cat').hover(function () {

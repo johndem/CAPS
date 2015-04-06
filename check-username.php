@@ -6,7 +6,7 @@
 	$email = $_POST['email'];
 
 	$results = "<ul>";
-	$results2 = "";
+	//$results2 = "";
 
 	
 	$query = "SELECT username FROM user WHERE username = '$username'";
@@ -15,8 +15,8 @@
 
 	if (mysqli_num_rows($result) >= 1) {
 			mysqli_free_result($result);
-			$results = $results . "<li> Username not available </li>";
-			$results2 =  $results2 . "<script> document.getElementById('username').style.border = 'solid 1px red'; </script>";
+			$results = $results . "<li> Username not available! </li>";
+			//$results2 =  $results2 . "<script> $('#username').css('border','solid 1px red'); </script>";
 	}
 	
 	
@@ -27,12 +27,11 @@
 	if (mysqli_num_rows($result) >= 1) {
 			mysqli_free_result($result);
 			$results = $results . "<li> Email already in use </li>";
-			$results2 =  $results2 . "<script> document.getElementById('email').style.border = 'solid 1px red'; </script>";
 	}
 
 	mysqli_close($link);
 
-	$results = $results . "</ul>" . $results2;
+	$results = $results . "</ul>" ;//. $results2;
 
 	echo $results;
 	

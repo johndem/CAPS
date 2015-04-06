@@ -45,17 +45,17 @@
 
                 <div id="categories">
 
-                    <div class="cat">
+                    <div class="cat"><img id="hc" class="cat-img" src="hc-green.png"/>
                     </div>
-                    <div class="cat">
+                    <div class="cat"><img id="edu" class="cat-img" src="edu-green.png"/>
                     </div>
-                    <div class="cat">
+                    <div class="cat"><img id="em" class="cat-img" src="em-green.png"/>
                     </div>
-                    <div class="cat">
+                    <div class="cat"><img id="env" class="cat-img" src="env-green.png"/>
                     </div>
-                    <div class="cat">
+                    <div class="cat"><img id="hc" class="cat-img" src="edu-green.png"/>
                     </div>
-                    <div class="cat">
+                    <div class="cat"><img id="hc" class="cat-img" src="edu-green.png"/>
                     </div>
                 </div>
 

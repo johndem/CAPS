@@ -104,7 +104,6 @@ p {
 
 .cat {
     display: inline-block;
-    padding: 10px;
     margin: 15px;
     width: 230px;
     height: 230px;
@@ -112,6 +111,8 @@ p {
     border-width: 4px;
     border-color: #BFBFBF;
     border-radius: 20px;
+    overflow: hidden;
+    
 }
 
 #btnOpp {
@@ -379,4 +380,12 @@ textarea {
 #email-span {
     display: inline;
     float: right;
+}
+
+
+.cat-img {
+    overflow: hidden;
+    cursor: pointer;
+    height: inherit;
+    width: inherit;
 }

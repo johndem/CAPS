@@ -47,40 +47,41 @@
                 <div class="aligner">
                     
                     <div id="results">
-                    
+                        <ul id="res-ul">
+                        </ul>
                     </div>
                     
                     <form id="form" name="vol-form">
                         
                         <div class="label-in">
-                         <div class="h3"> First name: </div>
-                            <input class="in" maxlength="50" name="first" size="30" type="text" value="" />
+                         <div class="h3"> First name: * </div>
+                            <input id="first" class="in" maxlength="50" name="first" size="30" type="text" value="" />
                         </div>
                        
                         <div class="label-in">
-                         <div class="h3"> Last Name: </div>
+                         <div class="h3"> Last Name: * </div>
                               <input id="last-name" class="in" maxlength="50" name="last" size="30" type="text" value="" />
                         </div>
                         
                         <div class="label-in">
-                         <div class="h3"> Username: </div>
+                         <div class="h3"> Username: * </div>
                              <input id="username" class="in" maxlength="50" name="user" size="30" type="text" value="" />
                             <div id="user-span"></div>
                         </div>
                         
                         <div class="label-in">
-                         <div class="h3"> Email: </div>
+                         <div class="h3"> Email: * </div>
                              <input id="email" class="in" maxlength="50" name="email" size="30" type="email" value="" />
                             <div id="email-span"></div>
                         </div>
                         
                         <div class="label-in">
-                         <div class="h3"> Password: </div>
+                         <div class="h3"> Password: * </div>
                              <input id="password" class="in" maxlength="50" name="pass" size="30" type="password" value="" />
                         </div>
                         
                         <div class="label-in">
-                         <div class="h3"> Confirm password: </div>
+                         <div class="h3"> Confirm password: * </div>
                                 <input id="con-pass" onkeyup="checkpass()" class="in" maxlength="50" name="con-pass" size="30" type="password" value="" />
                                 <div id="pass-span"></div>
                         </div>
@@ -96,14 +97,26 @@
                         </div>
                         
                         <div class="label-in">
-                         <div class="h3"> Date of Birth: </div>
+                         <div class="h3"> Street Number: </div>
+                                <input id="str-num"  class="in" maxlength="50" name="str" size="30" type="number" value="" />
+                        </div>
+                        
+                        <div class="label-in">
+                         <div class="h3"> Zip Code: </div>
+                                <input id="zip"  class="in" maxlength="50" name="zip" size="30" type="number" value="" />
+                        </div>
+                        
+                        <div class="label-in">
+                         <div class="h3"> Date of Birth: * </div>
                                <input id="dob" class="in" maxlength="50" name="date" size="30" type="date" value="" />
                          
                         </div>
                     </form>
                     
+                    <p id="required">* This field is required </p>
+                    
                     <div id="go">
-                        <input type="submit" class="submitBtn" id="sButton" name="submit" onclick="getResponse()" value="Register" />
+                        <input type="submit" class="submitBtn" onclick="checkform()" id="sButton" name="submit" value="Register" />
                     </div> 
                    
                 </div>

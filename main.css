@@ -427,3 +427,12 @@ textarea {
 #news-body p {
     text-align: left;
 }
+
+#required {
+   color: red;
+    clear: both;
+    margin: 0 auto;
+    text-align: left;
+    width: 450px;
+    margin-bottom: 50px;
+}

@@ -5,9 +5,8 @@
 	$username = $_POST['username'];
 	$email = $_POST['email'];
 
-	$results = "<ul>";
-	//$results2 = "";
-
+	$results = " ";
+    $error = false;
 	
 	$query = "SELECT username FROM user WHERE username = '$username'";
 	   
@@ -16,7 +15,7 @@
 	if (mysqli_num_rows($result) >= 1) {
 			mysqli_free_result($result);
 			$results = $results . "<li> Username not available! </li>";
-			//$results2 =  $results2 . "<script> $('#username').css('border','solid 1px red'); </script>";
+            $error = true;
 	}
 	
 	
@@ -27,13 +26,23 @@
 	if (mysqli_num_rows($result) >= 1) {
 			mysqli_free_result($result);
 			$results = $results . "<li> Email already in use </li>";
+            $error = true;
 	}
 
 	mysqli_close($link);
+    
+    if ($error) {
+            echo $results;
+        }
+    else {
+        
+        include "vol-register.php";
+           
+    }
 
-	$results = $results . "</ul>" ;//. $results2;
+	
 
-	echo $results;
+	
 	
 	
 	/*

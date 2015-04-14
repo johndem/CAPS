@@ -4,6 +4,7 @@
 	
 	$username = $_POST['username'];
 	$email = $_POST['email'];
+    $username = trim($username);
 
 	$results = " ";
     $error = false;

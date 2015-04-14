@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>GETTING STARTED WITH BRACKETS</title>
+        <title>Team Thessaloniki</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
@@ -45,17 +45,17 @@
 
                 <div id="categories">
 
-                    <div class="cat"><img id="hc" class="cat-img" src="hc-green.png"/>
+                    <div class="cat"><img id="hc" class="cat-img" src="images/hc-green.png"/>
                     </div>
-                    <div class="cat"><img id="edu" class="cat-img" src="edu-green.png"/>
+                    <div class="cat"><img id="edu" class="cat-img" src="images/edu-green.png"/>
                     </div>
-                    <div class="cat"><img id="em" class="cat-img" src="em-green.png"/>
+                    <div class="cat"><img id="em" class="cat-img" src="images/em-green.png"/>
                     </div>
-                    <div class="cat"><img id="env" class="cat-img" src="env-green.png"/>
+                    <div class="cat"><img id="env" class="cat-img" src="images/env-green.png"/>
                     </div>
-                    <div class="cat"><img id="com" class="cat-img" src="com-green.png"/>
+                    <div class="cat"><img id="com" class="cat-img" src="images/com-green.png"/>
                     </div>
-                    <div class="cat"><img id="an" class="cat-img" src="an-green.png"/>
+                    <div class="cat"><img id="an" class="cat-img" src="images/an-green.png"/>
                     </div>
                 </div>
 

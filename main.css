@@ -107,10 +107,6 @@ p {
     margin: 15px;
     width: 230px;
     height: 230px;
-    border-style: solid;
-    border-width: 4px;
-    border-color: #BFBFBF;
-    border-radius: 20px;
     overflow: hidden;
     
 }
@@ -486,4 +482,52 @@ textarea {
 
 select {
     width: 220px;
+}
+
+select {
+    width: 260px;
+    height: 30px;
+    font-family: 'Open Sans';
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+#skills {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.cats {
+float: left;
+border-bottom: solid 2px black;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.div-cat {
+    clear: both;
+    margin: 0 auto;
+    text-align: center;
+    width: 450px;
+
+    
+}
+
+.toggled {
+    margin-top: 50px;
+}
+
+.checkb {
+     border-color: white;
+    border-style: dashed;
+    clear: both;
+    margin: 0 auto;
+    text-align: left;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.cb {
+    height: 15px;
+    width: 15px;
 }

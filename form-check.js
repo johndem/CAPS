@@ -1,3 +1,5 @@
+
+
 function checkpass() {
     var elpass =  document.getElementById("password");
     var elconf = document.getElementById('con-pass');
@@ -6,7 +8,7 @@ function checkpass() {
     var pass = elpass.value;
     var conf = elconf.value;
     console.log(pass + " " + conf);
-    
+     
     if (conf != pass) {
         elconf.style.border = "solid 2px red";
         span.innerHTML = "<img src='X.jpg'>";
@@ -144,7 +146,7 @@ function useHttpResponse() {
             window.location = "confirm.html";
      }
         else {
-            document.getElementById('res-ul').innerHTML(http.responseText);
+            document.getElementById('res-ul').innerHTML = http.responseText;
         }
   }
 }

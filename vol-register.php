@@ -10,6 +10,7 @@ $last = htmlspecialchars($last, ENT_QUOTES);
 
 $user = mysqli_real_escape_string($link,$_POST['username']);
 $user = htmlspecialchars($user, ENT_QUOTES);
+$user = trim($user);
 
 $email = mysqli_real_escape_string($link,$_POST['email']);
 $email = htmlspecialchars($email, ENT_QUOTES);

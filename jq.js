@@ -2,55 +2,55 @@ $(document).ready(function () {
 
 $("#hc").on({
  "mouseover" : function() {
-    this.src = 'hc-gray.png';
+    this.src = 'images/hc-gray.png';
   },
   "mouseout" : function() {
-    this.src='hc-green.png';
+    this.src='images/hc-green.png';
   }
 });
     
 $("#em").on({
  "mouseover" : function() {
-    this.src = 'em-gray.png';
+    this.src = 'images/em-gray.png';
   },
   "mouseout" : function() {
-    this.src='em-green.png';
+    this.src='images/em-green.png';
   }
 });
     
 $("#edu").on({
  "mouseover" : function() {
-    this.src = 'edu-gray.png';
+    this.src = 'images/edu-gray.png';
   },
   "mouseout" : function() {
-    this.src='edu-green.png';
+    this.src ='images/edu-green.png';
   }
 });
 
 $("#env").on({
  "mouseover" : function() {
-    this.src = 'env-gray.png';
+    this.src = 'images/env-gray.png';
   },
   "mouseout" : function() {
-    this.src='env-green.png';
+    this.src='images/env-green.png';
   }
 });
     
  $("#com").on({
  "mouseover" : function() {
-    this.src = 'com-gray.png';
+    this.src = 'images/com-gray.png';
   },
   "mouseout" : function() {
-    this.src='com-green.png';
+    this.src='images/com-green.png';
   }
 });
 
 $("#an").on({
  "mouseover" : function() {
-    this.src = 'an-gray.png';
+    this.src = 'images/an-gray.png';
   },
   "mouseout" : function() {
-    this.src='an-green.png';
+    this.src='images/an-green.png';
   }
 });
 

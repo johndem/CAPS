@@ -9,162 +9,165 @@
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="when-jq.js"></script>
-        
+        <script src="when-jq.js"></script>  
     </head>
     <body>
-        
-        <div>
-        
-            <!-- registration -->
-            <div class="registration">
-                <ul>
-                    <li class="reg"><a href="register.html">Register</a></li>
-                    <li class="reg"><a href="login.html">Login</a></li>
-                </ul>
-            </div>
-            
-            <!-- masthead -->
-            <div class="masthead">
-                <h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>
-            </div>
-            
-            <!-- navigation -->
-            <div class="navigation">
-                <ul>
-                    <li><a href="index.php">HOME</a></li>
-                    <li><a href="volunteers.html">VOLUNTEERS</a></li>
-                    <li id="selected"><a href="organisations.html">ORGANISATIONS</a></li>
-                    <li><a href="calendar.html">CALENDAR</a></li>
-                    <li><a href="account.html">ACCOUNT</a></li>
-                </ul>
-            </div>
-            
-            <!-- content -->
-            <div class="content">
-                <h1 class="center-title">Post a new volunteer opportunity</h1>
-                <div class="aligner">
-                    
-                    <div id="results">
-                        <ul id="res-ul">
-                        </ul>
-                    </div>
-                    
-                       <div class="div-cat"> <h1 class="cats">Basic Information &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> </div>
-                        
-                        <div class="label-in">
-                         <div class="h3"> Title: * </div>
-                            <input id="op-title" class="in" maxlength="100" name="title" size="30" type="text" value="" />
-                        </div>
-                       
-                        <div class="label-in">
-                         <div class="h3"> Category: * </div>
-                             <select id="category" class="in">
-                              <option value="select">Select One</option>
-                              <option value="education">Education</option>
-                              <option value="healthcare">Healthcare</option>
-                              <option value="evnironement">Evnironement</option>
-                              <option value="animals">Animals</option>c
-                              <option value="emergency">Emergency</option>
-                              <option value="communities">Communities</option>
 
-                             </select>
-                        </div>
-                        
-                    <div class="div-cat"> <h1 class="cats">Where &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> </div>
+        <!-- registration -->
+        <div class="registration">
+            <ul>
+                <li class="reg"><a href="register.html">Register</a></li>
+                <li class="reg"><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+
+        <!-- masthead -->
+        <div class="masthead">
+            <h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>
+        </div>
+
+        <!-- navigation -->
+        <div class="navigation">
+            <ul>
+                <li><a href="index.php">HOME</a></li>
+                <li><a href="volunteers.html">VOLUNTEERS</a></li>
+                <li id="selected"><a href="organisations.html">ORGANISATIONS</a></li>
+                <li><a href="calendar.html">CALENDAR</a></li>
+                <li><a href="account.html">ACCOUNT</a></li>
+            </ul>
+        </div>
+
+        <!-- content -->
+        <div class="content">
+            <h1 class="center-title">Post a new volunteer opportunity</h1>
+            <div class="aligner">
+
+                <div id="results">
+                    <ul id="res-ul">
+                    </ul>
+                </div>
+
+                <div class="div-cat"> 
+                    <h1 class="cats">Basic Information &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> 
+                </div>
+
+                <div class="label-in">
+                    <div class="h3"> Title: * </div>
+                        <input id="op-title" class="in" maxlength="100" name="title" size="30" type="text" value="" />
+                    </div>
+
                     <div class="label-in">
-                         <div class="h3"> Address: *</div>
-                               <input id="address" class="in" maxlength="50" name="address" size="30" type="text" value="" />
-                        </div>
-                        
-                        <div class="label-in">
-                         <div class="h3"> Street Number: *</div>
-                                <input id="str-num"  class="in" maxlength="50" name="str" size="30" type="number" value="" />
-                        </div>
-                        
-                        <div class="label-in">
-                         <div class="h3"> Zip Code: *</div>
-                                <input id="zip"  class="in" maxlength="50" name="zip" size="30" type="number" value="" />
-                        </div>
-                        <div class="label-in">
-                         <div class="h3"> Area: * </div>
-                             <select id="area" class="in">
-                              <option value="select">Select one</option>
-                              <option value="onetime">Ανω Τούμπα</option>
-                              <option value="onetime">Αμπελόκηποι Θεσσαλονίκης</option>
-                              <option value="onetime">Ασβεστοχώρι</option>
-                              <option value="onetime">Βάρνα</option>
-                              <option value="onetime">Κωνσταντινοπολίτικα</option>
-                              <option value="onetime">Σαράντα Εκκλησιές</option>
-                              <option value="onetime">Κάτω Τούμπα</option>
-                              <option value="onetime">Καλαμαριά</option>
-                              <option value="onetime">Πυλαία</option>
-                             </select>
-                        </div>
-                       <div class="div-cat"> <h1 class="cats">When &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> </div>
-                     
-                     <div class="label-in"> 
+                        <div class="h3"> Category: * </div>
+                        <select id="category" class="in">
+                            <option value="select">Select One</option>
+                            <option value="education">Education</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="evnironement">Evnironement</option>
+                            <option value="animals">Animals</option>c
+                            <option value="emergency">Emergency</option>
+                            <option value="communities">Communities</option>
+                        </select>
+                    </div>
+
+                    <div class="div-cat"> 
+                        <h1 class="cats">Where &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> 
+                    </div>
+
+                    <div class="label-in">
+                        <div class="h3"> Address: *</div>
+                        <input id="address" class="in" maxlength="50" name="address" size="30" type="text" value="" />
+                    </div>
+
+                    <div class="label-in">
+                        <div class="h3"> Street Number: *</div>
+                        <input id="str-num"  class="in" maxlength="50" name="str" size="30" type="number" value="" />
+                    </div>
+
+                    <div class="label-in">
+                        <div class="h3"> Zip Code: *</div>
+                        <input id="zip"  class="in" maxlength="50" name="zip" size="30" type="number" value="" />
+                    </div>
+
+                    <div class="label-in">
+                        <div class="h3"> Area: * </div>
+                        <select id="area" class="in">
+                            <option value="select">Select one</option>
+                            <option value="onetime">Ανω Τούμπα</option>
+                            <option value="onetime">Αμπελόκηποι Θεσσαλονίκης</option>
+                            <option value="onetime">Ασβεστοχώρι</option>
+                            <option value="onetime">Βάρνα</option>
+                            <option value="onetime">Κωνσταντινοπολίτικα</option>
+                            <option value="onetime">Σαράντα Εκκλησιές</option>
+                            <option value="onetime">Κάτω Τούμπα</option>
+                            <option value="onetime">Καλαμαριά</option>
+                            <option value="onetime">Πυλαία</option>
+                        </select>
+                    </div>
+
+                    <div class="div-cat"> 
+                        <h1 class="cats">When &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> 
+                    </div>
+
+                    <div class="label-in"> 
                         <div class="h3">Day: * </div>
-                         <input id="day" class="in" maxlength="50" name="date" size="30" type="date" />
-                         </div>
-                    
+                        <input id="day" class="in" maxlength="50" name="date" size="30" type="date" />
+                    </div>
+
                     <div class="label-in">
                         <div class="h3">Time: * </div>
-                         <input id="time" class="in" maxlength="50" name="time" size="30" type="time"/>
-                         </div>
-                    
-                    
+                        <input id="time" class="in" maxlength="50" name="time" size="30" type="time"/>
+                    </div>
+
                     <div class="label-in"> 
                         <div class="h3">Entire day: </div>
-                          <input id="entire" class="in cb" name="ent" type="checkbox"/>
-                         </div>
+                        <input id="entire" class="in cb" name="ent" type="checkbox"/>
+                    </div>
 
                     <div class="label-in"> 
                         <div class="h3"> Repeat: </div>
-                         <input id="rep" class="in cb" name="rep" type="checkbox"/>
-                         </div>
+                        <input id="rep" class="in cb" name="rep" type="checkbox"/>
+                    </div>
 
-                    
                     <div hidden class="label-in toggled">
-                         <div class="h3">Repetition: * </div>
-                             <select id="date" onchange="date()" class="in">
-                              <option value="select">Select one</option>
-                              <option value="onetime">One time</option>
-                              <option value="everyday">Everyday</option>
-                              <option value="weekly">Weekly</option>
-                              <option value="monthly">Monthly</option>
-                              <option value="annualy">Annualy</option>
-                             </select>
-                        <div hidden id="onetime"> 
-                        
-                         
-                         <div class="label-in">
-                        <div class="h3">Time: * </div>
-                         <input id="time" class="in" maxlength="50" name="time" size="30" type="time"/>
-                         </div>
-                         </div>
-                        </div>
-                    
-                    
-                    <div class="div-cat"> <h1 class="cats">Additional Information &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> </div>
-                        
-                        <div class="label-in">
-                         <div class="h3"> Age Group: * </div>
-                             <select id="selectr" class="in">
-                                                             
+                        <div class="h3">Repetition: * </div>
+                        <select id="date" onchange="date()" class="in">
+                            <option value="select">Select one</option>
+                            <option value="onetime">One time</option>
+                            <option value="everyday">Everyday</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="annualy">Annualy</option>
+                        </select>
 
-                              <option value="select">Select One</option>
-                              <option value="kids">Kids</option>
-                              <option value="teens">Teens</option>
-                              <option value="elders">Elders (55+)</option>
-                              <option value="groups">Groups</option>
-                             </select>
+                        <div hidden id="onetime"> 
+                            <div class="label-in">
+                                <div class="h3">Time: * </div>
+                                <input id="time" class="in" maxlength="50" name="time" size="30" type="time"/>
+                            </div>
                         </div>
-                        
-                        <div class="label-in">
-                         <div class="h3">Optional Skills: * </div>
-                             <select id="skills" class="in" multiple>
-                                 <option disabled value="hold">- Hold Ctr for multiple selection -</option>
+                    </div>
+
+
+                    <div class="div-cat"> 
+                        <h1 class="cats">Additional Information &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> 
+                    </div>
+
+                    <div class="label-in">
+                        <div class="h3"> Age Group: * </div>
+                        <select id="selectr" class="in">
+                            <option value="select">Select One</option>
+                            <option value="kids">Kids</option>
+                            <option value="teens">Teens</option>
+                            <option value="adults">Adults</option>
+                            <option value="elders">Elders (55+)</option>
+                            <option value="groups">Groups</option>
+                        </select>
+                    </div>
+
+                    <div class="label-in">
+                        <div class="h3">Optional Skills: * </div>
+                            <select id="skills" class="in" multiple>
+                                <option disabled value="hold">- Hold Ctr for multiple selection -</option>
                                 <option label="Administration" value="37">Administration</option>
                                 <option label="Advice, Information and Support" value="38">Advice, Information and Support</option>
                                 <option label="Architecture, Building and Construction" value="39">Architecture, Building and Construction</option>
@@ -196,53 +199,38 @@
                                 <option label="Technology and the Internet" value="65">Technology and the Internet</option>
                                 <option label="Trusteeship and Committees" value="66">Trusteeship and Committees</option>
                                 <option label="Youth Work" value="67">Youth Work</option>
-                             </select>
-                        </div>
-                        
-                       
-                        
-                        <div class="label-in">
-                         <div class="h3"> Short description: * </div>
-                           <textarea class="for-text-area" cols="55" name="description" maxlength="500" rows="10" ></textarea>
-                        </div>
-                    
+                            </select>
+                    </div>
+
+                    <div class="label-in">
+                        <div class="h3"> Short description: * </div>
+                        <textarea class="for-text-area" cols="55" name="description" maxlength="500" rows="10" ></textarea>
+                    </div>
+
                     <p id="required">* This field is required </p>
-                    
+
                     <div id="go">
                         <input type="submit" class="submitBtn" onclick="checkform()" id="sButton" name="submit" value="Post" />
                     </div> 
-                   
+
                 </div>
-                
-                <div id="reg-blanket">
-                
-                </div>
-                
-            </div>
-                
-                
-            </div>
-            
-            <!-- footer -->
-            <div class="footer">
-                
-                <div id="links">
-                    <a href="">Login</a>
-                    <a href="">Terms and Conditions</a>
-                    <a href="">Privacy Policy</a>
-                </div>
-                
-                <div id="copyright">
-                    <p>Copyright &copy; 2015 JayTee. All Rights Reserved.</p>
-                </div>
-                
-                
-            
-            </div>
-            
+
+            <div id="reg-blanket"></div>
+
         </div>
-       
+
+        <!-- footer -->
+        <div class="footer">
+            <div id="links">
+                <a href="">Login</a>
+                <a href="">Terms and Conditions</a>
+                <a href="">Privacy Policy</a>
+            </div>
+
+            <div id="copyright">
+                <p>Copyright &copy; 2015 JayTee. All Rights Reserved.</p>
+            </div>
+        </div>
+             
     </body>
-    
-   
 </html>

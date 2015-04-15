@@ -2,7 +2,6 @@ body {
     position: absolute;
     right: 0;
     left: 0;
-    <!-- background-color: #31D100; -->
     margin: 0 auto;
 }
 
@@ -108,7 +107,6 @@ p {
     width: 230px;
     height: 230px;
     overflow: hidden;
-    
 }
 
 #btnOpp {
@@ -287,14 +285,12 @@ input {
     font-family: 'Open Sans';
     font-size: 15px;
     border-radius: 5px;
-    
 }
 
 textarea {
     font-family: 'Open Sans';
     font-size: 15px;
     border-radius: 5px;
-
 }
 
 #register-blanket {
@@ -310,6 +306,7 @@ textarea {
     background-color: #33D900;
     border-radius: 10px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .button-hover {
@@ -439,7 +436,7 @@ textarea {
     clear: both;
     margin: 0 auto;
     text-align: center;
-    width: 350px;
+    width: 450px;
     margin-bottom: 180px;
 }
 
@@ -449,7 +446,7 @@ textarea {
     clear: both;
     margin: 0 auto;
     text-align: center;
-    width: 350px;
+    width: 450px;
     margin-bottom: 50px;
 }
 
@@ -461,6 +458,7 @@ textarea {
 #radio-right {
     float: right;
     clear: right;
+    margin-right: 50px;
 }
 
 .align-left {
@@ -494,12 +492,12 @@ select {
 
 #skills {
     height: 150px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .cats {
-float: left;
-border-bottom: solid 2px black;
+    float: left;
+    border-bottom: solid 2px black;
     margin-bottom: 50px;
     margin-top: 20px;
 }
@@ -508,9 +506,7 @@ border-bottom: solid 2px black;
     clear: both;
     margin: 0 auto;
     text-align: center;
-    width: 450px;
-
-    
+    width: 450px; 
 }
 
 .toggled {
@@ -518,7 +514,7 @@ border-bottom: solid 2px black;
 }
 
 .checkb {
-     border-color: white;
+    border-color: white;
     border-style: dashed;
     clear: both;
     margin: 0 auto;

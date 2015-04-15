@@ -1,5 +1,3 @@
-
-
 function checkpass() {
     var elpass =  document.getElementById("password");
     var elconf = document.getElementById('con-pass');
@@ -39,32 +37,31 @@ function check_required_fields() {
     return error;
 }
 
-
-
 function checkform() {
-document.getElementById('res-ul').innerHTML = "";
-var error = false;
-var req = check_required_fields();
-var res = "";
-if (req === true) {
-    res = res + "<li> Please fill in all required fields. </li>";
-    error = true;
-}
-var elpass =  document.getElementById("password").value;
-var elconf = document.getElementById('con-pass').value;
-if (elconf != elpass) {
-    res = res + "<li>Passwords do no match!</li>";
-    error = true;
-}
-document.getElementById('res-ul').innerHTML = res;
+    document.getElementById('res-ul').innerHTML = "";
+    var error = false;
+    var req = check_required_fields();
+    var res = "";
+    
+    if (req === true) {
+        res = res + "<li> Please fill in all required fields. </li>";
+        error = true;
+    }
+    
+    var elpass =  document.getElementById("password").value;
+    var elconf = document.getElementById('con-pass').value;
+    
+    if (elconf != elpass) {
+        res = res + "<li>Passwords do no match!</li>";
+        error = true;
+    }
+    
+    document.getElementById('res-ul').innerHTML = res;
 
-if (!error) {
-    getResponse();
+    if (!error) {
+        getResponse();
+    }
 }
-}
-
-
-
 
 /*
 function checkuser() {
@@ -106,14 +103,14 @@ function checkemail() {
 
 var http = getXMLHttpRequest();
 
-function getXMLHttpRequest()
-{
-  if(window.XMLHttpRequest) {
-    request = new XMLHttpRequest();
-  } else {
-    request = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  return request;
+function getXMLHttpRequest() {
+    if (window.XMLHttpRequest) {
+        request = new XMLHttpRequest();
+    } 
+    else {
+        request = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    return request;
 }
 
 
@@ -129,7 +126,6 @@ function getResponse() {
       var usernamevalue= encodeURIComponent(document.getElementById("username").value);
       var emailvalue=encodeURIComponent(document.getElementById("email").value);
       var birth= encodeURIComponent(document.getElementById("dob").value);
-
       var parameters="username="+usernamevalue+"&email="+emailvalue+"&first="+first+"&last="+last+"&password="+password+"&phone="+phone+"&address="+address+"&str="+str+"&zip="+zip+"&birth="+birth;
 
     console.log(parameters);
@@ -140,14 +136,14 @@ function getResponse() {
 }
 
 function useHttpResponse() {
-  if (http.readyState == 4) {
-    if (http.status == 200) {
-     if (http.responseText === "OK") {
-            window.location = "confirm.html";
-     }
-        else {
-            document.getElementById('res-ul').innerHTML = http.responseText;
+    if (http.readyState == 4) {
+        if (http.status == 200) {
+            if (http.responseText === "OK") {
+                window.location = "confirm.html";
+            }
+            else {
+                document.getElementById('res-ul').innerHTML = http.responseText;
+            }
         }
-  }
-}
+    }
 }

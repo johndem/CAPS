@@ -59,7 +59,7 @@
             </div>
 
             <div id="btnOpp">
-                <h3><a href="">More Opportunities!</a></h3>
+                <h3><a href="volunteers.html">More Opportunities!</a></h3>
             </div>
 
 

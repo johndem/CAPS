@@ -2,17 +2,14 @@
 
     include 'create-link.php';
     
-    $user = mysqli_real_escape_string($link,$_POST['user']);
+    $user = mysqli_real_escape_string($link,$_POST['username']);
     $user = htmlspecialchars($user, ENT_QUOTES);
 
     $email = mysqli_real_escape_string($link,$_POST['email']);
     $email = htmlspecialchars($email, ENT_QUOTES);
 
-    $pass = mysqli_real_escape_string($link,$_POST['pass']);
+    $pass = mysqli_real_escape_string($link,$_POST['password']);
     $pass = htmlspecialchars($pass, ENT_QUOTES);
-
-    $con_pass = mysqli_real_escape_string($link,$_POST['con-pass']);
-    $con_pass = htmlspecialchars($con_pass, ENT_QUOTES);
 
     $name = mysqli_real_escape_string($link,$_POST['name']);
     $name = htmlspecialchars($name, ENT_QUOTES);
@@ -33,8 +30,9 @@
     $description = htmlspecialchars($description, ENT_QUOTES);
 
     $query = "INSERT INTO organisations (username,email,password,name,website,facebook,twitter,other,description) VALUES ('$user', '$email','$pass','$name','$website','$facebook','$twitter', '$other','$description')";
+    
     mysqli_query($link,$query);
     @mysqli_close($link);
-    echo "<script> window.open('confirm.html','_self')</script>";
 
+    echo "OK";
 ?>

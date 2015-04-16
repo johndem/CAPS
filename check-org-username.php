@@ -9,7 +9,7 @@
 	$results = " ";
     $error = false;
 	
-	$query = "SELECT username FROM user WHERE username = '$username'";
+	$query = "SELECT username FROM organisations WHERE username = '$username'";
 	   
 	$result = mysqli_query($link, $query);
 
@@ -20,7 +20,7 @@
 	}
 	
 	
-	$query = "SELECT email FROM user WHERE email = '$email'";
+	$query = "SELECT email FROM organisations WHERE email = '$email'";
 
 	$result = mysqli_query($link, $query);
 
@@ -36,7 +36,7 @@
         echo $results;
     }
     else {
-        include "vol-register.php";   
+        include "org-register.php";   
     }
 
 ?>

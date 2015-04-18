@@ -1,4 +1,27 @@
 $(document).ready(function () {
+    
+    $('.submitBtn').hover(function () {
+        $(this).toggleClass("button-hover");
+    });
+    
+    $(".username").on({
+     "mouseover" : function() {
+        $('#dropdownlist').css("display","block");
+      },
+      "mouseout" : function() {
+        $('#dropdownlist').css("display","none");
+      }
+    });
+    
+    $("#dropdownlist").on({
+     "mouseover" : function() {
+        $(this).css("display","block");
+      },
+      "mouseout" : function() {
+        $(this).css("display","none");
+      }
+    });
+    
 
     $("#hc").on({
      "mouseover" : function() {
@@ -54,13 +77,4 @@ $(document).ready(function () {
       }
     });
 
-
-
-    /*$('.cat').hover(function () {
-            $(this).toggleClass("change"); 
-        });
-
-        $('.submitBtn').hover(function () {
-            $(this).toggleClass("button-hover");
-        }); */
 });

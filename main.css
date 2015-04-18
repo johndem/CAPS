@@ -549,16 +549,17 @@ select {
 
 .cats {
     float: left;
-    border-bottom: solid 2px black;
-    margin-bottom: 50px;
     margin-top: 20px;
 }
 
 .div-cat {
+    overflow: hidden;
     clear: both;
     margin: 0 auto;
     text-align: center;
     width: 450px; 
+    border-bottom: solid 2px black;
+    margin-bottom: 50px;
 }
 
 .toggled {
@@ -579,3 +580,4 @@ select {
     height: 15px;
     width: 15px;
 }
+

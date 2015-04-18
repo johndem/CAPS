@@ -2,7 +2,6 @@ body {
     position: absolute;
     right: 0;
     left: 0;
-    <!-- background-color: #31D100; -->
     margin: 0 auto;
 }
 
@@ -68,8 +67,7 @@ p {
     font-weight: bold;
     text-align: center;
     font-size: 50px;
-    padding-top: 20px;
-    padding-bottom: 50px;
+    padding-top: 30px;
 }
 
 #links {
@@ -108,7 +106,6 @@ p {
     width: 230px;
     height: 230px;
     overflow: hidden;
-    
 }
 
 #btnOpp {
@@ -166,8 +163,9 @@ p {
 
 .registration {
     background-color: #31D100;
-    position: relative;
+    position: absolute;
     overflow: hidden;
+    right: 0;
 }
 
 .registration ul {
@@ -183,7 +181,7 @@ p {
 
 .reg {
     width: 100px;
-    height: 50px;
+    height: 30px;
     margin: 0 auto;
     text-align: center;
     float: right;
@@ -194,6 +192,58 @@ p {
     font-family: 'Open Sans';
     color: #525252;
     padding: 0px 7px 5px 7px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.logged {
+    background-color: #31D100;
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+}
+
+#dropdownlist {
+    width: 130px;
+    margin: 0 auto;
+    float: right;
+    clear: both;
+    margin-right: 40px;
+    display: none;
+}
+
+.logged ul {
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ABABAB;
+    padding: 0px 7px 5px 7px;
+    border: solid 2px gray;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.logged li a {
+    font-family: 'Open Sans';
+    color: #525252;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.username {
+    width: 200px;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+    float: right;
+    background-color: #ABABAB;
+    font-family: 'Open Sans';
+    color: #525252;
     text-decoration: none;
     font-size: 17px;
     font-weight: bold;
@@ -287,14 +337,12 @@ input {
     font-family: 'Open Sans';
     font-size: 15px;
     border-radius: 5px;
-    
 }
 
 textarea {
     font-family: 'Open Sans';
     font-size: 15px;
     border-radius: 5px;
-
 }
 
 #register-blanket {
@@ -310,6 +358,7 @@ textarea {
     background-color: #33D900;
     border-radius: 10px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .button-hover {
@@ -425,7 +474,7 @@ textarea {
 }
 
 #required {
-   color: red;
+    color: red;
     clear: both;
     margin: 0 auto;
     text-align: left;
@@ -439,7 +488,7 @@ textarea {
     clear: both;
     margin: 0 auto;
     text-align: center;
-    width: 350px;
+    width: 450px;
     margin-bottom: 180px;
 }
 
@@ -449,7 +498,7 @@ textarea {
     clear: both;
     margin: 0 auto;
     text-align: center;
-    width: 350px;
+    width: 450px;
     margin-bottom: 50px;
 }
 
@@ -461,6 +510,7 @@ textarea {
 #radio-right {
     float: right;
     clear: right;
+    margin-right: 50px;
 }
 
 .align-left {
@@ -494,12 +544,12 @@ select {
 
 #skills {
     height: 150px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .cats {
-float: left;
-border-bottom: solid 2px black;
+    float: left;
+    border-bottom: solid 2px black;
     margin-bottom: 50px;
     margin-top: 20px;
 }
@@ -508,9 +558,7 @@ border-bottom: solid 2px black;
     clear: both;
     margin: 0 auto;
     text-align: center;
-    width: 450px;
-
-    
+    width: 450px; 
 }
 
 .toggled {
@@ -518,7 +566,7 @@ border-bottom: solid 2px black;
 }
 
 .checkb {
-     border-color: white;
+    border-color: white;
     border-style: dashed;
     clear: both;
     margin: 0 auto;

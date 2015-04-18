@@ -49,12 +49,12 @@
                         <ul id="res-ul">
                         </ul>
                     </div>
-                    
-                       <div class="div-cat"> <h1 class="cats">Basic Information &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> </div>
+                    <form>
+                       <div class="div-cat"> <h1 class="cats">Basic Information</h1> </div>
                         
                         <div class="label-in">
                          <div class="h3"> Title: * </div>
-                            <input id="op-title" class="in" maxlength="100" name="title" size="30" type="text" value="" />
+                            <input required id="op-title" class="in" maxlength="100" name="title" size="30" type="text" value="" />
                         </div>
                        
                         <div class="label-in">
@@ -71,7 +71,7 @@
                              </select>
                         </div>
                         
-                    <div class="div-cat"> <h1 class="cats">Where &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> </div>
+                    <div class="div-cat"> <h1 class="cats">Where</h1> </div>
                     <div class="label-in">
                          <div class="h3"> Address: *</div>
                                <input id="address" class="in" maxlength="50" name="address" size="30" type="text" value="" />
@@ -101,7 +101,7 @@
                               <option value="onetime">Πυλαία</option>
                              </select>
                         </div>
-                       <div class="div-cat"> <h1 class="cats">When &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> </div>
+                       <div class="div-cat"> <h1 class="cats">When</h1> </div>
                      
                      <div class="label-in"> 
                         <div class="h3">Day: * </div>
@@ -114,7 +114,7 @@
                          </div>
                     
                     
-                    <div class="label-in"> 
+        <!--          <div class="label-in"> 
                         <div class="h3">Entire day: </div>
                           <input id="entire" class="in cb" name="ent" type="checkbox"/>
                          </div>
@@ -144,20 +144,20 @@
                          </div>
                          </div>
                         </div>
+                -->
                     
-                    
-                    <div class="div-cat"> <h1 class="cats">Additional Information &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> </div>
+                    <div class="div-cat"> <h1 class="cats">Additional Information</h1> </div>
                         
                         <div class="label-in">
                          <div class="h3"> Age Group: * </div>
                              <select id="selectr" class="in">
                                                              
 
-                              <option value="select">Select One</option>
-                              <option value="kids">Kids</option>
-                              <option value="teens">Teens</option>
-                              <option value="elders">Elders (55+)</option>
-                              <option value="groups">Groups</option>
+                              <option disabled value="0">Select One</option>
+                              <option value="1">Kids</option>
+                              <option value="2">Teens</option>
+                              <option value="3">Elders (55+)</option>
+                              <option value="4">Groups</option>
                              </select>
                         </div>
                         
@@ -211,7 +211,7 @@
                     <div id="go">
                         <input type="submit" class="submitBtn" onclick="checkform()" id="sButton" name="submit" value="Post" />
                     </div> 
-                   
+                   </form>
                 </div>
                 
                 <div id="reg-blanket">

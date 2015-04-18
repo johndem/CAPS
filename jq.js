@@ -1,5 +1,41 @@
 $(document).ready(function () {
 
+/*$("#hc").animate({
+        height: '+=230px',
+        width: '+=230px'
+    },70,function() {
+    
+    $("#edu").animate({
+        height: '+=230px',
+        width: '+=230px'
+    },70,function() {
+        $("#em").animate({
+        height: '+=230px',
+        width: '+=230px'
+    },70,function () {
+            $("#env").animate({
+        height: '+=230px',
+        width: '+=230px'
+    },70,function() {
+                $("#com").animate({
+        height: '+=230px',
+        width: '+=230px'
+    },70,function() {
+                    $("#an").animate({
+        height: '+=230px',
+        width: '+=230px'
+    },70);
+                });
+            });
+        });
+    });
+        
+}); */
+
+
+
+
+    
 $("#hc").on({
  "mouseover" : function() {
     this.src = 'images/hc-gray.png';

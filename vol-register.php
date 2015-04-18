@@ -36,7 +36,7 @@ $date = htmlspecialchars($date, ENT_QUOTES);
 $query = "INSERT INTO user (firstname,lastname,username,email,pasword,phone,address,str_number,zip,city,date) VALUES ('$first', '$last','$user','$email','$pass','$phone','$address','$str','$zip','Thessaloniki', '$date')";
 mysqli_query($link,$query);
 @mysqli_close($link); 
-echo "OK";
+
 
 
 ?>

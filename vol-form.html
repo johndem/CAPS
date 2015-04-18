@@ -51,38 +51,38 @@
                         </ul>
                     </div>
                     
-                    <form id="form" name="vol-form">
+                    <form id="form" method="post" action="vol-register.php" target="_self" name="vol-form">
                         
                         <div class="label-in">
                          <div class="h3"> First name: * </div>
-                            <input id="first" class="in" maxlength="50" name="first" size="30" type="text" value="" />
+                            <input id="first" class="in" maxlength="50" name="first" size="30" type="text" required />
                         </div>
                        
                         <div class="label-in">
                          <div class="h3"> Last Name: * </div>
-                              <input id="last-name" class="in" maxlength="50" name="last" size="30" type="text" value="" />
+                              <input id="last" class="in" maxlength="50" name="last" size="30" type="text" required />
                         </div>
                         
                         <div class="label-in">
                          <div class="h3"> Username: * </div>
-                             <input id="username" class="in" maxlength="50" name="user" size="30" type="text" value="" />
+                             <input id="username" class="in" minlength="5" maxlength="50" name="username" size="30" type="text" required />
                             <div id="user-span"></div>
                         </div>
                         
                         <div class="label-in">
                          <div class="h3"> Email: * </div>
-                             <input id="email" class="in" maxlength="50" name="email" size="30" type="email" value="" />
+                             <input id="email" class="in" maxlength="50" name="email" size="30" type="email" required />
                             <div id="email-span"></div>
                         </div>
                         
                         <div class="label-in">
                          <div class="h3"> Password: * </div>
-                             <input id="password" class="in" maxlength="50" name="pass" size="30" type="password" value="" />
+                             <input id="password" class="in" minlength="5" maxlength="50" name="password" size="30" type="password" required />
                         </div>
                         
                         <div class="label-in">
                          <div class="h3"> Confirm password: * </div>
-                                <input id="con-pass" onkeyup="checkpass()" class="in" maxlength="50" name="con-pass" size="30" type="password" value="" />
+                                <input id="con-pass" onkeyup="checkpass()" class="in" maxlength="50" name="con-pass" size="30" minlength="5" type="password" required />
                                 <div id="pass-span"></div>
                         </div>
                         
@@ -108,16 +108,19 @@
                         
                         <div class="label-in">
                          <div class="h3"> Date of Birth: * </div>
-                               <input id="dob" class="in" maxlength="50" name="date" size="30" type="date" value="" />
+                               <input id="dob" class="in" name="birth" size="30" type="date" required />
                          
                         </div>
+                        
+                        <div id="go">
+                        <input type="submit" class="submitBtn"  id="sButton" name="submit" value="Register" />
+                    </div>
+                        
                     </form>
                     
                     <p id="required">* This field is required </p>
                     
-                    <div id="go">
-                        <input type="submit" class="submitBtn" onclick="checkform()" id="sButton" name="submit" value="Register" />
-                    </div> 
+                     
                    
                 </div>
                 

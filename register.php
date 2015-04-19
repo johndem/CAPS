@@ -12,16 +12,29 @@
         <script src="jq.js"></script>
     </head>
     <body>
+	<?php session_start(); ?>
         
         <div>
         
-            <!-- registration -->
-            <div class="registration">
-                <ul>
-                    <li class="reg"><a href="register.html">Register</a></li>
-                    <li class="reg"><a href="login.html">Login</a></li>
-                </ul>
-            </div>
+            <!-- registration or username -->
+			<?php if(isset($_SESSION['user'])){?>
+			<div class="logged">     
+				<a href="account.php"><div class="username">Welcome, <?php echo $_SESSION['user']; ?>!</div></a>
+				<div id="dropdownlist">
+					<ul>
+						<li><a href="account.php">Edit my profile</a></li>
+						<li><a href="index.php">Log Out</a></li>
+					</ul>
+				</div>
+			</div>
+			<?php }else{?>
+			 <div class="registration">
+				<ul>
+					<li class="reg"><a href="register.php">Register</a></li>
+					<li class="reg"><a href="login.php">Login</a></li>
+				</ul>
+			</div>  
+			<?php } ?>
             
             <!-- masthead -->
             <div class="masthead">
@@ -32,18 +45,35 @@
             <div class="navigation">
                 <ul>
                     <li><a href="index.php">HOME</a></li>
-                    <li><a href="volunteers.html">VOLUNTEERS</a></li>
-                    <li><a href="organisations.html">ORGANISATIONS</a></li>
-                    <li><a href="calendar.html">CALENDAR</a></li>
-                    <li id="selected"><a href="account.html">ACCOUNT</a></li>
+                    <li><a href="volunteers.php">VOLUNTEERS</a></li>
+                    <li><a href="organisations.php">ORGANISATIONS</a></li>
+                    <li><a href="calendar.php">CALENDAR</a></li>
+                    <li><a href="account.php">ACCOUNT</a></li>
                 </ul>
             </div>
             
             <!-- content -->
             <div class="content">
-                <h1 class="center-title">My Account</h1>
+                <h1 class="center-title">Register</h1>
                 
+                <div>
+                    <div class="aligner row">
+                        <h2>I want to become a Volunteer!</h2>
+                        <div id="btnReg">
+                            <h3><a href="vol-form.php">Register as a volunteer!</a></h3>
+                        </div>
+                    </div>
+                    <div class="aligner row">
+                        <h2>Our Organisation is seeking volunteers!</h2>
+                        <div id="btnReg">
+                            <h3><a href="org-form.php">Register as an organisation!</a></h3>
+                        </div>
+                    </div>
+                </div>
                 
+                <div id="register-blanket">
+                
+                </div>
                 
             </div>
             

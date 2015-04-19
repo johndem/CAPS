@@ -13,27 +13,31 @@
         <script src="form-check.js"></script>
     </head>
     <body>
+		<?php session_start(); ?>
         
         <div>
-        
-            <!-- registration -->
-            <div class="registration">
-                <ul>
-                    <li class="reg"><a href="register.html">Register</a></li>
-                    <li class="reg"><a href="login.html">Login</a></li>
-                </ul>
-            </div>
-			
+		
+			<!-- registration or username -->
+			<?php if(isset($_SESSION['user'])){?>
 			<div class="logged">     
-                <a href="account.html"><div class="username">Welcome, Mr. User!</div></a>
+                <a href="account.php"><div class="username">Welcome, <?php echo $_SESSION['user']; ?>!</div></a>
                 <div id="dropdownlist">
                     <ul>
-                        <li><a href="account.html">Edit my profile</a></li>
+                        <li><a href="account.php">Edit my profile</a></li>
                         <li><a href="index.php">Log Out</a></li>
                     </ul>
                 </div>
             </div>
-            
+			<?php }else{?>
+			 <div class="registration">
+                <ul>
+                    <li class="reg"><a href="register.php">Register</a></li>
+                    <li class="reg"><a href="login.php">Login</a></li>
+                </ul>
+            </div>  
+			<?php } ?>
+        
+               
             <!-- masthead -->
             <div class="masthead">
                 <h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>
@@ -43,10 +47,10 @@
             <div class="navigation">
                 <ul>
                     <li><a href="index.php">HOME</a></li>
-                    <li><a href="volunteers.html">VOLUNTEERS</a></li>
-                    <li><a href="organisations.html">ORGANISATIONS</a></li>
-                    <li><a href="calendar.html">CALENDAR</a></li>
-                    <li><a href="account.html">ACCOUNT</a></li>
+                    <li><a href="volunteers.php">VOLUNTEERS</a></li>
+                    <li><a href="organisations.php">ORGANISATIONS</a></li>
+                    <li><a href="calendar.php">CALENDAR</a></li>
+                    <li><a href="account.php">ACCOUNT</a></li>
                 </ul>
             </div>
             
@@ -55,7 +59,7 @@
                 <h1 class="center-title">Login</h1>
                 
                 <div class="aligner">
-                    <div><p>Not yet registered? Signing up is easy and takes less than 5 minutes. <a href="register.html">Click here to get started</a> »</p></div>
+                    <div><p>Not yet registered? Signing up is easy and takes less than 5 minutes. <a href="register.php">Click here to get started</a> »</p></div>
                     
                     <!--<form id="form" action="log.php" target="_self" method="post" name="log-form">-->
                     <form id="form" name="log-form">

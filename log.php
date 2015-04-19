@@ -1,4 +1,6 @@
 <?php
+
+	session_start();
 	
     include 'create-link.php';
 
@@ -16,10 +18,11 @@
     $match = false;
 
     while ($row = mysqli_fetch_row($results)) {
-        if (($user == $row[4] || $user == $row[3]) && $pass == $row[5]) {
+        if (($user == $row[3] || $user == $row[4]) && $pass == $row[5]) {
             //$_SESSION['username'] = $row[3];
             // found user match
             $match = true;
+			$_SESSION['user'] = $row[3];
         }
     }
 

@@ -13,15 +13,28 @@
         <script src="form-check.js"></script>
     </head>
     <body>
+	<?php session_start(); ?>
         
         
-        <!-- registration -->
-        <div class="registration">
-            <ul>
-                <li class="reg"><a href="register.html">Register</a></li>
-                <li class="reg"><a href="login.html">Login</a></li>
-            </ul>
-        </div>
+        <!-- registration or username -->
+		<?php if(isset($_SESSION['user'])){?>
+		<div class="logged">     
+			<a href="account.php"><div class="username">Welcome, <?php echo $_SESSION['user']; ?>!</div></a>
+			<div id="dropdownlist">
+				<ul>
+					<li><a href="account.php">Edit my profile</a></li>
+					<li><a href="index.php">Log Out</a></li>
+				</ul>
+			</div>
+		</div>
+		<?php }else{?>
+		 <div class="registration">
+			<ul>
+				<li class="reg"><a href="register.php">Register</a></li>
+				<li class="reg"><a href="login.php">Login</a></li>
+			</ul>
+		</div>  
+		<?php } ?>
 
         <!-- masthead -->
         <div class="masthead">
@@ -32,10 +45,10 @@
         <div class="navigation">
             <ul>
                 <li><a href="index.php">HOME</a></li>
-                <li><a href="volunteers.html">VOLUNTEERS</a></li>
-                <li><a href="organisations.html">ORGANISATIONS</a></li>
-                <li><a href="calendar.html">CALENDAR</a></li>
-                <li><a href="account.html">ACCOUNT</a></li>
+                <li><a href="volunteers.php">VOLUNTEERS</a></li>
+                <li><a href="organisations.php">ORGANISATIONS</a></li>
+                <li><a href="calendar.php">CALENDAR</a></li>
+                <li><a href="account.php">ACCOUNT</a></li>
             </ul>
         </div>
 

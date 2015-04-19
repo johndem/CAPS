@@ -200,11 +200,11 @@ function useHttpResponse() {
     if (http.readyState == 4) {
         if (http.status == 200) {
             if (http.responseText === "OK") {
-                $('.registration').css("display","none");
-                $('.logged').css("display","block");
+                //$('.registration').hide();//css("display","none");
+                //$('.logged').show();//css("display","block");
 				//$('.registration').addClass("disappear");
                 //$('.logged').removeClass("disappear");
-                window.location = "login.html";   
+                window.location = "index.php";   
             }
             else {
                 document.getElementById('res-ul').innerHTML = http.responseText;

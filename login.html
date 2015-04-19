@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
+        <script src="form-check.js"></script>
     </head>
     <body>
         
@@ -21,6 +22,16 @@
                     <li class="reg"><a href="register.html">Register</a></li>
                     <li class="reg"><a href="login.html">Login</a></li>
                 </ul>
+            </div>
+			
+			<div class="logged">     
+                <a href="account.html"><div class="username">Welcome, Mr. User!</div></a>
+                <div id="dropdownlist">
+                    <ul>
+                        <li><a href="account.html">Edit my profile</a></li>
+                        <li><a href="index.php">Log Out</a></li>
+                    </ul>
+                </div>
             </div>
             
             <!-- masthead -->
@@ -46,24 +57,33 @@
                 <div class="aligner">
                     <div><p>Not yet registered? Signing up is easy and takes less than 5 minutes. <a href="register.html">Click here to get started</a> »</p></div>
                     
-                    <form id="form" action="log.php" target="_self" method="post" name="log-form">
+                    <!--<form id="form" action="log.php" target="_self" method="post" name="log-form">-->
+                    <form id="form" name="log-form">
                        
                        <div class="label-in">
                          <div class="h3"> Username or Email: </div>
-                            <input class="in" maxlength="50" name="user" id="user" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" size="25" type="text" value="" />
+                            <input class="in" maxlength="50" name="user" id="log-username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" size="25" type="text" value="" />
                         </div> 
                         
                         <div class="label-in">
                          <div class="h3">Password: </div>
-                            <input class="in" maxlength="50" name="pass" id="pass" size="25" type="password" value="" />
+                            <input class="in" maxlength="50" name="pass" id="log-password" size="25" type="password" required value="" />
                         </div>
                        
-                        <div id="go">
+                        <!--<div id="go">
                             <input type="submit" class="submitBtn" name="submit" value="Go" />
-                        </div> 
+                        </div> -->
                     </form>
                     
+                    <div id="go">
+                        <input type="submit" class="submitBtn" onclick="getLogResponse()" id="sButton" name="submit" value="Go" />
+                    </div>
+                    
                     <div><a href="">Forgot your password?</a></div>
+                    
+                    <div id="results">
+                        <ul id="res-ul"></ul>
+                    </div>
                     
                 </div>
                 

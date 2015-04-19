@@ -134,6 +134,8 @@ function getXMLHttpRequest() {
 
 
 
+
+
 function getResponse() {
       var myurl = "check-username.php";
       var first = encodeURIComponent(document.getElementById("first").value);
@@ -179,13 +181,30 @@ function getOrgResponse() {
     http.send(parameters);
 }
 
+function getLogResponse() {
+    var myurl = "log.php";
+    
+    var username = encodeURIComponent(document.getElementById("log-username").value);
+    var password = encodeURIComponent(document.getElementById("log-password").value);
 
+    var parameters = "username="+username+"&password="+password;
+    
+    console.log(parameters);
+    http.open("POST", myurl, true);
+    http.onreadystatechange = useHttpResponse;
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(parameters);
+}
 
 function useHttpResponse() {
     if (http.readyState == 4) {
         if (http.status == 200) {
             if (http.responseText === "OK") {
-                window.location = "confirm.html";
+                $('.registration').css("display","none");
+                $('.logged').css("display","block");
+				//$('.registration').addClass("disappear");
+                //$('.logged').removeClass("disappear");
+                window.location = "login.html";   
             }
             else {
                 document.getElementById('res-ul').innerHTML = http.responseText;

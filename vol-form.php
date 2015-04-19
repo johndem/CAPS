@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src="jq.js"></script>
         <script src="form-check.js"></script>
     </head>
@@ -66,67 +69,90 @@
 
                     <div class="label-in">
                         <div class="h3"> First name: * </div>
-                        <input id="first" class="in" maxlength="50" name="first" size="30" type="text" value="" />
+                        <div id="err-first" class="error-message"> </div>
+                        <div id="first-span" class="img-span"></div>
+                        <input id="first" class="in" maxlength="50" name="first" size="30" type="text" value="" required/>
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Last Name: * </div>
-                        <input id="last-name" class="in" maxlength="50" name="last" size="30" type="text" value="" />
+                         <div id="err-last" class="error-message"> </div>
+                        <div id="last-span" class="img-span"></div>
+                        <input id="last-name" class="in" maxlength="50" name="last" size="30" type="text" value="" required/>
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Username: * </div>
-                        <input id="username" class="in" maxlength="50" name="user" size="30" type="text" value="" />
+                        <div id="err-username" class="error-message"> </div>
+                        <div id="username-span" class="img-span"></div>
+                        <input id="username" class="in" minlength="5" maxlength="50" name="user" size="30" type="text" value="" required/>
                         <div id="user-span"></div>
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Email: * </div>
-                        <input id="email" class="in" maxlength="50" name="email" size="30" type="email" value="" />
-                        <div id="email-span"></div>
+                        <div id="err-email" class="error-message"> </div>
+                        <div id="email-span" class="img-span"></div>
+                        
+                        <input id="email" class="in" name="email" size="30" type="email" value="" required/>
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Password: * </div>
-                        <input id="password" class="in" maxlength="50" name="pass" size="30" type="password" value="" />
+                         <div id="err-password" class="error-message"> </div>
+                        <div id="password-span" class="img-span"></div>
+                        <input id="password" class="in" minlength="10" maxlength="50" name="pass" size="30" type="password" value="" required/>
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Confirm password: * </div>
-                        <input id="con-pass" onkeyup="checkpass()" class="in" maxlength="50" name="con-pass" size="30" type="password" value="" />
-                        <div id="pass-span"></div>
+                        <div id="err-conf" class="error-message"> </div>
+                        <div id="conf-span" class="img-span"></div>
+                        <input id="con-pass" onkeyup="checkpass()" class="in" minlength="10" name="con-pass" size="30" type="password" value="" required/>
+                        
+                   
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Phone number: </div>
-                        <input id="phone"  class="in" maxlength="50" name="phone" size="30" type="text" value="" />
+                        <div id="err-phone" class="error-message"> </div>
+                        <div id="phone-span" class="img-span"></div>
+                        <input id="phone"  class="in" minlength="10" maxlength="10" name="phone" size="30" type="tel" value="" />
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Address: </div>
+                        <div id="err-addr" class="error-message"> </div>
+                        <div id="addr-span" class="img-span"></div>
                         <input id="address" class="in" maxlength="50" name="address" size="30" type="text" value="" />
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Street Number: </div>
-                        <input id="str-num"  class="in" maxlength="50" name="str" size="30" type="number" value="" />
+                        <div id="err-str" class="error-message"> </div>
+                        <div id="str-span" class="img-span"></div>
+                        <input id="str"  class="in" min="1" max="9999" name="str"  type="number" value="" />
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Zip Code: </div>
-                        <input id="zip"  class="in" maxlength="50" name="zip" size="30" type="number" value="" />
+                        <div id="err-zip" class="error-message"> </div>
+                        <div id="zip-span" class="img-span"></div>
+                        <input id="zip"  class="in" name="zip" type="number" value="" min="10000" max="99999"/>
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Date of Birth: * </div>
-                        <input id="dob" class="in" maxlength="50" name="date" size="30" type="date" value="" />
+                        <div id="err-dob" class="error-message"> </div>
+                        <div id="dob-span" class="img-span"></div>
+                        <input id="dob" class="in" name="date" required/>
                     </div>
                     
                 </form>
 
                 <p id="required">* This field is required </p>
 
-                <div id="go">
+                 <div id="go">
                     <input type="submit" class="submitBtn" onclick="checkform()" id="sButton" name="submit" value="Register" />
                 </div> 
 

@@ -1,25 +1,162 @@
+$(document).ready(function() {
+    $("#dob").datepicker({
+  dateFormat: "dd-mm-yy"
+});
+ });
+
 function checkpass() {
     var elpass =  document.getElementById("password");
     var elconf = document.getElementById('con-pass');
-    var span = document.getElementById('pass-span');
-	var button = document.getElementById("sButton");
+    var span = document.getElementById('conf-span');
+
     var pass = elpass.value;
     var conf = elconf.value;
     console.log(pass + " " + conf);
      
     if (conf != pass) {
-        elconf.style.border = "solid 2px red";
-        span.innerHTML = "<img src='X.jpg'>";
+       
+        puterror("conf-span",'err-conf', 'Passwords do not match!')
         //button.disabled = true;
     }
     else {
-        elconf.style.border = "solid 2px green";
-        span.innerHTML = "<img src='check.jpg'>";
+       putok('conf-span', 'err-conf');
 		//button.disabled = false;
     }
 }
 
+function putok(imgid,mspanid) {
+    var imgspan = document.getElementById(imgid);
+    var span = document.getElementById(mspanid);
+    
+    imgspan.innerHTML = "<img class='err-img' src='check.jpg'>";
+    span.innerHTML = "";
+}
 
+function puterror(imgid,mspanid,errmess) {
+    
+        var imgspan = document.getElementById(imgid);
+        var span = document.getElementById(mspanid);
+        
+        imgspan.innerHTML = "<img class='err-img' src='images/exc-mark.png'>";
+        span.innerHTML = errmess;
+        
+        imgspan.onmouseover = function () {
+            span.style.display  = 'block';
+        }
+        
+         imgspan.onmouseout = function () {
+            span.style.display = 'none';
+        }
+    
+}
+
+function getValidity() {
+    var error = false;
+    
+    var email =  document.getElementById('email');
+    var first =  document.getElementById('first');
+    var last =  document.getElementById('last-name');
+    var username =  document.getElementById('username');
+    var password =  document.getElementById('password');
+    var conpass =  document.getElementById('con-pass');
+    var birth =  document.getElementById('dob');
+    var tel = document.getElementById('phone');
+    var addr = document.getElementById('address');
+    var str = document.getElementById('str');
+    var zip = document.getElementById('zip');
+   
+    if (email.checkValidity() == false ) {
+        puterror('email-span','err-email', email.validationMessage);
+        error = true;
+    }
+    else {
+        putok('email-span','err-email');
+    }
+    
+    if (first.checkValidity() == false ) {
+        puterror('first-span','err-first', first.validationMessage);
+        error = true;
+
+    }
+    else {
+        putok('first-span','err-first');
+    }
+    
+    if (last.checkValidity() == false ) {
+        puterror('last-span','err-last', last.validationMessage);
+         error = true;
+
+    }
+    else {
+        putok('last-span','err-last');
+    }
+    
+    if (username.checkValidity() == false ) {
+        puterror('username-span','err-username', username.validationMessage);
+         error = true;
+
+    }
+    else {
+         putok('username-span','err-username');
+    }
+    
+    if (password.checkValidity() == false ) {
+        puterror('password-span','err-password', password.validationMessage);
+        error = true;
+
+    }
+    else {
+         putok('password-span','err-password');
+    }
+    
+     if (birth.checkValidity() == false ) {
+        puterror('dob-span','err-dob', birth.validationMessage);
+        error = true;
+
+     }
+    else {
+         putok('dob-span','err-dob');
+    }
+    
+    if (tel.checkValidity() == false ) {
+        puterror('phone-span','err-phone', tel.validationMessage);
+        error = true;
+
+    } 
+    else {
+         putok('phone-span','err-phone');
+    }
+    
+     if (addr.checkValidity() == false ) {
+        puterror('addr-span','err-addr', addr.validationMessage);
+         error = true;
+
+    }
+    else {
+         putok('addr-span','err-addr');
+    }
+    
+     if (str.checkValidity() == false ) {
+        puterror('str-span','err-str', str.validationMessage);
+         error = true;
+
+    }
+    else {
+         putok('str-span','err-str');
+    }
+    
+     if (zip.checkValidity() == false ) {
+        puterror('zip-span','err-zip', zip.validationMessage);
+        error = true;
+
+    }
+    else {
+         putok('zip-span','err-zip');
+    }
+
+    return error;
+
+}
 
 function check_required_fields() {
     var error = false;
@@ -92,14 +229,14 @@ function check_org_required_fields() {
 
 
 
-function checkorgform() {
+function checkform() {
     document.getElementById('res-ul').innerHTML = "";
     var error = false;
-    var req = check_org_required_fields();
+    var req = getValidity();
     var res = "";
     
     if (req === true) {
-        res = res + "<li> Please fill in all required fields. </li>";
+        res = res + "<li> Please make sure your input is correct! Mouse over for error message. </li>";
         error = true;
     }
     
@@ -114,7 +251,7 @@ function checkorgform() {
     document.getElementById('res-ul').innerHTML = res;
 
     if (!error) {
-        getOrgResponse();
+        getResponse();
     }
 }
 
@@ -143,7 +280,7 @@ function getResponse() {
       var password = encodeURIComponent(document.getElementById("password").value);
       var phone = encodeURIComponent(document.getElementById("phone").value);
       var address = encodeURIComponent(document.getElementById("address").value);
-      var str = encodeURIComponent(document.getElementById("str-num").value);
+      var str = encodeURIComponent(document.getElementById("str").value);
       var zip = encodeURIComponent(document.getElementById("zip").value);
       var usernamevalue = encodeURIComponent(document.getElementById("username").value);
       var emailvalue = encodeURIComponent(document.getElementById("email").value);

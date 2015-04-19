@@ -158,34 +158,15 @@ function getValidity() {
 
 }
 
-function check_required_fields() {
-    var error = false;
-    
-    var first =  document.getElementById('first').value;
-    var last =  document.getElementById('last-name').value;
-    var username =  document.getElementById('username').value;
-    var email =  document.getElementById('email').value;
-    var password =  document.getElementById('password').value;
-    var conpass =  document.getElementById('con-pass').value;
-    var birth =  document.getElementById('dob').value;
-   
-    
-    if (first.trim().length === 0 || last.trim().length=== 0 || username.trim().length=== 0|| email.trim().length=== 0 || password.trim().length=== 0 || conpass.trim().length=== 0 || birth.trim().length=== 0) {
-        error = true;
-    }
-    return error;
-}
-
-
 
 function checkform() {
     document.getElementById('res-ul').innerHTML = "";
     var error = false;
-    var req = check_required_fields();
+    var req = getValidity();
     var res = "";
     
     if (req === true) {
-        res = res + "<li> Please fill in all required fields. </li>";
+        res = res + "<li> Please make sure your input is correct! Mouse over for error message. </li>";
         error = true;
     }
     
@@ -229,14 +210,14 @@ function check_org_required_fields() {
 
 
 
-function checkform() {
+function checkorgform() {
     document.getElementById('res-ul').innerHTML = "";
     var error = false;
-    var req = getValidity();
+    var req = check_org_required_fields();
     var res = "";
     
     if (req === true) {
-        res = res + "<li> Please make sure your input is correct! Mouse over for error message. </li>";
+        res = res + "<li> Please fill in all required fields. </li>";
         error = true;
     }
     
@@ -251,7 +232,7 @@ function checkform() {
     document.getElementById('res-ul').innerHTML = res;
 
     if (!error) {
-        getResponse();
+        getOrgResponse();
     }
 }
 

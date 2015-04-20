@@ -21,6 +21,27 @@ $(document).ready(function () {
         $(this).css("display","none");
       }
     });
+	
+	$('#logout').click(function() {
+		$.ajax( {
+			type: "POST",
+			url: "logout.php",
+			data: "action=unsetsession",
+			success: function(msg) {
+				if(msg=="success") {
+					//window.location = "index.php";
+					//window.location.reload();
+					history.go(0);
+				}
+				else {
+					// it failed
+				}
+			},
+			error: function(msg) {
+				alert("There was a problem loading a page.");
+			}
+		});
+	});
     
 
     $("#hc").on({

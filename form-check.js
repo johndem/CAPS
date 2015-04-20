@@ -318,10 +318,6 @@ function useHttpResponse() {
     if (http.readyState == 4) {
         if (http.status == 200) {
             if (http.responseText === "OK") {
-                //$('.registration').hide();//css("display","none");
-                //$('.logged').show();//css("display","block");
-				//$('.registration').addClass("disappear");
-                //$('.logged').removeClass("disappear");
                 window.location = "index.php";   
             }
             else {

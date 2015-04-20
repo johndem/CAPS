@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="when-jq.js"></script>
+        <script src="jq.js"></script>
+		<script src="when-jq.js"></script>
         
     </head>
     <body>

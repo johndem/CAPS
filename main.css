@@ -188,7 +188,7 @@ p {
 }
 
 .reg a {
-    background-color: #ABABAB;
+    background-color: #E2E6E1;
     font-family: 'Open Sans';
     color: #525252;
     padding: 0px 7px 5px 7px;
@@ -204,6 +204,10 @@ p {
     position: absolute;
     overflow: hidden;
     right: 0;
+}
+
+.logged a:hover {
+    color: #31D100;
 }
 
 .appear {
@@ -228,9 +232,8 @@ p {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #ABABAB;
+    background-color: #E2E6E1;
     padding: 0px 7px 5px 7px;
-    border: solid 2px gray;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -249,7 +252,7 @@ p {
     margin: 0 auto;
     text-align: center;
     float: right;
-    background-color: #ABABAB;
+    background-color: #E2E6E1;
     font-family: 'Open Sans';
     color: #525252;
     text-decoration: none;

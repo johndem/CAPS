@@ -601,7 +601,6 @@ select {
 .error-message {
     padding: 5px;
     position: absolute;
-    min-height: 50px;
     max-width: 250px;
     font-size: 80%;
     background-color: #ddd;

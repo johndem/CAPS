@@ -8,9 +8,12 @@
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src="jq.js"></script>
-		<script src="when-jq.js"></script>
+		<script src="form-check-add-event.js"></script>
         
     </head>
     <body>
@@ -41,13 +44,17 @@
                         
                         <div class="label-in">
                          <div class="h3"> Title: * </div>
+                            <div id="err-title" class="error-message"> </div>
+                            <div id="title-span" class="img-span"></div>
                             <input required id="op-title" class="in" maxlength="100" name="title" size="30" type="text" value="" />
                         </div>
                        
                         <div class="label-in">
                          <div class="h3"> Category: * </div>
-                             <select id="category" class="in">
-                              <option value="select">Select One</option>
+                            <div id="err-category" class="error-message"> </div>
+                            <div id="category-span" class="img-span"></div>
+                             <select id="category" class="in" required>
+                              <option value="select" selected>Select One</option>
                               <option value="education">Education</option>
                               <option value="healthcare">Healthcare</option>
                               <option value="evnironement">Evnironement</option>
@@ -58,25 +65,35 @@
                              </select>
                         </div>
                         
-                    <div class="div-cat"> <h1 class="cats">Where</h1> </div>
+                        <div class="div-cat"> <h1 class="cats">Where</h1> </div>
+                        
+                        
+                     <div class="label-in">
+                        <div class="h3"> Address: * </div>
+                        <div id="err-addr" class="error-message"> </div>
+                        <div id="addr-span" class="img-span"></div>
+                        <input id="address" class="in" maxlength="50" name="address" size="30" type="text" value="" required/>
+                    </div>
+
                     <div class="label-in">
-                         <div class="h3"> Address: *</div>
-                               <input id="address" class="in" maxlength="50" name="address" size="30" type="text" value="" />
-                        </div>
-                        
-                        <div class="label-in">
-                         <div class="h3"> Street Number: *</div>
-                                <input id="str-num"  class="in" maxlength="50" name="str" size="30" type="number" value="" />
-                        </div>
-                        
-                        <div class="label-in">
-                         <div class="h3"> Zip Code: *</div>
-                                <input id="zip"  class="in" maxlength="50" name="zip" size="30" type="number" value="" />
-                        </div>
+                        <div class="h3"> Street Number: * </div>
+                        <div id="err-str" class="error-message"> </div>
+                        <div id="str-span" class="img-span"></div>
+                        <input id="str"  class="in" min="1" max="9999" name="str"  type="number" value="" required/>
+                    </div>
+
+                    <div class="label-in">
+                        <div class="h3"> Zip Code: * </div>
+                        <div id="err-zip" class="error-message"> </div>
+                        <div id="zip-span" class="img-span"></div>
+                        <input id="zip"  class="in" name="zip" type="number" value="" min="10000" max="99999" required/>
+                    </div>
                         <div class="label-in">
                          <div class="h3"> Area: * </div>
-                             <select id="area" class="in">
-                              <option value="select">Select one</option>
+                            <div id="err-area" class="error-message"> </div>
+                            <div id="area-span" class="img-span"></div>
+                             <select id="area" class="in" required>
+                              <option value="select" selected>Select one</option>
                               <option value="onetime">Ανω Τούμπα</option>
                               <option value="onetime">Αμπελόκηποι Θεσσαλονίκης</option>
                               <option value="onetime">Ασβεστοχώρι</option>
@@ -92,12 +109,16 @@
                      
                      <div class="label-in"> 
                         <div class="h3">Day: * </div>
-                         <input id="day" class="in" maxlength="50" name="date" size="30" type="date" />
+                         <div id="err-day" class="error-message"> </div>
+                         <div id="day-span" class="img-span"></div>
+                         <input id="day" class="in" name="date" required/>
                          </div>
                     
                     <div class="label-in">
-                        <div class="h3">Time: * </div>
-                         <input id="time" class="in" maxlength="50" name="time" size="30" type="time"/>
+                         <div class="h3">Time: * </div>
+                         <div id="err-time" class="error-message"> </div>
+                         <div id="time-span" class="img-span"></div>
+                         <input id="time" class="in"  name="time" type="time" required/>
                          </div>
                     
                     
@@ -137,20 +158,24 @@
                         
                         <div class="label-in">
                          <div class="h3"> Age Group: * </div>
-                             <select id="selectr" class="in">
+                            <div id="err-agegroup" class="error-message"> </div>
+                            <div id="agegroup-span" class="img-span"></div>
+                             <select id="agegroup" class="in" required>
                                                              
-
-                              <option disabled value="0">Select One</option>
-                              <option value="1">Kids</option>
-                              <option value="2">Teens</option>
-                              <option value="3">Elders (55+)</option>
-                              <option value="4">Groups</option>
+                                    <option disabled selected="selected" value="0">Select one</option>
+                                    <option value="1">Kids</option>
+                                    <option value="2">Teens</option>
+                                    <option value="3">Adults</option>
+                                    <option value="4">Elders</option>
+                                    <option value="5">Groups</option>
                              </select>
                         </div>
                         
                         <div class="label-in">
                          <div class="h3">Optional Skills: * </div>
-                             <select id="skills" class="in" multiple>
+                            <div id="err-skills" class="error-message"> </div>
+                            <div id="skills-span" class="img-span"></div>
+                             <select id="skills" class="in" multiple required>
                                  <option disabled value="hold">- Hold Ctr for multiple selection -</option>
                                 <option label="Administration" value="37">Administration</option>
                                 <option label="Advice, Information and Support" value="38">Advice, Information and Support</option>
@@ -190,15 +215,18 @@
                         
                         <div class="label-in">
                          <div class="h3"> Short description: * </div>
-                           <textarea class="for-text-area" cols="55" name="description" maxlength="500" rows="10" ></textarea>
+                            <div id="err-desc" class="error-message"> </div>
+                            <div id="desc-span" class="img-span"></div>
+                           <textarea id="desc" class="for-text-area" cols="55" name="description" maxlength="500" rows="10" required></textarea>
                         </div>
                     
                     <p id="required">* This field is required </p>
-                    
-                    <div id="go">
+                   </form>
+                
+                 <div id="go">
                         <input type="submit" class="submitBtn" onclick="checkform()" id="sButton" name="submit" value="Post" />
                     </div> 
-                   </form>
+                
                 </div>
                 
                 <div id="reg-blanket">

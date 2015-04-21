@@ -54,13 +54,13 @@
                             <div id="err-category" class="error-message"> </div>
                             <div id="category-span" class="img-span"></div>
                              <select id="category" class="in" required>
-                              <option value="select" selected>Select One</option>
-                              <option value="education">Education</option>
-                              <option value="healthcare">Healthcare</option>
-                              <option value="evnironement">Evnironement</option>
-                              <option value="animals">Animals</option>c
-                              <option value="emergency">Emergency</option>
-                              <option value="communities">Communities</option>
+                              <option value="0" disabled selected>Select One</option>
+                              <option value="1">Education</option>
+                              <option value="2">Healthcare</option>
+                              <option value="3">Evnironement</option>
+                              <option value="4">Animals</option>c
+                              <option value="5">Emergency</option>
+                              <option value="6">Communities</option>
 
                              </select>
                         </div>
@@ -93,16 +93,16 @@
                             <div id="err-area" class="error-message"> </div>
                             <div id="area-span" class="img-span"></div>
                              <select id="area" class="in" required>
-                              <option value="select" selected>Select one</option>
-                              <option value="onetime">Ανω Τούμπα</option>
-                              <option value="onetime">Αμπελόκηποι Θεσσαλονίκης</option>
-                              <option value="onetime">Ασβεστοχώρι</option>
-                              <option value="onetime">Βάρνα</option>
+                              <option value="0" disabled selected>Select one</option>
+                              <option value="1">Ανω Τούμπα</option>
+                              <option value="2">Αμπελόκηποι Θεσσαλονίκης</option>
+                              <option value="3">Ασβεστοχώρι</option>
+                              <option value="4">Βάρνα</option>
                               <option value="onetime">Κωνσταντινοπολίτικα</option>
-                              <option value="onetime">Σαράντα Εκκλησιές</option>
-                              <option value="onetime">Κάτω Τούμπα</option>
-                              <option value="onetime">Καλαμαριά</option>
-                              <option value="onetime">Πυλαία</option>
+                              <option value="5">Σαράντα Εκκλησιές</option>
+                              <option value="6">Κάτω Τούμπα</option>
+                              <option value="7">Καλαμαριά</option>
+                              <option value="8">Πυλαία</option>
                              </select>
                         </div>
                        <div class="div-cat"> <h1 class="cats">When</h1> </div>
@@ -176,7 +176,7 @@
                             <div id="err-skills" class="error-message"> </div>
                             <div id="skills-span" class="img-span"></div>
                              <select id="skills" class="in" multiple required>
-                                 <option disabled value="hold">- Hold Ctr for multiple selection -</option>
+                                 <option disabled selected value="0">- Hold Ctr for multiple selection -</option>
                                 <option label="Administration" value="37">Administration</option>
                                 <option label="Advice, Information and Support" value="38">Advice, Information and Support</option>
                                 <option label="Architecture, Building and Construction" value="39">Architecture, Building and Construction</option>

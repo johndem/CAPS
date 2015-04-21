@@ -72,8 +72,8 @@ function getValidity() {
     }
     
     //Category
-    if (category.checkValidity() == false ) {
-        puterror('category-span','err-category', category.validationMessage);
+    if (category.value == 0 ) {
+        puterror('category-span','err-category', "Please choose a category");
         error = true;
 
     }
@@ -82,8 +82,8 @@ function getValidity() {
     }
     
     // Age Group
-    if (agegroup.checkValidity() == false ) {
-        puterror('agegroup-span','err-agegroup', agegroup.validationMessage);
+    if (agegroup.value == 0 ) {
+        puterror('agegroup-span','err-agegroup', "Please select the age group");
          error = true;
 
     }
@@ -92,8 +92,8 @@ function getValidity() {
     }
     
     // Skills
-    if (skills.checkValidity() == false ) {
-        puterror('skills-span','err-skills', skills.validationMessage);
+    if (skills.value == 0 ) {
+        puterror('skills-span','err-skills', "Please choose at least one skill");
          error = true;
 
     }
@@ -164,8 +164,8 @@ function getValidity() {
 
     
     //Area 
-    if (area.checkValidity() == false ) {
-        puterror('area-span','err-area', area.validationMessage);
+    if (area.value == 0 ) {
+        puterror('area-span','err-area', "Please select the event place/area");
         error = true;
 
     }
@@ -189,32 +189,54 @@ function checkform() {
         document.getElementById('res-ul').innerHTML = res;
     }
     else {
-        //getResponse();
+        getResponse();
     }
     
 }
 
 // Get Response
 function getResponse() {
-      var myurl = "check-username.php";
-      var first = encodeURIComponent(document.getElementById("first").value);
-      var last = encodeURIComponent(document.getElementById("last-name").value);
-      var password = encodeURIComponent(document.getElementById("password").value);
-      var phone = encodeURIComponent(document.getElementById("phone").value);
+     var title =  document.getElementById('op-title');
+    var category =  document.getElementById('category');
+    
+    var agegroup =  document.getElementById('agegroup');
+    var skills = document.getElementById('skills');
+    var desc = document.getElementById('desc');
+    
+    var day =  document.getElementById('day');
+    var time = document.getElementById('time');
+    
+    var area =  document.getElementById('area');
+    var addr = document.getElementById('address');
+    var str = document.getElementById('str');
+    var zip = document.getElementById('zip');
+    
+    
+      var myurl = "add-event.php";
+      var title = encodeURIComponent(document.getElementById('op-title').value);
+      var category = encodeURIComponent(category.options[category.selectedIndex].text);
+      
+      var day = encodeURIComponent(document.getElementById('day').value);
+      var time = encodeURIComponent(document.getElementById('time').value);
+      
       var address = encodeURIComponent(document.getElementById("address").value);
       var str = encodeURIComponent(document.getElementById("str").value);
       var zip = encodeURIComponent(document.getElementById("zip").value);
-      var usernamevalue = encodeURIComponent(document.getElementById("username").value);
-      var emailvalue = encodeURIComponent(document.getElementById("email").value);
-      var birth = encodeURIComponent(document.getElementById("dob").value);
+      var area = encodeURIComponent(area.options[area.selectedIndex].text);
     
-      var parameters = "username="+usernamevalue+"&email="+emailvalue+"&first="+first+"&last="+last+"&password="+password+"&phone="+phone+"&address="+address+"&str="+str+"&zip="+zip+"&birth="+birth;
+      var agegroup = encodeURIComponent(agegroup.options[agegroup.selectedIndex].text);
+      var desc = encodeURIComponent(document.getElementById("desc").value);
+      var skills = encodeURIComponent(document.getElementById("skills").value);
 
-    console.log(parameters);
-    http.open("POST", myurl, true);
-    http.onreadystatechange = useHttpResponse;
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.send(parameters);
+
+    
+     var parameters = "title="+title+"&category="+category+"&day="+day+"&time="+time+"&desc="+desc+"&agegroup="+agegroup+"&address="+address+"&str="+str+"&zip="+zip+"&area="+area+"&skills="+skills;
+
+     console.log(parameters);
+     http.open("POST", myurl, true);
+     http.onreadystatechange = useHttpResponse;
+     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+     http.send(parameters);
 }
 
 // Use Response

@@ -32,6 +32,7 @@
             
             <!-- content -->
             <div class="content">
+            <?php if(isset($_SESSION['org'])) { ?>    
                 <h1 class="center-title">Post a new volunteer opportunity</h1>
                 <div class="aligner">
                     
@@ -226,7 +227,10 @@
                  <div id="go">
                         <input type="submit" class="submitBtn" onclick="checkform()" id="sButton" name="submit" value="Post" />
                     </div> 
-                
+                <?php } else { ?>
+                    <p> Register your organisation! </p>
+                    
+                    <?php } ?>
                 </div>
                 
                 <div id="reg-blanket">

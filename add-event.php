@@ -1,11 +1,13 @@
 <?php
 
+    session_start();
+
     include 'create-link.php';
 
     $title = mysqli_real_escape_string($link,$_POST['title']);
     $title = htmlspecialchars($title, ENT_QUOTES);
 
-    $category = mysqli_real_escape_string($category,$_POST['category']);
+    $category = mysqli_real_escape_string($link,$_POST['category']);
     $category = htmlspecialchars($category, ENT_QUOTES);
 
     $day = mysqli_real_escape_string($link,$_POST['day']);
@@ -35,15 +37,15 @@
     $skills = mysqli_real_escape_string($link,$_POST['skills']);
     $skills = htmlspecialchars($skills, ENT_QUOTES);
 
+    $org_id = $_SESSION['org'];
 
-
-    $query = "INSERT INTO events (org_id,title,category,address,str_num,zipcode,area,day,time,agegroup,skills,sdesc) VALUES (1,'$title',                 '$category','$address','$str','$zip','$area','$day','$time','$agegroup','$skills','$desc')";
+    $query = "INSERT INTO events (org_id,title,category,address,str_num,zipcode,area,day,time,agegroup,skills,sdesc) VALUES ('$org_id','$title',                 '$category','$address','$str','$zip','$area','$day','$time','$agegroup','$skills','$desc')";
     
    $result =  mysqli_query($link,$query);
 
-    if(mysql_errno()){
+    if(!$result){
+        echo "Database problem" . mysqli_error() ;
         mysqli_close($link); 
-        echo "MySQL error " . mysql_errno() . ": " .mysql_error()."\n<br>When executing <br>\n $query \n<br>";
     }
    
     else {

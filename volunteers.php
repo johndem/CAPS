@@ -32,7 +32,7 @@
                 
                 <div class="aligner">
                     
-                    <form>
+                    <form action="search-results.php" method="get" >
                        
 
                         <div id="search-cat">
@@ -40,29 +40,29 @@
                             <div>
                                 <div id="radio-left">
                                     <div class="align-left">
-                                        <input type="checkbox" name="category" value="education" /> 
+                                        <input type="radio" name="category" value="Education" /> 
                                         Education    
                                     </div>
                                     <div class="align-left">
-                                        <input type="checkbox" name="category" value="healthcare" />
+                                        <input type="radio" name="category" value="healthcare" />
                                         Healthcare      
                                     </div>
                                     <div class="align-left">
-                                        <input type="checkbox" name="category" value="environment" />
+                                        <input type="radio" name="category" value="environment" />
                                         Environment      
                                     </div>
                                 </div>
                                 <div id="radio-right">
                                     <div class="align-left">
-                                        <input type="checkbox" name="category" value="animals" />
+                                        <input type="radio" name="category" value="animals" />
                                         Animals
                                     </div> 
                                     <div class="align-left">
-                                        <input type="checkbox" name="category" value="emergency" />
+                                        <input type="radio" name="category" value="emergency" />
                                         Emergency
                                     </div>
                                     <div class="align-left">
-                                        <input type="checkbox" name="category" value="communities" />
+                                        <input type="radio" name="category" value="communities" />
                                         Communities
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                             <div class="h3">Area:</div>
                             <div class="in">
                                 <select name="areas">
-                                    <option selected="selected">Select one</option>
+                                    <option selected="selected" value="0">Select one</option>
                                     <option>Ανω Τούμπα</option>
                                     <option>Αμπελόκηποι Θεσσαλονίκης</option>
                                     <option>Ασβεστοχώρι</option>
@@ -92,7 +92,7 @@
                             <div class="h3">Age group:</div>
                             <div class="in">
                                 <select name="ages">
-                                    <option selected="selected">Select one</option>
+                                    <option selected="selected" value="0">Select one</option>
                                     <option value="kids">Kids</option>
                                     <option value="teens">Teens</option>
                                     <option value="adults">Adults</option>

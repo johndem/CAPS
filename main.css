@@ -38,7 +38,7 @@ p {
 }
 
 .navigation li {
-    display: inline;
+    display: inline-block;
 }
 
 .navigation li a:hover {
@@ -46,16 +46,17 @@ p {
 }
 
 .navigation a {
+    display: block;
     background-color: #ABABAB;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     color: #525252;
-    padding: 7px 7px 0px 7px;
+    padding: 10px 10px 5px 10px;
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
     margin-right: 5px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 #selected a {
@@ -266,6 +267,14 @@ p {
     margin: 0 auto;
     text-align: center;  
 }
+#confirm-link {
+    background-color: lawngreen;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 3px;
+    margin-top: 2px;
+}
+
 
 .aligner div a {
     text-decoration: none;
@@ -618,3 +627,4 @@ select {
     width: 5px;
     float: right;
 }
+

@@ -196,20 +196,17 @@ function checkform() {
 
 // Get Response
 function getResponse() {
-     var title =  document.getElementById('op-title');
+    
     var category =  document.getElementById('category');
     
     var agegroup =  document.getElementById('agegroup');
-    var skills = document.getElementById('skills');
-    var desc = document.getElementById('desc');
-    
-    var day =  document.getElementById('day');
-    var time = document.getElementById('time');
+    //var skills = document.getElementById('skills');
+    //var desc = document.getElementById('desc');
     
     var area =  document.getElementById('area');
-    var addr = document.getElementById('address');
-    var str = document.getElementById('str');
-    var zip = document.getElementById('zip');
+    //var addr = document.getElementById('address');
+   // var str = document.getElementById('str');
+    //var zip = document.getElementById('zip');
     
     
       var myurl = "add-event.php";
@@ -233,10 +230,10 @@ function getResponse() {
      var parameters = "title="+title+"&category="+category+"&day="+day+"&time="+time+"&desc="+desc+"&agegroup="+agegroup+"&address="+address+"&str="+str+"&zip="+zip+"&area="+area+"&skills="+skills;
 
      console.log(parameters);
-     //http.open("POST", myurl, true);
-    // http.onreadystatechange = useHttpResponse;
-    // http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    // http.send(parameters);
+     http.open("POST", myurl, true);
+     http.onreadystatechange = useHttpResponse;
+     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+     http.send(parameters);
 }
 
 // Use Response

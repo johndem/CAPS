@@ -393,7 +393,7 @@ function useHttpResponseOrg() {
     if (http.readyState == 4) {
         if (http.status == 200) {
             if (http.responseText === "OK") {
-                window.location = "index.php";   
+                window.location = "confirm.html";   
             }
             else {
                 document.getElementById('res-ul').innerHTML = http.responseText;

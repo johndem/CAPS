@@ -25,6 +25,24 @@
 			$_SESSION['user'] = $row[3];
         }
     }
+    
+    // Search for org
+    if ($match == false) {
+        
+    $query = "SELECT * FROM organisations";
+
+    $results = mysqli_query($link, $query);
+
+    while ($row = mysqli_fetch_row($results)) {
+        if (($user == $row[1] || $user == $row[2]) && $pass == $row[3]) {
+            //$_SESSION['username'] = $row[3];
+            // found user match
+            $match = true;
+			$_SESSION['user'] = $row[1];
+            $_SESSION['org'] = $row[0];
+        }
+    }
+    }
 
     @mysqli_close($link); 
 

@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src="jq.js"></script>
         <script src="form-check.js"></script>
     </head>
@@ -39,54 +42,74 @@
                     <form id="form" name="org-form">
                      
                         <div class="label-in">
-                            <div class="h3"> Username: * </div>
-                            <input id="org-username" class="in" maxlength="50" name="user" size="30" type="text" value="" />
-                        </div>
-                        
-                        <div class="label-in">
-                            <div class="h3"> Email: * </div>
-                            <input id="org-email" class="in" maxlength="50" name="email" size="30" type="email" value="" />
-                        </div>
-                        
-                        <div class="label-in">
-                            <div class="h3"> Password: * </div>
-                            <input id="password" class="in" maxlength="50" name="pass" size="30" type="password" value="" />
-                        </div>
-                        
-                        <div class="label-in">
-                            <div class="h3"> Confirm password: * </div>
-                            <input id="con-pass" onkeyup="checkpass()" class="in" maxlength="50" name="con-pass" size="30" type="password" value="" />
-                            <div id="pass-span"></div>
-                        </div>
+                        <div class="h3"> Username: * </div>
+                        <div id="err-username" class="error-message"> </div>
+                        <div id="username-span" class="img-span"></div>
+                        <input id="org-username" class="in" minlength="5" maxlength="50" name="user" size="30" type="text" value="" required/>
+                        <div id="user-span"></div>
+                    </div>
+
+                    <div class="label-in">
+                        <div class="h3"> Email: * </div>
+                        <div id="err-email" class="error-message"> </div>
+                        <div id="email-span" class="img-span"></div>
+                        <input id="org-email" class="in" name="email" size="30" type="email" value="" required/>
+                    </div>
+
+                    <div class="label-in">
+                        <div class="h3"> Password: * </div>
+                         <div id="err-password" class="error-message"> </div>
+                        <div id="password-span" class="img-span"></div>
+                        <input id="password" class="in" minlength="10" maxlength="50" name="pass" size="30" type="password" value="" required/>
+                    </div>
+
+                    <div class="label-in">
+                        <div class="h3"> Confirm password: * </div>
+                        <div id="err-conf" class="error-message"> </div>
+                        <div id="conf-span" class="img-span"></div>
+                        <input id="con-pass" onkeyup="checkpass()" class="in" minlength="10" name="con-pass" size="30" type="password" value="" required/>
+                    </div>
                         
                         <div class="label-in">
                             <div class="h3"> Organisation name: * </div>
-                            <input id="org-name" class="in" maxlength="50" name="name" size="30" type="text" value="" />
+                            <div id="err-name" class="error-message"> </div>
+                            <div id="name-span" class="img-span"></div>
+                            <input id="org-name" class="in" maxlength="50" name="name" size="30" type="text" value="" required/>
                         </div>
                         
                         <div class="label-in">
                             <div class="h3">Website: </div>
-                            <input id="website" class="in" maxlength="50" name="website" size="30" type="url" value="" />
+                            <div id="err-ws" class="error-message"> </div>
+                            <div id="ws-span" class="img-span"></div>
+                            <input id="website" class="in" name="website" size="30" type="url" value="" />
                         </div>
                         
                         <div class="label-in">
                             <div class="h3">  Facebook: </div>
-                            <input id="facebook" class="in" maxlength="50" name="facebook" size="30" type="url" value="" />
+                            <div id="err-fb" class="error-message"> </div>
+                            <div id="fb-span" class="img-span"></div>
+                            <input id="facebook" class="in" name="facebook" size="30" type="url" value="" />
                         </div>
                         
                         <div class="label-in">
                             <div class="h3"> Twitter: </div>
-                            <input id="twitter" class="in" maxlength="50" name="twitter" size="30" type="url" value="" />
+                            <div id="err-tw" class="error-message"> </div>
+                            <div id="tw-span" class="img-span"></div>
+                            <input id="twitter" class="in" name="twitter" size="30" type="url" value="" />
                         </div>
                         
                         <div class="label-in">
                             <div class="h3">  Other: </div>
-                            <input id="other" class="in" maxlength="50" name="other" size="30" type="url" value="" />
+                            <div id="err-other" class="error-message"> </div>
+                            <div id="other-span" class="img-span"></div>
+                            <input id="other" class="in" name="other" size="30" type="url" value="" />
                         </div>
                          
                         <div class="label-in">
                             <div class="h3">  Organisation description: * </div>
-                            <textarea id="description" class="for-text-area" cols="55" name="description" maxlength="500" rows="10" ></textarea>
+                            <div id="err-desc" class="error-message"> </div>
+                            <div id="desc-span" class="img-span"></div>
+                            <textarea id="description" class="for-text-area" cols="55" name="description" maxlength="500" rows="10" required></textarea>
                         </div>
                         
                     </form>

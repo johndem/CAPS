@@ -233,10 +233,10 @@ function getResponse() {
      var parameters = "title="+title+"&category="+category+"&day="+day+"&time="+time+"&desc="+desc+"&agegroup="+agegroup+"&address="+address+"&str="+str+"&zip="+zip+"&area="+area+"&skills="+skills;
 
      console.log(parameters);
-     http.open("POST", myurl, true);
-     http.onreadystatechange = useHttpResponse;
-     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-     http.send(parameters);
+     //http.open("POST", myurl, true);
+    // http.onreadystatechange = useHttpResponse;
+    // http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // http.send(parameters);
 }
 
 // Use Response

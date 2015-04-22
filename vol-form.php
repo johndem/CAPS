@@ -82,8 +82,6 @@
                         <div id="err-conf" class="error-message"> </div>
                         <div id="conf-span" class="img-span"></div>
                         <input id="con-pass" onkeyup="checkpass()" class="in" minlength="10" name="con-pass" size="30" type="password" value="" required/>
-                        
-                   
                     </div>
 
                     <div class="label-in">
@@ -137,6 +135,16 @@
 
         <!-- footer -->
         <?php include 'footer.php'; ?>
+
+   <script>     
+       
+       $(document).ready(function() {
+           $("#dob").datepicker({
+               dateFormat: "dd-mm-yy"
+           });
+       });
+        
+    </script>
 
     </body>
 </html>

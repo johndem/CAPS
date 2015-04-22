@@ -1,8 +1,19 @@
-$(document).ready(function() {
-    $("#dob").datepicker({
-  dateFormat: "dd-mm-yy"
-});
- });
+
+/********************** HTTP REQUEST ****************************/
+
+var http = getXMLHttpRequest();
+
+function getXMLHttpRequest() {
+    if (window.XMLHttpRequest) {
+        request = new XMLHttpRequest();
+    } 
+    else {
+        request = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    return request;
+}
+
+/************************* UTILITIES **************************/
 
 function checkpass() {
     var elpass =  document.getElementById("password");
@@ -50,7 +61,11 @@ function puterror(imgid,mspanid,errmess) {
     
 }
 
-function getValidity() {
+
+/********************* VOLUNTEER REGISTER **************************/
+
+
+function getVolValidity() {
     var error = false;
     
     var email =  document.getElementById('email');
@@ -158,11 +173,10 @@ function getValidity() {
 
 }
 
-
 function checkform() {
     document.getElementById('res-ul').innerHTML = "";
     var error = false;
-    var req = getValidity();
+    var req = getVolValidity();
     var res = "";
     
     if (req === true) {
@@ -185,39 +199,157 @@ function checkform() {
     }
 }
 
-
-
-function check_org_required_fields() {
-    var error = false;
+function getResponse() {
+      var myurl = "check-username.php";
+      var first = encodeURIComponent(document.getElementById("first").value);
+      var last = encodeURIComponent(document.getElementById("last-name").value);
+      var password = encodeURIComponent(document.getElementById("password").value);
+      var phone = encodeURIComponent(document.getElementById("phone").value);
+      var address = encodeURIComponent(document.getElementById("address").value);
+      var str = encodeURIComponent(document.getElementById("str").value);
+      var zip = encodeURIComponent(document.getElementById("zip").value);
+      var usernamevalue = encodeURIComponent(document.getElementById("username").value);
+      var emailvalue = encodeURIComponent(document.getElementById("email").value);
+      var birth = encodeURIComponent(document.getElementById("dob").value);
     
-    var username =  document.getElementById('org-username').value;
-    var email =  document.getElementById('org-email').value;
-    var password =  document.getElementById('password').value;
-    var conpass =  document.getElementById('con-pass').value;
-    var name =  document.getElementById('org-name').value;
-    var website =  document.getElementById('website').value;
-    var facebook =  document.getElementById('facebook').value;
-    var twitter =  document.getElementById('twitter').value;
-    var other =  document.getElementById('other').value;
-    var description =  document.getElementById('description').value;
-   
-    
-    if (username.trim().length === 0 || email.trim().length=== 0 || password.trim().length=== 0|| conpass.trim().length=== 0 || name.trim().length=== 0 || description.trim().length=== 0) {
-        error = true;
-    }
-    return error;
+      var parameters = "username="+usernamevalue+"&email="+emailvalue+"&first="+first+"&last="+last+"&password="+password+"&phone="+phone+"&address="+address+"&str="+str+"&zip="+zip+"&birth="+birth;
+
+    console.log(parameters);
+    http.open("POST", myurl, true);
+    http.onreadystatechange = useHttpResponseVol;
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(parameters);
 }
 
+function useHttpResponseVol() {
+    if (http.readyState == 4) {
+        if (http.status == 200) {
+            if (http.responseText === "OK") {
+                window.location = "confirm.html";   
+            }
+            else {
+                document.getElementById('res-ul').innerHTML = http.responseText;
+            }
+        }
+    }
+}
 
+/********************* ORGANIZATION REGISTER **************************/
+
+
+function getOrgValidity() {
+    var error = false;
+    
+    var username =  document.getElementById('org-username');
+    var email =  document.getElementById('org-email');
+    var password =  document.getElementById('password');
+    //var conpass =  document.getElementById('con-pass').value;
+    var name =  document.getElementById('org-name');
+    var website =  document.getElementById('website');
+    var facebook =  document.getElementById('facebook');
+    var twitter =  document.getElementById('twitter');
+    var other =  document.getElementById('other');
+    var description =  document.getElementById('description');
+   
+    // USERNAME //
+    if (username.checkValidity() == false ) {
+        puterror('username-span','err-username', username.validationMessage);
+         error = true;
+
+    }
+    else {
+         putok('username-span','err-username');
+    }
+    
+    // EMAIL //
+    if (email.checkValidity() == false ) {
+        puterror('email-span','err-email', email.validationMessage);
+        error = true;
+    }
+    else {
+        putok('email-span','err-email');
+    }
+    
+    // PASSWORD //
+    if (password.checkValidity() == false ) {
+        puterror('password-span','err-password', password.validationMessage);
+        error = true;
+
+    }
+    else {
+         putok('password-span','err-password');
+    }
+    
+    // ORG NAME //
+    if (name.checkValidity() == false ) {
+        puterror('name-span','err-name', name.validationMessage);
+        error = true;
+
+    }
+    else {
+        putok('name-span','err-name');
+    }
+    
+    // WEBSITE //
+    if (website.checkValidity() == false ) {
+        puterror('ws-span','err-ws', website.validationMessage);
+         error = true;
+    }
+    else {
+        putok('ws-span','err-ws');
+    }
+    
+    // FACEBOOK //
+     if (facebook.checkValidity() == false ) {
+        puterror('fb-span','err-fb', facebook.validationMessage);
+        error = true;
+
+     }
+    else {
+         putok('fb-span','err-fb');
+    }
+    
+    // TWIITER //
+    if (twitter.checkValidity() == false ) {
+        puterror('tw-span','err-tw', twitter.validationMessage);
+        error = true;
+
+    } 
+    else {
+         putok('tw-span','err-tw');
+    }
+    
+    // OTHER //
+     if (other.checkValidity() == false ) {
+        puterror('other-span','err-other', other.validationMessage);
+         error = true;
+
+    }
+    else {
+         putok('other-span','err-other');
+    }
+    
+    // DESCRIPTION //
+     if (description.checkValidity() == false ) {
+        puterror('desc-span','err-desc', description.validationMessage);
+         error = true;
+
+    }
+    else {
+         putok('desc-span','err-desc');
+    }
+    
+    return error;
+}
 
 function checkorgform() {
     document.getElementById('res-ul').innerHTML = "";
     var error = false;
-    var req = check_org_required_fields();
+    var req = getOrgValidity();
     var res = "";
     
     if (req === true) {
-        res = res + "<li> Please fill in all required fields. </li>";
+        res = res + "<li> Please make sure your input is correct! Mouse over for error message. </li>";
         error = true;
     }
     
@@ -236,48 +368,6 @@ function checkorgform() {
     }
 }
 
-
-
-var http = getXMLHttpRequest();
-
-function getXMLHttpRequest() {
-    if (window.XMLHttpRequest) {
-        request = new XMLHttpRequest();
-    } 
-    else {
-        request = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    return request;
-}
-
-
-
-
-
-function getResponse() {
-      var myurl = "check-username.php";
-      var first = encodeURIComponent(document.getElementById("first").value);
-      var last = encodeURIComponent(document.getElementById("last-name").value);
-      var password = encodeURIComponent(document.getElementById("password").value);
-      var phone = encodeURIComponent(document.getElementById("phone").value);
-      var address = encodeURIComponent(document.getElementById("address").value);
-      var str = encodeURIComponent(document.getElementById("str").value);
-      var zip = encodeURIComponent(document.getElementById("zip").value);
-      var usernamevalue = encodeURIComponent(document.getElementById("username").value);
-      var emailvalue = encodeURIComponent(document.getElementById("email").value);
-      var birth = encodeURIComponent(document.getElementById("dob").value);
-    
-      var parameters = "username="+usernamevalue+"&email="+emailvalue+"&first="+first+"&last="+last+"&password="+password+"&phone="+phone+"&address="+address+"&str="+str+"&zip="+zip+"&birth="+birth;
-
-    console.log(parameters);
-    http.open("POST", myurl, true);
-    http.onreadystatechange = useHttpResponse;
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.send(parameters);
-}
-
-
-
 function getOrgResponse() {
       var myurl = "check-org-username.php";
       var username = encodeURIComponent(document.getElementById("org-username").value);
@@ -294,10 +384,26 @@ function getOrgResponse() {
 
     console.log(parameters);
     http.open("POST", myurl, true);
-    http.onreadystatechange = useHttpResponse;
+    http.onreadystatechange = useHttpResponseOrg;
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.send(parameters);
 }
+
+function useHttpResponseOrg() {
+    if (http.readyState == 4) {
+        if (http.status == 200) {
+            if (http.responseText === "OK") {
+                window.location = "index.php";   
+            }
+            else {
+                document.getElementById('res-ul').innerHTML = http.responseText;
+            }
+        }
+    }
+}
+
+
+/****************** LOGIN ******************************************/
 
 function getLogResponse() {
     var myurl = "log.php";

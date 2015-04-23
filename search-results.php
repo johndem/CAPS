@@ -42,22 +42,30 @@
                 
                 //echo $category . $area . $skills . $date;
                 
-                $query = "SELECT * FROM events WHERE category='$category' OR area='$area' OR agegroup= '$ages' OR skills = '$skills' OR day = '$date' ";
+            $query = "SELECT * FROM events WHERE category='$category' OR area='$area' OR agegroup= '$ages' OR skills = '$skills' OR day = '$date' ";
 
             $results = mysqli_query($link,$query);
 
 
             if ($results) {   
-                
-             while ($row = mysqli_fetch_row($results)) { ?>
+            
+            $bool = true;
+            while ($row = mysqli_fetch_row($results)) { 
+                $bool = false;
+                $org_q = "SELECT name FROM organisations WHERE org_id = '$row[1]' ";
+                $org_res = mysqli_query($link,$org_q); 
+                $org_name = mysqli_fetch_row($org_res);
+            ?>
                 
             <div class="single-result">
             <h3><?php echo $row[2] ?></h3>
             <p><?php echo $row[12] ?> </p>
             
+            <h5>Posted by: <?php echo $org_name[0] ?></h5>
             <h5>Category: <?php echo $row[3]  ?></h5>
             <h5>Date: <?php echo $row[8] ?> </h5>
             <h5>Area: <?php echo $row[7] ?></h5>
+            
             
             <a href="">Read more &raquo;</a>
                 
@@ -65,7 +73,14 @@
                  
                 <?php    } 
                  
-              
+              if ($bool) { ?>
+            <div class="single-result">
+            
+                <h3>There are no volunteering events matching your criteria!</h3>
+                
+            </div> 
+                <a href="volunteers.php">Go back</a>
+           <?php   }
             }
             else {
     

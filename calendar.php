@@ -29,7 +29,11 @@
             <div class="content">
                 <h1 class="center-title">Find an opportunity in Calendar</h1>
                 
+                <div class="beta"> 
+                    
+                    <h3>Coming Soon in Beta! </h3>
                 
+                </div>
                 
             </div>
             

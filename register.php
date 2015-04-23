@@ -35,7 +35,7 @@
                         <div id="btnReg">
                             <h3><a href="vol-form.php">Register as a volunteer!</a></h3>
                         </div>
-                        <div id="btnReg" class="fb">
+                        <div hidden id="btnReg" class="fb">
                             <h3><a href="vol-form.php">Register with Facebook!</a></h3>
                         </div>
                     </div>

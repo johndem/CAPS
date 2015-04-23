@@ -28,17 +28,17 @@
             <h1 class="center-title">Choose a category and get started!</h1>
 
             <div id="categories">
-                <div class="cat"><img id="hc" class="cat-img" src="images/hc-green.png"/>
+                <div class="cat"><img onclick="window.location= 'search-results.php?category=Healthcare'" id="hc" class="cat-img" src="images/hc-green.png"/>
                 </div>
-                <div class="cat"><img id="edu" class="cat-img" src="images/edu-green.png"/>
+                <div class="cat"><img onclick="window.location= 'search-results.php?category=Education'" id="edu" class="cat-img" src="images/edu-green.png"/>
                 </div>
-                <div class="cat"><img id="em" class="cat-img" src="images/em-green.png"/>
+                <div class="cat"><img onclick="window.location= 'search-results.php?category=Emergency'" id="em" class="cat-img" src="images/em-green.png"/>
                 </div>
-                <div class="cat"><img id="env" class="cat-img" src="images/env-green.png"/>
+                <div class="cat"><img onclick="window.location= 'search-results.php?category=Environment'" id="env" class="cat-img" src="images/env-green.png"/>
                 </div>
-                <div class="cat"><img id="com" class="cat-img" src="images/com-green.png"/>
+                <div class="cat"><img onclick="window.location= 'search-results.php?category=Communities'" id="com" class="cat-img" src="images/com-green.png"/>
                 </div>
-                <div class="cat"><img id="an" class="cat-img" src="images/an-green.png"/>
+                <div class="cat"><img onclick="window.location= 'search-results.php?category=Animals'" id="an" class="cat-img" src="images/an-green.png"/>
                 </div>
             </div>
 

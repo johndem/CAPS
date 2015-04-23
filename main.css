@@ -39,6 +39,7 @@ p {
 
 .navigation li {
     display: inline-block;
+    
 }
 
 .navigation li a:hover {
@@ -107,6 +108,8 @@ p {
     width: 230px;
     height: 230px;
     overflow: hidden;
+    box-shadow: 3px 3px 3px #999;
+    border-radius: 10px;
 }
 
 #btnOpp {
@@ -241,7 +244,9 @@ p {
     padding: 0px 7px 5px 7px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    
 }
+
 
 .logged li a {
     font-family: 'Open Sans';
@@ -249,6 +254,7 @@ p {
     text-decoration: none;
     font-size: 17px;
     font-weight: bold;
+    
 }
 
 .username {
@@ -346,6 +352,7 @@ p {
     padding-top: 35px;
     text-align: center;
     background-color: #E2E6E1; 
+    box-shadow: 5px 5px 5px #999;
 }
 
 #login-blanket {
@@ -687,4 +694,12 @@ select {
     float: right;
     text-decoration: none;
     color: #31D100;
+}
+
+.beta {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    
 }

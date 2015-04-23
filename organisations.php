@@ -228,8 +228,26 @@
                         <input type="submit" class="submitBtn" onclick="checkform()" id="sButton" name="submit" value="Post" />
                     </div> 
                 <?php } else { ?>
-                    <p> Register your organisation! </p>
                     
+                    <h1 class="center-title">Register your organisation and get started!</h1>
+                            
+                    <div class="org-info">
+                    <h3>Registering your organization is easy and quick!</h3>
+                            <p>You will need the following info to complete your registration: </p>
+                        <ul>
+                        
+                        <li>A username and a password for login</li>
+                        <li>A valid and active email</li>
+                        <li>Your organisation name</li>
+                        <li>A description of your organisation</li>
+                        <li>You can also provide a website or social media links of your organisation (optional)</li>
+                        
+                        <div class="org-info-btn">
+                            <h3><a href="org-form.php">Register here &raquo;</a></h3>
+                        </div>
+                        </ul>
+                     </div>
+                        
                     <?php } ?>
                 </div>
                 

@@ -28,6 +28,8 @@
             
             <h1 class="center-title">Search results</h1>
             
+            <div class="results">
+            
             <?php 
             
                 include 'create-link.php';
@@ -38,36 +40,52 @@
                 $skills = $_GET['skills'];
                 $date = $_GET['date'];
                 
-                echo $category . $area . $skills . $date;
+                //echo $category . $area . $skills . $date;
                 
                 $query = "SELECT * FROM events WHERE category='$category' OR area='$area' OR agegroup= '$ages' OR skills = '$skills' OR day = '$date' ";
 
-                $results = mysqli_query($link,$query);
+            $results = mysqli_query($link,$query);
 
 
             if ($results) {   
                 
-                    while ($row = mysqli_fetch_row($results)) {
-                        echo '<p> ' . $row[2] . '</p>';
-                    } 
-                    echo "results!";
+             while ($row = mysqli_fetch_row($results)) { ?>
+                
+            <div class="single-result">
+            <h3><?php echo $row[2] ?></h3>
+            <p><?php echo $row[12] ?> </p>
+            
+            <h5>Category: <?php echo $row[3]  ?></h5>
+            <h5>Date: <?php echo $row[8] ?> </h5>
+            <h5>Area: <?php echo $row[7] ?></h5>
+            
+            <a href="">Read more &raquo;</a>
+                
+            </div> 
+                 
+                <?php    } 
+                 
               
             }
             else {
     
-                echo "database prob";
+                echo '<p> An error occurred while retrieving the results from the database. Please try again later!  </p>';
             } 
                
                 mysqli_close($link); 
             
-            ?>
+            ?> 
+                
+                
+            </div>    
+                
             
             <div id="home-blanket">
 
             </div>
 
+      
         </div>
-
         <!-- footer -->
         <?php include 'footer.php'; ?>
 

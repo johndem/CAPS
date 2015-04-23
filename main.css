@@ -151,6 +151,10 @@ p {
 
 #btnOpp a:visited {}
 
+.fb {
+    background-color: mediumblue!important;
+}
+
 .footer {
     color: white;
     background-color: #31D100;
@@ -628,3 +632,59 @@ select {
     float: right;
 }
 
+
+.org-info {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.org-info-btn {
+    margin-top: 50px;
+    width: 180px;
+    height: 50px;
+    color: black;
+    font-family: 'Open Sans';
+    background-color: #33D900;
+    border-radius: 10px;
+}
+
+.org-info-btn a {
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    color: white;
+    font-size: 21px;
+}
+.results {
+    width: 1000px;
+    margin:0 auto;
+}
+
+.single-result h5 {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+    border-right: 1px dotted black;
+    padding-right: 5px;
+}
+
+.single-result h5:last-of-type {
+    border: none;
+}
+
+.single-result {
+    margin-top: 15px;
+    padding: 5px 15px 5px 15px;
+    clear: both;
+    overflow: hidden;
+    border: 1px solid #333;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.single-result a {
+    float: right;
+    text-decoration: none;
+    color: #31D100;
+}

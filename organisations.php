@@ -49,6 +49,13 @@
                             <div id="title-span" class="img-span"></div>
                             <input required id="op-title" class="in" maxlength="100" name="title" size="30" type="text" value="" />
                         </div>
+                        
+                        <div class="label-in">
+                         <div class="h3"> Short description: * </div>
+                            <div id="err-desc" class="error-message"> </div>
+                            <div id="desc-span" class="img-span"></div>
+                           <textarea id="desc" class="for-text-area" cols="55" name="description" maxlength="400" rows="7" required></textarea>
+                        </div>
                        
                         <div class="label-in">
                          <div class="h3"> Category: * </div>
@@ -65,6 +72,7 @@
 
                              </select>
                         </div>
+                        
                         
                         <div class="div-cat"> <h1 class="cats">Where</h1> </div>
                         
@@ -215,10 +223,10 @@
                        
                         
                         <div class="label-in">
-                         <div class="h3"> Short description: * </div>
-                            <div id="err-desc" class="error-message"> </div>
-                            <div id="desc-span" class="img-span"></div>
-                           <textarea id="desc" class="for-text-area" cols="55" name="description" maxlength="500" rows="10" required></textarea>
+                         <div class="h3"> Detailed description: * </div>
+                            <div id="err-ddesc" class="error-message"> </div>
+                            <div id="ddesc-span" class="img-span"></div>
+                           <textarea id="ddesc" class="for-text-area" cols="55" name="detailed-description" maxlength="1500" rows="20" required></textarea>
                         </div>
                     
                     <p id="required">* This field is required </p>

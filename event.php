@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,8 +12,7 @@
         <script src="jq.js"></script>
     </head>
     <body>
-        
-        <div>
+		
         
             <!-- registration or username -->
             <?php include 'log-state.php'; ?>
@@ -23,25 +22,36 @@
 
             <!-- navigation -->
             <?php include 'navigation.php'; ?>
-            
+
             <!-- content -->
             <div class="content">
-                <h1 class="center-title">My Account</h1>
-                
-                <div class="beta"> 
+                <?php include 'find-event.php'; ?>
+                <h1 class="center-title"><?php echo "$row[2]"; ?></h1>
+
+                <div id="news-body">
+                    <ul id="event-chars">
+                        <li><?php echo "Category: " . $row[3]; ?></li>
+                        <li><?php echo "Address: " . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
+                        <li><?php echo "Date: " . $row[8] . ", " . $row[9]; ?></li>
+                        <li><?php echo "Recommended age group: " . $row[10]; ?></li>
+                        <li><?php echo "Optional skills: " . $row[11]; ?></li>
+                    </ul>
+                    <div id="event-body"><?php echo $row[13]; ?></div>
                     
-                    <h3>Coming Soon in Beta! </h3>
-                
                 </div>
                 
+                <div id="home-blanket">
+                
+                </div>
+
             </div>
-            
+
             <!-- footer -->
             <?php include 'footer.php'; ?>
-            
-        </div>
-       
+
+        
+
     </body>
-    
-   
+
+
 </html>

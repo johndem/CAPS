@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+        <title>Team Thessaloniki</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
@@ -32,22 +32,13 @@
             
             <?php 
             
-                include 'create-link.php';               
+                include 'create-link.php';
 
-                $category = mysqli_real_escape_string($link,$_GET['category']);
-                $category = htmlspecialchars($category,ENT_QUOTES);
-            
-                $area = mysqli_real_escape_string($link,$_GET['areas']);
-                $area = htmlspecialchars($area,ENT_QUOTES);
-                
-                $ages = mysqli_real_escape_string($link,$_GET['ages']);
-                $ages = htmlspecialchars($ages,ENT_QUOTES);
-
-                $skills = mysqli_real_escape_string($link,$_GET['skills']);
-                $skills = htmlspecialchars($skills,ENT_QUOTES);
-
-                $date = mysqli_real_escape_string($link,$_GET['aredateas']);
-                $date = htmlspecialchars($date,ENT_QUOTES);
+                $category = $_GET['category'];
+                $area = $_GET['areas'];
+                $ages = $_GET['ages'];
+                $skills = $_GET['skills'];
+                $date = $_GET['date'];
                 
                 //echo $category . $area . $skills . $date;
                 
@@ -76,7 +67,7 @@
             <h5>Area: <?php echo $row[7] ?></h5>
             
             
-            <a href="">Read more &raquo;</a>
+            <a href="<?php echo "event.php?id=" . $row[0]; ?>">Read more &raquo;</a>
                 
             </div> 
                  

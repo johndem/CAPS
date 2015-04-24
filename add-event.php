@@ -19,9 +19,6 @@
     $desc = mysqli_real_escape_string($link,$_POST['desc']);
     $desc = htmlspecialchars($desc, ENT_QUOTES);
 
-    $ddesc = mysqli_real_escape_string($link,$_POST['ddesc']);
-    $ddesc = htmlspecialchars($ddesc, ENT_QUOTES);
-
     $agegroup = mysqli_real_escape_string($link,$_POST['agegroup']);
     $agegroup = htmlspecialchars($agegroup, ENT_QUOTES);
 
@@ -42,7 +39,7 @@
 
     $org_id = $_SESSION['org'];
 
-    $query = "INSERT INTO events (org_id,title,category,address,str_num,zipcode,area,day,time,agegroup,skills,sdesc,ddesc) VALUES ('$org_id','$title',                 '$category','$address','$str','$zip','$area','$day','$time','$agegroup','$skills','$desc','$ddesc')";
+    $query = "INSERT INTO events (org_id,title,category,address,str_num,zipcode,area,day,time,agegroup,skills,sdesc) VALUES ('$org_id','$title',                 '$category','$address','$str','$zip','$area','$day','$time','$agegroup','$skills','$desc')";
     
    $result =  mysqli_query($link,$query);
 

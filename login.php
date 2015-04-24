@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>GETTING STARTED WITH BRACKETS</title>
+        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />

@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>GETTING STARTED WITH BRACKETS</title>
+        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
@@ -16,29 +16,13 @@
 
         
             <!-- registration -->
-            <div class="registration">
-                <ul>
-                    <li class="reg"><a href="register.html">Register</a></li>
-                    <li class="reg"><a href="login.html">Login</a></li>
-                </ul>
-            </div>
-            
+            <?php include 'log-state.php'; ?>
 
-            <!-- masthead -->
-            <div class="masthead">
-                <h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>
-            </div>
+        <!-- masthead -->
+        <?php include 'masthead.php'; ?>
 
-            <!-- navigation -->
-            <div class="navigation">
-                <ul>
-                    <li><a href="index.php">HOME</a></li>
-                    <li><a href="volunteers.html">VOLUNTEERS</a></li>
-                    <li><a href="organisations.html">ORGANISATIONS</a></li>
-                    <li><a href="calendar.html">CALENDAR</a></li>
-                    <li><a href="account.html">ACCOUNT</a></li>
-                </ul>
-            </div>
+        <!-- navigation -->
+        <?php include 'navigation.php'; ?>
 
             <!-- content -->
             <div class="content">

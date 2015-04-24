@@ -53,6 +53,7 @@ function getValidity() {
     var agegroup =  document.getElementById('agegroup');
     var skills = document.getElementById('skills');
     var desc = document.getElementById('desc');
+    var ddesc = document.getElementById('ddesc');
     
     var day =  document.getElementById('day');
     var time = document.getElementById('time');
@@ -109,6 +110,16 @@ function getValidity() {
     }
     else {
          putok('desc-span','err-desc');
+    }
+    
+    //Detailed Description
+    if (ddesc.checkValidity() == false ) {
+        puterror('ddesc-span','err-ddesc', ddesc.validationMessage);
+        error = true;
+
+    }
+    else {
+         putok('ddesc-span','err-ddesc');
     }
     
     
@@ -223,11 +234,12 @@ function getResponse() {
     
       var agegroup = encodeURIComponent(agegroup.options[agegroup.selectedIndex].text);
       var desc = encodeURIComponent(document.getElementById("desc").value);
+      var ddesc = encodeURIComponent(document.getElementById("ddesc").value);
       var skills = encodeURIComponent(document.getElementById("skills").value);
 
 
     
-     var parameters = "title="+title+"&category="+category+"&day="+day+"&time="+time+"&desc="+desc+"&agegroup="+agegroup+"&address="+address+"&str="+str+"&zip="+zip+"&area="+area+"&skills="+skills;
+     var parameters = "title="+title+"&category="+category+"&day="+day+"&time="+time+"&desc="+desc+"&ddesc="+ddesc+"&agegroup="+agegroup+"&address="+address+"&str="+str+"&zip="+zip+"&area="+area+"&skills="+skills;
 
      console.log(parameters);
      http.open("POST", myurl, true);

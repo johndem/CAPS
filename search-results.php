@@ -34,11 +34,20 @@
             
                 include 'create-link.php';
 
-                $category = $_GET['category'];
-                $area = $_GET['areas'];
-                $ages = $_GET['ages'];
-                $skills = $_GET['skills'];
-                $date = $_GET['date'];
+                $category = mysqli_real_escape_string($link,$_GET['category']);
+                $category = htmlspecialchars($category,ENT_QUOTES);
+            
+                $area = mysqli_real_escape_string($link,$_GET['areas']);
+                $area = htmlspecialchars($area,ENT_QUOTES);
+                
+                $ages = mysqli_real_escape_string($link,$_GET['ages']);
+                $ages = htmlspecialchars($ages,ENT_QUOTES);
+
+                $skills = mysqli_real_escape_string($link,$_GET['skills']);
+                $skills = htmlspecialchars($skills,ENT_QUOTES);
+
+                $date = mysqli_real_escape_string($link,$_GET['date']);
+                $date = htmlspecialchars($date,ENT_QUOTES);
                 
                 //echo $category . $area . $skills . $date;
                 

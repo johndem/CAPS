@@ -109,6 +109,7 @@ p {
     height: 230px;
     overflow: hidden;
     box-shadow: 3px 3px 3px #999;
+	box-shadow: 5px 5px 20px #33D900;
     border-radius: 10px;
 }
 
@@ -132,6 +133,7 @@ p {
     font-family: 'Open Sans';
     background-color: #33D900;
     border-radius: 10px;
+	box-shadow: 5px 5px 5px #999;
 }
 
 #btnOpp a {
@@ -155,8 +157,9 @@ p {
 #btnOpp a:visited {}
 
 .fb {
-    background-color: mediumblue!important;
+	background-color: #4e69a2 !important;
 }
+
 
 .footer {
     color: white;
@@ -188,23 +191,25 @@ p {
 }
 
 .reg {
-    width: 100px;
-    height: 30px;
-    margin: 0 auto;
-    text-align: center;
-    float: right;
+	width: auto;
+	height: 30px;
+	float: right;
+	display: block;
+	background-color: #E2E6E1;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	margin-right: 10px;
+	text-align: center;
+	padding-left: 7px;
+	padding-right: 7px;
 }
 
 .reg a {
-    background-color: #E2E6E1;
-    font-family: 'Open Sans';
-    color: #525252;
-    padding: 0px 7px 5px 7px;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+	font-family: 'Open Sans';
+	color: #525252;
+	text-decoration: none;
+	font-size: 17px;
+	font-weight: bold;
 }
 
 .logged {

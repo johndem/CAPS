@@ -35,16 +35,39 @@
                         <div id="btnReg">
                             <h3><a href="vol-form.php">Register as a volunteer!</a></h3>
                         </div>
-                        <div hidden id="btnReg" class="fb">
-                            <h3><a href="vol-form.php">Register with Facebook!</a></h3>
-                        </div>
-                    </div>
+                      </div>
+                  
                     <div class="aligner row">
                         <h2>Our Organisation is seeking volunteers!</h2>
                         <div id="btnReg">
                             <h3><a href="org-form.php">Register as an organisation!</a></h3>
                         </div>
                     </div>
+                    
+                         <h3 style="text-align:center">OR SIGN IN WITH (ONLY FOR VOLUNTEERS):</h3>
+
+					<div class="social-buttons">
+
+						<div class="social-container">
+							<h4>Facebook</h4>
+							<div class="social-login" onclick="window.location = '<?php echo $loginUrl ?>'" id="fb"></div>
+						</div>
+
+						<div class="social-container">
+
+							<h4>Twitter</h4>
+							<div class="social-login" onclick="window.location = 'twitter-login2.php'" id="twitter"></div>
+						</div>
+						
+						<div class="social-container">
+
+							<h4>Google+</h4>
+							<div class="social-login" id="googleplus"></div>
+						</div>
+
+					</div>
+                   
+                    
                 </div>
                 
                 <div id="register-blanket">

@@ -44,57 +44,57 @@ $(document).ready(function () {
 	});
     
 
-    $("#hc").on({
+   $("#hc").on({
      "mouseover" : function() {
-        this.src = 'images/hc-gray.png';
+        this.src = 'images/hc-green.png';
       },
       "mouseout" : function() {
-        this.src='images/hc-green.png';
+        this.src='images/hc-gray.png';
       }
     });
 
     $("#em").on({
      "mouseover" : function() {
-        this.src = 'images/em-gray.png';
+        this.src = 'images/em-green.png';
       },
       "mouseout" : function() {
-        this.src='images/em-green.png';
+        this.src='images/em-gray.png';
       }
     });
 
     $("#edu").on({
      "mouseover" : function() {
-        this.src = 'images/edu-gray.png';
+        this.src = 'images/edu-green.png';
       },
       "mouseout" : function() {
-        this.src ='images/edu-green.png';
+        this.src ='images/edu-gray.png';
       }
     });
 
     $("#env").on({
      "mouseover" : function() {
-        this.src = 'images/env-gray.png';
+        this.src = 'images/env-green.png';
       },
       "mouseout" : function() {
-        this.src='images/env-green.png';
+        this.src='images/env-gray.png';
       }
     });
 
      $("#com").on({
      "mouseover" : function() {
-        this.src = 'images/com-gray.png';
+        this.src = 'images/com-green.png';
       },
       "mouseout" : function() {
-        this.src='images/com-green.png';
+        this.src='images/com-gray.png';
       }
     });
 
     $("#an").on({
      "mouseover" : function() {
-        this.src = 'images/an-gray.png';
+        this.src = 'images/an-green.png';
       },
       "mouseout" : function() {
-        this.src='images/an-green.png';
+        this.src='images/an-gray.png';
       }
     });
 

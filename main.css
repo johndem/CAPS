@@ -156,10 +156,6 @@ p {
 
 #btnOpp a:visited {}
 
-.fb {
-	background-color: #4e69a2 !important;
-}
-
 
 .footer {
     color: white;
@@ -760,4 +756,46 @@ select {
 
 #map-caption {
     color: white; 
+}
+
+/* Social Login Styling */
+.social-buttons {
+	margin: 0 auto;
+	clear: both;
+	width: 400px;
+}
+
+.social-container {
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-right: 1px dotted #999;
+	padding-right: 10px;
+}
+
+.social-container:last-of-type {
+	border-right: none;
+}
+
+.social-container h4 {
+	text-align: center;
+}
+
+.social-login {
+	height: 100px;
+	width: 100px;
+	background-size: cover;
+	cursor: pointer;
+}
+
+#fb {
+	background-image: url('images/fb-logo3.png');
+}
+
+#twitter {
+	background-image: url('images/twitter-logo3.png');
+}
+
+#googleplus {
+	background-image: url('images/google-plus-logo2.png');
 }

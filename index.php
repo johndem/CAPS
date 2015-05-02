@@ -26,21 +26,20 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title">Choose a category and get started!</h1>
-
-            <div id="categories">
-                <div class="cat"><img onclick="window.location= 'search-results.php?category=Healthcare'" id="hc" class="cat-img" src="images/hc-green.png"/>
-                </div>
-                <div class="cat"><img onclick="window.location= 'search-results.php?category=Education'" id="edu" class="cat-img" src="images/edu-green.png"/>
-                </div>
-                <div class="cat"><img onclick="window.location= 'search-results.php?category=Emergency'" id="em" class="cat-img" src="images/em-green.png"/>
-                </div>
-                <div class="cat"><img onclick="window.location= 'search-results.php?category=Environment'" id="env" class="cat-img" src="images/env-green.png"/>
-                </div>
-                <div class="cat"><img onclick="window.location= 'search-results.php?category=Communities'" id="com" class="cat-img" src="images/com-green.png"/>
-                </div>
-                <div class="cat"><img onclick="window.location= 'search-results.php?category=Animals'" id="an" class="cat-img" src="images/an-green.png"/>
-                </div>
-            </div>
+<div id="categories">
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Healthcare'" id="hc" class="cat-img" src="images/hc-gray.png"/>
+				</div>
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Education'" id="edu" class="cat-img" src="images/edu-gray.png"/>
+				</div>
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Emergency'" id="em" class="cat-img" src="images/em-gray.png"/>
+				</div>
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Environment'" id="env" class="cat-img" src="images/env-gray.png"/>
+				</div>
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Communities'" id="com" class="cat-img" src="images/com-gray.png"/>
+				</div>
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Animals'" id="an" class="cat-img" src="images/an-gray.png"/>
+				</div>
+			</div>
 
             <div id="btnOpp">
                 <h3><a href="volunteers.php">More Opportunities!</a></h3>

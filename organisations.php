@@ -65,7 +65,7 @@
                               <option value="0" disabled selected>Select One</option>
                               <option value="1">Education</option>
                               <option value="2">Healthcare</option>
-                              <option value="3">Evnironement</option>
+                              <option value="3">Environment</option>
                               <option value="4">Animals</option>c
                               <option value="5">Emergency</option>
                               <option value="6">Communities</option>

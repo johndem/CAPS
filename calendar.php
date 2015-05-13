@@ -29,11 +29,81 @@
             <div class="content">
                 <h1 class="center-title">Find an opportunity in Calendar</h1>
                 
-                <div class="beta"> 
-                    
-                    <h3>Coming Soon in Beta! </h3>
                 
-                </div>
+                    
+                    <div id="calendar">
+                        <table></table>
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                        <th>Saturday</th>
+                                        <th>Sunday</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                </tr>
+                                <tr>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                </tr>
+                                <tr>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                </tr>
+                                <tr>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                </tr>
+                                <tr>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                </tr>
+                                <tr>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                    <td><div></div></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                
                 
             </div>
             

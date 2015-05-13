@@ -799,3 +799,176 @@ select {
 #googleplus {
 	background-image: url('images/google-plus-logo2.png');
 }
+
+#calendar {
+    margin: 0 auto;
+    text-align: center;
+    width: 800px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th {
+    width: 95px;
+}
+
+td {
+    height: 60px;
+}
+
+td div {
+    min-height: 75px;
+}
+
+#account {
+    margin: 0 auto;
+    text-align: center;
+    width: 950px;
+    height: auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+#account-left {
+    width: 580px;
+    height: auto;
+    float: left;
+}
+
+#account-right {
+    width: 350px;
+    height: auto;
+    float: right;
+}
+
+#info {
+    overflow: auto;
+}
+
+#pic {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+
+#edit-pic {
+    margin: 0 auto;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+#history {
+    height: 500px;
+    overflow: visible;
+}
+
+.history-event {
+    padding: 5px 15px 5px 15px;
+    clear: both;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.history-event h5 {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+    border-right: 1px dotted black;
+    padding-right: 5px;
+}
+
+.history-event h5:last-of-type {
+    border: none;
+}
+
+.history-event a {
+    float: right;
+    text-decoration: none;
+    color: #31D100;
+}
+
+#achievements {
+    
+}
+
+.account-label-in {
+    border-color: white;
+    border-style: dashed;
+    clear: both;
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+    margin-bottom: 40px;
+}
+
+#pin {
+    border: 1px solid black;
+    border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+    box-shadow: 5px 5px 5px #999;
+}
+
+#pin-stuff {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+#personal-info {
+    float: right;
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.account-label-in a {
+    text-decoration: none;
+    color: #31D100;
+}
+
+#history-list {
+    border: 1px solid #333;
+    height: 465px;
+    overflow: scroll;
+}
+
+#account-blanket {
+    height: 100px;
+    clear: both;
+}
+
+#achievement-list {
+    border: 1px solid #333;
+    height: 427px;
+    overflow: scroll;
+}
+
+.achievement {
+    padding: 5px 15px 5px 15px;
+    clear: both;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.achievement img {
+    float: left;
+    margin-left: 5px;
+    border: 1px solid #333;
+}
+
+.achievement-body {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    width: 200px;
+}
+
+.achievement-body div {
+    padding-top: 5px;
+}

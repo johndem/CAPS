@@ -225,7 +225,7 @@ function useHttpResponseVol() {
     if (http.readyState == 4) {
         if (http.status == 200) {
             if (http.responseText === "OK") {
-                window.location = "confirm.html";   
+                window.location = "confirm.php";   
             }
             else {
                 document.getElementById('res-ul').innerHTML = http.responseText;
@@ -431,4 +431,282 @@ function useHttpResponse() {
             }
         }
     }
+}
+
+/****************** EDIT USER INFO ******************************************/
+
+function getEditVolValidity() {
+    var error = false;
+    
+    var first =  document.getElementById('edit-first');
+    var last =  document.getElementById('edit-last-name');
+    var birth =  document.getElementById('edit-dob');
+    var tel = document.getElementById('edit-phone');
+    var addr = document.getElementById('edit-address');
+    var str = document.getElementById('edit-str');
+    var zip = document.getElementById('edit-zip');
+   
+    
+    if (first.checkValidity() == false ) {
+        puterror('edit-first-span','edit-err-first', first.validationMessage);
+        error = true;
+
+    }
+    else {
+        putok('edit-first-span','edit-err-first');
+    }
+    
+    if (last.checkValidity() == false ) {
+        puterror('edit-last-span','edit-err-last', last.validationMessage);
+         error = true;
+
+    }
+    else {
+        putok('edit-last-span','edit-err-last');
+    }
+    
+    if (birth.checkValidity() == false ) {
+        puterror('edit-dob-span','edit-err-dob', birth.validationMessage);
+        error = true;
+
+    }
+    else {
+         putok('edit-dob-span','edit-err-dob');
+    }
+    
+    if (tel.checkValidity() == false ) {
+        puterror('edit-phone-span','edit-err-phone', tel.validationMessage);
+        error = true;
+
+    } 
+    else {
+         putok('edit-phone-span','edit-err-phone');
+    }
+    
+    if (addr.checkValidity() == false ) {
+        puterror('edit-addr-span','edit-err-addr', addr.validationMessage);
+         error = true;
+
+    }
+    else {
+         putok('edit-addr-span','edit-err-addr');
+    }
+    
+    if (str.checkValidity() == false ) {
+        puterror('edit-str-span','edit-err-str', str.validationMessage);
+        error = true;
+
+    }
+    else {
+         putok('edit-str-span','edit-err-str');
+    }
+    
+    if (zip.checkValidity() == false ) {
+        puterror('edit-zip-span','edit-err-zip', zip.validationMessage);
+        error = true;
+
+    }
+    else {
+         putok('edit-zip-span','edit-err-zip');
+    }
+
+    return error;
+
+}
+
+function checkEditVolForm() {
+    document.getElementById('res-ul').innerHTML = "";
+    var error = false;
+    var req = getEditVolValidity();
+    var res = "";
+    
+    if (req === true) {
+        res = res + "<li> Please make sure your input is correct! Mouse over for error message. </li>";
+        error = true;
+    }
+    
+    document.getElementById('res-ul').innerHTML = res;
+
+    if (!error) {
+        getEditVolResponse();
+    }
+}
+
+function getEditVolResponse() {
+    
+    var first = encodeURIComponent(document.getElementById("edit-first").value);
+    var last = encodeURIComponent(document.getElementById("edit-last-name").value);
+    var phone = encodeURIComponent(document.getElementById("edit-phone").value);
+    var address = encodeURIComponent(document.getElementById("edit-address").value);
+    var str = encodeURIComponent(document.getElementById("edit-str").value);
+    var zip = encodeURIComponent(document.getElementById("edit-zip").value);
+    var birth = encodeURIComponent(document.getElementById("edit-dob").value);
+    
+    var file = document.getElementById('prof-pic').files[0];
+    
+    // Create a new FormData object.
+    var formData = new FormData();
+    
+    // Add the file to the request.
+    formData.append('picture', file);
+    formData.append('first', first);
+    formData.append('last', last);
+    formData.append('phone', phone);
+    formData.append('address', address);
+    formData.append('str', str);
+    formData.append('zip', zip);
+    formData.append('date', birth);
+    
+    $.ajax({  
+        url: "check-image.php",  
+        type: 'POST',
+        enctype: 'multipart/form-data',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (data) {  
+            if (data === "OK") {
+                window.location = "account.php";
+            }
+            else {
+                document.getElementById('res-ul').innerHTML = data;
+            }
+        }  
+    });  
+
+}
+
+/****************** EDIT ORGANISATION INFO ******************************************/
+
+function getEditOrgValidity() {
+    var error = false;
+    
+    var name =  document.getElementById('edit-org-name');
+    var website =  document.getElementById('edit-website');
+    var facebook =  document.getElementById('edit-facebook');
+    var twitter =  document.getElementById('edit-twitter');
+    var other =  document.getElementById('edit-other');
+    var description =  document.getElementById('edit-description');
+   
+    
+    // ORG NAME //
+    if (name.checkValidity() == false ) {
+        puterror('edit-name-span','edit-err-name', name.validationMessage);
+        error = true;
+
+    }
+    else {
+        putok('edit-name-span','edit-err-name');
+    }
+    
+    // WEBSITE //
+    if (website.checkValidity() == false ) {
+        puterror('edit-ws-span','edit-err-ws', website.validationMessage);
+         error = true;
+    }
+    else {
+        putok('edit-ws-span','edit-err-ws');
+    }
+    
+    // FACEBOOK //
+     if (facebook.checkValidity() == false ) {
+        puterror('edit-fb-span','edit-err-fb', facebook.validationMessage);
+        error = true;
+
+     }
+    else {
+         putok('edit-fb-span','edit-err-fb');
+    }
+    
+    // TWIITER //
+    if (twitter.checkValidity() == false ) {
+        puterror('edit-tw-span','edit-err-tw', twitter.validationMessage);
+        error = true;
+
+    } 
+    else {
+         putok('edit-tw-span','edit-err-tw');
+    }
+    
+    // OTHER //
+     if (other.checkValidity() == false ) {
+        puterror('edit-other-span','edit-err-other', other.validationMessage);
+         error = true;
+
+    }
+    else {
+         putok('edit-other-span','edit-err-other');
+    }
+    
+    // DESCRIPTION //
+     if (description.checkValidity() == false ) {
+        puterror('edit-desc-span','edit-err-desc', description.validationMessage);
+         error = true;
+
+    }
+    else {
+         putok('edit-desc-span','edit-err-desc');
+    }
+    
+    return error;
+
+}
+
+function checkEditOrgForm() {
+    document.getElementById('res-ul').innerHTML = "";
+    var error = false;
+    var req = getEditOrgValidity();
+    var res = "";
+    
+    if (req === true) {
+        res = res + "<li> Please make sure your input is correct! Mouse over for error message. </li>";
+        error = true;
+    }
+    
+    document.getElementById('res-ul').innerHTML = res;
+
+    if (!error) {
+        getEditOrgResponse();
+    }
+}
+
+function getEditOrgResponse() {
+    
+    var name = encodeURIComponent(document.getElementById("edit-org-name").value);
+    var website = encodeURIComponent(document.getElementById("edit-website").value);
+    var facebook = encodeURIComponent(document.getElementById("edit-facebook").value);
+    var twitter = encodeURIComponent(document.getElementById("edit-twitter").value);
+    var other = encodeURIComponent(document.getElementById("edit-other").value);
+    var description = encodeURIComponent(document.getElementById("edit-description").value);
+    
+    var file = document.getElementById('prof-pic').files[0];
+    
+    // Create a new FormData object.
+    var formData = new FormData();
+    
+    // Add the file to the request.
+    formData.append('picture', file);
+    formData.append('name', name);
+    formData.append('website', website);
+    formData.append('facebook', facebook);
+    formData.append('twitter', twitter);
+    formData.append('other', other);
+    formData.append('description', description);
+    
+    $.ajax({  
+        url: "check-image.php",  
+        type: 'POST',
+        enctype: 'multipart/form-data',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (data) {  
+            if (data === "OK") {
+                window.location = "account.php";
+            }
+            else {
+                document.getElementById('res-ul').innerHTML = data;
+            }
+        }  
+    });  
 }

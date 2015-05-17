@@ -116,12 +116,13 @@ p {
 #btnOpp {
     margin: 0 auto;
     text-align: center;
-    width: 220px;
-    height: 30px;
+    width: 240px;
+    height: 50px;
     color: black;
     font-family: 'Open Sans';
     background-color: #33D900;
     border-radius: 10px;
+	box-shadow: 5px 5px 5px #999;
 }
 
 #btnReg {
@@ -141,7 +142,9 @@ p {
     text-decoration: none;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 10px;
     color: white;
+    font-size: 21px;
 }
 
 #btnReg a {
@@ -245,9 +248,7 @@ p {
     padding: 0px 7px 5px 7px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    
 }
-
 
 .logged li a {
     font-family: 'Open Sans';
@@ -478,14 +479,22 @@ textarea {
 }
 
 .new {
-    margin-bottom: 70px;
-    padding-bottom: 85px;
-    border-bottom: solid 1px #525252;
+    margin-bottom: 15px;
+    padding: 20px;
+    padding-bottom: 50px;
+    background-color: #E2E6E1;
+    border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+    box-shadow: 5px 5px 5px #999;
 }
 
 .new-text a {
     text-decoration: none;
     color: #31D100;
+}
+
+.new-text a:hover {
+    text-decoration: underline;
 }
 
 .cat-img {
@@ -697,6 +706,10 @@ select {
     color: #31D100;
 }
 
+.single-result a:hover {
+    text-decoration: underline;
+}
+
 .beta {
     margin: 0 auto;
     text-align: center;
@@ -723,13 +736,18 @@ select {
     float: left;
 }
 
-#event-map {
+#event-side {
     width: 300px;
-    height: 400px;
-    background-color: #33D900;
+    height: 600px;
+    background-color: #E2E6E1;
     box-shadow: 5px 5px 5px #888888;
     float: right;
     margin-left: 30px;
+    color: #525252;
+}
+
+#event-side img {
+    margin-top: 10px;
 }
 
 #event-chars {
@@ -745,8 +763,17 @@ select {
     text-align: left;
 }
 
+#org-info {
+    text-align: left;
+    margin-left: 20px;
+}
+
+#org-info a {
+    color: #31D100;
+}
+
 #map-canvas {
-    width: 280px;
+    width: inherit;
     height: 300px;
     margin: 0 auto;
     text-align: center;
@@ -827,7 +854,7 @@ td div {
 #account {
     margin: 0 auto;
     text-align: center;
-    width: 950px;
+    width: 970px;
     height: auto;
     margin-bottom: 100px;
     margin-top: 100px;
@@ -894,6 +921,10 @@ td div {
     color: #31D100;
 }
 
+.history-event a:hover {
+    text-decoration: underline;
+}
+
 #achievements {
     
 }
@@ -906,6 +937,10 @@ td div {
     text-align: center;
     width: 300px;
     margin-bottom: 40px;
+}
+
+.account-label-in a:hover {
+    text-decoration: underline;
 }
 
 #pin {

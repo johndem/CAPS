@@ -1,14 +1,12 @@
 <?php
 
-    session_start();
-
 	$results = " ";
     $error = false;
 
-    $tmp_name = $_FILES['picture']['tmp_name'];
-    $title = $_FILES['picture']['name'];
-    $size = $_FILES['picture']['size'];
-    $type = $_FILES['picture']['type'];
+    $tmp_name = $_FILES['event-picture']['tmp_name'];
+    $name = $_FILES['event-picture']['name'];
+    $size = $_FILES['event-picture']['size'];
+    $type = $_FILES['event-picture']['type'];
 
     $fileExists = false;
     if (is_uploaded_file($tmp_name)) {
@@ -17,7 +15,7 @@
         $whitelist = array(".jpg", ".jpeg", ".png");
         $black = true;
         foreach ($whitelist as $item) {
-            if (substr($title, strrpos($title, ".")) == $item) {
+            if (substr($name, strrpos($name, ".")) == $item) {
                 $black = false;
                 break;
            }
@@ -29,20 +27,20 @@
         }
     }
 
+
+//echo $_POST['title'] . " AND " . $_POST['category'] . " AND " . $_POST['address'] . " AND " . $_POST['desc'] . " AND " . $_POST['ddesc'];
+
+
     if ($error) {
         echo $results;
     }
     else {
         if ($fileExists == true) {
-            move_uploaded_file($_FILES['picture']['tmp_name'], "images/" . $title);
+            move_uploaded_file($_FILES['event-picture']['tmp_name'], "images/" . $name);
         }
         
-        if (isset($_SESSION['org'])){
-            include "edit-org.php";
-        }
-        else if (isset($_SESSION['user'])){
-            include "edit-vol.php";
-        }
+        include "add-event.php";
+        
     }
 
 ?>

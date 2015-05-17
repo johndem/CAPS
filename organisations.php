@@ -73,6 +73,12 @@
                              </select>
                         </div>
                         
+                        <div class="div-cat"> <h1 class="cats">Event Picture</h1> </div>
+                        <div class="label-in">
+                            <div class="h3"> You can upload an image for this volunteering event. </div>
+                        </div>
+                        <input type="file" name="event-picture" id="event-pic">
+                        
                         
                         <div class="div-cat"> <h1 class="cats">Where</h1> </div>
                         
@@ -127,7 +133,7 @@
                          <div class="h3">Time: * </div>
                          <div id="err-time" class="error-message"> </div>
                          <div id="time-span" class="img-span"></div>
-                         <input id="time" class="in"  name="time" type="time" required/>
+                         <input id="time" class="in" name="time" type="time" required/>
                          </div>
                     
                     

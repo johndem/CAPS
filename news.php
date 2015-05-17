@@ -34,7 +34,7 @@
                     <img class="news-img" src="<?php echo "$row[3]"; ?>" />
                     <?php 
                         echo '<p>' . $row[2] . '</p>'; 
-                        echo '<p>' . $row[4] . '</p>'; 
+                        echo '<p>' . nl2br($row[4]) . '</p>'; 
                     ?>
                 </div>
                 

@@ -4,37 +4,46 @@
 
     include 'create-link.php';
 
-    $title = mysqli_real_escape_string($link,$_POST['title']);
+    $title = urldecode($_POST['title']);
+    $title = mysqli_real_escape_string($link,$title);
     $title = htmlspecialchars($title, ENT_QUOTES);
 
-    $category = mysqli_real_escape_string($link,$_POST['category']);
+    $category = urldecode($_POST['category']);
+    $category = mysqli_real_escape_string($link,$category);
     $category = htmlspecialchars($category, ENT_QUOTES);
 
-    $day = mysqli_real_escape_string($link,$_POST['day']);
+    $day = mysqli_real_escape_string($link,$day);
     $day = htmlspecialchars($day, ENT_QUOTES);
 
     $time = mysqli_real_escape_string($link,$_POST['time']);
     $time = htmlspecialchars($time, ENT_QUOTES);
 
-    $desc = mysqli_real_escape_string($link,$_POST['desc']);
+    $desc = urldecode($_POST['description']);
+    $desc = mysqli_real_escape_string($link,$desc);
     $desc = htmlspecialchars($desc, ENT_QUOTES);
 
-    $ddesc = mysqli_real_escape_string($link,$_POST['ddesc']);
+    $ddesc = urldecode($_POST['detailed-description']);
+    $ddesc = mysqli_real_escape_string($link,$ddesc);
     $ddesc = htmlspecialchars($ddesc, ENT_QUOTES);
 
-    $agegroup = mysqli_real_escape_string($link,$_POST['agegroup']);
+    $agegroup = urldecode($_POST['agegroup']);
+    $agegroup = mysqli_real_escape_string($link,$agegroup);
     $agegroup = htmlspecialchars($agegroup, ENT_QUOTES);
 
-    $address = mysqli_real_escape_string($link,$_POST['address']);
+    $address = urldecode($_POST['address']);
+    $address = mysqli_real_escape_string($link,$address);
     $address = htmlspecialchars($address, ENT_QUOTES);
 
-    $str = mysqli_real_escape_string($link,$_POST['str']);
+    $str = urldecode($_POST['str']);
+    $str = mysqli_real_escape_string($link,$str);
     $str = htmlspecialchars($str, ENT_QUOTES);
 
-    $zip = mysqli_real_escape_string($link,$_POST['zip']);
+    $zip = urldecode($_POST['zip']);
+    $zip = mysqli_real_escape_string($link,$zip);
     $zip = htmlspecialchars($zip, ENT_QUOTES);
 
-    $area = mysqli_real_escape_string($link,$_POST['area']);
+    $area = urldecode($_POST['area']);
+    $area = mysqli_real_escape_string($link,$area);
     $area = htmlspecialchars($area, ENT_QUOTES);
 
     $skills = mysqli_real_escape_string($link,$_POST['skills']);
@@ -42,9 +51,19 @@
 
     $org_id = $_SESSION['org'];
 
-    $query = "INSERT INTO events (org_id,title,category,address,str_num,zipcode,area,day,time,agegroup,skills,sdesc,ddesc) VALUES ('$org_id','$title',                 '$category','$address','$str','$zip','$area','$day','$time','$agegroup','$skills','$desc','$ddesc')";
+
     
-   $result =  mysqli_query($link,$query);
+    if ($fileExists == true) {
+        $image = "images/" . $name;
+        $query = "INSERT INTO events (org_id,title,category,address,str_num,zipcode,area,day,time,agegroup,skills,sdesc,ddesc,image) VALUES ('$org_id','$title',                 '$category','$address','$str','$zip','$area','$day','$time','$agegroup','$skills','$desc','$ddesc','$image')";
+    }
+    else {
+        $query = "INSERT INTO events (org_id,title,category,address,str_num,zipcode,area,day,time,agegroup,skills,sdesc,ddesc) VALUES ('$org_id','$title',                 '$category','$address','$str','$zip','$area','$day','$time','$agegroup','$skills','$desc','$ddesc')";
+    }
+
+//    $query = "INSERT INTO events (org_id,title,category,address,str_num,zipcode,area,day,time,agegroup,skills,sdesc,ddesc) VALUES ('$org_id','$title',                 '$category','$address','$str','$zip','$area','$day','$time','$agegroup','$skills','$desc','$ddesc')";
+    
+    $result =  mysqli_query($link,$query);
 
     if(!$result){
         echo "Database problem" . mysqli_error() ;

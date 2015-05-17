@@ -27,10 +27,10 @@
             <!-- content -->
             <div class="content">
                 <?php include 'find-event.php'; ?>
-                <h1 class="center-title">Give this volunteering opportunity a chance!</h1>
+                <h1 class="center-title"><?php echo "$row[2]"; ?></h1>
 
                 <div id="event-page">
-                    <h2><?php echo "$row[2]"; ?></h2>
+                    
                     
                     <div id="event-main">
                         <ul id="event-chars">
@@ -41,14 +41,38 @@
                             <li><?php echo "Optional skills: " . $row[11]; ?></li>
                             <?php $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ"); ?>
                         </ul>
-                        <div id="event-body"><?php echo $row[13]; ?></div>
+                        <div id="event-body"><?php echo nl2br($row[13]); ?></div>
+                        
+                        <h2>Where to find us</h2>
+                        <div id="map-canvas"></div>
                     </div>
                     
-                    <div id="event-map">
-                        <div id="map-canvas"></div>
-                        <div id="map-caption">Find this event on the city map!</div>
+                    <div id="event-side">
+                        <img src="<?php echo $row[14]; ?>" width="280" height="200" />
+                        <div id="org-info">
+                            <h3>Organisation name:</h3>
+                            <?php echo '<h5>' . $org[4] . '</h5>'; ?>
+                            <h3>Contact:</h3>
+                            <?php echo '<h5>' . $org[2] . '</h5>'; ?>
+                            <?php 
+                                if ($org[5] != "") {
+                                    echo '<h3><a href="' . $org[5] . '">Visit our Website</a></h3>';
+                                }
+                                if ($org[6] != "") {
+                                    echo '<h3><a href="' . $org[6] . '">Find us on Facebook</a></h3>';
+                                }
+                                if ($org[7] != "") {
+                                    echo '<h3><a href="' . $org[7] . '">Find us on Twitter</a></h3>';
+                                }
+                                if ($org[8] != "") {
+                                    echo '<h3><a href="' . $org[8] . '">Other</a></h3>';
+                                }
+                            ?>
+                        </div>
                     </div>
+                    
                 </div>
+                
                 
                 <div id="event-blanket">
                 

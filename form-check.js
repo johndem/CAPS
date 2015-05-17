@@ -213,6 +213,8 @@ function getResponse() {
       var birth = encodeURIComponent(document.getElementById("dob").value);
     
       var parameters = "username="+usernamevalue+"&email="+emailvalue+"&first="+first+"&last="+last+"&password="+password+"&phone="+phone+"&address="+address+"&str="+str+"&zip="+zip+"&birth="+birth;
+    
+    alert(parameters);
 
     console.log(parameters);
     http.open("POST", myurl, true);

@@ -216,36 +216,79 @@ function getResponse() {
     
     var area =  document.getElementById('area');
     //var addr = document.getElementById('address');
-   // var str = document.getElementById('str');
+    // var str = document.getElementById('str');
     //var zip = document.getElementById('zip');
     
     
-      var myurl = "add-event.php";
-      var title = encodeURIComponent(document.getElementById('op-title').value);
-      var category = encodeURIComponent(category.options[category.selectedIndex].text);
+    var myurl = "add-event.php";
+    var title = encodeURIComponent(document.getElementById('op-title').value);
+    var category = encodeURIComponent(category.options[category.selectedIndex].text);
       
-      var day = encodeURIComponent(document.getElementById('day').value);
-      var time = encodeURIComponent(document.getElementById('time').value);
+    var day = encodeURIComponent(document.getElementById('day').value);
+    var time = encodeURIComponent(document.getElementById('time').value);
       
-      var address = encodeURIComponent(document.getElementById("address").value);
-      var str = encodeURIComponent(document.getElementById("str").value);
-      var zip = encodeURIComponent(document.getElementById("zip").value);
-      var area = encodeURIComponent(area.options[area.selectedIndex].text);
+    var address = encodeURIComponent(document.getElementById("address").value);
+    var str = encodeURIComponent(document.getElementById("str").value);
+    var zip = encodeURIComponent(document.getElementById("zip").value);
+    var area = encodeURIComponent(area.options[area.selectedIndex].text);
     
-      var agegroup = encodeURIComponent(agegroup.options[agegroup.selectedIndex].text);
-      var desc = encodeURIComponent(document.getElementById("desc").value);
-      var ddesc = encodeURIComponent(document.getElementById("ddesc").value);
-      var skills = encodeURIComponent(document.getElementById("skills").value);
+    var agegroup = encodeURIComponent(agegroup.options[agegroup.selectedIndex].text);
+    var desc = encodeURIComponent(document.getElementById("desc").value);
+    var ddesc = encodeURIComponent(document.getElementById("ddesc").value);
+    var skills = encodeURIComponent(document.getElementById("skills").value);
+    
+//    alert(title + " " + desc + " AAAAAAAAA     " + ddesc);
+    
+    var file = document.getElementById('event-pic').files[0];
+    
+    // Create a new FormData object.
+    var formData = new FormData();
+    
+    // Add the file to the request.
+    formData.append('event-picture', file);
+    formData.append('title', title);
+    formData.append('category', category);
+    formData.append('date', day);
+    formData.append('time', time);
+    formData.append('address', address);
+    formData.append('str', str);
+    formData.append('zip', zip);
+    formData.append('area', area);
+    formData.append('agegroup', agegroup);
+    formData.append('description', desc);
+    formData.append('detailed-description', ddesc);
+    formData.append('skills', skills);
+    
+//         var parameters = "title="+title+"&category="+category+"&day="+day+"&time="+time+"&desc="+desc+"&ddesc="+ddesc+"&agegroup="+agegroup+"&address="+address+"&str="+str+"&zip="+zip+"&area="+area+"&skills="+skills;
+//    
+//    alert(parameters);
+    
+    $.ajax({  
+        url: "check-event-image.php",  
+        type: 'POST',
+        enctype: 'multipart/form-data',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (data) {  
+            if (data === "OK") {
+                window.location = "index.php";
+            }
+            else {
+                document.getElementById('res-ul').innerHTML = data;
+            }
+        }  
+    });  
 
 
     
-     var parameters = "title="+title+"&category="+category+"&day="+day+"&time="+time+"&desc="+desc+"&ddesc="+ddesc+"&agegroup="+agegroup+"&address="+address+"&str="+str+"&zip="+zip+"&area="+area+"&skills="+skills;
 
-     console.log(parameters);
-     http.open("POST", myurl, true);
-     http.onreadystatechange = useHttpResponse;
-     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-     http.send(parameters);
+//
+//     console.log(parameters);
+//     http.open("POST", myurl, true);
+//     http.onreadystatechange = useHttpResponse;
+//     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//     http.send(parameters);
 }
 
 // Use Response

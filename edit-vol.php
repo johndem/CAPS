@@ -2,31 +2,38 @@
 
     include 'create-link.php';
 
-    $first = mysqli_real_escape_string($link,$_POST['first']);
+    $first = urldecode($_POST['first']);
+    $first = mysqli_real_escape_string($link,$first);
     $first = htmlspecialchars($first, ENT_QUOTES);
 
-    $last = mysqli_real_escape_string($link,$_POST['last']);
+    $last = urldecode($_POST['last']);
+    $last = mysqli_real_escape_string($link,$last);
     $last = htmlspecialchars($last, ENT_QUOTES);
 
-    $phone = mysqli_real_escape_string($link,$_POST['phone']);
+    $phone = urldecode($_POST['phone']);
+    $phone = mysqli_real_escape_string($link,$phone);
     $phone = htmlspecialchars($phone, ENT_QUOTES);
 
-    $address = mysqli_real_escape_string($link,$_POST['address']);
+    $address = urldecode($_POST['address']);
+    $address = mysqli_real_escape_string($link,$address);
     $address = htmlspecialchars($address, ENT_QUOTES);
 
-    $str = mysqli_real_escape_string($link,$_POST['str']);
+    $str = urldecode($_POST['str']);
+    $str = mysqli_real_escape_string($link,$str);
     $str = htmlspecialchars($str, ENT_QUOTES);
 
-    $zip = mysqli_real_escape_string($link,$_POST['zip']);
+    $zip = urldecode($_POST['zip']);
+    $zip = mysqli_real_escape_string($link,$zip);
     $zip = htmlspecialchars($zip, ENT_QUOTES);
 
-    $date = mysqli_real_escape_string($link,$_POST['date']);
+    $date = urldecode($_POST['date']);
+    $date = mysqli_real_escape_string($link,$date);
     $date = htmlspecialchars($date, ENT_QUOTES);
 
     $user = $_SESSION['user'];
 
     if ($fileExists == true) {
-        $image = "images/" . $name;
+        $image = "images/" . $title;
         $query = "UPDATE user SET firstname = '$first', lastname = '$last', phone = '$phone', address = '$address', str_number = '$str', zip = '$zip', date = '$date', picture = '$image' WHERE username = '$user'";
     }
     else {

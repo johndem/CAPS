@@ -71,7 +71,7 @@
                                         <input class="in" maxlength="50" name="pass" id="log-password" size="20" type="date" value="<?php echo $row[11]; ?>" readonly/>
                                     </div>
                                 <?php } ?>
-                                <div class="account-label-in"><a href="edit-account.php">Edit my account</a></div>
+                                <div class="account-label-in"><a href="edit-account.php">Edit my account &raquo;</a></div>
                             </div>
                         </div>
                     

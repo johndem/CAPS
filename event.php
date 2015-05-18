@@ -38,7 +38,7 @@
                             <li><?php echo "Address: " . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
                             <li><?php echo "Date: " . $row[8] . ", " . $row[9]; ?></li>
                             <li><?php echo "Recommended age group: " . $row[10]; ?></li>
-                            <li><?php echo "Optional skills: " . $row[11]; ?></li>
+                            <li><?php echo "Optional skills: " . $skills[2]; ?></li>
                             <?php $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ"); ?>
                         </ul>
                         <div id="event-body"><?php echo nl2br($row[13]); ?></div>

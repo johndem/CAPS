@@ -12,6 +12,10 @@
     $results = mysqli_query($link,$query);
     $org = mysqli_fetch_row($results);
 
+    $query = "SELECT * FROM skills WHERE value = '$row[11]'";
+    $results = mysqli_query($link,$query);
+    $skills = mysqli_fetch_row($results);
+
     @mysqli_close($link);
 
 ?>

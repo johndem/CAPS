@@ -187,42 +187,21 @@
                         </div>
                         
                         <div class="label-in">
-                         <div class="h3">Optional Skills: * </div>
+                            <div class="h3">Optional Skills: * </div>
                             <div id="err-skills" class="error-message"> </div>
                             <div id="skills-span" class="img-span"></div>
-                             <select id="skills" class="in" multiple required>
-                                 <option disabled selected value="0">- Hold Ctr for multiple selection -</option>
-                                <option label="Administration" value="37">Administration</option>
-                                <option label="Advice, Information and Support" value="38">Advice, Information and Support</option>
-                                <option label="Architecture, Building and Construction" value="39">Architecture, Building and Construction</option>
-                                <option label="Arts, Entertainment and Music" value="40">Arts, Entertainment and Music</option>
-                                <option label="Befriending, Buddying and Mentoring" value="41">Befriending, Buddying and Mentoring</option>
-                                <option label="Business, Management and Research" value="42">Business, Management and Research</option>
-                                <option label="Campaigning and Lobbying" value="43">Campaigning and Lobbying</option>
-                                <option label="Caring" value="44">Caring</option>
-                                <option label="Catering" value="45">Catering</option>
-                                <option label="Counselling" value="46">Counselling</option>
-                                <option label="Driving" value="47">Driving</option>
-                                <option label="Events and Stewarding" value="48">Events and Stewarding</option>
-                                <option label="Finance and accountancy" value="49">Finance and accountancy</option>
-                                <option label="First Aid" value="51">First Aid</option>
-                                <option label="Fundraising" value="50">Fundraising</option>
-                                <option label="Gardening and Conservation" value="52">Gardening and Conservation</option>
-                                <option label="General and Helping" value="53">General and Helping</option>
-                                <option label="Group Volunteering" value="54">Group Volunteering</option>
-                                <option label="Hostel Work" value="55">Hostel Work</option>
-                                <option label="Languages" value="56">Languages</option>
-                                <option label="Legal and the Law" value="57">Legal and the Law</option>
-                                <option label="Local Events" value="58">Local Events</option>
-                                <option label="Manual Work and DIY" value="59">Manual Work and DIY</option>
-                                <option label="Marketing, Media and Communications" value="60">Marketing, Media and Communications</option>
-                                <option label="Officials" value="61">Officials</option>
-                                <option label="Retail and Charity Shops" value="62">Retail and Charity Shops</option>
-                                <option label="Sports and Coaching" value="63">Sports and Coaching</option>
-                                <option label="Teaching, Training and Leading" value="64">Teaching, Training and Leading</option>
-                                <option label="Technology and the Internet" value="65">Technology and the Internet</option>
-                                <option label="Trusteeship and Committees" value="66">Trusteeship and Committees</option>
-                                <option label="Youth Work" value="67">Youth Work</option>
+                            <select id="skills" class="in" multiple required>
+                                <option disabled selected value="0">- Hold Ctr for multiple selection -</option>
+                                <?php
+                                    include 'create-link.php';
+                                               
+                                    $query = "SELECT * FROM skills";
+                                    $results = mysqli_query($link,$query);
+                                               
+                                    while ($row = mysqli_fetch_row($results)) {
+                                        echo '<option label="' . $row[2] . '" value="' . $row[1] . '">' . $row[2] . '</option>';
+                                    }
+                                ?>
                              </select>
                         </div>
                         

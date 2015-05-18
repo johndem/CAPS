@@ -738,16 +738,13 @@ select {
 
 #event-side {
     width: 300px;
-    height: 600px;
-    background-color: #E2E6E1;
-    box-shadow: 5px 5px 5px #888888;
     float: right;
     margin-left: 30px;
-    color: #525252;
 }
 
 #event-side img {
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #event-chars {
@@ -763,9 +760,18 @@ select {
     text-align: left;
 }
 
-#org-info {
+#org-side {
     text-align: left;
-    margin-left: 20px;
+    background-color: #E2E6E1;
+    box-shadow: 5px 5px 5px #888888;
+    color: #525252;
+    width: inherit;
+    margin-top: 20px;
+}
+
+#org-info {
+    padding: 10px;
+    padding-left: 20px;
 }
 
 #org-info a {

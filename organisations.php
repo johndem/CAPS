@@ -223,23 +223,43 @@
                 <?php } else { ?>
                     
                     <h1 class="center-title">Register your organisation and get started!</h1>
+                    
+                    <div id="org-tab-default">
+                        
+                        <div id="present-orgs">
+                            <h2>Organisations providing volunteering opportunities</h2>
                             
-                    <div class="org-info">
-                    <h3>Registering your organization is easy and quick!</h3>
-                            <p>You will need the following info to complete your registration: </p>
-                        <ul>
-                        
-                        <li>A username and a password for login</li>
-                        <li>A valid and active email</li>
-                        <li>Your organisation name</li>
-                        <li>A description of your organisation</li>
-                        <li>You can also provide a website or social media links of your organisation (optional)</li>
-                        
-                        <div class="org-info-btn">
-                            <h3><a href="org-form.php">Register here &raquo;</a></h3>
+                            <?php
+                                include 'create-link.php';
+
+                                $query = "SELECT * FROM organisations";
+                                $results = mysqli_query($link,$query);
+
+                                while ($row = mysqli_fetch_row($results)) {
+                                    echo '<div class="single-org">';
+                                    echo '<img src="' . $row[10] . '" width="170" height="170" />';
+                                    echo '<h3>' . $row[4] . '</h3>';
+                                    echo '</div>';
+                                    
+                                }
+
+                            ?>
                         </div>
-                        </ul>
-                     </div>
+                        
+                        <div id="orgs-side">
+                            <h3>Consider registering your organisation!</h3>
+                            <div class="org-info-btn">
+                                <h3><a href="org-form.php">Register here &raquo;</a></h3>
+                            </div>
+                            <h3>Sign up as a volunteer to help these organisations!</h3>
+                            <div class="org-info-btn">
+                                <h3><a href="vol-form.php">Join &raquo;</a></h3>
+                            </div>  
+                        </div>
+                        
+                        
+                    </div>
+  
                         
                     <?php } ?>
                 </div>

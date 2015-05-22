@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.jcarousel.js"></script>
         <script src="jq.js"></script>
     </head>
     <body>
@@ -26,7 +27,19 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title">Choose a category and get started!</h1>
-<div id="categories">
+            
+            
+            
+            <div id="featured">
+                <ul>
+                    <li><img src="images/kids.jpg" /></li>
+                    <li><img src="images/flowers.jpg" /></li>
+                    <li><img src="images/family.jpg" /></li>
+                </ul>
+            </div>
+            
+            
+            <div id="categories">
 				<div class="cat"><img onclick="window.location= 'search-results.php?category=Healthcare'" id="hc" class="cat-img" src="images/hc-gray.png"/>
 				</div>
 				<div class="cat"><img onclick="window.location= 'search-results.php?category=Education'" id="edu" class="cat-img" src="images/edu-gray.png"/>

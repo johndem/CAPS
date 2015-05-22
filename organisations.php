@@ -75,9 +75,14 @@
                         
                         <div class="div-cat"> <h1 class="cats">Event Picture</h1> </div>
                         <div class="label-in">
-                            <div class="h3"> You can upload an image for this volunteering event. </div>
+                            <div class="h3"> You can upload up to three images for this event. </div>
+                            <div id="file-buttons">
+                                <input type="file" name="event-picture" id="event-pic">
+                                <input type="file" name="event-picture2" id="event-pic2">
+                                <input type="file" name="event-picture3" id="event-pic3">
+                            </div>  
                         </div>
-                        <input type="file" name="event-picture" id="event-pic">
+                        
                         
                         
                         <div class="div-cat"> <h1 class="cats">Where</h1> </div>
@@ -222,6 +227,7 @@
                     </div> 
                 <?php } else { ?>
                     
+                    <!-- DOULEIA -->
                     <h1 class="center-title">Register your organisation and get started!</h1>
                     
                     <div id="org-tab-default">
@@ -260,6 +266,7 @@
                         
                     </div>
   
+                    <!-- DOULEIA -->
                         
                     <?php } ?>
                 </div>

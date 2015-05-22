@@ -741,12 +741,19 @@ select {
 #event-side {
     width: 300px;
     float: right;
-    margin-left: 30px;
+    margin-top: 20px;
+    text-align: left;
+    background-color: #E2E6E1;
+    box-shadow: 5px 5px 5px #888888;
+    color: #525252;
 }
 
-#event-side img {
-    margin-top: 20px;
-    margin-bottom: 10px;
+#event-side img { 
+    width: 280px;
+    height: 250px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #event-chars {
@@ -1052,4 +1059,70 @@ td div {
 
 .achievement-body div {
     padding-top: 5px;
+}
+
+#featured {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 70px;
+}
+
+#featured ul {
+    width: 100%;
+    display: table;
+    padding: 0;
+    margin: 0;
+}
+
+#featured ul li {
+    display: table-cell;
+    width: auto;
+    text-align: center;
+    height: 300px;
+    list-style: none;
+}
+
+#featured ul li img {
+    width: 33vw;
+    height: 300px;
+}
+
+#event-gallery {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#event-gallery img {
+    width: 480px;
+    height: 280px;
+}
+
+#carousel {
+    margin: 0 auto;
+    text-align: center;
+    width: 480px;
+    overflow: hidden;
+}
+
+#carousel ul {
+    width: 1920px;
+    padding: 0;
+    margin: 0;
+}
+
+#carousel ul li {
+    width: 480px;
+    text-align: center;
+    height: 280px;
+    list-style: none;
+    float: left;
+}
+
+#carousel ul li img {
+    width: 480px;
+    height: 280px;
+}
+
+#file-buttons input {
+    margin-top: 20px;
 }

@@ -240,12 +240,16 @@ function getResponse() {
 //    alert(title + " " + desc + " AAAAAAAAA     " + ddesc);
     
     var file = document.getElementById('event-pic').files[0];
+    var file2 = document.getElementById('event-pic2').files[0];
+    var file3 = document.getElementById('event-pic3').files[0];
     
     // Create a new FormData object.
     var formData = new FormData();
     
     // Add the file to the request.
     formData.append('event-picture', file);
+    formData.append('event-picture2', file2);
+    formData.append('event-picture3', file3);
     formData.append('title', title);
     formData.append('category', category);
     formData.append('date', day);

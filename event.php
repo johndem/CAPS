@@ -43,37 +43,50 @@
                         </ul>
                         <div id="event-body"><?php echo nl2br($row[13]); ?></div>
                         
+                        <div id="event-gallery">
+                        <?php
+                            if ($row[14] != '' && $row[15] != '') {
+                                echo '<div id="carousel">';
+                                    echo '<ul>';
+                                        echo '<li><img src="' . $row[14] . '" /></li>';
+                                        echo '<li><img src="' . $row[15] . '" /></li>';
+                                        if ($row[16] != '')
+                                            echo '<li><img src="' . $row[16] . '" /></li>';
+                                    echo '</ul>';
+                                echo '</div>';
+                            }
+                            else if ($row[14] != '') {
+                                echo '<img src="' . $row[14] . '" />';
+                            }
+                                
+                        ?>
+                        </div>
+                        
                         <h2>Where to find us</h2>
                         <div id="map-canvas"></div>
                     </div>
                     
                     <div id="event-side">
-                        <?php
-                            if ($row[14] != "") {
-                                echo '<img src="' . $row[14] . '" width="300" height="220" />';
-                            }
-                        ?>
-                        <div id="org-side">
-                            <div id="org-info">
-                                <h3>Organisation name:</h3>
-                                <?php echo '<h5>' . $org[4] . '</h5>'; ?>
-                                <h3>Contact:</h3>
-                                <?php echo '<h5>' . $org[2] . '</h5>'; ?>
-                                <?php 
-                                    if ($org[5] != "") {
-                                        echo '<h3><a href="' . $org[5] . '">Visit our Website</a></h3>';
-                                    }
-                                    if ($org[6] != "") {
-                                        echo '<h3><a href="' . $org[6] . '">Find us on Facebook</a></h3>';
-                                    }
-                                    if ($org[7] != "") {
-                                        echo '<h3><a href="' . $org[7] . '">Find us on Twitter</a></h3>';
-                                    }
-                                    if ($org[8] != "") {
-                                        echo '<h3><a href="' . $org[8] . '">Other</a></h3>';
-                                    }
-                                ?>
-                            </div>
+                        <img src="<?php echo $org[10]; ?>" />
+                        <div id="org-info">
+                            <h3>Organisation name:</h3>
+                            <?php echo '<h5>' . $org[4] . '</h5>'; ?>
+                            <h3>Contact:</h3>
+                            <?php echo '<h5>' . $org[2] . '</h5>'; ?>
+                            <?php 
+                                if ($org[5] != "") {
+                                    echo '<h3><a href="' . $org[5] . '">Visit our Website</a></h3>';
+                                }
+                                if ($org[6] != "") {
+                                    echo '<h3><a href="' . $org[6] . '">Find us on Facebook</a></h3>';
+                                }
+                                if ($org[7] != "") {
+                                    echo '<h3><a href="' . $org[7] . '">Find us on Twitter</a></h3>';
+                                }
+                                if ($org[8] != "") {
+                                    echo '<h3><a href="' . $org[8] . '">Other</a></h3>';
+                                }
+                            ?>
                         </div>
                     </div>
                     

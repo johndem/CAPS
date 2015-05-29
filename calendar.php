@@ -32,8 +32,9 @@
                 
                     
                     <div id="calendar">
-                        <table></table>
+<!--                       <table></table>-->
                         <div>
+					
                             <table>
                                 <thead>
                                     <tr>
@@ -46,60 +47,96 @@
                                         <th>Sunday</th>
                                     </tr>
                                 </thead>
-                                <tr>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
+					   <?php 
+					    
+					    $month = idate("m");
+						//echo $month;
+						$year = idate("Y");
+						//echo $year;
+
+						$month_start = strtotime('first day of this month', time());
+
+						$day = idate('w', $month_start) - 1;
+						
+					    	$number = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+						//echo $number;
+						
+						$td = 0;
+						$days = 1;
+						for ($i=0 ; $i<6 ; $i++) {
+							echo '<tr>';
+							for ($j=0 ; $j<7 ; $j++) {
+								if ($td<$day or $days>$number) {
+									echo '<td><div></div></td>';
+									
+								}
+								else {
+									echo '<td><div>' . $days . '</div></td>';
+									$days = $days + 1;
+								}
+								$td = $td + 1;
+						
+							}
+							echo '</tr>';
+						}
+					    
+					    ?>
+<!--
+                                <tr id='w0'>
+                                    <td id="d0"><div></div></td>
+                                    <td id="d1"><div></div></td>
+                                    <td id="d2"><div></div></td>
+                                    <td id="d3"><div></div></td>
+                                    <td id="d4"><div></div></td>
+                                    <td id="d5"><div></div></td>
+                                    <td id="d6"><div></div></td>
                                 </tr>
-                                <tr>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
+                                <tr id='w1'>
+                                    <td id="d0"><div></div></td>
+                                    <td id="d1"><div></div></td>
+                                    <td id="d2"><div></div></td>
+                                    <td id="d3"><div></div></td>
+                                    <td id="d4"><div></div></td>
+                                    <td id="d5"><div></div></td>
+                                    <td id="d6"><div></div></td>
                                 </tr>
-                                <tr>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
+                                <tr id='w2'>
+                                    <td id="d0"><div></div></td>
+                                    <td id="d1"><div></div></td>
+                                    <td id="d2"><div></div></td>
+                                    <td id="d3"><div></div></td>
+                                    <td id="d4"><div></div></td>
+                                    <td id="d5"><div></div></td>
+                                    <td id="d6"><div></div></td>
                                 </tr>
-                                <tr>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
+                                <tr id='w3'>
+                                    <td id="d0"><div></div></td>
+                                    <td id="d1"><div></div></td>
+                                    <td id="d2"><div></div></td>
+                                    <td id="d3"><div></div></td>
+                                    <td id="d4"><div></div></td>
+                                    <td id="d5"><div></div></td>
+                                    <td id="d6"><div></div></td>
                                 </tr>
-                                <tr>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
+                                <tr id='w4'>
+                                    <td id="d0"><div></div></td>
+                                    <td id="d1"><div></div></td>
+                                    <td id="d2"><div></div></td>
+                                    <td id="d3"><div></div></td>
+                                    <td id="d4"><div></div></td>
+                                    <td id="d5"><div></div></td>
+                                    <td id="d6"><div></div></td>
                                 </tr>
-                                <tr>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
-                                    <td><div></div></td>
+                                <tr id='w5'>
+                                    <td id="d0"><div></div></td>
+                                    <td id="d1"><div></div></td>
+                                    <td id="d2"><div></div></td>
+                                    <td id="d3"><div></div></td>
+                                    <td id="d4"><div></div></td>
+                                    <td id="d5"><div></div></td>
+                                    <td id="d6"><div></div></td>
                                 </tr>
+-->
                             </table>
                         </div>
                     </div>

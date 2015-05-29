@@ -1082,6 +1082,43 @@ td div {
     list-style: none;
 }
 
+.featured-image {
+    position: relative; 
+    width: 100%; /* for IE 6 */
+}
+
+.featured-image-text {
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    text-align: left;
+    padding: 15px;
+}
+
+.featured-image-text h2,h4 {
+    color: white; 
+}
+
+.btnLearn {
+    margin: 0 auto;
+    text-align: center;
+    width: 150px;
+    height: 40px;
+    color: black;
+    font-family: 'Open Sans';
+    background-color: white;
+    border-radius: 10px;
+	box-shadow: 5px 5px 5px #999;
+}
+
+.btnLearn a {
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 5px;
+    color: black;
+    font-size: 21px;
+}
+
 #featured ul li img {
     width: 33vw;
     height: 300px;

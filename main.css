@@ -108,8 +108,7 @@ p {
     width: 230px;
     height: 230px;
     overflow: hidden;
-    box-shadow: 3px 3px 3px #999;
-	box-shadow: 5px 5px 20px #33D900;
+
     border-radius: 10px;
 }
 

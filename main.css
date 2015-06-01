@@ -880,28 +880,32 @@ select {
 }
 
 #calendar {
-    margin: 0 auto;
-    text-align: center;
+	margin: 0 auto;
+    text-align: center; 
     width: 800px;
     margin-bottom: 100px;
     margin-top: 100px;
 }
 
-table, th, td {
-    border: 1px solid black;
-}
 
 th {
-    width: 95px;
+   background-color: #ff9639;
 }
 
 td {
-    height: 60px;
+	height: 100px;
+	width: 200px;
+	background-color: #ffe8d5;
+/*	border-left: 1px solid black;*/
 }
 
-td div {
-    min-height: 75px;
+table {
+	width: 1000px;
+	table-layout: fixed;
+	margin: 0 auto;
+    text-align: center;  
 }
+
 
 #account {
     margin: 0 auto;
@@ -1162,4 +1166,27 @@ td div {
 
 #file-buttons input {
     margin-top: 20px;
+}
+
+.cal-num {
+	text-align: left;
+	margin-left: 5px;
+		margin-top: 5px;
+	font-weight: bold;
+	color: black;
+	
+}
+
+.cal-el {
+	min-height: 100px;
+		text-align: left;
+	margin-left: 5px;
+		margin-top: 10px;
+	font-size: 14px;
+	
+
+}
+
+.cal-el span {
+	background-color: #ffc18b;
 }

@@ -1,3 +1,5 @@
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 var http = getXMLHttpRequest();
 
 function getXMLHttpRequest() {
@@ -25,7 +27,17 @@ function useHttpResponseCal() {
     if (http.readyState == 4) {
         if (http.status == 200) {
            document.getElementById('cal-cont').innerHTML = http.responseText;
+		  var previous = document.getElementById('mon').innerHTML;
+		  var previous_num = months.indexOf(previous);
+		  
+		  console.log(previous + " " + previous_num);
+		document.getElementById('mon').innerHTML = months[previous_num + 1];
         }
     }
 }
 
+$(document).ready(function() {
+	$("td").hover(function() {
+		$(this).toggleClass("cal-back");
+	})
+})

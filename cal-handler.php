@@ -29,15 +29,16 @@
 	  
 	if ($arrow == 'right') {
 		$month = $month + 1;
-		$month_start = strtotime('first day of this month', time());
-
-						$day = idate('w', $month_start) - 1;
+		
 						
 					    	$number = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 						
 						if ($month<10) $date = '' . $year . '-0' . $month . '-';
     						else $date = '' . $year . '-' . $month . '-';
 						
+						$month_start = strtotime($date . '01');
+
+						$day = idate('w', $month_start) - 1;
 						
 						$td = 0;
 						$days = 1;
@@ -70,16 +71,17 @@
 		}
 		else {
 			$month = $month - 1;
-			$month_start = strtotime('first day of this month', time());
-
-			$day = idate('w', $month_start) - 1;
+			
 						
 			$number = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 						
 			if ($month<10) $date = '' . $year . '-0' . $month . '-';
     			else $date = '' . $year . '-' . $month . '-';
 						
-						
+			$month_start = strtotime($date . '01');
+
+			$day = idate('w', $month_start) - 1;	
+			
 			$td = 0;
 			$days = 1;
 			for ($i=0 ; $i<6 ; $i++) {

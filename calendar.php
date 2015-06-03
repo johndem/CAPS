@@ -34,7 +34,20 @@
                     <div id="calendar">
 <!--                       <table></table>-->
 				  
-				 <span id="left" onclick="getResponseCal(this)"> &lArr;</span> <div id="mon">June</div><span id="right" onclick="getResponseCal(this)">&rArr;</span>
+				 
+				  
+				  <table>
+				  <tbody>
+					  <tr>
+					  	<td id="manasou">
+							<span  class="arrows" id="left" onclick="getResponseCal(this)"> &lArr;</span> <span class="cal-date" id="mon"><?php echo date('F'); ?></span > <span  class="cal-date" id="year"><?php echo date('Y'); ?></span><span class="arrows" id="right" onclick="getResponseCal(this)">&rArr;</span>
+							
+						</td>
+					  </tr>
+					  
+				  </tbody>
+				  
+				  </table>
                            <?php include 'calendar-plugin.php'; ?>
                     </div>
                 

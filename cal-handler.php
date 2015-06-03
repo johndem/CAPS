@@ -46,7 +46,7 @@
 							$results = $results . '<tr>';
 							for ($j=0 ; $j<7 ; $j++) {
 								if ($td<$day or $days>$number) {
-									$results = $results . '<td><div></div></td>';
+									$results = $results . '<td class="td-cells"><div></div></td>';
 									
 								}
 								else {
@@ -56,7 +56,7 @@
 									$query = "SELECT id,title FROM events WHERE day = '$newDate'";
 								      $results_sql = mysqli_query($link,$query);
 								      $row = mysqli_fetch_row($results_sql);
-									$results = $results . '<td><div class="cal-num">' . $days . '</div><div class="cal-el"><span>' . $row[1]  .'</span></div></td>';
+									$results = $results . '<td class="td-cells"><div class="cal-num">' . $days . '</div><div class="cal-el"><span>' . $row[1]  .'</span></div></td>';
 									$days = $days + 1;
 								}
 								$td = $td + 1;
@@ -66,10 +66,7 @@
 						}
 	}
 	else if ($arrow == 'left') {
-		if ($current_month == $month) {
-			echo 'bitch';
-		}
-		else {
+		
 			$month = $month - 1;
 			
 						
@@ -88,7 +85,7 @@
 					$results = $results . '<tr>';
 					 for ($j=0 ; $j<7 ; $j++) {
 							if ($td<$day or $days>$number) {
-									$results = $results . '<td><div></div></td>';
+									$results = $results . '<td class="td-cells"><div></div></td>';
 									
 								}
 								else {
@@ -98,7 +95,7 @@
 									$query = "SELECT id,title FROM events WHERE day = '$newDate'";
 								      $results_sql = mysqli_query($link,$query);
 								      $row = mysqli_fetch_row($results_sql);
-									$results = $results . '<td><div class="cal-num">' . $days . '</div><div class="cal-el"><span>' . $row[1]  .'</span></div></td>';
+									$results = $results . '<td class="td-cells"><div class="cal-num">' . $days . '</div><div class="cal-el"><span>' . $row[1]  .'</span></div></td>';
 									$days = $days + 1;
 								}
 								$td = $td + 1;
@@ -107,7 +104,6 @@
 							$results = $results . '</tr>';
 						}
 		}
-	}
 	
 	//echo "Month: " . $month . " Arrow: " . $arrow;
 	echo $results . '</table>';

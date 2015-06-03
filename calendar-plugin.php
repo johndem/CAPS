@@ -37,7 +37,7 @@ echo '<table>
 							echo '<tr>';
 							for ($j=0 ; $j<7 ; $j++) {
 								if ($td<$day or $days>$number) {
-									echo '<td><div></div></td>';
+									echo '<td class="td-cells"><div></div></td>';
 									
 								}
 								else {
@@ -47,7 +47,7 @@ echo '<table>
 									$query = "SELECT id,title FROM events WHERE day = '$newDate'";
 								      $results = mysqli_query($link,$query);
 								      $row = mysqli_fetch_row($results);
-									echo '<td><div class="cal-num">' . $days . '</div><div class="cal-el"><span>' . $row[1]  .'</span></div></td>';
+									echo '<td class="td-cells"><div class="cal-num">' . $days . '</div><div class="cal-el"><span>' . $row[1]  .'</span></div></td>';
 									$days = $days + 1;
 								}
 								$td = $td + 1;

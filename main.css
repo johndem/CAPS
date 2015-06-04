@@ -889,7 +889,7 @@ select {
 
 
 th {
-   background-color: #ff9639;
+    background-color: #ff9639;
 }
 
 .td-cells {
@@ -1159,7 +1159,6 @@ table {
 #carousel ul li img {
     width: 480px;
     height: 280px;
-    
 }
 
 #file-buttons input {
@@ -1169,7 +1168,7 @@ table {
 .cal-num {
 	text-align: left;
 	margin-left: 5px;
-		margin-top: 5px;
+    margin-top: 5px;
 	font-weight: bold;
 	color: black;
 	
@@ -1177,12 +1176,10 @@ table {
 
 .cal-el {
 	min-height: 100px;
-		text-align: left;
+    text-align: center;
 	margin-left: 5px;
-		margin-top: 10px;
+    margin-top: 10px;
 	font-size: 14px;
-	
-
 }
 
 .cal-el span {
@@ -1192,6 +1189,7 @@ table {
 .cal-back {
 	background-color: #ffcfa4;
 }
+
 #manasou {
 	height: 50px;
 }
@@ -1204,7 +1202,6 @@ table {
 .cal-date {
 	font-size: 20px;
 	font-weight: bold;
-	
 }
 
 #year {
@@ -1219,4 +1216,9 @@ table {
 
 #left {
 	visibility: hidden;
+}
+
+.td-cells a {
+    color: #525252;
+    font-size: 16px;
 }

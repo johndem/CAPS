@@ -347,6 +347,13 @@ p {
 }
 
 .center-title {
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(50,50,50,0) 25%, rgba(183,183,183,0.57) 91%, rgba(183,183,183,0.65) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(25%,rgba(50,50,50,0)), color-stop(91%,rgba(183,183,183,0.57)), color-stop(100%,rgba(183,183,183,0.65))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(50,50,50,0) 25%,rgba(183,183,183,0.57) 91%,rgba(183,183,183,0.65) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(50,50,50,0) 25%,rgba(183,183,183,0.57) 91%,rgba(183,183,183,0.65) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(50,50,50,0) 25%,rgba(183,183,183,0.57) 91%,rgba(183,183,183,0.65) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(50,50,50,0) 25%,rgba(183,183,183,0.57) 91%,rgba(183,183,183,0.65) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6b7b7b7',GradientType=0 ); /* IE6-9 */
     color: #525252;
     margin-top: 0;
     height: 80px;
@@ -1096,7 +1103,11 @@ table {
     padding: 15px;
 }
 
-.featured-image-text h2,h4 {
+.featured-image-text h2{
+    color: white; 
+}
+
+.featured-image-text h4 {
     color: white; 
 }
 
@@ -1208,17 +1219,44 @@ table {
 	margin-right: 10px;
 }
 
-.arrows {
-	font-size: 25px;
-	font-weight: bold;
-	cursor: pointer;
-}
-
 #left {
 	visibility: hidden;
+	background-image: url('images/arrow-left.png');
+	background-size: cover;
+
+}
+
+#right {
+	background-image: url('images/arrow-right.png');
+	background-size: cover;
+}
+
+.arrows {
+	cursor: pointer;
+	min-height: 23px;
+	min-width: 23px;
+	display: inline-block;
 }
 
 .td-cells a {
     color: #525252;
     font-size: 16px;
+}
+
+#btnOpp a:hover {
+	background-color: #ff9639;
+}
+
+#btnOpp:hover {
+	background-color: #ff9639;
+}
+
+
+
+#btnReg a:hover {
+	background-color: #ff9639;
+}
+
+#btnReg:hover {
+	background-color: #ff9639;
 }

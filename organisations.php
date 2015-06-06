@@ -227,10 +227,13 @@
                     </div> 
                 <?php } else { ?>
                     
+			    
                     <!-- DOULEIA -->
                     <h1 class="center-title">Register your organisation and get started!</h1>
+			   <div id="org-tab-default"> 
+                      <?php include 'recent-events-widget.php'; ?>
+			    
                     
-                    <div id="org-tab-default">
                         
                         <div id="present-orgs">
                             <h2>Organisations providing volunteering opportunities</h2>
@@ -252,16 +255,7 @@
                             ?>
                         </div>
                         
-                        <div id="orgs-side">
-                            <h3>Consider registering your organisation!</h3>
-                            <div class="org-info-btn">
-                                <h3><a href="org-form.php">Register here &raquo;</a></h3>
-                            </div>
-                            <h3>Sign up as a volunteer to help these organisations!</h3>
-                            <div class="org-info-btn">
-                                <h3><a href="vol-form.php">Join &raquo;</a></h3>
-                            </div>  
-                        </div>
+                   
                         
                         
                     </div>

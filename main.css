@@ -1255,8 +1255,6 @@ table {
 	background-color: #ff9639;
 }
 
-
-
 #btnReg a:hover {
 	background-color: #ff9639;
 }
@@ -1264,18 +1262,25 @@ table {
 #btnReg:hover {
 	background-color: #ff9639;
 }
+
 .somthing {
 	padding-left: 3px;
 	padding-right:3px;
-	background-color:rgba(255,150,57,0.2);
+	background-color: rgba(255,150,57,0.2);
+}
+
+.side-widgets {
+    width: 300px;
+	float: left;
+    margin-right: 30px;
 }
 
 .recent-events {
-	width: 300px;
 	float: left;
+    width: inherit;
 	background-color: #E2E6E1;
 	box-shadow: 5px 5px 5px #999;
-	margin-right: 30px;
+    margin-bottom: 50px;
 	border-radius: 3px;
 }
 
@@ -1283,20 +1288,17 @@ table {
 	text-align: center;
 }
 
-
-
 .event-info {
 	text-align: left;
 	padding: 10px;
-	background-color:rgba(82,82,82,0.2);
+	background-color: rgba(82,82,82,0.2);
 	margin: 10px;
 	border-radius: 5px;
 	cursor: pointer;
 }
 
 .event-info:hover {
-	
-	background-color:rgba(82,82,82,0.4);
+	background-color: rgba(82,82,82,0.4);
 }
 
 .event-info span {
@@ -1306,4 +1308,9 @@ table {
 .events-wid-title {
 	font-weight: bold;
 	font-size: 20px;
+}
+
+#quick-selects h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

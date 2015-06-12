@@ -30,7 +30,15 @@
             <div class="content">
                 <h1 class="center-title">Find an opportunity in Calendar</h1>
                 
+                <div id="calendar-tab">
                 
+                <?php
+                        echo '<div class="side-widgets">';
+                        include 'recent-events-widget.php'; 
+                        include 'quick-search-widget.php';
+				//include 'most-recent-event-widget.php';
+                        echo '</div>';
+                        ?>
                     <div id="calendar">
 <!--                       <table></table>-->
 				  
@@ -50,6 +58,8 @@
 				  </table>
                            <?php include 'calendar-plugin.php'; ?>
                     </div>
+                    
+                </div>
                 
             </div>
             

@@ -32,7 +32,13 @@
                 
                 <div class="aligner">
                     
-                    <form action="search-results.php" method="get" >
+                    <?php
+                        echo '<div class="side-widgets">';
+                        include 'recent-events-widget.php'; 
+                        echo '</div>';
+                        ?>
+                    
+                    <form action="search-results.php" method="get" id="volunteers-form">
                        
 
                         <div id="search-cat">

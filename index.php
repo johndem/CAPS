@@ -26,7 +26,7 @@
 
         <!-- content -->
         <div class="content">
-            <h1 class="center-title">Choose a category and get started!</h1>
+            <h1 class="center-title">Volunteer and help your city</h1>
             
             <?php
                 include 'create-link.php';
@@ -111,7 +111,11 @@
             <?php } ?>
             
             
+            
+            
             <div id="categories">
+                <h1>Categories</h1>
+                
 				<div class="cat"><img onclick="window.location= 'search-results.php?category=Healthcare'" id="hc" class="cat-img" src="images/hc-gray.png"/>
 				</div>
 				<div class="cat"><img onclick="window.location= 'search-results.php?category=Education'" id="edu" class="cat-img" src="images/edu-gray.png"/>
@@ -132,6 +136,9 @@
 
 
             <div id="news">  
+                
+                <h1>News and Stories</h1>
+                
                 <?php 
                     include 'display-news.php';
                 ?>    

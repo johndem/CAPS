@@ -169,6 +169,15 @@
                 <?php } else { ?>
                     
                     <h1 class="center-title">Create your account and get started!</h1>
+                
+                <div id="default-account-tab">
+                
+                <?php
+                        echo '<div class="side-widgets">'; 
+                        include 'quick-search-widget.php';
+				//include 'most-recent-event-widget.php';
+                        echo '</div>';
+                        ?>
                   
                         <div class="org-info">
                             <h3>All you need to do is sign up!</h3>
@@ -183,7 +192,7 @@
                             </ul>
                          </div>
                     
-                        
+                        </div>
                     <?php } ?>
                 
                 <div id="account-blanket">

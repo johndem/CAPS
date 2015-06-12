@@ -233,6 +233,7 @@
                         echo '<div class="side-widgets">';
                         include 'recent-events-widget.php'; 
                         include 'quick-search-widget.php';
+				//include 'most-recent-event-widget.php';
                         echo '</div>';
                         ?>
 

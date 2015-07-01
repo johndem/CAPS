@@ -249,7 +249,7 @@
                                 while ($row = mysqli_fetch_row($results)) {
                                     echo '<div class="single-org">';
                                     echo '<img src="' . $row[10] . '" width="170" height="170" />';
-                                    echo '<h3>' . $row[4] . '</h3>';
+                                    echo '<h3><a href="organization.php?id=' . $row[0] . '">' . $row[4] . '</a></h3>';
                                     echo '</div>';
                                     
                                 }

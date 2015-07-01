@@ -70,7 +70,7 @@
                         <img src="<?php echo $org[10]; ?>" />
                         <div id="org-info">
                             <h3>Organisation name:</h3>
-                            <?php echo '<h5>' . $org[4] . '</h5>'; ?>
+                            <?php echo '<h5><a href="organization.php?id=' . $org[0] . '">' . $org[4] . '</a></h5>'; ?>
                             <h3>Contact:</h3>
                             <?php echo '<h5>' . $org[2] . '</h5>'; ?>
                             <?php 

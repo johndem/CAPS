@@ -56,9 +56,10 @@
                                 if ($org[8] != "") {
                                     echo '<h3><a href="' . $org[8] . '">Other</a></h3>';
                                 }
-                                echo '<div id="org-desc">' . $org[9] . '</div>';
+                                echo '<div id="org-desc">';
+                                echo '<h3>Contact us at: ' . $org[2] . '</h3>';
+                                echo $org[9] . '</div>';
                                 echo '</div>';
-                                
                             ?>
 
                     </div>

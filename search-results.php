@@ -32,31 +32,59 @@
             
             <?php 
             
-                include 'create-link.php';
+            include 'create-link.php';
 
-                $category = mysqli_real_escape_string($link,$_GET['category']);
-                $category = htmlspecialchars($category,ENT_QUOTES);
-            
-                $area = mysqli_real_escape_string($link,$_GET['areas']);
-                $area = htmlspecialchars($area,ENT_QUOTES);
-                
-                $ages = mysqli_real_escape_string($link,$_GET['ages']);
-                $ages = htmlspecialchars($ages,ENT_QUOTES);
+            $category = mysqli_real_escape_string($link,$_GET['category']);
+            $category = htmlspecialchars($category,ENT_QUOTES);
 
-                $skills = mysqli_real_escape_string($link,$_GET['skills']);
-                $skills = htmlspecialchars($skills,ENT_QUOTES);
+            $area = mysqli_real_escape_string($link,$_GET['areas']);
+            $area = htmlspecialchars($area,ENT_QUOTES);
 
-                $date = mysqli_real_escape_string($link,$_GET['date']);
-                $date = htmlspecialchars($date,ENT_QUOTES);
+            $ages = mysqli_real_escape_string($link,$_GET['ages']);
+            $ages = htmlspecialchars($ages,ENT_QUOTES);
+
+            $skills = mysqli_real_escape_string($link,$_GET['skills']);
+            $skills = htmlspecialchars($skills,ENT_QUOTES);
+
+            $date = mysqli_real_escape_string($link,$_GET['date']);
+            $date = htmlspecialchars($date,ENT_QUOTES);
+
+            //echo $category . $area . $skills . $date;
                 
-                //echo $category . $area . $skills . $date;
-                
+            // pagination stuff
+            if (!isset($_GET['pagenum'])) {
+                $pagenum = 1;
+            }
+            else {
+                $pagenum = $_GET['pagenum'];
+            }  
+            // end of pagination stuff
+
             $query = "SELECT * FROM events WHERE category='$category' OR area='$area' OR agegroup= '$ages' OR skills = '$skills' OR day = '$date' ";
 
             $results = mysqli_query($link,$query);
 
+            // pagination stuff
+            $num_results = mysqli_num_rows($results);
+  	
+            $page_rows = 4;
+            $last_page = ceil($num_results/$page_rows);
+
+            if ($pagenum < 1) {
+                $pagenum = 1;
+            }
+            else if ($pagenum > $last_page) {
+                $pagenum = $last_page;
+            }
+
+            $max = 'limit ' .($pagenum - 1) * $page_rows .',' .$page_rows;
+  	
+            $query = "SELECT * FROM events WHERE category='$category' OR area='$area' OR agegroup= '$ages' OR skills = '$skills' OR day = '$date' $max";
+            $results = mysqli_query($link, $query);
+            // end of pagination stuff
 
             if ($results) {   
+            
             
             $bool = true;
             while ($row = mysqli_fetch_row($results)) { 
@@ -80,16 +108,42 @@
                 
             </div> 
                  
-                <?php    } 
-                 
-              if ($bool) { ?>
+            <?php    } 
+                
+            if ($num_results != 0) {
+                echo "<p> Page $pagenum of $last_page </p>";
+                
+                $url = "category=" . $category . "&areas=" . $areas . "&ages=" . $ages . "&date=" . $date . "&";
+                
+                if ($pagenum == 1 || $num_results == 0) { }
+                else { // if not at first page of comments section, display First and Previous hyperlinks
+                    echo " <a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=1'> <<-First</a> ";
+                    echo " ";
+                    $previous = $pagenum-1;
+                    echo " <a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=$previous'> <-Previous</a> ";
+                }	
+
+                if ($pagenum == $last_page) {}
+                else { // if not at last page of comments section, display Next and Last hyperlinks
+                    if ($num_results > 2*$page_rows) {
+                        echo " ---- ";
+                    }
+                    $next = $pagenum+1;
+                    echo " <a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=$next'>Next -></a> ";
+                    echo " ";
+                    echo " <a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=$last_page'>Last ->></a> ";
+                }
+                
+            } 
+  
+            if ($bool) { ?>
             <div class="single-result">
             
                 <h3>There are no volunteering events matching your criteria!</h3>
                 
             </div> 
-                <a href="volunteers.php">Go back</a>
-           <?php   }
+            <a href="volunteers.php">Go back</a>
+            <?php   }
             }
             else {
     

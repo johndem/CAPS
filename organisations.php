@@ -242,10 +242,38 @@
                             
                             <?php
                                 include 'create-link.php';
+    
+                                // pagination stuff
+                                if (!isset($_GET['pagenum'])) {
+                                    $pagenum = 1;
+                                }
+                                else {
+                                    $pagenum = $_GET['pagenum'];
+                                }  
+                                // end of pagination stuff
 
                                 $query = "SELECT * FROM organisations";
                                 $results = mysqli_query($link,$query);
+    
+                                // pagination stuff
+                                $num_results = mysqli_num_rows($results);
 
+                                $page_rows = 3;
+                                $last_page = ceil($num_results/$page_rows);
+
+                                if ($pagenum < 1) {
+                                    $pagenum = 1;
+                                }
+                                else if ($pagenum > $last_page) {
+                                    $pagenum = $last_page;
+                                }
+
+                                $max = 'limit ' .($pagenum - 1) * $page_rows .',' .$page_rows;
+                                
+                                $query = "SELECT * FROM organisations $max";
+                                $results = mysqli_query($link,$query);
+                                // end of pagination stuff
+    
                                 while ($row = mysqli_fetch_row($results)) {
                                     echo '<div class="single-org">';
                                     echo '<img src="' . $row[10] . '" width="170" height="170" />';
@@ -253,6 +281,32 @@
                                     echo '</div>';
                                     
                                 }
+    
+                                if ($num_results != 0) {
+                                    echo "<p> Page $pagenum of $last_page </p>";
+
+                                    if ($pagenum == 1 || $num_results == 0) { }
+                                    else { // if not at first page of comments section, display First and Previous hyperlinks
+                                        echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=1'> <<-First</a> ";
+                                        echo " ";
+                                        $previous = $pagenum-1;
+                                        echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=$previous'> <-Previous</a> ";
+                                    }	
+
+                                    if ($pagenum == $last_page) {}
+                                    else { // if not at last page of comments section, display Next and Last hyperlinks
+                                        if ($num_results > 2*$page_rows) {
+                                            echo " ---- ";
+                                        }
+                                        $next = $pagenum+1;
+                                        echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=$next'>Next -></a> ";
+                                        echo " ";
+                                        echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=$last_page'>Last ->></a> ";
+                                    }
+
+                                } 
+    
+    
                             ?>
                         </div>
 

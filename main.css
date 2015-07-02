@@ -1202,13 +1202,20 @@ table {
     margin-top: 20px;
 }
 
+input#event-pic2 {
+    display: none;
+}
+
+input#event-pic3 {
+    display: none;
+}
+
 .cal-num {
 	text-align: left;
 	margin-left: 5px;
     margin-top: 5px;
 	font-weight: bold;
 	color: black;
-	
 }
 
 .cal-el {

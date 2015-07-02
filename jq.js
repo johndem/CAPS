@@ -112,5 +112,13 @@ $(document).ready(function () {
         this.src='images/an-gray.png';
       }
     });
+    
+    $("#event-pic").change(function() {
+        $("#event-pic2").css("display", "inline");
+    });
+    
+    $("#event-pic2").change(function() {
+        $("#event-pic3").css("display", "inline");
+    });
 
 });

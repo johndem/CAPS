@@ -29,7 +29,7 @@
     $description = mysqli_real_escape_string($link,$_POST['description']);
     $description = htmlspecialchars($description, ENT_QUOTES);
 
-    $query = "INSERT INTO organisations (username,email,password,name,website,facebook,twitter,other,description) VALUES ('$user', '$email','$pass','$name','$website','$facebook','$twitter', '$other','$description')";
+    $query = "INSERT INTO organisations (username,email,password,name,website,facebook,twitter,other,description,picture) VALUES ('$user', '$email','$pass','$name','$website','$facebook','$twitter', '$other','$description', 'images/profile.png')";
     
     mysqli_query($link,$query);
     @mysqli_close($link);

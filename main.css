@@ -812,6 +812,10 @@ select {
     margin: 8px;
 }
 
+.single-org a {
+    color: #525252;
+}
+
 #orgs-side {
     width: 250px;
     height: auto;
@@ -1219,21 +1223,21 @@ input#event-pic3 {
 }
 
 .cal-el {
-min-height: 100px;
-  text-align: center;
-  margin-left: 2px;
-  margin-top: 10px;
-  /* font-size: 14px; */
-  margin-right: 2px;
- cursor: pointer;
+    min-height: 100px;
+    text-align: center;
+    margin-left: 2px;
+    margin-top: 10px;
+    /* font-size: 14px; */
+    margin-right: 2px;
+    cursor: pointer;
 }
 
 .cal-el span {
-background-color: #ffc18b;
-  width: 100%;
-  /* height: auto; */
-  display: inline-block;
-  border-radius: 3px;
+    background-color: #ffc18b;
+    width: 100%;
+    /* height: auto; */
+    display: inline-block;
+    border-radius: 3px;
 }
 
 .cal-el span:hover {
@@ -1402,4 +1406,40 @@ background-color: #ffc18b;
 #org-desc {
     float: left;
     margin-top: 50px;
+}
+
+.pagination {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    clear: both;
+    margin-top: 50px;
+}
+
+.pagination-block {
+    width: 20px;
+    height: 20px;
+    border: solid 1px;
+    border-radius: 5px;
+    float: left;
+    margin-right: 5px;
+    background-color: #ffe8d5;
+}
+
+#selected_page {
+    background-color: #ff9639;
+}
+
+.pagination-block a {
+    color: #525252;
+    text-decoration: none;
+}
+
+.pagination a:visited {}
+
+.pagination img {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 5px;
 }

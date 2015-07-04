@@ -125,7 +125,7 @@ $(document).ready(function () {
     
     
     
-    $("#log-password").keyup(function(event){
+    $("#log-password,#log-username").keyup(function(event){
     if(event.keyCode == 13){
         $("#sButton").click();
     }

@@ -240,6 +240,8 @@
                         <div id="present-orgs">
                             <h2>Organisations providing volunteering opportunities</h2>
                             
+                            
+                            
                             <?php
                                 include 'create-link.php';
     
@@ -258,7 +260,7 @@
                                 // pagination stuff
                                 $num_results = mysqli_num_rows($results);
 
-                                $page_rows = 3;
+                                $page_rows = 9;
                                 $last_page = ceil($num_results/$page_rows);
 
                                 if ($pagenum < 1) {
@@ -283,27 +285,28 @@
                                 }
     
                                 if ($num_results != 0) {
-                                    echo "<p> Page $pagenum of $last_page </p>";
-
-                                    if ($pagenum == 1 || $num_results == 0) { }
-                                    else { // if not at first page of comments section, display First and Previous hyperlinks
-                                        echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=1'> <<-First</a> ";
-                                        echo " ";
-                                        $previous = $pagenum-1;
-                                        echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=$previous'> <-Previous</a> ";
-                                    }	
-
-                                    if ($pagenum == $last_page) {}
-                                    else { // if not at last page of comments section, display Next and Last hyperlinks
-                                        if ($num_results > 2*$page_rows) {
-                                            echo " ---- ";
-                                        }
-                                        $next = $pagenum+1;
-                                        echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=$next'>Next -></a> ";
-                                        echo " ";
-                                        echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=$last_page'>Last ->></a> ";
+                                    
+                                    // ARROW STUFF
+                                    echo '<div class="pagination">';
+                                    if ($pagenum != 1) {
+                                        $previous_page = $pagenum - 1;
+                                        echo "<a href='{$_SERVER['PHP_SELF']}?pagenum=$previous_page'><img src='images/page-arrow-left.png' /></a>";
                                     }
 
+                                    for ($i = 1; $i <= $last_page; $i++) {
+                                        if ($i == $pagenum)
+                                            echo "<div class='pagination-block' id='selected_page'><a href='{$_SERVER['PHP_SELF']}?pagenum=$i'>$i</a></div>";
+                                        else
+                                            echo "<div class='pagination-block'><a href='{$_SERVER['PHP_SELF']}?pagenum=$i'>$i</a></div>";
+                                    }
+
+                                    if ($pagenum != $last_page && $last_page != 1) {
+                                        $next_page = $pagenum + 1;
+                                        echo "<a href='{$_SERVER['PHP_SELF']}?pagenum=$next_page'><img src='images/page-arrow-right.png' /></a>";
+                                    }
+                                    echo '</div>';
+                                    // END OF ARROW STUFF
+                                      
                                 } 
     
     

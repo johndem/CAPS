@@ -5,7 +5,7 @@
 	
 	include 'create-link.php';
 	
-	$query = "SELECT id,title,category,area,image FROM events WHERE image<>'' ORDER BY id DESC LIMIT 2";
+	$query = "SELECT id,title,category,area,image FROM events WHERE image<>'' ORDER BY RAND() LIMIT 2";
 	
 	$results = mysqli_query($link,$query);
 	

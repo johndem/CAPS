@@ -1219,15 +1219,25 @@ input#event-pic3 {
 }
 
 .cal-el {
-	min-height: 100px;
-    text-align: center;
-	margin-left: 5px;
-    margin-top: 10px;
-	font-size: 14px;
+min-height: 100px;
+  text-align: center;
+  margin-left: 2px;
+  margin-top: 10px;
+  /* font-size: 14px; */
+  margin-right: 2px;
+ cursor: pointer;
 }
 
 .cal-el span {
-	background-color: #ffc18b;
+background-color: #ffc18b;
+  width: 100%;
+  /* height: auto; */
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.cal-el span:hover {
+	background-color: #ff9639;
 }
 
 .cal-back {

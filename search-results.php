@@ -46,6 +46,7 @@
             $skills = mysqli_real_escape_string($link,$_GET['skills']);
             $skills = htmlspecialchars($skills,ENT_QUOTES);
 
+
             $date = mysqli_real_escape_string($link,$_GET['date']);
             $date = htmlspecialchars($date,ENT_QUOTES);
 
@@ -61,7 +62,7 @@
             // end of pagination stuff
 
             $query = "SELECT * FROM events WHERE category='$category' OR area='$area' OR agegroup= '$ages' OR skills = '$skills' OR day = '$date' ";
-
+            
             $results = mysqli_query($link,$query);
 
             // pagination stuff
@@ -113,7 +114,7 @@
             if ($num_results != 0) {
                 echo "<p> Page $pagenum of $last_page </p>";
                 
-                $url = "category=" . $category . "&areas=" . $areas . "&ages=" . $ages . "&date=" . $date . "&";
+                $url = "category=" . $category . "&areas=" . $areas . "&ages=" . $ages . "&skills=" . $skills . "&date=" . $date . "&";
                 
                 if ($pagenum == 1 || $num_results == 0) { }
                 else { // if not at first page of comments section, display First and Previous hyperlinks

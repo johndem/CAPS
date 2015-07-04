@@ -113,6 +113,8 @@ $(document).ready(function () {
       }
     });
     
+    
+    
     $("#event-pic").change(function() {
         $("#event-pic2").css("display", "inline");
     });
@@ -120,5 +122,13 @@ $(document).ready(function () {
     $("#event-pic2").change(function() {
         $("#event-pic3").css("display", "inline");
     });
+    
+    
+    
+    $("#log-password").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#sButton").click();
+    }
+});
 
 });

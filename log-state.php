@@ -8,7 +8,7 @@ if(isset($_SESSION['user'])){
         echo '<div id="dropdownlist">';
             echo '<ul>';
 				echo '<li><a href="account.php">Edit my profile</a></li>';
-				echo '<li><a id="logout" href="">Log Out</a></li>';
+				echo '<li><a id="logout" href="index.php">Log Out</a></li>';
             echo '</ul>';
         echo '</div>';
     echo '</div>';

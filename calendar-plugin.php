@@ -46,8 +46,13 @@ echo '<table>
 									//echo $newDate . "  ";
 									$query = "SELECT id,title FROM events WHERE day = '$newDate'";
 								      $results = mysqli_query($link,$query);
-								      $row = mysqli_fetch_row($results);
-									echo '<td class="td-cells"><div class="cal-num">' . $days . '</div><div class="cal-el"><span onclick="window.location = '. "'event.php?id=$row[0]'" . '">' . $row[1]  . '</a></span></div></td>';
+								      //$row = mysqli_fetch_row($results);
+									echo '<td class="td-cells"><div class="cal-num">' . $days . '</div>';
+									while ($row = mysqli_fetch_row($results)) {
+									echo '<div class="cal-el"><span onclick="window.location = '. "'event.php?id=$row[0]'" . '">' . $row[1]  . '</a></span></div>'; 
+									}
+									echo '</td>';
+									
 									$days = $days + 1;
 								}
 								$td = $td + 1;

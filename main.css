@@ -918,9 +918,10 @@ th {
 }
 
 .td-cells {
-	height: 100px;
+	height: 140px;
 	width: 200px;
 	background-color: #ffe8d5;
+	vertical-align: top;
 /*	border-left: 1px solid black;*/
 }
 
@@ -1223,7 +1224,7 @@ input#event-pic3 {
 }
 
 .cal-el {
-    min-height: 100px;
+/*    min-height: 100px;*/
     text-align: center;
     margin-left: 2px;
     margin-top: 10px;

@@ -1,5 +1,5 @@
 <div class="recent-events"> 
-<h3>Recent Events</h3>
+<h4>Events you might be interested in!</h4>
 	
 	<?php 
 	

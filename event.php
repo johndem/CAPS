@@ -33,14 +33,16 @@
                     
                     
                     <div id="event-main">
+				  <h2>Details</h2>
                         <ul id="event-chars">
-                            <li><?php echo "Category: " . $row[3]; ?></li>
-                            <li><?php echo "Address: " . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
-                            <li><?php echo "Date: " . $row[8] . ", " . $row[9]; ?></li>
-                            <li><?php echo "Recommended age group: " . $row[10]; ?></li>
-                            <li><?php echo "Optional skills: " . $skills[2]; ?></li>
+                            <li><?php echo "<strong>Category: </strong>" . $row[3]; ?></li>
+                            <li><?php echo "<strong>Address:  </strong>" . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
+                            <li><?php echo "<strong>Date:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
+                            <li><?php echo "<strong>Recommended age group:  </strong>" . $row[10]; ?></li>
+                            <li><?php echo "<strong>Optional skills:  </strong>" . $skills[2]; ?></li>
                             <?php $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ"); ?>
                         </ul>
+				  <div><h2>Description</h3></div>
                         <div id="event-body"><?php echo nl2br($row[13]); ?></div>
                         
                         <div id="event-gallery">
@@ -65,8 +67,8 @@
                         <h2>Where to find us</h2>
                         <div id="map-canvas"></div>
                     </div>
-                    
                     <div id="event-side">
+				
                         <img src="<?php echo $org[10]; ?>" />
                         <div id="org-info">
                             <h3>Organisation name:</h3>

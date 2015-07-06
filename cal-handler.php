@@ -55,8 +55,12 @@
 									//echo $newDate . "  ";
 									$query = "SELECT id,title FROM events WHERE day = '$newDate'";
 								      $results_sql = mysqli_query($link,$query);
-								      $row = mysqli_fetch_row($results_sql);
-									$results = $results . '<td class="td-cells"><div class="cal-num">' . $days . '</div><div class="cal-el"><span onclick="window.location = '. "'event.php?id=$row[0]'" . '">' . $row[1]  . '</a></span></div></td>';
+								      //$row = mysqli_fetch_row($results_sql);
+									$results = $results . '<td class="td-cells"><div class="cal-num">' . $days . '</div>';
+									while ($row = mysqli_fetch_row($results_sql)) {
+									$results  = $results . '<div class="cal-el"><span onclick="window.location = '. "'event.php?id=$row[0]'" . '">' . $row[1]  . '</a></span></div>';
+									}
+									$results = $results . '</td>';
 									$days = $days + 1;
 								}
 								$td = $td + 1;
@@ -94,8 +98,12 @@
 									//echo $newDate . "  ";
 									$query = "SELECT id,title FROM events WHERE day = '$newDate'";
 								      $results_sql = mysqli_query($link,$query);
-								      $row = mysqli_fetch_row($results_sql);
-									$results = $results . '<td class="td-cells"><div class="cal-num">' . $days . '</div><div class="cal-el"><span onclick="window.location = '. "'event.php?id=$row[0]'" . '">' . $row[1]  . '</a></span></div></td>';
+								      //$row = mysqli_fetch_row($results_sql);
+									$results = $results . '<td class="td-cells"><div class="cal-num">' . $days . '</div>';
+									while ($row = mysqli_fetch_row($results_sql)) {
+									$results  = $results . '<div class="cal-el"><span onclick="window.location = '. "'event.php?id=$row[0]'" . '">' . $row[1]  . '</a></span></div>';
+									}
+									$results = $results . '</td>';
 									$days = $days + 1;
 								}
 								$td = $td + 1;

@@ -40,7 +40,7 @@
                                 <img src="<?php if(isset($_SESSION['org'])) { echo $row[10]; } else { echo $row[12]; } ?>" width="200" height="200" />
                             </div>
                             <div id="personal-info">
-                                <?php if(isset($_SESSION['org'])) { ?>
+                                <?php if(isset($_SESSION['org_id'])) { ?>
                                     <div class="account-label-in">
                                         <div class="h3">Name:</div>
                                         <input class="in" maxlength="50" name="pass" id="log-password" size="20" type="text" value="<?php echo $row[4]; ?>" readonly/>
@@ -80,7 +80,7 @@
                             <div id="history-list">
                                 <?php
     
-                                if(isset($_SESSION['org'])) {
+                                if(isset($_SESSION['org_id'])) {
 
                                 }
                                 else if(isset($_SESSION['user'])) {

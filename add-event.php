@@ -49,7 +49,7 @@
     $skills = mysqli_real_escape_string($link,$_POST['skills']);
     $skills = htmlspecialchars($skills, ENT_QUOTES);
 
-    $org_id = $_SESSION['org'];
+    $org_id = $_SESSION['org_id'];
 
 
     

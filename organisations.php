@@ -32,7 +32,7 @@
             
             <!-- content -->
             <div class="content">
-                <?php if(isset($_SESSION['org'])) { ?>    
+                <?php if(isset($_SESSION['org_id'])) { ?>    
                     <h1 class="center-title">Post a new volunteer opportunity</h1>
                     <div class="aligner">
 

@@ -47,7 +47,7 @@
                     </div>
                     
                     <div id="edit-pic">
-                        <img src="<?php if(isset($_SESSION['org'])) { echo $row[10]; } else { echo $row[12]; } ?>" width="200" height="200" />
+                        <img src="<?php if(isset($_SESSION['org_id'])) { echo $row[10]; } else { echo $row[12]; } ?>" width="200" height="200" />
                     </div>
                     
                     <input type="file" name="picture" id="prof-pic">
@@ -56,7 +56,7 @@
                         <h1 class="cats">Basic Information</h1> 
                     </div>
                 
-                    <?php if(isset($_SESSION['org'])) { ?>
+                    <?php if(isset($_SESSION['org_id'])) { ?>
                         
                         <div class="label-in">
                             <div class="h3"> Organisation name: * </div>
@@ -162,7 +162,7 @@
                 <p id="required">* This field is required </p>
                 
                 <div id="go">
-                    <input type="submit" class="submitBtn" onclick="<?php if (isset($_SESSION['org'])){echo "checkEditOrgForm()";}else if(isset($_SESSION['user'])){echo "checkEditVolForm()";} ?>" id="sButton" name="submit" value="Edit" />
+                    <input type="submit" class="submitBtn" onclick="<?php if (isset($_SESSION['org_id'])){echo "checkEditOrgForm()";}else if(isset($_SESSION['user'])){echo "checkEditVolForm()";} ?>" id="sButton" name="submit" value="Edit" />
                 </div> 
 
             </div>

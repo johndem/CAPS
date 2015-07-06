@@ -22,6 +22,7 @@
             //$_SESSION['username'] = $row[3];
             // found user match
             $match = true;
+            $_SESSION['vol_id'] = $row[0];
 			$_SESSION['user'] = $row[3];
         }
     }
@@ -39,7 +40,7 @@
             // found user match
             $match = true;
 			$_SESSION['user'] = $row[1];
-            $_SESSION['org'] = $row[0];
+            $_SESSION['org_id'] = $row[0];
         }
     }
     }

@@ -78,6 +78,17 @@
                         <div id="history">
                             <h2>Participation History</h2>
                             <div id="history-list">
+                                <?php
+    
+                                if(isset($_SESSION['org'])) {
+
+                                }
+                                else if(isset($_SESSION['user'])) {
+                                    include 'volunteer-history.php';
+                                }
+                                
+    
+                                ?>
                                 <div class="history-event">
                                     <h3>National animal care day!</h3>
                                     <p>We gather all our friends and go to Harilaou to help the animals. We find shelter for them, bathe them
@@ -150,6 +161,7 @@
                             </div>
                         </div>
                     
+<!--
                         <div id="pin">
                             <h2>Redeem participation code</h2>
                             <div id="pin-stuff">
@@ -162,6 +174,7 @@
                                 </div>
                             </div>
                         </div>
+-->
                     </div>
                     
                         

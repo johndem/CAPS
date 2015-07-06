@@ -27,7 +27,7 @@
             <!-- content -->
             <div class="content">
             
-                <?php if(isset($_SESSION['org']) || isset($_SESSION['user'])) { 
+                <?php if(isset($_SESSION['org_id']) || isset($_SESSION['user'])) { 
                     include 'find-user.php';
                 ?>
                 <h1 class="center-title">My Account</h1>
@@ -37,7 +37,7 @@
                     <div id="account-left">
                         <div id="info">
                             <div id="pic">
-                                <img src="<?php if(isset($_SESSION['org'])) { echo $row[10]; } else { echo $row[12]; } ?>" width="200" height="200" />
+                                <img src="<?php if(isset($_SESSION['org_id'])) { echo $row[10]; } else { echo $row[12]; } ?>" width="200" height="200" />
                             </div>
                             <div id="personal-info">
                                 <?php if(isset($_SESSION['org_id'])) { ?>

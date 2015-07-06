@@ -2,7 +2,7 @@
     
     include 'create-link.php';
 	
-	if(isset($_SESSION['org'])) {
+	if(isset($_SESSION['org_id'])) {
         $user = $_SESSION['user'];
 	    $query = "SELECT * FROM organisations WHERE username = '$user'";
 	}

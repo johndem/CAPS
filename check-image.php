@@ -37,7 +37,7 @@
             move_uploaded_file($_FILES['picture']['tmp_name'], "images/" . $title);
         }
         
-        if (isset($_SESSION['org'])){
+        if (isset($_SESSION['org_id'])){
             include "edit-org.php";
         }
         else if (isset($_SESSION['user'])){

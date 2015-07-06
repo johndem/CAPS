@@ -762,23 +762,52 @@ select {
     float: right;
     margin-top: 20px;
     text-align: left;
+}
+
+#event-side a {
+    text-decoration: none;
+}
+
+#btnApply {
+    margin: 0 auto;
+    text-align: center;
+    width: 280px;
+    height: 60px;
+    font-family: 'Open Sans';
+    background-color: #33D900;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+	box-shadow: 5px 5px 5px #999;
+    vertical-align: middle;
+    color: white;
+    font-size: 30px;
+    line-height: 60px;
+}
+
+#btnApply:hover {
+	background-color: #ff9639;
+}
+
+#org-side {
+    width: 300px;
+    text-align: left;
     background-color: #E2E6E1;
     box-shadow: 5px 5px 5px #888888;
     color: #525252;
 }
 
-#event-side img{
+#org-side img{
 	border: solid grey 2px;
 }
 
-#event-side img { 
+#org-side img { 
     width: 280px;
     height: 250px;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-
-
 }
 
 #event-chars {

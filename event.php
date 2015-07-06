@@ -68,32 +68,39 @@
                         <div id="map-canvas"></div>
                     </div>
                     <div id="event-side">
-				
-                        <img src="<?php echo $org[10]; ?>" />
-                        <div id="org-info">
-                            <h3>Organisation name:</h3>
-                            <?php echo '<h5><a href="organization.php?id=' . $org[0] . '">' . $org[4] . '</a></h5>'; ?>
-                            <h3>Contact:</h3>
-                            <?php echo '<h5>' . $org[2] . '</h5>'; ?>
-                            <?php 
-                                if ($org[5] != "") {
-                                    echo '<h3><a href="' . $org[5] . '">Visit our Website</a></h3>';
-                                }
-                                if ($org[6] != "") {
-                                    echo '<h3><a href="' . $org[6] . '">Find us on Facebook</a></h3>';
-                                }
-                                if ($org[7] != "") {
-                                    echo '<h3><a href="' . $org[7] . '">Find us on Twitter</a></h3>';
-                                }
-                                if ($org[8] != "") {
-                                    echo '<h3><a href="' . $org[8] . '">Other</a></h3>';
-                                }
-                            ?>
+                        
+                        <a href="">
+                        <div id="btnApply">
+                            APPLY
+                        </div></a>
+                        
+                        <div id="org-side">
+                            <img src="<?php echo $org[10]; ?>" />
+                            <div id="org-info">
+                                <h3>Organisation name:</h3>
+                                <?php echo '<h5><a href="organization.php?id=' . $org[0] . '">' . $org[4] . '</a></h5>'; ?>
+                                <h3>Contact:</h3>
+                                <?php echo '<h5>' . $org[2] . '</h5>'; ?>
+                                <?php 
+                                    if ($org[5] != "") {
+                                        echo '<h3><a href="' . $org[5] . '">Visit our Website</a></h3>';
+                                    }
+                                    if ($org[6] != "") {
+                                        echo '<h3><a href="' . $org[6] . '">Find us on Facebook</a></h3>';
+                                    }
+                                    if ($org[7] != "") {
+                                        echo '<h3><a href="' . $org[7] . '">Find us on Twitter</a></h3>';
+                                    }
+                                    if ($org[8] != "") {
+                                        echo '<h3><a href="' . $org[8] . '">Other</a></h3>';
+                                    }
+                                ?>
+                            </div>
                         </div>
+
                     </div>
-                    
-                </div>
                 
+                </div>
                 
                 <div id="event-blanket">
                 

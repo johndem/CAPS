@@ -76,49 +76,23 @@
                         </div>
                     
                         <div id="history">
-                            <h2>Participation History</h2>
-                            <div id="history-list">
+                            
                                 <?php
     
                                 if(isset($_SESSION['org_id'])) {
-
+                                    echo '<h2>Events organized history</h2>';
+                                    echo '<div id="history-list">';
+                                    include 'post-history.php';
                                 }
                                 else if(isset($_SESSION['user'])) {
+                                    echo '<h2>Participation History</h2>';
+                                    echo '<div id="history-list">';
                                     include 'volunteer-history.php';
                                 }
                                 
     
                                 ?>
-                                <div class="history-event">
-                                    <h3>National animal care day!</h3>
-                                    <p>We gather all our friends and go to Harilaou to help the animals. We find shelter for them, bathe them
-                                    ,feed them and... hug them. This city rocks!</p>
-                                    <h5>Posted by: Parallaximag</h5>
-                                    <h5>Category: Animals</h5>
-                                    <h5>Date: 02/05/2015</h5>
-                                    <h5>Area: Harilaou</h5>
-                                    <a href="<?php echo "event.php?id=" . $row[0]; ?>">Read more &raquo;</a>
-                                </div>
-                                <div class="history-event">
-                                    <h3>National animal care day!</h3>
-                                    <p>We gather all our friends and go to Harilaou to help the animals. We find shelter for them, bathe them
-                                    ,feed them and... hug them. This city rocks!</p>
-                                    <h5>Posted by: Parallaximag</h5>
-                                    <h5>Category: Animals</h5>
-                                    <h5>Date: 02/05/2015</h5>
-                                    <h5>Area: Harilaou</h5>
-                                    <a href="<?php echo "event.php?id=" . $row[0]; ?>">Read more &raquo;</a>
-                                </div>
-                                <div class="history-event">
-                                    <h3>National animal care day!</h3>
-                                    <p>We gather all our friends and go to Harilaou to help the animals. We find shelter for them, bathe them
-                                    ,feed them and... hug them. This city rocks!</p>
-                                    <h5>Posted by: Parallaximag</h5>
-                                    <h5>Category: Animals</h5>
-                                    <h5>Date: 02/05/2015</h5>
-                                    <h5>Area: Harilaou</h5>
-                                    <a href="<?php echo "event.php?id=" . $row[0]; ?>">Read more &raquo;</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>

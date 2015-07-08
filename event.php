@@ -69,10 +69,20 @@
                     </div>
                     <div id="event-side">
                         
+                        <?php if(isset($_SESSION['vol_id'])) { ?>
                         <a href="">
                         <div id="btnApply">
                             APPLY
                         </div></a>
+                        <?php } else { ?>
+                        
+                        <div id="btnApply" class="btnGreyout">
+                            APPLY
+                        </div>
+                        <div id="msgApply">* Sign up or log in to apply!</div>
+                        <?php } ?>
+                        
+                        
                         
                         <div id="org-side">
                             <img src="<?php echo $org[10]; ?>" />

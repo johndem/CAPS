@@ -786,8 +786,24 @@ select {
     line-height: 60px;
 }
 
-#btnApply:hover {
+a div#btnApply:hover {
 	background-color: #ff9639;
+}
+
+.btnGreyout {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* msie */
+    background-color: #000;
+}
+
+#msgApply {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 #org-side {

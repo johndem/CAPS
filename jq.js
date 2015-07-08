@@ -126,9 +126,29 @@ $(document).ready(function () {
     
     
     $("#log-password,#log-username").keyup(function(event){
-    if(event.keyCode == 13){
-        $("#sButton").click();
-    }
-});
+        if(event.keyCode == 13){
+            $("#sButton").click();
+        }
+    });
+    
+    
+    // When a link is clicked
+   $("a.tab").click(function () {
+
+       // switch all tabs off
+       $(".active").removeClass("active");
+
+       // switch this tab on
+       $(this).addClass("active");
+
+       // slide all elements with the class 'content' up
+       $(".tab-content").hide();
+
+       // Now figure out what the 'title' attribute value is and find the element with that id.  Then slide that down.
+       var content_show = $(this).attr("title");
+       $("#"+content_show).show();
+       
+       return false;
+   });
 
 });

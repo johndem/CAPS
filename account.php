@@ -77,23 +77,64 @@
                     
                         <div id="history">
                             
-                                <?php
-    
-                                if(isset($_SESSION['org_id'])) {
-                                    echo '<h2>Events organized history</h2>';
-                                    echo '<div id="history-list">';
-                                    include 'post-history.php';
-                                }
-                                else if(isset($_SESSION['user'])) {
-                                    echo '<h2>Participation History</h2>';
-                                    echo '<div id="history-list">';
-                                    include 'volunteer-history.php';
-                                }
+                           
+<!--                            <h2>Volunteer History</h2>-->
+                            
+                            <div id="tabbed_box_1" class="tabbed_box">
                                 
-    
-                                ?>
+                                <?php if(isset($_SESSION['org_id'])) { ?>
+                                <h2>Organization Event History</h2>
+                                <div class="tabbed_area">
 
+                                    <ul class="tabs">
+                                        <li><a href="#" title="content_1" class="tab active">Events completed</a></li>
+                                        <li><a href="#" title="content_2" class="tab">Events Pending</a></li>
+                                        <li><a href="#" title="content_3" class="tab">Events Canceled</a></li>
+                                    </ul>
+
+                                    <div id="content_1" class="tab-content">
+                                        <ul>
+                                            <?php include 'post-history.php'; ?>
+                                        </ul>
+                                    </div>
+                                    <div id="content_2" class="tab-content">
+                                        <ul>
+                                            <?php include 'post-history.php'; ?>
+                                        </ul>
+                                    </div>
+                                    <div id="content_3" class="tab-content">
+                                        <ul>
+                                            <?php include 'post-history.php'; ?>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <?php } else if(isset($_SESSION['user'])) { ?>
+                                <h2>Volunteer History</h2>
+                                <div class="tabbed_area">
+
+                                    <ul class="tabs">
+                                        <li><a href="#" title="content_1" class="tab active">Events completed</a></li>
+                                        <li><a href="#" title="content_2" class="tab">Events Applied</a></li>
+                                    </ul>
+
+                                    <div id="content_1" class="tab-content">
+                                        <ul>
+                                            <?php include 'volunteer-history.php'; ?>
+                                        </ul>
+                                    </div>
+                                    <div id="content_2" class="tab-content">
+                                        <ul>
+                                            <?php include 'volunteer-apply-history.php'; ?>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <?php } ?>
+                                
+                                
                             </div>
+                            
                         </div>
                     </div>
                     

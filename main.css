@@ -784,9 +784,32 @@ select {
     color: white;
     font-size: 30px;
     line-height: 60px;
+    cursor: pointer;
 }
 
-a div#btnApply:hover {
+#btnCancel {
+     margin: 0 auto;
+    text-align: center;
+    width: 280px;
+    height: 60px;
+    font-family: 'Open Sans';
+    background-color: orangered;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #999;
+    vertical-align: middle;
+    color: white;
+    font-size: 30px;
+    line-height: 60px;
+    cursor: pointer;
+}
+div#btnCancel:hover {
+    background-color: #ff9639;
+}
+
+div#btnApply:hover {
 	background-color: #ff9639;
 }
 

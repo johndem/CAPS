@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
+        <script src="apply.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js"></script>
     </head>
     <body>
@@ -69,11 +70,39 @@
                     </div>
                     <div id="event-side">
                         
-                        <?php if(isset($_SESSION['vol_id'])) { ?>
-                        <a href="">
-                        <div id="btnApply">
+                        <?php 
+
+                        include 'create-link.php';
+                        $eid = $_GET['id'];
+                        $vid = $_SESSION['vol_id'];
+
+                        $query = "SELECT id FROM apply WHERE eventID = '$eid' AND volunteerID = '$vid' ";
+
+                        $result = mysqli_query($link,$query);
+                        @mysqli_close($link); 
+
+                        $applied = false;
+                        if (mysqli_num_rows($result) >= 1) {
+
+                            $applied= true;
+
+                        }
+
+
+
+                        ?>
+
+                        <?php if(isset($_SESSION['vol_id']) AND $applied == false) { ?>
+                        <div id="btnApply" onclick="volApply()">
                             APPLY
-                        </div></a>
+                        </div>
+                        <?php 
+                        }elseif($applied) { ?>
+                        <div id='btnCancel' onclick="cancel()">
+                            CANCEL
+                        </div>
+                        <div id="msgApply">* You have applied for this event! Click CANCEL to remove.</div>
+
                         <?php } else { ?>
                         
                         <div id="btnApply" class="btnGreyout">

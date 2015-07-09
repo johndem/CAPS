@@ -87,24 +87,24 @@
                                 <div class="tabbed_area">
 
                                     <ul class="tabs">
-                                        <li><a href="#" title="content_1" class="tab active">Events completed</a></li>
-                                        <li><a href="#" title="content_2" class="tab">Events Pending</a></li>
+                                        <li><a href="#" title="content_1" class="tab active">Active Events</a></li>
+                                        <li><a href="#" title="content_2" class="tab">Events completed</a></li>
                                         <li><a href="#" title="content_3" class="tab">Events Canceled</a></li>
                                     </ul>
 
                                     <div id="content_1" class="tab-content">
                                         <ul>
-                                            <?php include 'post-history.php'; ?>
+                                            <?php include 'event-history-active.php'; ?>
                                         </ul>
                                     </div>
                                     <div id="content_2" class="tab-content">
                                         <ul>
-                                            <?php include 'post-history.php'; ?>
+                                            <?php include 'event-history-completed.php'; ?>
                                         </ul>
                                     </div>
                                     <div id="content_3" class="tab-content">
                                         <ul>
-                                            <?php include 'post-history.php'; ?>
+                                            <?php include 'event-history-cancelled.php'; ?>
                                         </ul>
                                     </div>
 

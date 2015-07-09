@@ -62,13 +62,20 @@
                                 <div id="err-category" class="error-message"> </div>
                                 <div id="category-span" class="img-span"></div>
                                 <select id="category" class="in" required>
-                                    <option value="0" disabled selected>Select One</option>
-                                    <option value="1">Education</option>
-                                    <option value="2">Healthcare</option>
-                                    <option value="3">Environment</option>
-                                    <option value="4">Animals</option>
-                                    <option value="5">Emergency</option>
-                                    <option value="6">Communities</option>
+                                    <option value="0" disabled>Select One</option>
+                                    <?php
+                                        include 'create-link.php';
+
+                                        $query = "SELECT * FROM categories";
+                                        $results = mysqli_query($link,$query);
+                                                      
+                                        while ($cat = mysqli_fetch_row($results)) {
+                                            $category = '<option value="' . $cat[0] . '" ';
+                                            if($row[3] == $cat[1]) { $category = $category . 'selected'; }
+                                            $category = $category . '>' . $cat[1] . '</option>';
+                                            echo $category;
+                                        }
+                                    ?>
                                 </select>
                             </div>
 
@@ -111,16 +118,20 @@
                                 <div id="err-area" class="error-message"> </div>
                                 <div id="area-span" class="img-span"></div>
                                 <select id="area" class="in" required>
-                                    <option value="0" disabled selected>Select one</option>
-                                    <option value="1">Ανω Τούμπα</option>
-                                    <option value="2">Αμπελόκηποι Θεσσαλονίκης</option>
-                                    <option value="3">Ασβεστοχώρι</option>
-                                    <option value="4">Βάρνα</option>
-                                    <option value="onetime">Κωνσταντινοπολίτικα</option>
-                                    <option value="5">Σαράντα Εκκλησιές</option>
-                                    <option value="6">Κάτω Τούμπα</option>
-                                    <option value="7">Καλαμαριά</option>
-                                    <option value="8">Πυλαία</option>
+                                    <option value="0" disabled>Select one</option>
+                                    <?php
+                                        include 'create-link.php';
+
+                                        $query = "SELECT * FROM districts";
+                                        $results = mysqli_query($link,$query);
+                                                      
+                                        while ($area = mysqli_fetch_row($results)) {
+                                            $district = '<option value="' . $area[0] . '" ';
+                                            if($row[7] == $area[1]) { $district = $district . 'selected'; }
+                                            $district = $district . '>' . $area[1] . '</option>';
+                                            echo $district;
+                                        }
+                                    ?>
                                 </select>
                                 </div>
                             
@@ -180,12 +191,20 @@
                                 <div id="err-agegroup" class="error-message"> </div>
                                 <div id="agegroup-span" class="img-span"></div>
                                 <select id="agegroup" class="in" required>
-                                    <option disabled selected="selected" value="0">Select one</option>
-                                    <option value="1">Kids</option>
-                                    <option value="2">Teens</option>
-                                    <option value="3">Adults</option>
-                                    <option value="4">Elders</option>
-                                    <option value="5">Groups</option>
+                                    <option disabled value="0">Select one</option>
+                                    <?php
+                                        include 'create-link.php';
+
+                                        $query = "SELECT * FROM agegroups";
+                                        $results = mysqli_query($link,$query);
+                                                      
+                                        while ($age = mysqli_fetch_row($results)) {
+                                            $agegroup = '<option value="' . $age[0] . '" ';
+                                            if($row[10] == $age[1]) { $agegroup = $agegroup . 'selected'; }
+                                            $agegroup = $agegroup . '>' . $age[1] . '</option>';
+                                            echo $agegroup;
+                                        }
+                                    ?>
                                 </select>
                             </div>
 
@@ -194,17 +213,21 @@
                                 <div id="err-skills" class="error-message"> </div>
                                 <div id="skills-span" class="img-span"></div>
                                 <select id="skills" class="in" multiple required>
-                                    <option disabled selected value="0">- Hold Ctr for multiple selection -</option>
+                                    <option disabled value="0">- Hold Ctr for multiple selection -</option>
                                     <?php
                                         include 'create-link.php';
 
                                         $query = "SELECT * FROM skills";
                                         $results = mysqli_query($link,$query);
-
+                                                      
                                         while ($skill = mysqli_fetch_row($results)) {
-                                            echo '<option label="' . $skill[2] . '" value="' . $row[1] . '">' . $skill[2] . '</option>';
+                                            $skills = '<option value="' . $skill[1] . '" ';
+                                            if($row[11] == $skill[1]) { $skills = $skills . 'selected'; }
+                                            $skills = $skills . '>' . $skill[2] . '</option>';
+                                            echo $skills;
                                         }
                                     ?>
+                                    
                                  </select>
                             </div>
 

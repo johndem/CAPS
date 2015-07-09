@@ -63,12 +63,16 @@
                                 <div id="category-span" class="img-span"></div>
                                 <select id="category" class="in" required>
                                     <option value="0" disabled selected>Select One</option>
-                                    <option value="1">Education</option>
-                                    <option value="2">Healthcare</option>
-                                    <option value="3">Environment</option>
-                                    <option value="4">Animals</option>
-                                    <option value="5">Emergency</option>
-                                    <option value="6">Communities</option>
+                                    <?php
+                                        include 'create-link.php';
+
+                                        $query = "SELECT * FROM categories";
+                                        $results = mysqli_query($link,$query);
+    
+                                        while ($row = mysqli_fetch_row($results)) {
+                                            echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+                                        }
+                                    ?>
                                 </select>
                             </div>
 
@@ -112,15 +116,16 @@
                                 <div id="area-span" class="img-span"></div>
                                 <select id="area" class="in" required>
                                     <option value="0" disabled selected>Select one</option>
-                                    <option value="1">Ανω Τούμπα</option>
-                                    <option value="2">Αμπελόκηποι Θεσσαλονίκης</option>
-                                    <option value="3">Ασβεστοχώρι</option>
-                                    <option value="4">Βάρνα</option>
-                                    <option value="onetime">Κωνσταντινοπολίτικα</option>
-                                    <option value="5">Σαράντα Εκκλησιές</option>
-                                    <option value="6">Κάτω Τούμπα</option>
-                                    <option value="7">Καλαμαριά</option>
-                                    <option value="8">Πυλαία</option>
+                                    <?php
+                                        include 'create-link.php';
+
+                                        $query = "SELECT * FROM districts";
+                                        $results = mysqli_query($link,$query);
+    
+                                        while ($row = mysqli_fetch_row($results)) {
+                                            echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+                                        }
+                                    ?>
                                 </select>
                                 </div>
                             
@@ -181,11 +186,17 @@
                                 <div id="agegroup-span" class="img-span"></div>
                                 <select id="agegroup" class="in" required>
                                     <option disabled selected="selected" value="0">Select one</option>
-                                    <option value="1">Kids</option>
-                                    <option value="2">Teens</option>
-                                    <option value="3">Adults</option>
-                                    <option value="4">Elders</option>
-                                    <option value="5">Groups</option>
+                                    <?php
+                                        include 'create-link.php';
+
+                                        $query = "SELECT * FROM agegroups";
+                                        $results = mysqli_query($link,$query);
+                                        
+                                        $i = 1;
+                                        while ($row = mysqli_fetch_row($results)) {
+                                            echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+                                        }
+                                    ?>
                                 </select>
                             </div>
 

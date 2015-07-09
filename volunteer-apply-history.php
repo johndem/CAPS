@@ -4,7 +4,7 @@ include 'create-link.php';
 
 $volunteer_id = $_SESSION['vol_id'];
 
-$query = "SELECT event_id FROM participation WHERE volunteer_id = '$volunteer_id'";
+$query = "SELECT eventID FROM apply WHERE volunteerID = '$volunteer_id'";
 $results = mysqli_query($link,$query);
 $num_results = mysqli_num_rows($results);
 

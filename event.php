@@ -67,6 +67,9 @@
                         
                         <h2>Where to find us</h2>
                         <div id="map-canvas"></div>
+
+                       
+
                     </div>
                     <div id="event-side">
                         
@@ -97,7 +100,7 @@
                             APPLY
                         </div>
                         <?php 
-                        }elseif($applied) { ?>
+                        }elseif(isset($_SESSION['vol_id']) AND $applied) { ?>
                         <div id='btnCancel' onclick="cancel()">
                             CANCEL
                         </div>
@@ -108,7 +111,8 @@
                         <div id="btnApply" class="btnGreyout">
                             APPLY
                         </div>
-                        <div id="msgApply">* Sign up or log in to apply!</div>
+                        <div id="msgApply">* 
+<a href="register.php">Sign up</a> or <a href="login.php">log in</a> to apply!</div>
                         <?php } ?>
                         
                         
@@ -136,6 +140,39 @@
                                 ?>
                             </div>
                         </div>
+
+                         <?php 
+
+                        include 'check-org-event.php';
+
+                        if ($flag == true) { ?>
+
+                           <h3 style="text-align: center;"> Users applied for this event: </h3>
+                           <div class="applied-content"> 
+                            <?php 
+
+                                include 'create-link.php';
+                                $eventid = $_GET['id'];
+
+                                $query = "SELECT user.firstname, user.lastname FROM user,apply WHERE user.id = apply.volunteerID AND apply.eventID = $eventid ";
+                                $result = mysqli_query($link,$query);
+
+                                while ($row = mysqli_fetch_row($result)) { ?>
+
+                                <div class="applicant"> 
+
+                                    <?php echo $row[0] . " " . $row[1];  ?>
+
+                                </div>
+
+                          <?php      }
+                          @mysqli_close($link);
+                            ?>
+                            
+                           </div>
+
+                       <?php }
+                        ?>
 
                     </div>
                 

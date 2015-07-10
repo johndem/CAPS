@@ -1367,11 +1367,13 @@ ul.tabs {
 #event-gallery {
     margin-top: 50px;
     margin-bottom: 50px;
+    width: inherit;
+
 }
 
 #event-gallery img {
-    width: 480px;
-    height: 280px;
+    width: inherit;
+    height: auto;
 }
 
 #carousel {
@@ -1640,4 +1642,24 @@ input#event-pic3 {
     height: 20px;
     float: left;
     margin-right: 5px;
+}
+
+.applied-content {
+    width: inherit;
+    height: 300px;
+    overflow: scroll;
+  border: 1px grey dotted;
+}
+
+.applicant {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+
+}
+
+.applicant:hover {
+    background-color: lightgrey;
 }

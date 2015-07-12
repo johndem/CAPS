@@ -22,7 +22,15 @@
 		<script src="form-check.js"></script>
 	</head>
 	<body>
+<?php session_start();
 
+		if (isset($_SESSION['user'])) {
+			header("Location: index.php");
+		}
+
+
+	
+ ?>
 		<div>
 
 			<!-- registration or username -->

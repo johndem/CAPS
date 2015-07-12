@@ -58,7 +58,7 @@
                         <div class="h3"> Username: * </div>
                         <div id="err-username" class="error-message"> </div>
                         <div id="username-span" class="img-span"></div>
-                        <input id="username" class="in" minlength="5" maxlength="50" name="user" size="30" type="text" value="" required/>
+                        <input id="username" class="in" minlength="5" maxlength="50" name="user" size="30" type="text" value="" pattern="[a-zA-Z0-9]+" required/>
                         <div id="user-span"></div>
                     </div>
 

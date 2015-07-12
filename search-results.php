@@ -61,7 +61,7 @@
             }  
             // end of pagination stuff
 
-            $query = "SELECT * FROM events WHERE category='$category' OR area='$area' OR agegroup= '$ages' OR skills = '$skills' OR day = '$date' ";
+            $query = "SELECT * FROM events WHERE (category='$category' OR area='$area' OR agegroup= '$ages' OR skills = '$skills' OR day = '$date') AND status='1' ";
             
             $results = mysqli_query($link,$query);
 
@@ -80,16 +80,16 @@
 
             $max = 'limit ' .($pagenum - 1) * $page_rows .',' .$page_rows;
   	
-            $query = "SELECT * FROM events WHERE category='$category' OR area='$area' OR agegroup= '$ages' OR skills = '$skills' OR day = '$date' $max";
+            $query = "SELECT * FROM events WHERE (category='$category' OR area='$area' OR agegroup= '$ages' OR skills = '$skills' OR day = '$date') AND status='1' $max";
             $results = mysqli_query($link, $query);
             // end of pagination stuff
 
             if ($results) {   
             
             
-            $bool = true;
+            $bool = false;
             while ($row = mysqli_fetch_row($results)) { 
-                $bool = false;
+                $bool = true;
                 $org_q = "SELECT name FROM organisations WHERE org_id = '$row[1]' ";
                 $org_res = mysqli_query($link,$org_q); 
                 $org_name = mysqli_fetch_row($org_res);
@@ -139,7 +139,7 @@
                 
             } 
   
-            if ($bool) { ?>
+            if ($bool== false) { ?>
             <div class="single-result">
             
                 <h3>There are no volunteering events matching your criteria!</h3>

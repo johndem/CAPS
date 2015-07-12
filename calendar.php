@@ -46,7 +46,10 @@
 				  
 				  <table>
 				  <tbody>
-					  <tr>
+					  <tr><td id='loading'>
+                        </td> 
+                    </tr>
+                      <tr>
 					  	<td id="manasou">
 							<div  class="arrows" id="left" onclick="getResponseCal(this)">&nbsp;</div> <span class="cal-date" id="mon"><?php echo date('F'); ?></span > <span  class="cal-date" id="year"><?php echo date('Y'); ?></span><div class="arrows" id="right" onclick="getResponseCal(this)">&nbsp; </div>
 							

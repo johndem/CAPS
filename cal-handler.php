@@ -2,12 +2,13 @@
 
 	$month = $_POST['month'];
 	$arrow = $_POST['arrow'];
+	$year = $_POST['year'];
 
 	$parser = date_parse($month);
 	
 	$month = $parser['month'];
 	
-	$year = idate("Y");
+	//$year = idate("Y");
 	
 	$current_month = idate("m");
 	
@@ -29,6 +30,10 @@
 	  
 	if ($arrow == 'right') {
 		$month = $month + 1;
+		if ($month == 13) {
+			$month = 1;
+			$year = $year + 1;
+		}
 		
 						
 					    	$number = cal_days_in_month(CAL_GREGORIAN, $month, $year);
@@ -72,6 +77,11 @@
 	else if ($arrow == 'left') {
 		
 			$month = $month - 1;
+
+			if ($month == 0 ) {
+				$month = 12;
+				$year = $year - 1;
+			}
 			
 						
 			$number = cal_days_in_month(CAL_GREGORIAN, $month, $year);

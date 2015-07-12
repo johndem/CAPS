@@ -112,7 +112,7 @@
                             APPLY
                         </div>
                         <div id="msgApply">* 
-<a href="register.php">Sign up</a> or <a href="login.php">log in</a> to apply!</div>
+<a href="register.php">Sign up</a> or <a href="login.php">log in</a> with a volunteer account to apply!</div>
                         <?php } ?>
                         
                         

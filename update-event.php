@@ -32,7 +32,12 @@
             
             <!-- content -->
             <div class="content">
-                <?php if(isset($_SESSION['org_id'])) { include 'find-event.php'; $_SESSION['event_id'] = $row[0]; ?>    
+                <?php if(isset($_SESSION['org_id'])) { 
+                    include 'find-event.php'; 
+                    if ($_SESSION['org_id'] != $row[1])
+                        header("Location: index.php");
+                    $_SESSION['event_id'] = $row[0]; 
+                ?>    
                     <h1 class="center-title">Edit this volunteering event</h1>
                     <div class="aligner">
 

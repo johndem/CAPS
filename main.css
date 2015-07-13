@@ -867,6 +867,9 @@ div#btnApply:hover {
 
 #event-body {
     text-align: left;
+    background-color: #ffe8d5;
+  box-shadow: 5px 5px 5px #999;
+  padding: 10px;
 }
 
 #org-tab-default {

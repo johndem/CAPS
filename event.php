@@ -154,14 +154,14 @@
                                 include 'create-link.php';
                                 $eventid = $_GET['id'];
 
-                                $query = "SELECT user.firstname, user.lastname FROM user,apply WHERE user.id = apply.volunteerID AND apply.eventID = $eventid ";
+                                $query = "SELECT user.firstname, user.lastname, user.username FROM user,apply WHERE user.id = apply.volunteerID AND apply.eventID = $eventid ";
                                 $result = mysqli_query($link,$query);
 
                                 while ($row = mysqli_fetch_row($result)) { ?>
 
                                 <div class="applicant"> 
 
-                                    <?php echo $row[0] . " " . $row[1];  ?>
+                                    <?php echo $row[0] . " " . $row[1] . " (" . $row[2] . ")";  ?>
 
                                 </div>
 

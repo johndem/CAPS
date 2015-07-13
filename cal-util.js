@@ -103,7 +103,6 @@ function useHttpResponseCal() {
 		  checkMonth();
 		
         }
-        
 
     }
     else {
@@ -111,7 +110,3 @@ function useHttpResponseCal() {
         }
     
 }
-
-$(document).ready(function() {
-	$('#')
-})

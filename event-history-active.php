@@ -15,7 +15,7 @@ while ($row = mysqli_fetch_row($results)) {
     echo '<h5>Date: ' . $row[8] . '</h5>';
     echo '<h5>Area: ' . $row[7] . '</h5>';
     echo '<div class="history-event-links">';
-    echo '<a href="edit-event.php?id=' . $row[0] . '">Edit event &raquo;</a>';
+    echo '<a href="update-event.php?id=' . $row[0] . '">Edit event &raquo;</a>';
     echo '<a href="event.php?id=' . $row[0] . '">Read more &raquo;</a>';
     echo '</div>';
     echo '</div>';

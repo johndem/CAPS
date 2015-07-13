@@ -1050,6 +1050,19 @@ table {
     margin-bottom: 15px;
 }
 
+.edit-event-pic {
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.event-img-input {
+    margin-top: 55px;
+    margin-bottom: 15px;
+}
+
 #history {
     height: 650px;
     overflow: visible;

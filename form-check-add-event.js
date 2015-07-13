@@ -189,6 +189,8 @@ function getValidity() {
 
 }
 
+/*************************** Add Event utilities ***************************/
+
 //Check Form
 function checkform() {
     document.getElementById('res-ul').innerHTML = "";
@@ -243,6 +245,8 @@ function getResponse() {
     var file2 = document.getElementById('event-pic2').files[0];
     var file3 = document.getElementById('event-pic3').files[0];
     
+    var btn = document.getElementById('sButton').value;
+    
     // Create a new FormData object.
     var formData = new FormData();
     
@@ -262,6 +266,7 @@ function getResponse() {
     formData.append('description', desc);
     formData.append('detailed-description', ddesc);
     formData.append('skills', skills);
+    formData.append('button', btn);
     
 //         var parameters = "title="+title+"&category="+category+"&day="+day+"&time="+time+"&desc="+desc+"&ddesc="+ddesc+"&agegroup="+agegroup+"&address="+address+"&str="+str+"&zip="+zip+"&area="+area+"&skills="+skills;
 //    
@@ -307,4 +312,101 @@ function useHttpResponse() {
             }
         }
     }
+}
+
+
+/*************************** Update Event utilities ***************************/
+
+//Check Form
+function checkEventEditForm() {
+    document.getElementById('res-ul').innerHTML = "";
+    var req = getValidity();
+    var res = "";
+    
+    if (req === true) {
+        res = res + "<li> Please make sure your input is correct! Mouse over for error message. </li>";
+        document.getElementById('res-ul').innerHTML = res;
+    }
+    else {
+        getEventEditResponse();
+    }
+    
+}
+
+// Get Response
+function getEventEditResponse() {
+    
+    var category =  document.getElementById('category');
+    
+    var agegroup =  document.getElementById('agegroup');
+    //var skills = document.getElementById('skills');
+    //var desc = document.getElementById('desc');
+    
+    var area =  document.getElementById('area');
+    //var addr = document.getElementById('address');
+    //var str = document.getElementById('str');
+    //var zip = document.getElementById('zip');
+    
+    
+    var myurl = "edit-event.php";
+    var title = encodeURIComponent(document.getElementById('op-title').value);
+    var category = encodeURIComponent(category.options[category.selectedIndex].text);
+      
+    var day = encodeURIComponent(document.getElementById('day').value);
+    var time = encodeURIComponent(document.getElementById('time').value);
+      
+    var address = encodeURIComponent(document.getElementById("address").value);
+    var str = encodeURIComponent(document.getElementById("str").value);
+    var zip = encodeURIComponent(document.getElementById("zip").value);
+    var area = encodeURIComponent(area.options[area.selectedIndex].text);
+    
+    var agegroup = encodeURIComponent(agegroup.options[agegroup.selectedIndex].text);
+    var desc = encodeURIComponent(document.getElementById("desc").value);
+    var ddesc = encodeURIComponent(document.getElementById("ddesc").value);
+    var skills = encodeURIComponent(document.getElementById("skills").value);
+    
+    
+    var file = document.getElementById('edit-event-pic').files[0];
+    var file2 = document.getElementById('edit-event-pic2').files[0];
+    var file3 = document.getElementById('edit-event-pic3').files[0];
+    var btn = document.getElementById('sButton').value;
+    
+    // Create a new FormData object.
+    var formData = new FormData();
+    
+    // Add the file to the request.
+    formData.append('event-picture', file);
+    formData.append('event-picture2', file2);
+    formData.append('event-picture3', file3);
+    formData.append('title', title);
+    formData.append('category', category);
+    formData.append('date', day);
+    formData.append('time', time);
+    formData.append('address', address);
+    formData.append('str', str);
+    formData.append('zip', zip);
+    formData.append('area', area);
+    formData.append('agegroup', agegroup);
+    formData.append('description', desc);
+    formData.append('detailed-description', ddesc);
+    formData.append('skills', skills);
+    formData.append('button', btn);
+    
+    $.ajax({  
+        url: "check-event-image.php",  
+        type: 'POST',
+        enctype: 'multipart/form-data',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (data) {  
+            if (data === "OK") {
+                window.location = "account.php";
+            }
+            else {
+                document.getElementById('res-ul').innerHTML = data;
+            }
+        }  
+    });  
+
 }

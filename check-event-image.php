@@ -83,10 +83,6 @@
         }
     }
 
-
-//echo $_POST['title'] . " AND " . $_POST['category'] . " AND " . $_POST['address'] . " AND " . $_POST['desc'] . " AND " . $_POST['ddesc'];
-
-
     if ($error) {
         echo $results;
     }
@@ -104,7 +100,14 @@
             $image3 = "images/" . $name3;
         }
         
-        include "add-event.php";
+        
+        $btn = $_POST['button'];
+        
+        
+        if ($btn == 'Post')
+            include "add-event.php";
+        else
+            include "edit-event.php";
         
     }
 

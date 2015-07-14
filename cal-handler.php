@@ -44,7 +44,7 @@
 						$month_start = strtotime($date . '01');
 
 						$day = idate('w', $month_start) - 1;
-						
+						if ($day == -1) $day = 6;
 						$td = 0;
 						$days = 1;
 						for ($i=0 ; $i<6 ; $i++) {
@@ -91,8 +91,8 @@
 						
 			$month_start = strtotime($date . '01');
 
-			$day = idate('w', $month_start) - 1;	
-			
+			$day = idate('w', $month_start) - 1;
+			if ($day == -1) $day = 6;
 			$td = 0;
 			$days = 1;
 			for ($i=0 ; $i<6 ; $i++) {

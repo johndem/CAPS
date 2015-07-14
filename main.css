@@ -2,7 +2,8 @@
 
 #categories {
     border-radius: 10px;
-    width: 880px;
+    width: auto;
+    max-width: 1000px;
     margin: 0 auto;
     text-align: center;
     border-width: 5px;
@@ -16,8 +17,8 @@
 .cat {
     display: inline-block;
     margin: 15px;
-    width: 230px;
-    height: 230px;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     border-radius: 10px;
 }
@@ -139,7 +140,7 @@
 #news {
     margin: 0 auto;
     text-align: center;
-    width: 880px;
+    width: auto;
     margin-top: 70px;
 }
 
@@ -155,6 +156,8 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     box-shadow: 5px 5px 5px #999;
+	width: 50%;
+    margin: 0 auto;
 }
 
 .new-text a {
@@ -263,11 +266,11 @@
 
 /********************************************************************** GENERAL *********************************************/
 
+
 body {
     position: absolute;
-    right: 0;
-    left: 0;
     margin: 0 auto;
+    min-width: 100%;
 }
 
 p {
@@ -861,8 +864,8 @@ table {
 }
 
 #loading img{
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 }
 
 .arrows {

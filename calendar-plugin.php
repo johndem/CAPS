@@ -24,13 +24,12 @@ echo '<table>
 						$month_start = strtotime('first day of this month', time());
 
 						$day = idate('w', $month_start) - 1;
-						
+						if ($day == -1) $day = 6;
 					    	$number = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 						
 						if ($month<10) $date = '' . $year . '-0' . $month . '-';
     						else $date = '' . $year . '-' . $month . '-';
-						
-						
+												
 						$td = 0;
 						$days = 1;
 						for ($i=0 ; $i<6 ; $i++) {

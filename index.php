@@ -19,14 +19,16 @@
 		<?php include 'log-state.php'; ?>
 
         <!-- masthead -->
-        <?php include 'masthead.php'; ?>
+        
 
         <!-- navigation -->
-        <?php include 'navigation.php'; ?>
+         <?php include 'navigation.php'; ?>
+        <h1 class="center-title"></h1>
+        <?php include 'masthead.php'; ?>
 
         <!-- content -->
         <div class="content">
-            <h1 class="center-title">Volunteer and help your city</h1>
+            <h1 class="center-title"></h1>
             
             <?php
                 include 'create-link.php';

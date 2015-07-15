@@ -312,10 +312,11 @@ background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(50,50,50,0) 25%,rg
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6b7b7b7',GradientType=0 ); /* IE6-9 */
     color: #525252;
     margin-top: 0;
-    height: 20px;
+    height: 80px;
+    padding-top: 35px;
     text-align: center;
-    background-color: #E2E6E1;
-	margin-bottom: 0;
+    background-color: #E2E6E1; 
+    box-shadow: 5px 5px 5px #999;
 }
 
 
@@ -367,10 +368,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     font-family: 'Open Sans';
     font-weight: bold;
     text-align: center;
-	color: grey;
     font-size: 50px;
     padding-top: 30px;
-    
 }
 
 

@@ -18,14 +18,12 @@
         <!-- registration or username -->
 		<?php include 'log-state.php'; ?>
 
-        
+        <!-- masthead -->
         
 
         <!-- navigation -->
          <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
-
-        <!-- masthead -->
         <?php include 'masthead.php'; ?>
 
         <!-- content -->
@@ -117,11 +115,26 @@
             
             
             
-            
+            <div id="categories">
+                <h1>Categories</h1>
+                
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Healthcare'" id="hc" class="cat-img" src="images/hc-gray.png"/>
+				</div>
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Education'" id="edu" class="cat-img" src="images/edu-gray.png"/>
+				</div>
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Emergency'" id="em" class="cat-img" src="images/em-gray.png"/>
+				</div>
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Environment'" id="env" class="cat-img" src="images/env-gray.png"/>
+				</div>
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Communities'" id="com" class="cat-img" src="images/com-gray.png"/>
+				</div>
+				<div class="cat"><img onclick="window.location= 'search-results.php?category=Animals'" id="an" class="cat-img" src="images/an-gray.png"/>
+				</div>
+			</div>
 
-           <!--  <div id="btnOpp">
+            <div id="btnOpp">
                 <h3><a href="volunteers.php">More Opportunities!</a></h3>
-            </div> -->
+            </div>
 
 
             <div id="news">  

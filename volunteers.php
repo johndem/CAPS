@@ -17,21 +17,18 @@
 		
         <div>
         
-             <!-- registration or username -->
-        <?php include 'log-state.php'; ?>
+            <!-- registration or username -->
+            <?php include 'log-state.php'; ?>
 
-        
-        
+            <!-- masthead -->
+            <?php include 'masthead.php'; ?>
 
-        <!-- navigation -->
-         <?php include 'navigation.php'; ?>
-        <h1 class="center-title"></h1>
-
-        <!-- masthead -->
-        <?php include 'masthead.php'; ?>
+            <!-- navigation -->
+            <?php include 'navigation.php'; ?>
+            
             <!-- content -->
             <div class="content">
-                <h1 class="center-title"></h1>
+                <h1 class="center-title">Search for a volunteer opportunity</h1>
                 
                 <div class="aligner">
                     

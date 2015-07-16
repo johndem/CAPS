@@ -1759,3 +1759,23 @@ div#btnApply:hover {
     padding-right:3px;
     background-color: rgba(255,150,57,0.2);
 }
+
+
+/************** ADMIN ****************************/
+
+.listplz {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #464c54; 
+    height: 525px;
+    overflow: scroll;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.listitem {
+    border-bottom: 1px black solid;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}

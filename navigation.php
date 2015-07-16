@@ -11,6 +11,8 @@ if (strpos($url,'index') !== false) {
     echo '<li><a href="organisations.php">ORGANISATIONS</a></li>';
     echo '<li><a href="calendar.php">CALENDAR</a></li>';
     echo '<li><a href="account.php">ACCOUNT</a></li>';
+    echo '<li class="log-reg"><a href="login.php">Login</a></li>';
+    echo '<li class="log-reg"><a href="register.php">Register</a></li>';
 }
 else if ((strpos($url,'volunteers') !== false) || (strpos($url,'search-results') !== false) || (strpos($url,'event') !== false)) {
     echo '<li><a href="index.php">HOME</a></li>';

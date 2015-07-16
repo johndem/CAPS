@@ -360,8 +360,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     background-color: #31D100;
     width: auto;
     height: 500px;
-	background-image: url("images/thss.jpg");
-	background-size: cover;
+	
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4ee000+82,24d800+99&amp;0+6,0.65+99 */
+background: -moz-linear-gradient(top,  rgba(78,224,0,0) 6%, rgba(78,224,0,0.53) 82%, rgba(36,216,0,0.65) 99%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,rgba(78,224,0,0)), color-stop(82%,rgba(78,224,0,0.53)), color-stop(99%,rgba(36,216,0,0.65))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(78,224,0,0) 6%,rgba(78,224,0,0.53) 82%,rgba(36,216,0,0.65) 99%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(78,224,0,0) 6%,rgba(78,224,0,0.53) 82%,rgba(36,216,0,0.65) 99%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(78,224,0,0) 6%,rgba(78,224,0,0.53) 82%,rgba(36,216,0,0.65) 99%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(78,224,0,0) 6%,rgba(78,224,0,0.53) 82%,rgba(36,216,0,0.65) 99%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004ee000', endColorstr='#a624d800',GradientType=0 ); /* IE6-9 */
+
 }
 
 #title {
@@ -374,7 +382,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     
 }
 
-
+.back {
+background-image: url("images/thss.jpg");
+    background-size: cover;
+}
 
 /*************************************************************** NAVIGATION **************************************************/
 
@@ -426,6 +437,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     background-color: #E2E6E1;
 }
 
+.log-reg a {
+    height: 20px;
+    border-radius: 70px;
+    background-color: lightgrey;
+    margin-left: 10px;
+    min-width: 80px;
+}
 
 
 /*************************************************************** WIDGETS **********************************************************/

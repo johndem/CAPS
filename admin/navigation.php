@@ -8,9 +8,9 @@ echo '<div class="navigation">';
 if (strpos($url,'index') !== false) {
     echo '<li id="selected"><a href="index.php">USERS</a></li>';
     echo '<li><a href="volunteers.php">EVENTS</a></li>';
-    echo '<li><a href="organisations.php">SKILLS</a></li>';
+    echo '<li><a href="organisations.php">DATA</a></li>';
     echo '<li><a href="calendar.php">NEWS</a></li>';
-    echo '<li><a href="account.php">CATEGORIES</a></li>';
+    echo '<li><a href="account.php"></a></li>';
 }
 else if ((strpos($url,'volunteers') !== false) || (strpos($url,'search-results') !== false) || (strpos($url,'event') !== false)) {
     echo '<li><a href="index.php">HOME</a></li>';

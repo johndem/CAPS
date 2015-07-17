@@ -82,7 +82,7 @@ else if (strpos($url,'account') !== false) {
     }
 }
 else {
-    echo '<li id="selected"><a href="index.php">HOME</a></li>';
+    echo '<li><a href="index.php">HOME</a></li>';
     echo '<li><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li><a href="organisations.php">ORGANISATIONS</a></li>';
     echo '<li><a href="calendar.php">CALENDAR</a></li>';

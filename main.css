@@ -316,7 +316,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     height: 20px;
     text-align: center;
     background-color: #E2E6E1;
-	margin-bottom: 0;
+	margin-bottom: 50px;
 }
 
 
@@ -402,6 +402,11 @@ background-image: url("images/thss.jpg");
     background-color: #ABABAB;
 	/*background-image: url("images/thessaloniki-map.jpg");
 	background-size: cover;*/
+    position: fixed;
+    width: 100%;
+    box-shadow: 5px 2px 10px grey;
+    z-index: 1;
+
 }
 
 

@@ -27,7 +27,7 @@
 
         <!-- content -->
         <div class="content">
-            <h1 class="center-title"></h1>
+            <h1 class="center-title" style="margin-bottom: 0;"></h1>
             
             <?php
                 include 'create-link.php';

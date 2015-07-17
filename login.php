@@ -33,24 +33,19 @@
  ?>
 		<div>
 
-			<!-- registration or username -->
-			<?php
-			include 'log-state.php';
-			?>
+		<!-- registration or username -->
+		<?php //include 'log-state.php'; ?>
 
-			<!-- masthead -->
-			<?php
-			include 'masthead.php';
-			?>
+        <!-- navigation -->
+         <?php include 'navigation.php'; ?>
+        <h1 class="center-title"></h1>
 
-			<!-- navigation -->
-			<?php
-			include 'navigation.php';
-			?>
+        <!-- masthead -->
+        <?php include 'masthead.php'; ?>
 
-			<!-- content -->
-			<div class="content">
-				<h1 class="center-title">Login</h1>
+        <!-- content -->
+        <div class="content">
+            <h1 class="center-title"></h1>
 
 				<div class="aligner">
 					<div>

@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-                <script src="form-check.js"></script>
+        <script src="form-check.js"></script>
+        <script src="jq.js"> </script>
     </head>
     <body>
 
@@ -21,7 +22,7 @@
 
 
             <div class="aligner">
-           <form id="form" name="log-form">
+           <form id="admin-form" name="log-form">
 
                         <div class="label-in">
                             <div class="h3">
@@ -63,71 +64,69 @@
 
         <!-- content -->
         <div class="content">
+        <div class="aligner">
+        <h1> Organisations </h1>
+
+        <div class="listplz">   
+        <?php 
+
+            include "create-link.php";
+
+            $query =" SELECT * FROM organisations";
+            $results = mysqli_query($link,$query);
+
+            while ($row = mysqli_fetch_row($results)) { ?>
+
+                    <div class="listitem"> 
+
+                    <table> 
+                    <tr> 
+                        <th>ID</th>
+                        <th>Username </th>
+                        <th>Email </th>
+                        <th>Name </th>
+                        <th>Website </th>
+                        <th>Facebook </th>
+                        <th>Twitter </th>
+                        <th>Other </th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    <tr> 
+
+                        <td class="info-id"> <?php echo $row[0]; ?></td>
+                        <td class="info"><?php echo $row[1]; ?> </td>
+                        <td class="info"><?php echo $row[2]; ?> </td>
+                        <td class="info"><?php echo $row[4]; ?>  </td>
+                        <td class="link"><a href="<?php echo $row[5];?>">Link</a></td>
+                        <td class="link"><a href="<?php echo $row[6];?>">Link</a> </td>
+                        <td class="link"><a href="<?php echo $row[7];?>">Link</a></td>
+                        <td class="link"><a href="<?php echo $row[8];?>">Link</a></td>
+                        <td class="description"> <?php echo $row[9]; ?></td>
+                        <td class='actions'><span>Delete</span> <span>Mailto</span></td>
+
+                    </tr>
+
+                    </table>
+
+                    </div>
 
 
-        <div class="listplz"> 
+<?php            }
 
-        <div class="listitem"> 
-        <p>  
-        Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLorium ipsum
-        </p>
 
-        <div> Description Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu </div>
+
+
+        ?>
+        
 
         </div>
-
-          <div class="listitem"> 
-        <p>  
-        Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLorium ipsum
-        </p>
-
-        <div> Description Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu </div>
-
-        </div>
-
-          <div class="listitem"> 
-        <p>  
-        Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLorium ipsum
-        </p>
-
-        <div> Description Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu </div>
-
-        </div>
-
-          <div class="listitem"> 
-        <p>  
-        Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLorium ipsum
-        </p>
-
-        <div> Description Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu </div>
-
-        </div>
-
-          <div class="listitem"> 
-        <p>  
-        Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLorium ipsum
-        </p>
-
-        <div> Description Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu </div>
-
-        </div>
-
-          <div class="listitem"> 
-        <p>  
-        Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLorium ipsum
-        </p>
-
-        <div> Description Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu Lorium ipsum Lorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsumLorium ipsum  Lorium ipsumLoriu </div>
-
-        </div>
-
-        </div>
-
             
             <div id="home-blanket">
 
             </div>
-
+</div>
         </div>
 
 <?php } ?>

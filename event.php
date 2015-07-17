@@ -16,19 +16,21 @@
     <body>
 		
         
-            <!-- registration or username -->
-            <?php include 'log-state.php'; ?>
+           <!-- registration or username -->
+        <?php //include 'log-state.php'; ?>
 
-            <!-- masthead -->
-            <?php include 'masthead.php'; ?>
+        <!-- navigation -->
+         <?php include 'navigation.php'; ?>
+        <h1 class="center-title"></h1>
 
-            <!-- navigation -->
-            <?php include 'navigation.php'; ?>
+        <!-- masthead -->
+        <?php include 'masthead.php'; ?>
 
-            <!-- content -->
-            <div class="content">
+        <!-- content -->
+        <div class="content">
+            <h1 class="center-title"></h1>
                 <?php include 'find-event.php'; ?>
-                <h1 class="center-title"><?php echo "$row[2]"; ?></h1>
+                <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
 
                 <div id="event-page">
                     

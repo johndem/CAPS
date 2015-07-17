@@ -19,7 +19,7 @@
             $row = mysqli_fetch_row($results);        
    
             $_SESSION['admin'] = $row[0];
-			$_SESSION['user'] = $row[1];
+			//$_SESSION['user'] = $row[1];
             echo "OK";
       
     }

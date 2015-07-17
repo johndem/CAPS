@@ -15,22 +15,24 @@
         
         <div>
         
-            <!-- registration or username -->
-            <?php include 'log-state.php'; ?>
+         <!-- registration or username -->
+        <?php //include 'log-state.php'; ?>
 
-            <!-- masthead -->
-            <?php include 'masthead.php'; ?>
+        <!-- navigation -->
+         <?php include 'navigation.php'; ?>
+        <h1 class="center-title"></h1>
 
-            <!-- navigation -->
-            <?php include 'navigation.php'; ?>
-            
-            <!-- content -->
-            <div class="content">
+        <!-- masthead -->
+        <?php include 'masthead.php'; ?>
+
+        <!-- content -->
+        <div class="content">
+            <h1 class="center-title"></h1>
             
                 <?php if(isset($_SESSION['org_id']) || isset($_SESSION['user'])) { 
                     include 'find-user.php';
                 ?>
-                <h1 class="center-title">My Account</h1>
+                
                 
                 <div id="account"> 
                     
@@ -196,7 +198,7 @@
                 </div>
                 <?php } else { ?>
                     
-                    <h1 class="center-title">Create your account and get started!</h1>
+                    <!-- <h1 class="center-title">Create your account and get started!</h1> -->
                 
                 <div id="default-account-tab">
                 

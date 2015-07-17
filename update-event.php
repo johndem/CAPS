@@ -21,24 +21,26 @@
         
         <div>
         
-            <!-- registration or username -->
-            <?php include 'log-state.php'; ?>
+           <!-- registration or username -->
+        <?php include 'log-state.php'; ?>
 
-            <!-- masthead -->
-            <?php include 'masthead.php'; ?>
+        <!-- navigation -->
+         <?php include 'navigation.php'; ?>
+        <h1 class="center-title"></h1>
 
-            <!-- navigation -->
-            <?php include 'navigation.php'; ?>
-            
-            <!-- content -->
-            <div class="content">
+        <!-- masthead -->
+        <?php include 'masthead.php'; ?>
+
+        <!-- content -->
+        <div class="content">
+            <h1 class="center-title"></h1>
                 <?php if(isset($_SESSION['org_id'])) { 
                     include 'find-event.php'; 
                     if ($_SESSION['org_id'] != $row[1])
                         header("Location: index.php");
                     $_SESSION['event_id'] = $row[0]; 
                 ?>    
-                    <h1 class="center-title">Edit this volunteering event</h1>
+                    <!-- <h1 class="center-title">Edit this volunteering event</h1> -->
                     <div class="aligner">
 
                         <div id="results">

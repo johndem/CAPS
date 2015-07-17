@@ -348,6 +348,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     background-color: #31D100;
     width: auto;
     height: 150px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ababab+0,ababab+100&amp;1+0,0.45+100 */
+background: -moz-linear-gradient(top,  rgba(171,171,171,1) 0%, rgba(171,171,171,0.45) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(171,171,171,1)), color-stop(100%,rgba(171,171,171,0.45))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(171,171,171,1) 0%,rgba(171,171,171,0.45) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(171,171,171,1) 0%,rgba(171,171,171,0.45) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(171,171,171,1) 0%,rgba(171,171,171,0.45) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(171,171,171,1) 0%,rgba(171,171,171,0.45) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ababab', endColorstr='#73ababab',GradientType=0 ); /* IE6-9 */
 }
 
 
@@ -1779,3 +1787,7 @@ div#btnApply:hover {
     padding-right:3px;
     background-color: rgba(255,150,57,0.2);
 }
+
+/*.content .center-title:last-of-type {
+    margin-bottom: 50px;
+}*/

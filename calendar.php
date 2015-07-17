@@ -18,17 +18,18 @@
         <div>
         
             <!-- registration or username -->
-            <?php include 'log-state.php'; ?>
+        <?php //include 'log-state.php'; ?>
 
-            <!-- masthead -->
-            <?php include 'masthead.php'; ?>
+        <!-- navigation -->
+         <?php include 'navigation.php'; ?>
+        <h1 class="center-title"></h1>
 
-            <!-- navigation -->
-            <?php include 'navigation.php'; ?>
-            
-            <!-- content -->
-            <div class="content">
-                <h1 class="center-title">Find an opportunity in Calendar</h1>
+        <!-- masthead -->
+        <?php include 'masthead.php'; ?>
+
+        <!-- content -->
+        <div class="content">
+            <h1 class="center-title"></h1>
                 
                 <div id="calendar-tab">
                 

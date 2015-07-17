@@ -21,19 +21,21 @@
         
         <div>
         
-            <!-- registration or username -->
-            <?php include 'log-state.php'; ?>
+           <!-- registration or username -->
+        <?php //include 'log-state.php'; ?>
 
-            <!-- masthead -->
-            <?php include 'masthead.php'; ?>
+        <!-- navigation -->
+         <?php include 'navigation.php'; ?>
+        <h1 class="center-title"></h1>
 
-            <!-- navigation -->
-            <?php include 'navigation.php'; ?>
-            
-            <!-- content -->
-            <div class="content">
+        <!-- masthead -->
+        <?php include 'masthead.php'; ?>
+
+        <!-- content -->
+        <div class="content">
+            <h1 class="center-title"></h1>
                 <?php if(isset($_SESSION['org_id'])) { ?>    
-                    <h1 class="center-title">Post a new volunteer opportunity</h1>
+                    <!-- <h1 class="center-title">Post a new volunteer opportunity</h1> -->
                     <div class="aligner">
 
                         <div id="results">
@@ -236,7 +238,7 @@
                 <?php } else { ?>
                     
 			    
-                    <h1 class="center-title">Register your organisation and get started!</h1>
+                    <!-- <h1 class="center-title">Register your organisation and get started!</h1> -->
                         
                     <div id="org-tab-default"> 
                         

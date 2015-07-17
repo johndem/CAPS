@@ -5,6 +5,13 @@
 echo '<div class="masthead">';
     echo '<h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>'; ?>
 
+<?php
+
+	$url = $_SERVER["REQUEST_URI"];
+	if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
+
+ ?>
+
 <div id="categories">
               
 				<div class="cat"><img onclick="window.location= 'search-results.php?category=Healthcare'" id="hc" class="cat-img" src="images/hc-gray.png"/>
@@ -21,7 +28,7 @@ echo '<div class="masthead">';
 				</div>
 			</div>
 
-<?php echo '</div>';
+<?php }echo '</div>';
 
 ?>
 

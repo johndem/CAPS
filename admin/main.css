@@ -178,6 +178,10 @@
     height: 360px;
 }
 
+#admin-form {
+    margin-top: 200px;
+}
+
 
 /********************************************************** REGISTER.PHP ***************************************************/
 
@@ -293,7 +297,9 @@ textarea {
 
 
 /***************************************************************** ALL PAGES *************************************************/
-
+* {
+    font: 'Open Sans', sans-serif;
+}
 .content {
     overflow: hidden;
     font-family: 'Open Sans';
@@ -424,7 +430,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     background-color: #E2E6E1;
 }
 
-
+.log-reg a {
+    height: 20px;
+    border-radius: 70px;
+    background-color: lightgrey;
+    margin-left: 10px;
+    min-width: 80px;
+}
 
 /*************************************************************** WIDGETS **********************************************************/
 
@@ -561,23 +573,11 @@ select {
 /************************************************************ VOLUNTEERS.PHP *********************************************/
 
 .aligner {
-    width: 1200px;
+    width: inherit;
     margin: 0 auto;
     text-align: center;  
 }
 
-.aligner div a {
-    text-decoration: none;
-    color: #31D100;
-}
-
-.aligner div a:visited {
-}
-
-.aligner div a:hover {
-
-    text-decoration: underline;
-}
 
 #volunteers-form {
     width: 650px;
@@ -806,8 +806,8 @@ th {
 }
 
 table {
-    width: 1000px;
-    table-layout: fixed;  
+    /*width: 1000px;*/
+    /*table-layout: fixed;  */
 }
 
 #manasou {
@@ -1769,7 +1769,7 @@ div#btnApply:hover {
     border: 1px solid #464c54; 
     height: 525px;
     overflow: scroll;
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     margin-top: 30px;
 }
@@ -1778,4 +1778,33 @@ div#btnApply:hover {
     border-bottom: 1px black solid;
     margin-bottom: 10px;
     padding-bottom: 10px;
+}
+
+.actions {
+    width: 100px;
+}
+
+.actions span {
+    background-color:lightgrey;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    margin: 5px; 
+    cursor: pointer;
+}
+
+.link {
+    min-width: 65px;
+}
+
+.description {
+    width: 30%;
+}
+
+.info {
+    min-width: 200px;
+}
+
+.info-id {
+    min-width: 20px;
 }

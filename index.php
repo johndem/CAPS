@@ -16,10 +16,7 @@
 
         
         <!-- registration or username -->
-		<?php include 'log-state.php'; ?>
-
-        
-        
+		 <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
          <?php include 'navigation.php'; ?>

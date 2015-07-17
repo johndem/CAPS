@@ -20,17 +20,18 @@
         
         
         <!-- registration or username -->
-		<?php include 'log-state.php'; ?>
+        <?php //include 'log-state.php'; ?>
+
+        <!-- navigation -->
+         <?php include 'navigation.php'; ?>
+        <h1 class="center-title"></h1>
 
         <!-- masthead -->
         <?php include 'masthead.php'; ?>
 
-        <!-- navigation -->
-        <?php include 'navigation.php'; ?>
-
         <!-- content -->
         <div class="content">
-            <h1 class="center-title">Edit account information</h1>
+            <h1 class="center-title"></h1>
 
             <div class="aligner">
 

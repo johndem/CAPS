@@ -33,6 +33,10 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
+            <div class="page-title"> 
+                    <div class="main-title">Organisation register form</div>  
+                    <h4>Please fill in the necessary information about your organisation</h4>
+                    </div>
                 
                 <div class="aligner">
                     

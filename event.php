@@ -31,7 +31,10 @@
             <h1 class="center-title"></h1>
                 <?php include 'find-event.php'; ?>
                 <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
-
+                <div class="page-title"> 
+                    <div class="main-title"> <?php echo "$row[2]"; ?></div>  
+                    <h4>Event information page</h4>
+                    </div>
                 <div id="event-page">
                     
                     

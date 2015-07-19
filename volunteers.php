@@ -32,8 +32,12 @@
             <!-- content -->
             <div class="content">
                 <h1 class="center-title"></h1>
-                
+                <div class="page-title"> 
+                    <div class="main-title"> Advanced Search</div>  
+                    <h4>Search for a volunteers opportunity and get started! </h4>
+                    </div>
                 <div class="aligner">
+                    
                     
                     <?php
                         echo '<div class="side-widgets">';

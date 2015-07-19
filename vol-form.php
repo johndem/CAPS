@@ -32,6 +32,10 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
+            <div class="page-title"> 
+                    <div class="main-title">Volunteer register form</div>  
+                    <h4>Please fill in the necessary information</h4>
+                    </div>
 
             <div class="aligner">
 

@@ -46,8 +46,12 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-
+<div class="page-title"> 
+                    <div class="main-title"> Login </div>  
+                    </div>
 				<div class="aligner">
+					
+
 					<div>
 						<p>
 							Not yet registered? Signing up is easy and takes less than 5 minutes. <a href="register.php">Click here to get started</a> »

@@ -319,6 +319,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	margin-bottom: 50px;
 }
 
+.page-title {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+    background-color:rgba(192,192,192,0.3);
+    padding: 5px;
+}
+
+.main-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.page-title h4 {
+    margin: 10px;
+}
 
 
 /*************************************************************** FOOTER ***********************************************************/
@@ -386,7 +402,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004ee000', e
     text-align: center;
 	color: grey;
     font-size: 50px;
-    padding-top: 30px;
+    padding: 10px;
+    background-color: rgba(192,192,192,0.3);
     
 }
 

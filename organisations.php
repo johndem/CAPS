@@ -251,7 +251,11 @@
                         ?>
 
                         <div id="present-orgs">
-                            <h2>Organisations providing volunteering opportunities</h2>
+                            <div class="page-title"> 
+                    <div class="main-title"> Organisations providing volunteering opportunities</div>  
+                    <h4>Register your organisation and get started! </h4>
+                    </div>
+                    
                             
                             
                             

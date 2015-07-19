@@ -39,7 +39,12 @@
             <h1 class="center-title"></h1>
                 
                 <div>
+                    <div class="page-title"> 
+                    <div class="main-title"> Register </div>  
+                    <h4>Join now and help your city!</h4>
+                    </div>
                     <div class="aligner row">
+                        
                         <h2>I want to become a Volunteer!</h2>
                         <div id="btnReg">
                             <h3><a href="vol-form.php">Register as a volunteer!</a></h3>

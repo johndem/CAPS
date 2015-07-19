@@ -28,6 +28,7 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title" style="margin-bottom: 0;"></h1>
+
             
             <?php
                 include 'create-link.php';
@@ -122,8 +123,10 @@
 
 
             <div id="news">  
-                
-                <h1>News and Stories</h1>
+                <div class="page-title"> 
+                    <div class="main-title">News and Stories</div>  
+                    <!-- <h4>Search for a volunteers opportunity and get started! </h4> -->
+                    </div>
                 
                 <?php 
                     include 'display-news.php';

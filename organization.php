@@ -29,7 +29,10 @@
             <h1 class="center-title"></h1>
                 <?php include 'find-org.php'; ?>
                 <!-- <h1 class="center-title"><?php echo "$org[4]"; ?></h1> -->
-
+                <div class="page-title"> 
+                    <div class="main-title"><?php echo "$org[4]"; ?></div>  
+                    <h4>Organisation information</h4>
+                    </div>
                 <div id="organization-page"> 
                         
                         <?php

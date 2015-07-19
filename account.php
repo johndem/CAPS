@@ -28,6 +28,10 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
+            <div class="page-title"> 
+                    <div class="main-title"> My Account</div>  
+                    <h4>Profile information</h4>
+                    </div>
             
                 <?php if(isset($_SESSION['org_id']) || isset($_SESSION['user'])) { 
                     include 'find-user.php';

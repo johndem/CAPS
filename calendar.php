@@ -30,7 +30,11 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-                
+            
+                <div class="page-title"> 
+                    <div class="main-title"> Calendar</div>  
+                    <h4>Browse through the months and find a volunteering oppurtunity! </h4>
+                    </div>
                 <div id="calendar-tab">
                 
                 <?php

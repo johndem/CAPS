@@ -491,6 +491,7 @@ background-image: url("images/thss.jpg");
     margin: 10px;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 5px 5px 5px grey;
 }
 
 .event-info:hover {

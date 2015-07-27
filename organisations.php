@@ -34,6 +34,10 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
+            <div class="page-title"> 
+                    <div class="main-title">Post a new volunteering opportunity</div>  
+                    <h4>Fill in the information bellow.</h4>
+                    </div>
                 <?php if(isset($_SESSION['org_id'])) { ?>    
                     <!-- <h1 class="center-title">Post a new volunteer opportunity</h1> -->
                     <div class="aligner">

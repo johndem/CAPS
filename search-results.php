@@ -27,6 +27,10 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
+            <div class="page-title"> 
+                    <div class="main-title">Search Results</div>  
+                    <!-- <h4></h4> -->
+                    </div>
             
             <div class="results">
             

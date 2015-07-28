@@ -37,7 +37,7 @@
         <div class="aligner">
         <div class="left">
         <h1> Categories </h1>
-        <div class="listplz" style="width: auto; margin-left: 10px;">   
+        <div class="listplz" style="width: auto; margin-left: 50px;">   
         <?php 
 
             include "create-link.php";
@@ -60,7 +60,7 @@
 
                         <td class="info-id"> <?php echo $row[0]; ?></td>
                         <td class="info"><?php echo $row[1]; ?> </td>
-                        <td class='actions'><span>Delete</span> <span>Edit</span></td>
+                        <td class='actions'><span onclick="ondelete('category', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit()">Edit</span></td>
 
                     </tr>
 
@@ -81,14 +81,57 @@
 </div>
 
 <div class="left"> 
-        <h1> Categories </h1>
+        <h1> Skills </h1>
 
-        <div class="listplz" style="width: auto; margin-left: 10px;">   
+        <div class="listplz" style="width: auto; margin-left: 50px;">   
         <?php 
 
             include "create-link.php";
 
-            $query =" SELECT * FROM categories";
+            $query =" SELECT * FROM skills";
+            $results = mysqli_query($link,$query);
+
+            while ($row = mysqli_fetch_row($results)) { ?>
+
+                    <div class="listitem"> 
+
+                    <table> 
+                    <tr> 
+                        <th>ID</th>
+                        <th>Value</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    <tr> 
+
+                        <td class="info-id"> <?php echo $row[0]; ?></td>
+                        <td class="info-id"><?php echo $row[1]; ?> </td>
+                        <td class="name"><?php echo $row[2]; ?> </td>
+                        <td class='actions'><span onclick="ondelete('skill', <?php echo $row[0]; ?>)">Delete</span> <span>Edit</span></td>
+
+                    </tr>
+
+                    </table>
+
+                    </div>
+
+
+<?php    }    ?>
+        
+
+        </div>
+            </div>
+
+            <div class="left"> 
+        <h1> Age groups </h1>
+
+        <div class="listplz" style="width: auto; margin-left:50px;">   
+        <?php 
+
+            include "create-link.php";
+
+            $query =" SELECT * FROM agegroups";
             $results = mysqli_query($link,$query);
 
             while ($row = mysqli_fetch_row($results)) { ?>
@@ -106,7 +149,7 @@
 
                         <td class="info-id"> <?php echo $row[0]; ?></td>
                         <td class="info"><?php echo $row[1]; ?> </td>
-                        <td class='actions'><span>Delete</span> <span>Edit</span></td>
+                        <td class='actions'><span onclick="ondelete('agegroup', <?php echo $row[0]; ?>)">Delete</span> <span>Edit</span></td>
 
                     </tr>
 
@@ -115,16 +158,53 @@
                     </div>
 
 
-<?php            }
-
-
-
-
-        ?>
+<?php    }    ?>
         
 
         </div>
             </div>
+
+            <div class="left"> 
+        <h1> Districts </h1>
+
+        <div class="listplz" style="width: auto; margin-left: 50px;">   
+        <?php 
+
+            include "create-link.php";
+
+            $query =" SELECT * FROM districts";
+            $results = mysqli_query($link,$query);
+
+            while ($row = mysqli_fetch_row($results)) { ?>
+
+                    <div class="listitem"> 
+
+                    <table> 
+                    <tr> 
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    <tr> 
+
+                        <td class="info-id"> <?php echo $row[0]; ?></td>
+                        <td class="info"><?php echo $row[1]; ?> </td>
+                        <td class='actions'><span onclick="ondelete('dist', <?php echo $row[0]; ?>)">Delete</span> <span>Edit</span></td>
+
+                    </tr>
+
+                    </table>
+
+                    </div>
+
+
+<?php    }    ?>
+        
+
+        </div>
+            </div>
+
             <div id="home-blanket">
 
             </div>

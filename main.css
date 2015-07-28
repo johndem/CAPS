@@ -295,6 +295,10 @@ textarea {
 
 /***************************************************************** ALL PAGES *************************************************/
 
+* {
+    font-family: 'Open Sans';
+}
+
 .content {
     overflow: hidden;
     font-family: 'Open Sans';
@@ -475,6 +479,12 @@ background-image: url("images/thss.jpg");
     min-width: 80px;
 }
 
+.nav-user {
+    margin-left: 10px;
+    color: #525252;
+    
+
+}
 
 /*************************************************************** WIDGETS **********************************************************/
 

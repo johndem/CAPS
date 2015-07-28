@@ -34,12 +34,13 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-            <div class="page-title"> 
+            
+                <?php if(isset($_SESSION['org_id'])) { ?>    
+                    <!-- <h1 class="center-title">Post a new volunteer opportunity</h1> -->
+                    <div class="page-title"> 
                     <div class="main-title">Post a new volunteering opportunity</div>  
                     <h4>Fill in the information bellow.</h4>
                     </div>
-                <?php if(isset($_SESSION['org_id'])) { ?>    
-                    <!-- <h1 class="center-title">Post a new volunteer opportunity</h1> -->
                     <div class="aligner">
 
                         <div id="results">
@@ -243,6 +244,11 @@
                     
 			    
                     <!-- <h1 class="center-title">Register your organisation and get started!</h1> -->
+                    <div class="page-title"> 
+                    <div class="main-title"> Organisations providing volunteering opportunities</div>  
+                    <h4>Register your organisation and get started! </h4>
+                    </div>
+                    
                         
                     <div id="org-tab-default"> 
                         
@@ -255,11 +261,7 @@
                         ?>
 
                         <div id="present-orgs">
-                            <div class="page-title"> 
-                    <div class="main-title"> Organisations providing volunteering opportunities</div>  
-                    <h4>Register your organisation and get started! </h4>
-                    </div>
-                    
+                            
                             
                             
                             

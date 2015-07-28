@@ -16,8 +16,11 @@ if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
+         echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
         echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
         echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+       
+
     }
 }
 else if ((strpos($url,'volunteers') !== false) || (strpos($url,'search-results') !== false) || (strpos($url,'event') !== false)) {
@@ -32,8 +35,10 @@ else if ((strpos($url,'volunteers') !== false) || (strpos($url,'search-results')
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-        echo '<li class="log-reg"><a id="logout" href="index.php">Logout</a></li>';
-        echo '<li class="log-reg"><a href="account.php">Profile</a></li>';
+       echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
+        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
+        echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+
     }
 }
 else if (strpos($url,'organisations') !== false) {
@@ -47,8 +52,10 @@ else if (strpos($url,'organisations') !== false) {
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-        echo '<li class="log-reg"><a id="logout" href="index.php">Logout</a></li>';
-        echo '<li class="log-reg"><a href="account.php">Profile</a></li>';
+       echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
+        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
+        echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+
     }
 }
 else if (strpos($url,'calendar') !== false) {
@@ -62,8 +69,10 @@ else if (strpos($url,'calendar') !== false) {
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-        echo '<li class="log-reg"><a id="logout" href="index.php">Logout</a></li>';
-        echo '<li class="log-reg"><a href="account.php">Profile</a></li>';
+  echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
+        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
+        echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+
     }
 }
 else if (strpos($url,'account') !== false) {
@@ -77,8 +86,10 @@ else if (strpos($url,'account') !== false) {
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-        echo '<li class="log-reg"><a id="logout" href="index.php">Logout</a></li>';
-        echo '<li class="log-reg"><a href="account.php">Profile</a></li>';
+       echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
+        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
+        echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+
     }
 }
 else {
@@ -92,8 +103,10 @@ else {
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-        echo '<li class="log-reg"><a id="logout" href="index.php">Logout</a></li>';
-        echo '<li class="log-reg"><a href="account.php">Profile</a></li>';
+        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
+        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
+        echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+
     }
 }
 

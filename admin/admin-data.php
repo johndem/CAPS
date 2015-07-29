@@ -18,12 +18,12 @@
 
                 session_start();
 
-                //if (!isset($_SESSION['admin'])) { 
-                //    header("Location: index.php");
+                if (!isset($_SESSION['admin'])) { 
+                    header("Location: index.php");
                     ?>
 
 
-<?php //} else { ?>
+<?php } else { ?>
 
         <!-- masthead -->
         
@@ -60,7 +60,8 @@
 
                         <td class="info-id"> <?php echo $row[0]; ?></td>
                         <td class="info"><?php echo $row[1]; ?> </td>
-                        <td class='actions'><span onclick="ondelete('category', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit()">Edit</span></td>
+                        <td class='actions'><span onclick="ondelete('category', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('category', 
+                        <?php echo $row[0]; ?>, '<?php echo $row[1]; ?>')">Edit</span></td>
 
                     </tr>
 
@@ -108,7 +109,8 @@
                         <td class="info-id"> <?php echo $row[0]; ?></td>
                         <td class="info-id"><?php echo $row[1]; ?> </td>
                         <td class="name"><?php echo $row[2]; ?> </td>
-                        <td class='actions'><span onclick="ondelete('skill', <?php echo $row[0]; ?>)">Delete</span> <span>Edit</span></td>
+                        <td class='actions'><span onclick="ondelete('skill', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('skill', 
+                        <?php echo $row[0]; ?>, '<?php echo $row[2]; ?>')">Edit</span></td>
 
                     </tr>
 
@@ -149,7 +151,8 @@
 
                         <td class="info-id"> <?php echo $row[0]; ?></td>
                         <td class="info"><?php echo $row[1]; ?> </td>
-                        <td class='actions'><span onclick="ondelete('agegroup', <?php echo $row[0]; ?>)">Delete</span> <span>Edit</span></td>
+                        <td class='actions'><span onclick="ondelete('agegroup', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('agegroup', 
+                        <?php echo $row[0]; ?>, '<?php echo $row[1]; ?>')">Edit</span></td>
 
                     </tr>
 
@@ -190,7 +193,8 @@
 
                         <td class="info-id"> <?php echo $row[0]; ?></td>
                         <td class="info"><?php echo $row[1]; ?> </td>
-                        <td class='actions'><span onclick="ondelete('dist', <?php echo $row[0]; ?>)">Delete</span> <span>Edit</span></td>
+                        <td class='actions'><span onclick="ondelete('dist', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('dist', 
+                        <?php echo $row[0]; ?>, '<?php echo $row[1]; ?>')">Edit</span></td>
 
                     </tr>
 
@@ -211,7 +215,7 @@
 </div>
         </div>
 
-<?php //} ?>
+<?php } ?>
         
     </body>
 

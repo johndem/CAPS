@@ -76,3 +76,33 @@ function useHttpResponseVol() {
         }
     }
 }
+
+function onEdit(type,id,previous_value) {
+  
+  //alert(type + " " + id + " " + previous_value);
+
+   var new_value =  window.prompt("New name:", previous_value);
+
+  if (new_value != null) {
+
+    if (new_value != "") {
+      
+      var myurl = "edit.php";
+    
+      var parameters ="type="+type+"&id="+id+"&newvalue="+new_value;
+
+    
+    //alert(parameters);
+
+    console.log(parameters);
+    http.open("POST", myurl, true);
+    http.onreadystatechange = useHttpResponseVol;
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(parameters);
+    } 
+    else {
+      alert("Value cannot be empty!");
+    }
+  } 
+
+}

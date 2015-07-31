@@ -104,7 +104,63 @@
                         <td class="link"><a href="<?php echo $row[7];?>">Link</a></td>
                         <td class="link"><a href="<?php echo $row[8];?>">Link</a></td>
                         <td class="description"> <?php echo $row[9]; ?></td>
-                        <td class='actions'><span>Delete</span> <span>Mailto</span></td>
+                        <td class='actions'><span onclick="ondelete('org', <?php echo $row[0]; ?>)">Delete</span> <span onclick="window.location = 'mailto-form.php'">Mailto</span></td>
+
+                    </tr>
+
+                    </table>
+
+                    </div>
+
+
+<?php            }
+
+
+
+
+        ?>
+        
+
+        </div>
+
+        <h1> Volunteers </h1>
+
+        <div class="listplz">   
+        <?php 
+
+            include "create-link.php";
+
+            $query =" SELECT * FROM user";
+            $results = mysqli_query($link,$query);
+
+            while ($row = mysqli_fetch_row($results)) { ?>
+
+                    <div class="listitem"> 
+
+                    <table> 
+                    <tr> 
+                        <th>ID</th>
+                        <th>First Name </th>
+                        <th>Last Name </th>
+                        <th>Username </th>
+                        <th>Email </th>
+                        <th>Phone </th>
+                        <th>Address </th>
+                        <th>Date of birth </th>
+                        <th>Actions</th>
+                    </tr>
+
+                    <tr> 
+
+                        <td class="info-id"> <?php echo $row[0]; ?></td>
+                        <td class="info"><?php echo $row[1]; ?> </td>
+                        <td class="info"><?php echo $row[2]; ?> </td>
+                        <td class="info"><?php echo $row[3]; ?>  </td>
+                        <td class="info"><?php echo $row[4];?></td>
+                        <td class="info"><?php echo $row[6];?></td>
+                        <td class="info"><?php echo $row[7] . " " . $row[8] . ", " . $row[9]; ?></td>
+                        <td class="info"><?php echo $row[11];?></td>
+                        <td class='actions'><span onclick="ondelete('vol', <?php echo $row[0]; ?>)">Delete</span> <span onclick="window.location = 'mailto-form.php'">Mailto</span></td>
 
                     </tr>
 

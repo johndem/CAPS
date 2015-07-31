@@ -106,3 +106,29 @@ function onEdit(type,id,previous_value) {
   } 
 
 }
+
+function onAddNew(type) {
+    var value =  window.prompt("Name:", "");
+
+  if (value != null) {
+
+    if (value != "") {
+      
+      var myurl = "addNew.php";
+    
+      var parameters ="type="+type+"&value="+value;
+
+    
+    alert(parameters);
+
+    console.log(parameters);
+    http.open("POST", myurl, true);
+    http.onreadystatechange = useHttpResponseVol;
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(parameters);
+    } 
+    else {
+      alert("Value cannot be empty!");
+    }
+  } 
+}

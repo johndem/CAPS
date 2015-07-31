@@ -1772,7 +1772,6 @@ div#btnApply:hover {
     width: 70%;
     margin: 0 auto;
     margin-top: 30px;
-    float: left;
 }
 
 .listitem {
@@ -1823,4 +1822,12 @@ div#btnApply:hover {
 
 .name {
     width: 200px;
+}
+
+.addItem {
+    background-color: lightgrey;
+    cursor: pointer;
+    padding: 7px; 
+    border-radius: 15px;
+
 }

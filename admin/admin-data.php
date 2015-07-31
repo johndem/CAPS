@@ -36,7 +36,7 @@
         <div class="content">
         <div class="aligner">
         <div class="left">
-        <h1> Categories </h1>
+        <h1> Categories </h1> <span class="addItem" onclick="onAddNew('category')">Add New</span>
         <div class="listplz" style="width: auto; margin-left: 50px;">   
         <?php 
 
@@ -82,7 +82,7 @@
 </div>
 
 <div class="left"> 
-        <h1> Skills </h1>
+        <h1> Skills </h1><span class="addItem" onclick="onAddNew('skill')">Add New</span>
 
         <div class="listplz" style="width: auto; margin-left: 50px;">   
         <?php 
@@ -126,7 +126,7 @@
             </div>
 
             <div class="left"> 
-        <h1> Age groups </h1>
+        <h1> Age groups </h1> <span class="addItem" onclick="onAddNew('agegroup')">Add New</span>
 
         <div class="listplz" style="width: auto; margin-left:50px;">   
         <?php 
@@ -168,7 +168,7 @@
             </div>
 
             <div class="left"> 
-        <h1> Districts </h1>
+        <h1> Districts </h1><span class="addItem" onclick="onAddNew('dist')">Add New</span>
 
         <div class="listplz" style="width: auto; margin-left: 50px;">   
         <?php 

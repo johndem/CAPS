@@ -7,10 +7,10 @@
 		include "create-link.php";
 
 		$type = $_POST['type'];
-		$id = $_POST['id'];
+		$new_value = $_POST['value'];
 
 		if ($type == 'category') {
-			$query = "DELETE FROM categories WHERE id=$id";
+			$query = "INSERT INTO categories (title) VALUES ('$new_value') ";
 
 			if (mysqli_query($link, $query)) {
    				 echo "OK";
@@ -21,7 +21,7 @@
 			mysqli_close($link);
 		}
 		elseif ($type == 'dist') {
-			$query = "DELETE FROM districts WHERE id=$id";
+			$query = "INSERT INTO districts (title) VALUES ('$new_value')";
 
 			if (mysqli_query($link, $query)) {
    				 echo "OK";
@@ -32,7 +32,7 @@
 			mysqli_close($link);
 		}
 		elseif ($type == 'skill') {
-			$query = "DELETE FROM skills WHERE skill_id=$id";
+			$query = "INSERT INTO skills (skill, value) VALUES ('$new_value', 15)";
 
 			if (mysqli_query($link, $query)) {
    				 echo "OK";
@@ -43,29 +43,7 @@
 			mysqli_close($link);
 		}
 		elseif ($type == 'agegroup') {
-			$query = "DELETE FROM agegroups WHERE id=$id";
-
-			if (mysqli_query($link, $query)) {
-   				 echo "OK";
-			} else {
-  				 echo "Error";
-			}
-
-			mysqli_close($link);
-		}
-		elseif ($type == 'org') {
-			$query = "DELETE FROM organisations WHERE org_id=$id";
-
-			if (mysqli_query($link, $query)) {
-   				 echo "OK";
-			} else {
-  				 echo "Error";
-			}
-
-			mysqli_close($link);
-		}
-		elseif ($type == 'vol') {
-			$query = "DELETE FROM user WHERE id=$id";
+			$query = "INSERT INTO agegroups (title) VALUES ('$new_value')";
 
 			if (mysqli_query($link, $query)) {
    				 echo "OK";

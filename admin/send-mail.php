@@ -8,8 +8,12 @@
 
 	echo $to . ' ' . $subject . ' ' . $message;
 
-	//mail($to, $subject, $message);
-
+	if (mail($to, $subject, $message) ) {
+		header("Location: mailto-form.php?sucess=1");
+	}
+	else {
+		header("Location: mailto-form.php?sucess=0");
+	}
 
 
 ?>

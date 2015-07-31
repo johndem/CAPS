@@ -104,7 +104,7 @@
                         <td class="link"><a href="<?php echo $row[7];?>">Link</a></td>
                         <td class="link"><a href="<?php echo $row[8];?>">Link</a></td>
                         <td class="description"> <?php echo $row[9]; ?></td>
-                        <td class='actions'><span onclick="ondelete('org', <?php echo $row[0]; ?>)">Delete</span> <span onclick="window.location = 'mailto-form.php'">Mailto</span></td>
+                        <td class='actions'><span onclick="ondelete('org', <?php echo $row[0]; ?>)">Delete</span> <span onclick="window.location = 'mailto-form.php?email=<?php echo $row[2] ?>'">Mailto</span></td>
 
                     </tr>
 
@@ -160,7 +160,7 @@
                         <td class="info"><?php echo $row[6];?></td>
                         <td class="info"><?php echo $row[7] . " " . $row[8] . ", " . $row[9]; ?></td>
                         <td class="info"><?php echo $row[11];?></td>
-                        <td class='actions'><span onclick="ondelete('vol', <?php echo $row[0]; ?>)">Delete</span> <span onclick="window.location = 'mailto-form.php'">Mailto</span></td>
+                        <td class='actions'><span onclick="ondelete('vol', <?php echo $row[0]; ?>)">Delete</span> <span onclick="window.location = 'mailto-form.php?email=<?php echo $row[4] ?>'">Mailto</span></td>
 
                     </tr>
 

@@ -1831,3 +1831,10 @@ div#btnApply:hover {
     border-radius: 15px;
 
 }
+
+.message {
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: center;
+    background-color: orange;
+}

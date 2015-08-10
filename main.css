@@ -7,6 +7,7 @@
     text-align: center;
     border-width: 5px;
     border-color: #DCD7D7;
+    background-color: rgba(192,192,192,0.4);
 
 }
 
@@ -1501,6 +1502,22 @@ div#btnApply:hover {
 .event-img-input {
     margin-top: 55px;
     margin-bottom: 15px;
+}
+
+
+.facebook-share {
+    background-color: #3a5795;
+    padding: 5px;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.facebook-share div {
+    background-image: url('images/fb_icon.png');
+    float: left;
 }
 
 /****************************************************************** NEWS.PHP ****************************************************/

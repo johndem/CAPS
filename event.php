@@ -2,6 +2,15 @@
 <html>
 
     <head>
+    <meta property="og:title" content="Share this event!" />
+    <meta property="og:site_name" content="Thessaloniki Volunteer Network"/>
+    <meta property="og:url" content="http://localhost/CAPS/index.php"/>
+    <meta property="og:description" content="The Volunteer netowrk of Thessaloniki is a place where you can easily find volunteering oppurtunities." />
+    <meta property="fb:app_id" content="1607915839446072" />
+    <meta property="og:type" content="article" />
+    <meta property="article:author" content="TVN" />
+    <meta property="article:publisher" content="TVN" />
+    <meta property="og:image"  content="https://www.facebook.com/images/fb_icon_325x325.png" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>GETTING STARTED WITH BRACKETS</title>
@@ -14,7 +23,47 @@
         <script src="https://maps.googleapis.com/maps/api/js"></script>
     </head>
     <body>
-		
+       <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1607915839446072',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script type="text/javascript">
+  function share () {
+
+    FB.ui(
+  {
+    method: 'share',
+    href: 'http://localhost/CAPS/event.php?id=22',
+  },
+  // callback
+  function(response) {
+    if (response && !response.error_code) {
+      alert('Posting completed.');
+    } else {
+      alert('Error while posting.');
+    }
+  }
+);
+}
+
+    </script>
+
+
+
         
            <!-- registration or username -->
         <?php //include 'log-state.php'; ?>
@@ -72,8 +121,6 @@
                         
                         <h2>Where to find us</h2>
                         <div id="map-canvas"></div>
-
-                       
 
                     </div>
                     <div id="event-side">
@@ -146,6 +193,7 @@
                             </div>
                         </div>
 
+                        <div class="facebook-share" onclick="share()">Share on Facebook</div>
                          <?php 
 
                         include 'check-org-event.php';

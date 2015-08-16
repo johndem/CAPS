@@ -54,7 +54,7 @@
                         <div class="h3"> To: * </div>
                         <div id="err-first" class="error-message"> </div>
                         <div id="first-span" class="img-span"></div>
-                        <input id="to" class="in" maxlength="50" name="to" size="30" type="email" value="<?php if (isset($_GET['email'])) echo $_GET['email']; ?>" required/>
+                        <input id="to" class="in" maxlength="50" name="to" size="30" type="email" value="<?php if (isset($_GET['mailToVolunteer'])) { include 'find-vol-email.php'; echo $email[0]; } elseif (isset($_GET['mailToOrganization'])) { include 'find-org-email.php'; echo $email[0]; } ?>" required/>
                     </div>
 
                     <!-- <div class="label-in">

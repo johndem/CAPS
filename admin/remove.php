@@ -75,6 +75,29 @@
 
 			mysqli_close($link);
 		}
+        elseif ($type == 'news') {
+			$query = "DELETE FROM news WHERE id=$id";
+
+			if (mysqli_query($link, $query)) {
+   				 echo "OK";
+			} else {
+  				 echo "Error";
+			}
+
+			mysqli_close($link);
+		}
+        elseif ($type == 'events') {
+			$query = "DELETE FROM events WHERE id=$id";
+            $q = "DELETE FROM apply WHERE eventID='$id'";
+
+			if (mysqli_query($link, $query) && mysqli_query($link, $q)) {
+   				 echo "OK";
+			} else {
+  				 echo "Error";
+			}
+
+			mysqli_close($link);
+		}
 
 	}
 

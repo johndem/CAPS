@@ -46,7 +46,7 @@ function getXMLHttpRequest() {
     return request;
 }
 
-/*** DELETE FUNC ************/
+/********************* DELETE FUNC - ALL PAGES *******************/
 
 function ondelete(type, id) {
 
@@ -76,6 +76,8 @@ function useHttpResponseVol() {
         }
     }
 }
+
+/********************* EDIT FUNC - DATA *******************/
 
 function onEdit(type,id,previous_value) {
   
@@ -107,6 +109,8 @@ function onEdit(type,id,previous_value) {
 
 }
 
+/********************* ADD FUNC - DATA *******************/
+
 function onAddNew(type) {
     var value =  window.prompt("Name:", "");
 
@@ -131,4 +135,18 @@ function onAddNew(type) {
       alert("Value cannot be empty!");
     }
   } 
+}
+
+/********************* EDIT FUNC - EVENT *******************/
+
+function onEditEvent(type,id,state) {    
+    var myurl = "edit.php";
+    
+    var parameters ="type="+type+"&id="+id+"&newvalue="+state;
+
+    console.log(parameters);
+    http.open("POST", myurl, true);
+    http.onreadystatechange = useHttpResponseVol;
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(parameters);
 }

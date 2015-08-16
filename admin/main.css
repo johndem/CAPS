@@ -1838,3 +1838,12 @@ div#btnApply:hover {
     text-align: center;
     background-color: orange;
 }
+
+/*MINE*/
+
+.addItem a {
+    color: #525252;
+    text-decoration: none;
+}
+
+/*ENDOF MINE*/

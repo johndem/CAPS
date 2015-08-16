@@ -712,3 +712,163 @@ function getEditOrgResponse() {
         }  
     });  
 }
+
+
+
+/****************** POST NEWS STORY ******************************************/
+
+//Check validity
+function getNewsValidity() {
+    var error = false;
+    
+    var title =  document.getElementById('news-title');
+    var desc = document.getElementById('news-desc');
+    var body = document.getElementById('news-main-body');
+   
+    //Title
+    if (title.checkValidity() == false ) {
+        puterror('news-title-span','err-news-title', title.validationMessage);
+        error = true;
+    }
+    else {
+        putok('news-title-span','err-news-title');
+    }
+    
+    //Description
+    if (desc.checkValidity() == false ) {
+        puterror('news-desc-span','err-news-desc', desc.validationMessage);
+        error = true;
+    }
+    else {
+        putok('news-desc-span','err-news-desc');
+    }
+    
+    //Body
+    if (body.checkValidity() == false ) {
+        puterror('news-body-span','err-news-body', body.validationMessage);
+        error = true;
+    }
+    else {
+        putok('news-body-span','err-news-body');
+    }
+    
+    
+    return error;
+
+}
+
+
+//Check Form
+function checkNewsForm() {
+    
+    document.getElementById('res-ul').innerHTML = "";
+    var req = getNewsValidity();
+    var res = "";
+    
+    if (req === true) {
+        res = res + "<li> Please make sure your input is correct! Mouse over for error message. </li>";
+        document.getElementById('res-ul').innerHTML = res;
+    }
+    else {
+        getNewsResponse();
+    }
+    
+}
+
+// Get Response
+function getNewsResponse() {
+
+    var title = encodeURIComponent(document.getElementById('news-title').value);
+    var desc = encodeURIComponent(document.getElementById('news-desc').value);
+    var body = encodeURIComponent(document.getElementById('news-main-body').value);
+    
+    var file = document.getElementById('news-pic').files[0];
+    
+    var btn = document.getElementById('sButton').value;
+    
+    // Create a new FormData object.
+    var formData = new FormData();
+    
+    // Add the file to the request.
+    formData.append('news-picture', file);
+    formData.append('title', title);
+    formData.append('description', desc);
+    formData.append('body', body);
+    formData.append('button', btn);
+    
+    $.ajax({  
+        url: "check-news-image.php",  
+        type: 'POST',
+        enctype: 'multipart/form-data',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (data) {  
+            if (data === "OK") {
+                window.location = "admin-news.php";
+            }
+            else {
+                document.getElementById('res-ul').innerHTML = data;
+            }
+        }
+    });
+
+}
+
+/********************************** Edit News Form ***************************/
+//Check Form
+function checkEditNewsForm() {
+    
+    document.getElementById('res-ul').innerHTML = "";
+    var req = getNewsValidity();
+    var res = "";
+    
+    if (req === true) {
+        res = res + "<li> Please make sure your input is correct! Mouse over for error message. </li>";
+        document.getElementById('res-ul').innerHTML = res;
+    }
+    else {
+        getEditNewsResponse();
+    }
+    
+}
+
+// Get Response
+function getEditNewsResponse() {
+
+    var title = encodeURIComponent(document.getElementById('news-title').value);
+    var desc = encodeURIComponent(document.getElementById('news-desc').value);
+    var body = encodeURIComponent(document.getElementById('news-main-body').value);
+    
+    var file = document.getElementById('news-pic').files[0];
+    
+    var btn = document.getElementById('sButton').value;
+    
+    // Create a new FormData object.
+    var formData = new FormData();
+    
+    // Add the file to the request.
+    formData.append('news-picture', file);
+    formData.append('title', title);
+    formData.append('description', desc);
+    formData.append('body', body);
+    formData.append('button', btn);
+    
+    $.ajax({  
+        url: "check-news-image.php",  
+        type: 'POST',
+        enctype: 'multipart/form-data',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (data) {  
+            if (data === "OK") {
+                window.location = "admin-news.php";
+            }
+            else {
+                document.getElementById('res-ul').innerHTML = data;
+            }
+        }
+    });
+
+}

@@ -328,7 +328,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     margin: 0 auto;
     text-align: center;
     margin-bottom: 30px;
-    background-color:rgba(192,192,192,0.3);
+/*    background-color:rgba(192,192,192,0.3);*/
     padding: 5px;
 }
 
@@ -592,7 +592,7 @@ background-image: url("images/thss.jpg");
     display: none;
  }
 
- .img-span {
+.img-span {
     height: 5px;
     width: 5px;
     float: right;
@@ -958,12 +958,13 @@ table {
 #account {
     margin: 0 auto;
     text-align: center;
-    width: 970px;
+    width: 700px;
     height: auto;
     margin-bottom: 100px;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
+/*
 #account-left {
     width: 580px;
     height: auto;
@@ -975,6 +976,7 @@ table {
     height: auto;
     float: right;
 }
+*/
 
 #info {
     overflow: auto;
@@ -1000,7 +1002,7 @@ table {
     clear: both;
     margin: 0 auto;
     text-align: center;
-    width: 300px;
+    width: 350px;
     margin-bottom: 40px;
 }
 
@@ -1128,6 +1130,12 @@ ul.tabs {
 
 .tab-content ul li:last-child {
     border-bottom:none;
+}
+
+#points {
+    margin: 20px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 #achievements {

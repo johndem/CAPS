@@ -10,15 +10,15 @@ if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
     echo '<li><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li><a href="organisations.php">ORGANISATIONS</a></li>';
     echo '<li><a href="calendar.php">CALENDAR</a></li>';
-    echo '<li><a href="account.php">ACCOUNT</a></li>';
+    echo '<li><a href="statistics.php">STATISTICS</a></li>';
     if (!isset($_SESSION['user'])) {
         echo '<li class="log-reg"><a href="login.php">Login</a></li>';
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-         echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
-        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
+        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
         echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
        
 
     }
@@ -28,16 +28,16 @@ else if ((strpos($url,'volunteers') !== false) || (strpos($url,'search-results')
     echo '<li  id="selected"><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li><a href="organisations.php">ORGANISATIONS</a></li>';
     echo '<li><a href="calendar.php">CALENDAR</a></li>';
-    echo '<li><a href="account.php">ACCOUNT</a></li>';
+    echo '<li><a href="statistics.php">STATISTICS</a></li>';
 
     if (!isset($_SESSION['user'])) {
         echo '<li class="log-reg"><a href="login.php">Login</a></li>';
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-       echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
-        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
+        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
         echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
 
     }
 }
@@ -46,15 +46,15 @@ else if (strpos($url,'organisations') !== false) {
     echo '<li><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li  id="selected" ><a href="organisations.php">ORGANISATIONS</a></li>';
     echo '<li><a href="calendar.php">CALENDAR</a></li>';
-    echo '<li><a href="account.php">ACCOUNT</a></li>';
+    echo '<li><a href="statistics.php">STATISTICS</a></li>';
     if (!isset($_SESSION['user'])) {
         echo '<li class="log-reg"><a href="login.php">Login</a></li>';
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-       echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
-        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
+        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
         echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
 
     }
 }
@@ -63,32 +63,32 @@ else if (strpos($url,'calendar') !== false) {
     echo '<li><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li><a href="organisations.php">ORGANISATIONS</a></li>';
     echo '<li id="selected" ><a href="calendar.php">CALENDAR</a></li>';
-    echo '<li><a href="account.php">ACCOUNT</a></li>';
+    echo '<li><a href="statistics.php">STATISTICS</a></li>';
     if (!isset($_SESSION['user'])) {
         echo '<li class="log-reg"><a href="login.php">Login</a></li>';
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-  echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
-        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
+        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
         echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
 
     }
 }
-else if (strpos($url,'account') !== false) {
+else if (strpos($url,'statistics') !== false) {
     echo '<li><a href="index.php">HOME</a></li>';
     echo '<li><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li><a href="organisations.php">ORGANISATIONS</a></li>';
     echo '<li><a href="calendar.php">CALENDAR</a></li>';
-    echo '<li id="selected" ><a href="account.php">ACCOUNT</a></li>';
+    echo '<li id="selected" ><a href="statistics.php">STATISTICS</a></li>';
     if (!isset($_SESSION['user'])) {
         echo '<li class="log-reg"><a href="login.php">Login</a></li>';
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-       echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
-        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
+        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
         echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
 
     }
 }
@@ -97,15 +97,15 @@ else {
     echo '<li><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li><a href="organisations.php">ORGANISATIONS</a></li>';
     echo '<li><a href="calendar.php">CALENDAR</a></li>';
-    echo '<li><a href="account.php">ACCOUNT</a></li>';
+    echo '<li><a href="statistics.php">STATISTICS</a></li>';
     if (!isset($_SESSION['user'])) {
         echo '<li class="log-reg"><a href="login.php">Login</a></li>';
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
         echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong></li>';
-        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
         echo '<li class="log-reg"><a href="account.php">Profile </a></li>';
+        echo '<li class="log-reg"><a id="logout" href="index.php">Logout </a></li>';
 
     }
 }

@@ -46,8 +46,8 @@
     $area = mysqli_real_escape_string($link,$area);
     $area = htmlspecialchars($area, ENT_QUOTES);
 
-    $skills = mysqli_real_escape_string($link,$_POST['skills']);
-    $skills = htmlspecialchars($skills, ENT_QUOTES);
+    // $skills = mysqli_real_escape_string($link,$_POST['skills']);
+    // $skills = htmlspecialchars($skills, ENT_QUOTES);
 
     $event_id = $_SESSION['event_id'];
     unset($_SESSION['event_id']);
@@ -64,7 +64,7 @@
     if ($image3 == '')
         $image3 = $row[2];
 
-    $query = "UPDATE events SET org_id = '$org_id', title = '$title', category = '$category', address = '$address', str_num = '$str', zipcode = '$zip', area = '$area', day = '$day', time = '$time', agegroup = '$agegroup', skills = '$skills', sdesc = '$desc', ddesc = '$ddesc', image = '$image', image2 = '$image2', image3 =  '$image3' WHERE id = '$event_id'";
+    $query = "UPDATE events SET org_id = '$org_id', title = '$title', category = '$category', address = '$address', str_num = '$str', zipcode = '$zip', area = '$area', day = '$day', time = '$time', agegroup = '$agegroup', sdesc = '$desc', ddesc = '$ddesc', image = '$image', image2 = '$image2', image3 =  '$image3' WHERE id = '$event_id'";
 
     $result =  mysqli_query($link,$query);
 
@@ -75,8 +75,28 @@
     }
 
     else {
+        $q = "DELETE FROM skill_req WHERE event_id='$event_id'";
+        $res = mysqli_query($link,$q);
+        if ($res) {
+        $i = 0;
+        $skill = "skill0";
+        while (isset($_POST[$skill])) {
+            $s = $_POST[$skill];
+            $query = "INSERT INTO skill_req (event_id,skill_id) VALUES ('$event_id','$s') ";
+            $result = mysqli_query($link,$query);
+            $i = $i + 1;
+            $skill = "skill" . $i;
+        }
         mysqli_close($link); 
         echo "OK";
+    }
+    else {
+        mysqli_close($link); 
+        echo "Could not update skills! Please try again!";
+
+    }
+
+        
     }
     
 ?>

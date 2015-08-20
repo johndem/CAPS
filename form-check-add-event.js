@@ -188,6 +188,23 @@ function getValidity() {
     return error;
 
 }
+function getSelectedOptions(sel) {
+    var opts = [], opt;
+    
+    // loop through options in select list
+    for (var i=0, len=sel.options.length; i<len; i++) {
+        opt = sel.options[i];
+        
+        // check if selected
+        if ( opt.selected ) {
+            // add to array of option elements to return from this function
+            opts.push(opt);
+        }
+    }
+    
+    // return array containing references to selected option elements
+    return opts;
+}
 
 /*************************** Add Event utilities ***************************/
 
@@ -237,7 +254,7 @@ function getResponse() {
     var agegroup = encodeURIComponent(agegroup.options[agegroup.selectedIndex].text);
     var desc = encodeURIComponent(document.getElementById("desc").value);
     var ddesc = encodeURIComponent(document.getElementById("ddesc").value);
-    var skills = encodeURIComponent(document.getElementById("skills").value);
+    var skills = getSelectedOptions(document.getElementById("skills"));
     
 //    alert(title + " " + desc + " AAAAAAAAA     " + ddesc);
     
@@ -265,6 +282,11 @@ function getResponse() {
     formData.append('agegroup', agegroup);
     formData.append('description', desc);
     formData.append('detailed-description', ddesc);
+    for (var i=0; i<skills.length; i++) {
+        var skill = 'skill' + i;
+        formData.append(skill, skills[i].value);
+        alert(skills[i].value + "   " + skill);
+    }
     formData.append('skills', skills);
     formData.append('button', btn);
     
@@ -363,7 +385,7 @@ function getEventEditResponse() {
     var agegroup = encodeURIComponent(agegroup.options[agegroup.selectedIndex].text);
     var desc = encodeURIComponent(document.getElementById("desc").value);
     var ddesc = encodeURIComponent(document.getElementById("ddesc").value);
-    var skills = encodeURIComponent(document.getElementById("skills").value);
+    var skills = getSelectedOptions(document.getElementById("skills"));
     
     
     var file = document.getElementById('edit-event-pic').files[0];
@@ -389,7 +411,11 @@ function getEventEditResponse() {
     formData.append('agegroup', agegroup);
     formData.append('description', desc);
     formData.append('detailed-description', ddesc);
-    formData.append('skills', skills);
+    for (var i=0; i<skills.length; i++) {
+        var skill = 'skill' + i;
+        formData.append(skill, skills[i].value);
+        alert(skills[i].value + "   " + skill);
+    }
     formData.append('button', btn);
     
     $.ajax({  

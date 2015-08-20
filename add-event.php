@@ -46,13 +46,13 @@
     $area = mysqli_real_escape_string($link,$area);
     $area = htmlspecialchars($area, ENT_QUOTES);
 
-    $skills = mysqli_real_escape_string($link,$_POST['skills']);
-    $skills = htmlspecialchars($skills, ENT_QUOTES);
+    // $skills = mysqli_real_escape_string($link,$_POST['skills']);
+    // $skills = htmlspecialchars($skills, ENT_QUOTES);
 
     $org_id = $_SESSION['org_id'];
 
 
-    $query = "INSERT INTO events (org_id,title,category,address,str_num,zipcode,area,day,time,agegroup,skills,sdesc,ddesc,image,image2,image3) VALUES ('$org_id','$title',                 '$category','$address','$str','$zip','$area','$day','$time','$agegroup','$skills','$desc','$ddesc','$image','$image2','$image3')";
+    $query = "INSERT INTO events (org_id,title,category,address,str_num,zipcode,area,day,time,agegroup,sdesc,ddesc,image,image2,image3) VALUES ('$org_id','$title','$category','$address','$str','$zip','$area','$day','$time','$agegroup','$desc','$ddesc','$image','$image2','$image3')";
     
     $result =  mysqli_query($link,$query);
 
@@ -62,6 +62,20 @@
     }
    
     else {
+        $q = "SELECT id FROM events WHERE title='$title'";
+        $res = mysqli_query($link,$q);
+        $id = mysqli_fetch_row($res);
+        $id = $id[0];
+
+        $i = 0;
+        $skill = "skill0";
+        while (isset($_POST[$skill])) {
+            $s = $_POST[$skill];
+            $query = "INSERT INTO skill_req (event_id,skill_id) VALUES ('$id','$s') ";
+            $result = mysqli_query($link,$query);
+            $i = $i + 1;
+            $skill = "skill" . $i;
+        }
    
         mysqli_close($link); 
         echo "OK";

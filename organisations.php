@@ -208,7 +208,7 @@
                             </div>
 
                             <div class="label-in">
-                                <div class="h3">Optional Skills: * </div>
+                                <div class="h3">Skills you're looking for: * </div>
                                 <div id="err-skills" class="error-message"> </div>
                                 <div id="skills-span" class="img-span"></div>
                                 <select id="skills" class="in" multiple required>

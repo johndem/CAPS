@@ -94,7 +94,7 @@
                             <li><?php echo "<strong>Address:  </strong>" . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
                             <li><?php echo "<strong>Date:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
                             <li><?php echo "<strong>Recommended age group:  </strong>" . $row[10]; ?></li>
-                            <li><?php echo "<strong>Optional skills:  </strong>" . $skills[2]; ?></li>
+                            <li><?php echo "<strong>Skills required:  </strong>" . $skills[2]; ?></li>
                             <?php $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ"); ?>
                         </ul>
 				  <div><h2>Description</h3></div>

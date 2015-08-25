@@ -94,7 +94,18 @@
                             <li><?php echo "<strong>Address:  </strong>" . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
                             <li><?php echo "<strong>Date:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
                             <li><?php echo "<strong>Recommended age group:  </strong>" . $row[10]; ?></li>
-                            <li><?php echo "<strong>Skills required:  </strong>" . $skills[2]; ?></li>
+                            <li><?php echo "<strong>Skills required:  </strong>"; ?>
+                            <?php  
+                            $skill = mysqli_fetch_row($skills);
+                            echo $skill[0];
+
+                            while ($skill = mysqli_fetch_row($skills)) {
+
+                                 echo  ",  " . $skill[0];
+                                }
+                                    @mysqli_close($link);
+                            ?>
+                             </li>
                             <?php $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ"); ?>
                         </ul>
 				  <div><h2>Description</h3></div>
@@ -148,9 +159,23 @@
                         ?>
 
                         <?php if(isset($_SESSION['vol_id']) AND $applied == false) { ?>
+                         <select id="skills-choose">
+                            <option value="0" disabled selected>Select One </option>
+                            <?php  
+                             include 'create-link.php';
+                            $query = "SELECT skills.skill, skills.value FROM skills, skill_req WHERE skill_req.event_id='$id' AND skill_req.skill_id = skills.value";
+                            $skills = mysqli_query($link,$query);
+                            while ($skill = mysqli_fetch_row($skills)) {
+
+                                 echo "<option value='" . $skill[1] . "'>" . $skill[0] . "</option>";
+                                }
+                                  @mysqli_close($link);
+                            ?>
+                        </select>
                         <div id="btnApply" onclick="volApply()">
                             APPLY
                         </div>
+
                         <?php 
                         }elseif(isset($_SESSION['vol_id']) AND $applied) { ?>
                         <div id='btnCancel' onclick="cancel()">

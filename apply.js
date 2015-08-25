@@ -37,8 +37,11 @@ function cancel() {
 function volApply() {
 
 	var eventId = encodeURIComponent(getParameterByName('id'));
+    var skill = document.getElementById("skills-choose");
+    var skill_value = skill.options[skill.selectedIndex].value;
+    //alert(skill_value);
 
-	var parameters = "eventID=" + eventId;
+	var parameters = "eventID=" + eventId + "&skill=" + skill_value;
 
 	//alert(parameters);
 	console.log(parameters);

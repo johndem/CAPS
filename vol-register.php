@@ -33,7 +33,7 @@
     $date = mysqli_real_escape_string($link,$_POST['birth']);
     $date = htmlspecialchars($date, ENT_QUOTES);
 
-    $query = "INSERT INTO user (firstname,lastname,username,email,pasword,phone,address,str_number,zip,city,date,picture) VALUES ('$first', '$last','$user','$email','$pass','$phone','$address','$str','$zip','Thessaloniki', '$date', 'images/profile.png')";
+    $query = "INSERT INTO user (firstname,lastname,username,email,password,phone,address,str_number,zip,city,date,picture) VALUES ('$first', '$last','$user','$email','$pass','$phone','$address','$str','$zip','Thessaloniki', '$date', 'images/profile.png')";
     
     mysqli_query($link,$query);
     @mysqli_close($link); 

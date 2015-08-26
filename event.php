@@ -249,8 +249,11 @@
                             
                            </div>
 
+                           <div class="approve-btn">Approve</div>
+
                        <?php }
                         ?>
+                        
 
                     </div>
                 

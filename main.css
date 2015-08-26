@@ -1521,10 +1521,22 @@ div#btnApply:hover {
     border-radius: 10px;
     color: white;
     cursor: pointer;
+    width: inherit;
 }
 
 #skills-choose {
     margin-left: 10px;
+}
+
+.approve-btn {
+    cursor: pointer;
+    width: inherit;
+    background-color: #33D900;
+    border-radius: 10px;    
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    padding: 5px;
 }
 
 

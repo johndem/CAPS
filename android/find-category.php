@@ -2,9 +2,41 @@
 
 include 'create-link.php';
 
-$category = $_POST["category"];
+$query = "SELECT * FROM events WHERE status = '0'"; // ORDER BY id desc";
 
-$query = "SELECT * FROM events WHERE category='$category' AND status = '0' ORDER BY id desc";
+if (isset($_POST["category"])) { 
+
+    $category = $_POST["category"]; 
+    $query = $query . "AND category='$category'";
+
+}
+if (isset($_POST["area"])) { 
+
+    $area = $_POST["area"];
+    $query = $query . "OR area='$area'";
+
+}
+if (isset($_POST["date"])) { 
+
+    $date = $_POST["date"];
+    $query = $query . "OR day='$date'";
+
+}
+if (isset($_POST["agegroup"])) { 
+
+    $agegroup = $_POST["agegroup"];
+    $query = $query . "AND agegroup='$agegroup'";
+
+}
+// if (isset($_POST["skill"])) { 
+
+//     $area = $_POST["area"];
+//     $query = $query . "AND area= '$area'";
+
+// }
+
+$query = $query . " ORDER BY id desc";
+
 $results = mysqli_query($link,$query);
 
 

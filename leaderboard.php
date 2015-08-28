@@ -6,16 +6,23 @@ $query = "SELECT id,firstname,lastname,picture,points FROM user ORDER BY points 
 $results = mysqli_query($link,$query);
 
 if (mysqli_num_rows($results) > 0) {
-    echo '<div>';
-    echo '<ul>';
+    
     $position = 1;
+    echo '<table cellspacing="0" id="leaderboard-table">';
+    
     while ($row = mysqli_fetch_row($results)) {
-        if ($row[4] != 0)
-            echo '<li>' . $position . " " . $row[1] . " " . $row[2] . " " . $row[4] . '</li>';
+        if ($row[4] != 0) {
+            echo '<tr>';
+            echo '<td>' . $position . '</td>';
+            echo '<td><img src="' .  $row[3] . '" width="100" height="100" /></td>';
+            echo '<td>' . $row[1] . ' ' . $row[2] . '</td>';
+            echo '<td>' . $row[4] . ' pts' . '</td>';
+            echo '</tr>';
+        }
         $position++;
     }
-    echo '</ul>';
-    echo '</div>';
+    
+    echo '</table>';
 }
 
 

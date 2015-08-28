@@ -948,9 +948,50 @@ table {
     display: inline-block;
 }
 
+/*********************************************************** STATISTICS.PHP ******************************************************/
+#statistics {
+    margin: 0 auto;
+    text-align: center;
+    width: 1000px;
+    height: auto;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+#stats {
+    width: inherit;
+    height: auto;
+}
+
+#stats-map {
+    width: 700px;
+    height: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+#stats-options {
+    width: 250px;
+    height: inherit;
+    float: right;
+}
+
+#leaderboard {
+    width: inherit;
+    height: auto;
+    clear: both;
+}
 
 
+#leaderboard-table {
+    border-collapse: collapse;
+}
 
+#leaderboard-table tr {
+    background-color: #ffe8d5;
+    padding-bottom: 10px;
+}
 
 
 /*********************************************************** ACCOUNT.PHP ******************************************************/

@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
     </head>
     <body>
         
@@ -25,6 +26,7 @@
 
         <!-- content -->
         <div class="content">
+            
             <h1 class="center-title"></h1>
             <div class="page-title"> 
                 <div class="main-title">Statistics</div>  
@@ -33,30 +35,44 @@
             
                 
                 
-            <div id="default-account-tab">
+            <div id="statistics">
                 
-                <?php
-                echo '<div class="side-widgets">'; 
-                include 'quick-search-widget.php';
-				include 'most-recent-event-widget.php';
-                echo '</div>';
-                ?>
-                  
-                <div class="org-info">
-                    <h3>All you need to do is sign up!</h3>
-                    <p>You will need the following info to complete your registration: </p>
-                    <ul>
-                        <li>A username and a password for login</li>
-                        <li>A valid and active email</li>
-
-                        <div class="org-info-btn">
-                            <h3><a href="register.php">Register here &raquo;</a></h3>
-                        </div>
-                    </ul>
+                <div id="stats">
                     
+                    
+                    
+                    <div id="stats-map"></div>
+                    
+                    <div id="stats-options">
+                        <h2>Leaderboard</h2>
+<?php
+include 'create-link.php';
+$query="SELECT * FROM events WHERE YEAR(day) = 2015 AND MONTH(day) = 5";
+$results = mysqli_query($link,$query);
+$locations = array();
+if (mysqli_num_rows($results) > 0) {
+    while ($row = mysqli_fetch_row($results)) {
+        $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ");
+        array_push($locations, $location);
+    }
+    echo sizeof($locations);
+}
+else
+    echo "NOOO";
+
+?>
+                    </div>
+                     
+                </div>
+                
+                <div id="leaderboard">
+                    <h2>Leaderboard</h2>
                     <?php include 'leaderboard.php'; ?>
                     
-                 </div>
+                    
+                    
+                </div>
+                
                     
             </div>
                     
@@ -69,6 +85,55 @@
             
         <!-- footer -->
         <?php include 'footer.php'; ?>
+        
+        <script>
+            function initialize() {
+                var mapCanvas = document.getElementById('stats-map');
+                var mapOptions = {
+                    center: new google.maps.LatLng(40.6320457, 22.941188600000032),
+                    zoom: 12,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(mapCanvas, mapOptions);
+                
+                var geocoder = new google.maps.Geocoder();
+                
+                //fffffffffff
+                
+                //for (var i = 0; i < ; i++) {
+                
+                <?php foreach ($locations as $location) { 
+                ?>
+                    var address = <?php echo json_encode($location, JSON_UNESCAPED_UNICODE); ?>;
+                    address = address.toString();
+                    //alert(address);
+
+                    geocoder.geocode( { 'address': address}, function(results, status) {
+
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            var latitude = results[0].geometry.location.lat();
+                            var longitude = results[0].geometry.location.lng();
+                            alert(address + " " + latitude);
+
+                            var myLatlng = new google.maps.LatLng(latitude,longitude);
+                            var marker = new google.maps.Marker({
+                                position: myLatlng,
+                                map: map,
+                                title:"Volunteering Event"
+                            });
+                        } 
+                    }); 
+                <?php } ?>
+                //}
+                
+                
+                
+                //fffffffffffff
+                
+                
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
             
        
     </body>

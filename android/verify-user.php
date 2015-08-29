@@ -8,13 +8,15 @@ $password = $_POST["password"];
 $query = "SELECT id FROM user WHERE username = '$username' AND password = '$password'";
 $results = mysqli_query($link,$query);
 
+$response = array();
+$response["log-state"] = array();
 $userId = '0';
+$userRole = '';
 
 if (mysqli_num_rows($results) > 0) {
-    
     $row = mysqli_fetch_row($results);
     $userId = $row[0];
-    
+    $userRole = 'vol';
 }
 
 if ($userId == '0') {
@@ -25,15 +27,18 @@ if ($userId == '0') {
     if (mysqli_num_rows($results) > 0) {
         $row = mysqli_fetch_row($results);
         $userId = $row[0];
+        $userRole = 'org';
     }
     
 }
 
-//$fp = fopen('results.json', 'w');
-//fwrite($fp, json_encode($jsonData));
-//fclose($fp);
+array_push($response["log-state"], $userId, $userRole);
 
-echo json_encode($userId);
+$fp = fopen('results.json', 'w');
+fwrite($fp, json_encode($response));
+fclose($fp);
+
+echo json_encode($response);
 
 @mysqli_close($link);
 

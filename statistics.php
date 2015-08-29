@@ -33,6 +33,20 @@
                 <h4>Volunteering statistics and leaderboard</h4>
             </div>
             
+            
+            <?php
+            include 'create-link.php';
+            $query="SELECT * FROM events WHERE YEAR(day) = 2015 AND MONTH(day) = 5";
+            $results = mysqli_query($link,$query);
+            $locations = array();
+            if (mysqli_num_rows($results) > 0) {
+                while ($row = mysqli_fetch_row($results)) {
+                    $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ");
+                    array_push($locations, $location);
+                }
+            }
+
+            ?>
                 
                 
             <div id="statistics">
@@ -44,23 +58,13 @@
                     <div id="stats-map"></div>
                     
                     <div id="stats-options">
-                        <h2>Leaderboard</h2>
-<?php
-include 'create-link.php';
-$query="SELECT * FROM events WHERE YEAR(day) = 2015 AND MONTH(day) = 5";
-$results = mysqli_query($link,$query);
-$locations = array();
-if (mysqli_num_rows($results) > 0) {
-    while ($row = mysqli_fetch_row($results)) {
-        $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ");
-        array_push($locations, $location);
-    }
-    echo sizeof($locations);
-}
-else
-    echo "NOOO";
-
-?>
+                        <h2>Pick duration in months</h2>
+                        <form>
+                            From:
+                            <input type="month" name="bdaymonth">
+                            To:
+                            <input type="month" name="bdaymonth">
+                        </form>
                     </div>
                      
                 </div>
@@ -98,13 +102,14 @@ else
                 
                 var geocoder = new google.maps.Geocoder();
                 
-                //fffffffffff
                 
-                //for (var i = 0; i < ; i++) {
+                    
+                var js_var = JSON.parse('<?php echo json_encode($locations); ?>');
+
                 
-                <?php foreach ($locations as $location) { 
-                ?>
-                    var address = <?php echo json_encode($location, JSON_UNESCAPED_UNICODE); ?>;
+                for (var i = 0; i < js_var.length; i++) {
+                
+                    address = js_var[i];
                     address = address.toString();
                     //alert(address);
 
@@ -113,7 +118,7 @@ else
                         if (status == google.maps.GeocoderStatus.OK) {
                             var latitude = results[0].geometry.location.lat();
                             var longitude = results[0].geometry.location.lng();
-                            alert(address + " " + latitude);
+                            //alert(address + " " + latitude);
 
                             var myLatlng = new google.maps.LatLng(latitude,longitude);
                             var marker = new google.maps.Marker({
@@ -123,13 +128,8 @@ else
                             });
                         } 
                     }); 
-                <?php } ?>
-                //}
                 
-                
-                
-                //fffffffffffff
-                
+                }
                 
             }
             google.maps.event.addDomListener(window, 'load', initialize);

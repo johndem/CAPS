@@ -33,50 +33,57 @@
                 <h4>Volunteering statistics and leaderboard</h4>
             </div>
             
-            
             <?php
-            include 'create-link.php';
-            $query="SELECT * FROM events WHERE YEAR(day) = 2015 AND MONTH(day) = 5";
-            $results = mysqli_query($link,$query);
-            $locations = array();
-            if (mysqli_num_rows($results) > 0) {
-                while ($row = mysqli_fetch_row($results)) {
-                    $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ");
-                    array_push($locations, $location);
+
+            if (isset($_GET["fromdate"]) && isset($_GET["todate"])) {
+                $fromdate = $_GET["fromdate"];
+                $fromstrings = explode('-',$fromdate);
+                $todate = $_GET["todate"];
+                $tostrings = explode('-',$todate);
+      
+                include 'create-link.php';
+                $query="SELECT * FROM events WHERE YEAR(day) >= '$fromstrings[0]' AND YEAR(day) <= '$tostrings[0]' AND MONTH(day) >= '$fromstrings[1]' AND MONTH(day) <= '$tostrings[1]'";
+                $results = mysqli_query($link,$query);
+                
+                $locations = array();
+                if (mysqli_num_rows($results) > 0) {
+                    while ($row = mysqli_fetch_row($results)) {
+                        $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ");
+                        array_push($locations, $location);
+                    }
                 }
             }
 
+
             ?>
+            
                 
                 
             <div id="statistics">
                 
                 <div id="stats">
                     
-                    
-                    
                     <div id="stats-map"></div>
                     
                     <div id="stats-options">
                         <h2>Pick duration in months</h2>
-                        <form>
-                            From:
-                            <input type="month" name="bdaymonth">
-                            To:
-                            <input type="month" name="bdaymonth">
+                        <form method="get" action="">
+                            <div class="month-picker">
+                                <div>From:</div>
+                                <input type="month" name="fromdate">
+                            </div>
+                            <div class="month-picker">
+                                <div>To:</div>
+                                <input type="month" name="todate">
+                            </div>
+                            <div id="go">
+                                <input type="submit" class="submitBtn" id="sButton" name="submit" value="Display" />
+                            </div>
                         </form>
+                        
                     </div>
                      
-                </div>
-                
-                <div id="leaderboard">
-                    <h2>Leaderboard</h2>
-                    <?php include 'leaderboard.php'; ?>
-                    
-                    
-                    
-                </div>
-                
+                </div>   
                     
             </div>
                     

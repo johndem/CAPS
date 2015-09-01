@@ -441,6 +441,7 @@ background-image: url("images/thss.jpg");
 
 .navigation li {
     display: inline-block;
+    position: relative;
 }
 
 .navigation li a:hover {
@@ -468,7 +469,7 @@ background-image: url("images/thss.jpg");
 }
 
 
-#selected a {
+#selected > a {
     background-color: #E2E6E1;
 }
 
@@ -483,8 +484,22 @@ background-image: url("images/thss.jpg");
 .nav-user {
     margin-left: 10px;
     color: #525252;
-    
+}
 
+.navigation li ul li {
+    float: none; 
+    width: 200px; 
+    text-align: left; 
+}
+
+.navigation li ul {
+    position: absolute; 
+    left: 0; 
+    visibility: hidden;
+}
+
+.navigation li:hover ul {
+    visibility: visible;
 }
 
 /*************************************************************** WIDGETS **********************************************************/
@@ -991,6 +1006,21 @@ table {
 #leaderboard-table tr {
     background-color: #ffe8d5;
     padding-bottom: 10px;
+}
+
+.month-picker {
+    margin: 0 auto;
+    text-align: center;
+    width: 200px;
+    clear: both;
+}
+
+.month-picker div {
+    float: left;
+}
+
+.month-picker input {
+    float: right;
 }
 
 

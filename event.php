@@ -249,7 +249,7 @@
                             
                            </div>
 
-                           <div class="approve-btn">Approve</div>
+                           <div class="approve-btn" onclick="window.location='approve.php?eventid=<?php echo $eventid; ?>'">Approve</div>
 
                        <?php }
                         ?>

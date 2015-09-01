@@ -1932,3 +1932,22 @@ div#btnApply:hover {
 /*.content .center-title:last-of-type {
     margin-bottom: 50px;
 }*/
+
+/*************************** APPROVE.PHP ********************/
+
+.actions span {
+    background-color:lightgrey;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    margin: 5px; 
+    cursor: pointer;
+}
+
+.actions-selected span {
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    margin: 5px; 
+}

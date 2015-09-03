@@ -13,8 +13,8 @@ if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
     echo '<li>
     <a href="statistics.php">STATISTICS</a>
         <ul>
-            <li><a href="statistics.php">Event map stats</a></li>
-            <li><a href="leaderboard.php">Leaderboard</a></li>
+            <li><a href="statistics.php">EVENT MAP STATS</a></li>
+            <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
     

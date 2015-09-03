@@ -309,18 +309,11 @@ textarea {
 }
 
 .center-title {
-    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(50,50,50,0) 25%, rgba(183,183,183,0.57) 91%, rgba(183,183,183,0.65) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(25%,rgba(50,50,50,0)), color-stop(91%,rgba(183,183,183,0.57)), color-stop(100%,rgba(183,183,183,0.65))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(50,50,50,0) 25%,rgba(183,183,183,0.57) 91%,rgba(183,183,183,0.65) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(50,50,50,0) 25%,rgba(183,183,183,0.57) 91%,rgba(183,183,183,0.65) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(50,50,50,0) 25%,rgba(183,183,183,0.57) 91%,rgba(183,183,183,0.65) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(50,50,50,0) 25%,rgba(183,183,183,0.57) 91%,rgba(183,183,183,0.65) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6b7b7b7',GradientType=0 ); /* IE6-9 */
     color: #525252;
     margin-top: 0;
     height: 20px;
     text-align: center;
-    background-color: #E2E6E1;
+    background-color: #31D100;
 	margin-bottom: 50px;
 }
 
@@ -369,14 +362,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     background-color: #31D100;
     width: auto;
     height: 150px;
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ababab+0,ababab+100&amp;1+0,0.45+100 */
-background: -moz-linear-gradient(top,  rgba(171,171,171,1) 0%, rgba(171,171,171,0.45) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(171,171,171,1)), color-stop(100%,rgba(171,171,171,0.45))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(171,171,171,1) 0%,rgba(171,171,171,0.45) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(171,171,171,1) 0%,rgba(171,171,171,0.45) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(171,171,171,1) 0%,rgba(171,171,171,0.45) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(171,171,171,1) 0%,rgba(171,171,171,0.45) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ababab', endColorstr='#73ababab',GradientType=0 ); /* IE6-9 */
+
 }
 
 
@@ -386,18 +372,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ababab', end
 .masthead {
     overflow: hidden;
     color: white;
-    background-color: #31D100;
     width: auto;
     height: 500px;
-	
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4ee000+82,24d800+99&amp;0+6,0.65+99 */
-background: -moz-linear-gradient(top,  rgba(78,224,0,0) 6%, rgba(78,224,0,0.53) 82%, rgba(36,216,0,0.65) 99%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,rgba(78,224,0,0)), color-stop(82%,rgba(78,224,0,0.53)), color-stop(99%,rgba(36,216,0,0.65))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(78,224,0,0) 6%,rgba(78,224,0,0.53) 82%,rgba(36,216,0,0.65) 99%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(78,224,0,0) 6%,rgba(78,224,0,0.53) 82%,rgba(36,216,0,0.65) 99%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(78,224,0,0) 6%,rgba(78,224,0,0.53) 82%,rgba(36,216,0,0.65) 99%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(78,224,0,0) 6%,rgba(78,224,0,0.53) 82%,rgba(36,216,0,0.65) 99%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004ee000', endColorstr='#a624d800',GradientType=0 ); /* IE6-9 */
 
 }
 
@@ -421,7 +397,7 @@ background-image: url("images/thss.jpg");
 
 .navigation {
     text-align: center;
-    background-color: #ABABAB;
+    background-color: #31D100;
 	/*background-image: url("images/thessaloniki-map.jpg");
 	background-size: cover;*/
     position: fixed;
@@ -445,14 +421,14 @@ background-image: url("images/thss.jpg");
 }
 
 .navigation li a:hover {
-    background-color: #E2E6E1;
+    background-color: #FF9639;
 }
 
 .navigation a {
     display: block;
-    background-color: #ABABAB;
+    background-color: #31D100;
     font-family: 'Open Sans', sans-serif;
-    color: #525252;
+    color: white;
     padding: 10px 10px 10px 10px;
     text-decoration: none;
     font-size: 15px;
@@ -466,19 +442,21 @@ background-image: url("images/thss.jpg");
     border-top-left-radius: 15px;*/
     /*border-left: 1px black dotted;*/
     min-width: 140px;
+    letter-spacing: 4px;
 }
 
 
 #selected > a {
-    background-color: #E2E6E1;
+    background-color: #FF9639;
 }
 
 .log-reg a {
     height: 20px;
     border-radius: 70px;
-    background-color: lightgrey;
+    background-color: #FF9639;
     margin-left: 10px;
     min-width: 80px;
+    letter-spacing: 2px;
 }
 
 .nav-user {

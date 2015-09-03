@@ -82,6 +82,40 @@
                         <div class="account-label-in"><a href="edit-account.php">Edit my account &raquo;</a></div>
                     </div>
 
+                    <h2>Notifications</h2>
+                    <div class="notification-box"> 
+                        <?php
+
+                            include 'create-link.php';
+                            $id = 0;
+                            $role = 0;
+
+                            if (isset($_SESSION['vol_id'])) {
+                                $id = $_SESSION['vol_id'];
+                            }
+                            else {
+                                $id = $_SESSION['org_id'];
+                                $role = 1;
+                            }
+
+                            $query = "SELECT notifications.date, messages.text FROM notifications, messages WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id";
+                             $results = mysqli_query($link,$query);   
+                            while ($row = mysqli_fetch_row($results)) { ?>
+
+                            <div class="notification"> 
+                                <div class="image"> </div>
+                                <div class="message">
+                                    <?php echo $row[1]; ?>
+                                </div> 
+
+                                <div class="date">
+                                    <?php echo $row[0]; ?>
+                                </div> 
+                            </div>
+
+                           <?php } ?>
+                    </div>
+
                     <?php if(!isset($_SESSION['org_id'])) { ?>
                         <div id="points">Total points earned: 75</div>
                     <?php } ?>

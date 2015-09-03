@@ -152,3 +152,39 @@ $(document).ready(function () {
    });
 
 });
+var http = getXMLHttpRequest();
+
+function getXMLHttpRequest() {
+    if (window.XMLHttpRequest) {
+        request = new XMLHttpRequest();
+    } 
+    else {
+        request = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    return request;
+}
+
+/**** APPLY BUTTON FUNCTION *********/
+
+function notify() {
+
+  var parameters = "id=" + "0";
+
+  //alert(parameters);
+  console.log(parameters);
+
+    http.open("POST", "notify.php", true);
+    http.onreadystatechange = useHttpResponseVol;
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(parameters);
+}
+
+/****** MAKE REQUEST *******/
+
+function useHttpResponseVol() {
+    if (http.readyState == 4) {
+        if (http.status == 200) {
+            console.log(http.responseText);
+        }
+    }
+}

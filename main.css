@@ -154,7 +154,7 @@
     margin-bottom: 15px;
     padding: 20px;
     padding-bottom: 50px;
-    background-color: #E2E6E1;
+    background-color: #ffe8d5;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     box-shadow: 5px 5px 5px #999;
@@ -316,6 +316,15 @@ textarea {
     text-align: center;
     background-color: #31D100;
 	margin-bottom: 50px;
+ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#36cc00+0,36cc00+100&amp;0.25+0,0.65+99 */
+background: -moz-linear-gradient(top,  rgba(54,204,0,0.25) 0%, rgba(54,204,0,0.65) 99%, rgba(54,204,0,0.65) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(54,204,0,0.25)), color-stop(99%,rgba(54,204,0,0.65)), color-stop(100%,rgba(54,204,0,0.65))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(54,204,0,0.25) 0%,rgba(54,204,0,0.65) 99%,rgba(54,204,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(54,204,0,0.25) 0%,rgba(54,204,0,0.65) 99%,rgba(54,204,0,0.65) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(54,204,0,0.25) 0%,rgba(54,204,0,0.65) 99%,rgba(54,204,0,0.65) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(54,204,0,0.25) 0%,rgba(54,204,0,0.65) 99%,rgba(54,204,0,0.65) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4036cc00', endColorstr='#a636cc00',GradientType=0 ); /* IE6-9 */
+
 }
 
 .page-title {
@@ -376,6 +385,13 @@ textarea {
     width: auto;
     height: 500px;
 
+}
+
+.masthead_rest {
+    overflow: hidden;
+    color: white;
+    width: auto;
+    height: 200px;
 }
 
 #title {
@@ -462,7 +478,8 @@ background-image: url("images/thss.jpg");
 
 .nav-user {
     margin-left: 10px;
-    color: #525252;
+    color: white;
+    letter-spacing: 1px;
 }
 
 .navigation li ul li {
@@ -507,7 +524,7 @@ background-image: url("images/thss.jpg");
 .event-info {
     text-align: left;
     padding: 10px;
-    background-color: rgba(82,82,82,0.2);
+    background-color: #ffe8d5;
     margin: 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -515,7 +532,7 @@ background-image: url("images/thss.jpg");
 }
 
 .event-info:hover {
-    background-color: rgba(82,82,82,0.4);
+    background-color: #ff9639;
 }
 
 .event-info span {
@@ -538,7 +555,7 @@ background-image: url("images/thss.jpg");
 .recent-events {
     float: left;
     width: inherit;
-    background-color: #E2E6E1;
+    background-color: #ffc18b;
     box-shadow: 5px 5px 5px #999;
     margin-bottom: 50px;
     border-radius: 3px;
@@ -1104,8 +1121,6 @@ table {
 */
 
 .tabbed_area {
-    border:1px solid #494e52;
-    background-color:#636d76;
     padding:8px;    
 }
 
@@ -1119,8 +1134,8 @@ ul.tabs li {
 }
 
 ul.tabs li a {
-    background-color:#464c54;
-    color:#ffebb5;
+    background-color:#31D100;
+    color: white;
     padding:8px 14px 8px 14px;
     text-decoration:none;
     font-size:9px;
@@ -1131,13 +1146,13 @@ ul.tabs li a {
 }
 
 ul.tabs li a:hover {
-    background-color:#2f343a;
+    background-color:#FF9639;
     border-color:#2f343a;
 }
 
 ul.tabs li a.active {
-    background-color:#ffffff;
-    color:#282e32;
+    background-color:#FF9639;
+    color:white;
     border:1px solid #464c54; 
     border-bottom: 1px solid #ffffff;
 }
@@ -1333,12 +1348,13 @@ ul.tabs {
 }
 
 .notification-box {
-    padding: 10px;
+    margin: 0 auto;
     width: inherit;
     min-height: 200px;
     overflow: scroll;
     margin: 50px;
     text-align: left;
+    background-color: #ffe8d5;
 }
 
 .notification .date {
@@ -1363,7 +1379,7 @@ ul.tabs {
 }
 
 .notification {
-    background-color: #ffe8d5;
+    background-color: #ffc18b;
     padding: 5px;
     min-height: 50px;
 }

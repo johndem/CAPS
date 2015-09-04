@@ -1,14 +1,15 @@
 <div class="back"> 
 
-
 <?php 
+$url = $_SERVER["REQUEST_URI"];
+	if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
+
 echo '<div class="masthead">';
     echo '<h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>'; ?>
 
 <?php
 
-	$url = $_SERVER["REQUEST_URI"];
-	if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
+	
 
  ?>
 
@@ -28,7 +29,11 @@ echo '<div class="masthead">';
 				</div>
 			</div>
 
-<?php }echo '</div>';
+<?php }else {
+	echo '<div class="masthead_rest">';
+    echo '<h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>';
+
+} echo '</div>';
 
 ?>
 

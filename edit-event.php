@@ -73,28 +73,39 @@
         echo "Database problem" . mysqli_error() ;
         mysqli_close($link); 
     }
-
     else {
+        
+        $query = "SELECT volunteerID FROM apply WHERE eventID = '$event_id'";
+        $results = mysqli_query($link,$query);
+        while ($row = mysqli_fetch_row($results)) {
+            $vol_id = $row[0];
+            $query = "INSERT INTO notifications (user_id,not_id,role,event_id) VALUES ('$vol_id','8','0','$id')";
+            mysqli_query($link,$query);
+        }
+        
+        
+        
+        
         $q = "DELETE FROM skill_req WHERE event_id='$event_id'";
         $res = mysqli_query($link,$q);
         if ($res) {
-        $i = 0;
-        $skill = "skill0";
-        while (isset($_POST[$skill])) {
-            $s = $_POST[$skill];
-            $query = "INSERT INTO skill_req (event_id,skill_id) VALUES ('$event_id','$s') ";
-            $result = mysqli_query($link,$query);
-            $i = $i + 1;
-            $skill = "skill" . $i;
+            $i = 0;
+            $skill = "skill0";
+            while (isset($_POST[$skill])) {
+                $s = $_POST[$skill];
+                $query = "INSERT INTO skill_req (event_id,skill_id) VALUES ('$event_id','$s') ";
+                $result = mysqli_query($link,$query);
+                $i = $i + 1;
+                $skill = "skill" . $i;
+            }
+            mysqli_close($link); 
+            echo "OK";
         }
-        mysqli_close($link); 
-        echo "OK";
-    }
-    else {
-        mysqli_close($link); 
-        echo "Could not update skills! Please try again!";
+        else {
+            mysqli_close($link); 
+            echo "Could not update skills! Please try again!";
 
-    }
+        }
 
         
     }

@@ -87,13 +87,32 @@
 			mysqli_close($link);
 		}
         elseif ($type == 'events') {
-			$query = "DELETE FROM events WHERE id=$id";
-            $q = "DELETE FROM apply WHERE eventID='$id'";
+            $query = "SELECT org_id FROM events WHERE id = '$id'";
+            $results = mysqli_query($link,$query);
+            $row = mysqli_fetch_row($results);
+            $org_id = $row[0];
+            
+			$query = "DELETE FROM events WHERE id = $id";
 
-			if (mysqli_query($link, $query) && mysqli_query($link, $q)) {
-   				 echo "OK";
+			if (mysqli_query($link, $query)) {
+                  
+                $query = "INSERT INTO notifications (user_id,not_id,role,event_id) VALUES ('$org_id','3','1','$id')";
+                mysqli_query($link,$query);
+                
+                $query = "SELECT volunteerID FROM apply WHERE eventID = '$id'";
+                $results = mysqli_query($link,$query);
+                while ($row = mysqli_fetch_row($results)) {
+                    $vol_id = $row[0];
+                    $query = "INSERT INTO notifications (user_id,not_id,role,event_id) VALUES ('$vol_id','9','0','$id')";
+                    mysqli_query($link,$query);
+                }
+                
+                $q = "DELETE FROM apply WHERE eventID='$id'";
+                mysqli_query($link, $q);
+                
+   	            echo "OK";
 			} else {
-  				 echo "Error";
+  		        echo "Error";
 			}
 
 			mysqli_close($link);

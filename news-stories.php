@@ -29,23 +29,24 @@
             
             <h1 class="center-title"></h1>
             <div class="page-title"> 
-                <div class="main-title">Leaderboard statistics</div>  
-                <h4>A list of the 10 highest ranked volunteers based on points accumulated.</h4>
+                <div class="main-title">News and Stories</div>  
+                <h4>Stay up to date with the latest news!</h4>
             </div>
             
-            
                 
-                
-            <div id="leaderboard-statistics">
+            <div id="news-stories">
                 
                 <?php
                     echo '<div class="side-widgets">';
                     include 'recent-events-widget.php'; 
+                    include 'quick-search-widget.php';
+            //include 'most-recent-event-widget.php';
                     echo '</div>';
                 ?>
                 
-                <div id="leaderboard">
-                    <?php include 'show-leaderboard.php'; ?>     
+                
+                <div id="news-list">
+                    <?php include 'display-news.php'; ?>     
                 </div>
                 
                     

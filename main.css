@@ -142,7 +142,7 @@
 #news {
     margin: 0 auto;
     text-align: center;
-    width: auto;
+    width: 1000px;
     margin-top: 70px;
 }
 
@@ -151,15 +151,18 @@
 }
 
 .new {
-    margin-bottom: 15px;
-    padding: 20px;
-    padding-bottom: 50px;
-    background-color: #ffe8d5;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    box-shadow: 5px 5px 5px #999;
-	width: 50%;
-    margin: 0 auto;
+    padding-left: 12px;
+    padding-right: 12px;
+	width: 475px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.new img {
+    width: 200px;
+    height: 150px;
+    float: left;
+    margin-right: 8px;
 }
 
 .new-text a {
@@ -173,11 +176,43 @@
 
 #home-blanket {
     height: 100px;
+    clear: both;
 }
 
 #featured ul li img {
     width: 33vw;
     height: 360px;
+}
+
+#btnNews {
+    margin: 0 auto;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    color: black;
+    font-family: 'Open Sans';
+    background-color: #33D900;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #999;
+    clear: both;
+}
+
+#btnNews a {
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    color: white;
+    font-size: 21px;
+}
+
+#btnNews a:hover {
+    background-color: #ff9639;
+}
+
+#btnNews:hover {
+	background-color: #ff9639;
 }
 
 
@@ -1033,19 +1068,33 @@ table {
     float: right;
 }
 
-#leaderboard {
-    width: inherit;
+#leaderboard-statistics {
+    margin: 0 auto;
+    text-align: center;
+    width: 1200px;
     height: auto;
-    clear: both;
+    margin-bottom: 100px;
+    margin-top: 50px;
 }
 
+#leaderboard {
+    width: 750px;
+    height: auto;
+    float: left;
+}
 
 #leaderboard-table {
+    width: inherit;
     border-collapse: collapse;
 }
 
 #leaderboard-table tr {
     background-color: #ffe8d5;
+    padding-bottom: 10px;
+}
+
+#leaderboard-table td {
+    padding-top: 10px;
     padding-bottom: 10px;
 }
 
@@ -1771,6 +1820,33 @@ div#btnApply:hover {
 #org-desc {
     float: left;
     margin-top: 50px;
+}
+
+/******************************************************** NEWS-STORIES.PHP **********************************************/
+
+#news-stories {
+    width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#news-list {
+    width: 750px;
+    float: left;
+}
+
+.new-long {
+    padding-left: 12px;
+    padding-right: 12px;
+	width: inherit;
+    margin-bottom: 50px;
+}
+
+.new-long img {
+    width: 200px;
+    height: 150px;
+    float: left;
+    margin-right: 15px;
 }
 
 /*************************************************************** LOG STATE.PHP *************************************************/

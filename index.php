@@ -122,17 +122,16 @@
             </div> -->
 
 
-            <div id="news">  
+            <div id="news"> 
                 <div class="page-title"> 
                     <div class="main-title">News and Stories</div>  
-                    <!-- <h4>Search for a volunteers opportunity and get started! </h4> -->
-                    </div>
+                </div>
+             
                 
                 <?php 
-                    include 'display-news.php';
+                    include 'display-latest-news.php';
                 ?>    
             </div>
-
 
             <div id="home-blanket">
 

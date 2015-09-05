@@ -29,8 +29,8 @@
             
             <h1 class="center-title"></h1>
             <div class="page-title"> 
-                <div class="main-title">Statistics</div>  
-                <h4>Volunteering statistics and leaderboard</h4>
+                <div class="main-title">Volunteering statistics</div>  
+                <h4>Volunteering events completed around the city based on time period.</h4>
             </div>
             
             <?php
@@ -66,7 +66,7 @@
                     <div id="stats-map"></div>
                     
                     <div id="stats-options">
-                        <h2>Pick duration in months</h2>
+                        <h2>Pick time period in months:</h2>
                         <form method="get" action="">
                             <div class="month-picker">
                                 <div>From:</div>

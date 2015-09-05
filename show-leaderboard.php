@@ -13,10 +13,10 @@ if (mysqli_num_rows($results) > 0) {
     while ($row = mysqli_fetch_row($results)) {
         if ($row[4] != 0) {
             echo '<tr>';
-            echo '<td>' . $position . '</td>';
-            echo '<td><img src="' .  $row[3] . '" width="100" height="100" /></td>';
-            echo '<td>' . $row[1] . ' ' . $row[2] . '</td>';
-            echo '<td>' . $row[4] . ' pts' . '</td>';
+            echo '<td style="width: 15%;"><h3>' . $position . '.</h3></td>';
+            echo '<td style="width: 25%;"><img src="' .  $row[3] . '" width="100" height="100" /></td>';
+            echo '<td style="width: 40%;"><h3>' . $row[1] . ' ' . $row[2] . '</h3></td>';
+            echo '<td style="width: 20%;"><h3>' . $row[4] . ' pts' . '</h3></td>';
             echo '</tr>';
         }
         $position++;

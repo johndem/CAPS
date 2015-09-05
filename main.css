@@ -1738,10 +1738,17 @@ div#btnApply:hover {
 
 /****************************************************************** NEWS.PHP ****************************************************/
 
-#news-body {
-    width: 700px;
+#new-page {
+    width: 1000px;
     margin: 0 auto;
     text-align: center;
+}
+
+#news-body {
+    width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    float: left;
 }
 
 #news-body p {

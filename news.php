@@ -27,9 +27,18 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
+            
+            <div id="new-page">
+                <?php
+                    echo '<div class="side-widgets">';
+                    include 'recent-events-widget.php'; 
+                    include 'quick-search-widget.php';
+            //include 'most-recent-event-widget.php';
+                    echo '</div>';
+                ?>
 
                 <?php include 'find-news.php'; ?>
-                
+
                 <div id="news-body">
                     <h2><?php echo "$row[1]"; ?></h2>
                     <img class="news-img" src="<?php echo "$row[3]"; ?>" />
@@ -38,19 +47,18 @@
                         echo '<p>' . nl2br($row[4]) . '</p>'; 
                     ?>
                 </div>
-                
-                <div id="blanket">
-                
-                </div>
+            </div>
+            
+
+            <div id="blanket">
 
             </div>
 
-            <!-- footer -->
-            <?php include 'footer.php'; ?>
+        </div>
 
-        
+        <!-- footer -->
+        <?php include 'footer.php'; ?>
 
     </body>
-
 
 </html>

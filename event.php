@@ -80,6 +80,25 @@
             <h1 class="center-title"></h1>
                 <?php include 'find-event.php'; ?>
                 <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
+                
+                <?php if (isset($_SESSION['vol_id'])) {
+
+                    include 'create-link.php';
+                    $vol_id = $_SESSION['vol_id'];
+                    $eventid = $_GET['id'];
+                    $query = "SELECT id FROM apply WHERE eventID='$eventid' AND volunteerID = '$vol_id' AND selected = 1";
+                    $results = mysqli_query($link,$query);
+
+                    if (mysqli_num_rows($results) > 0) {
+
+                        ?>
+                        <div class="selected-msg"> You have been selected to volunteer for this event by the organisation! </div>
+                    <?php }
+
+
+                    } ?>
+                
+
                 <div class="page-title"> 
                     <div class="main-title"> <?php echo "$row[2]"; ?></div>  
                     <h4>Event information page</h4>

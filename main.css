@@ -1429,7 +1429,7 @@ ul.tabs {
 .notification-box {
     margin: 0 auto;
     width: inherit;
-    min-height: 200px;
+    height: 500px;
     overflow: scroll;
     margin: 50px;
     text-align: left;
@@ -1461,7 +1461,20 @@ ul.tabs {
     background-color: #ffc18b;
     padding: 5px;
     min-height: 50px;
+    border-bottom: 2px orange solid;
 }
+
+.notification .event-link a {
+    font-size: 16px;
+    color:white;
+}
+
+.notification .event-link a:visited {
+    color:white ;
+}
+
+
+
 
 
 /*********************************************************** CONFIRM.PHP ********************************************************/
@@ -1733,6 +1746,16 @@ div#btnApply:hover {
     text-align: center;
     color: white;
     padding: 5px;
+}
+
+.selected-msg {
+    margin: 0 auto;
+    font-size: 20px;
+    background-color: #ffc18b;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px; 
+
 }
 
 

@@ -98,7 +98,7 @@
                                 $role = 1;
                             }
 
-                            $query = "SELECT notifications.date, messages.text FROM notifications, messages WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id";
+                            $query = "SELECT notifications.date, messages.text ,notifications.id,events.title,events.id FROM notifications, messages, events WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id AND notifications.event_id = events.id ";
                              $results = mysqli_query($link,$query);   
                             while ($row = mysqli_fetch_row($results)) { ?>
 
@@ -107,7 +107,9 @@
                                 <div class="message">
                                     <?php echo $row[1]; ?>
                                 </div> 
-
+                                <?php if($row[4] != 0)  {?>
+                                <div class="event-link">Event page: <a href="event.php?id=<?php echo $row[4]; ?>"> <?php echo $row[3]; ?></a> </div>
+                                <?php } ?>
                                 <div class="date">
                                     <?php echo $row[0]; ?>
                                 </div> 

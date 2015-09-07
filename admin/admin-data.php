@@ -16,14 +16,14 @@
 
         <?php 
 
-                session_start();
+            session_start();
 
-                if (!isset($_SESSION['admin'])) { 
-                    header("Location: index.php");
-                    ?>
+            if (!isset($_SESSION['admin'])) { 
+                header("Location: index.php");
+        ?>
 
 
-<?php } else { ?>
+        <?php } else { ?>
 
         <!-- masthead -->
         
@@ -34,188 +34,163 @@
 
         <!-- content -->
         <div class="content">
-        <div class="aligner">
-        <div class="left">
-        <h1> Categories </h1> <span class="addItem" onclick="onAddNew('category')">Add New</span>
-        <div class="listplz" style="width: auto; margin-left: 50px;">   
-        <?php 
+            <div class="aligner">
+                <div id="data-tables">
+                <div class="left">
+                    <h1> Categories </h1> <span class="addItem" onclick="onAddNew('category')">Add New</span>
+                    
+                    <div class="listplz" style="width: auto; margin-left: 50px;">   
+                    <?php 
 
-            include "create-link.php";
+                        include "create-link.php";
 
-            $query =" SELECT * FROM categories";
-            $results = mysqli_query($link,$query);
+                        $query =" SELECT * FROM categories";
+                        $results = mysqli_query($link,$query);
 
-            while ($row = mysqli_fetch_row($results)) { ?>
+                        while ($row = mysqli_fetch_row($results)) { ?>
 
-                    <div class="listitem"> 
+                            <div class="listitem"> 
 
-                    <table> 
-                    <tr> 
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Actions</th>
-                    </tr>
+                                <table> 
+                                    <tr> 
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    <tr> 
+                                        <td class="info-id"> <?php echo $row[0]; ?></td>
+                                        <td class="info"><?php echo $row[1]; ?> </td>
+                                        <td class='actions'><span onclick="ondelete('category', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('category', 
+                                        <?php echo $row[0]; ?>, '<?php echo $row[1]; ?>')">Edit</span></td>
+                                    </tr>
+                                </table>
 
-                    <tr> 
+                            </div>
 
-                        <td class="info-id"> <?php echo $row[0]; ?></td>
-                        <td class="info"><?php echo $row[1]; ?> </td>
-                        <td class='actions'><span onclick="ondelete('category', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('category', 
-                        <?php echo $row[0]; ?>, '<?php echo $row[1]; ?>')">Edit</span></td>
-
-                    </tr>
-
-                    </table>
-
-                    </div>
-
-
-<?php            }
-
-
-
-
-        ?>
-        
-
-        </div>
-</div>
-
-<div class="left"> 
-        <h1> Skills </h1><span class="addItem" onclick="onAddNew('skill')">Add New</span>
-
-        <div class="listplz" style="width: auto; margin-left: 50px;">   
-        <?php 
-
-            include "create-link.php";
-
-            $query =" SELECT * FROM skills";
-            $results = mysqli_query($link,$query);
-
-            while ($row = mysqli_fetch_row($results)) { ?>
-
-                    <div class="listitem"> 
-
-                    <table> 
-                    <tr> 
-                        <th>ID</th>
-                        <th>Value</th>
-                        <th>Name</th>
-                        <th>Actions</th>
-                    </tr>
-
-                    <tr> 
-
-                        <td class="info-id"> <?php echo $row[0]; ?></td>
-                        <td class="info-id"><?php echo $row[1]; ?> </td>
-                        <td class="name"><?php echo $row[2]; ?> </td>
-                        <td class='actions'><span onclick="ondelete('skill', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('skill', 
-                        <?php echo $row[0]; ?>, '<?php echo $row[2]; ?>')">Edit</span></td>
-
-                    </tr>
-
-                    </table>
+                    <?php } ?>
 
                     </div>
+                </div>
 
+                <div class="left"> 
+                    <h1> Skills </h1><span class="addItem" onclick="onAddNew('skill')">Add New</span>
 
-<?php    }    ?>
+                    <div class="listplz" style="width: auto; margin-left: 50px;">   
+                    <?php 
+
+                        include "create-link.php";
+
+                        $query =" SELECT * FROM skills";
+                        $results = mysqli_query($link,$query);
+
+                        while ($row = mysqli_fetch_row($results)) { ?>
+
+                            <div class="listitem"> 
+
+                                <table> 
+                                    <tr> 
+                                        <th>ID</th>
+                                        <th>Value</th>
+                                        <th>Name</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    <tr> 
+                                        <td class="info-id"> <?php echo $row[0]; ?></td>
+                                        <td class="info-id"><?php echo $row[1]; ?> </td>
+                                        <td class="name"><?php echo $row[2]; ?> </td>
+                                        <td class='actions'><span onclick="ondelete('skill', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('skill', 
+                                        <?php echo $row[0]; ?>, '<?php echo $row[2]; ?>')">Edit</span></td>
+                                    </tr>
+                                </table>
+
+                            </div>
+
+                    <?php } ?>
         
+                    </div>
+                </div>
 
-        </div>
-            </div>
+                <div class="left"> 
+                    <h1> Age groups </h1> <span class="addItem" onclick="onAddNew('agegroup')">Add New</span>
 
-            <div class="left"> 
-        <h1> Age groups </h1> <span class="addItem" onclick="onAddNew('agegroup')">Add New</span>
+                    <div class="listplz" style="width: auto; margin-left:50px;">   
+                    <?php 
 
-        <div class="listplz" style="width: auto; margin-left:50px;">   
-        <?php 
+                        include "create-link.php";
 
-            include "create-link.php";
+                        $query =" SELECT * FROM agegroups";
+                        $results = mysqli_query($link,$query);
 
-            $query =" SELECT * FROM agegroups";
-            $results = mysqli_query($link,$query);
+                        while ($row = mysqli_fetch_row($results)) { ?>
 
-            while ($row = mysqli_fetch_row($results)) { ?>
+                            <div class="listitem"> 
 
-                    <div class="listitem"> 
+                                <table> 
+                                    <tr> 
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    <tr> 
+                                        <td class="info-id"> <?php echo $row[0]; ?></td>
+                                        <td class="info"><?php echo $row[1]; ?> </td>
+                                        <td class='actions'><span onclick="ondelete('agegroup', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('agegroup', 
+                                        <?php echo $row[0]; ?>, '<?php echo $row[1]; ?>')">Edit</span></td>
+                                    </tr>
+                                </table>
 
-                    <table> 
-                    <tr> 
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Actions</th>
-                    </tr>
+                            </div>
 
-                    <tr> 
+                    <?php    }    ?>
+        
+                    </div>
+                </div>
 
-                        <td class="info-id"> <?php echo $row[0]; ?></td>
-                        <td class="info"><?php echo $row[1]; ?> </td>
-                        <td class='actions'><span onclick="ondelete('agegroup', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('agegroup', 
-                        <?php echo $row[0]; ?>, '<?php echo $row[1]; ?>')">Edit</span></td>
+                <div class="left"> 
+                    <h1> Districts </h1><span class="addItem" onclick="onAddNew('dist')">Add New</span>
 
-                    </tr>
+                        <div class="listplz" style="width: auto; margin-left: 50px;">   
+                        <?php 
 
-                    </table>
+                            include "create-link.php";
+
+                            $query =" SELECT * FROM districts";
+                            $results = mysqli_query($link,$query);
+
+                            while ($row = mysqli_fetch_row($results)) { ?>
+
+                                <div class="listitem"> 
+
+                                    <table> 
+                                        <tr> 
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                        <tr> 
+                                            <td class="info-id"> <?php echo $row[0]; ?></td>
+                                            <td class="info"><?php echo $row[1]; ?> </td>
+                                            <td class='actions'><span onclick="ondelete('dist', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('dist', 
+                                            <?php echo $row[0]; ?>, '<?php echo $row[1]; ?>')">Edit</span></td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+
+                        <?php } ?>
+
+                        </div>
+                    </div>
+                
+
+                    <div id="home-blanket">
 
                     </div>
-
-
-<?php    }    ?>
-        
-
-        </div>
+                </div>
             </div>
-
-            <div class="left"> 
-        <h1> Districts </h1><span class="addItem" onclick="onAddNew('dist')">Add New</span>
-
-        <div class="listplz" style="width: auto; margin-left: 50px;">   
-        <?php 
-
-            include "create-link.php";
-
-            $query =" SELECT * FROM districts";
-            $results = mysqli_query($link,$query);
-
-            while ($row = mysqli_fetch_row($results)) { ?>
-
-                    <div class="listitem"> 
-
-                    <table> 
-                    <tr> 
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Actions</th>
-                    </tr>
-
-                    <tr> 
-
-                        <td class="info-id"> <?php echo $row[0]; ?></td>
-                        <td class="info"><?php echo $row[1]; ?> </td>
-                        <td class='actions'><span onclick="ondelete('dist', <?php echo $row[0]; ?>)">Delete</span> <span onclick="onEdit('dist', 
-                        <?php echo $row[0]; ?>, '<?php echo $row[1]; ?>')">Edit</span></td>
-
-                    </tr>
-
-                    </table>
-
-                    </div>
-
-
-<?php    }    ?>
-        
-
-        </div>
-            </div>
-
-            <div id="home-blanket">
-
-            </div>
-</div>
         </div>
 
-<?php } ?>
+        <?php } ?>
         
     </body>
 

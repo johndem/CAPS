@@ -15,8 +15,7 @@
     $body = htmlspecialchars($body, ENT_QUOTES);
 
 
-    $query = "INSERT INTO news(title,description,image,body) VALUES ('$title',                 '$desc','$image','$body')";
-    
+    $query = "INSERT INTO news(title,description,image,body) VALUES ('$title','$desc','$image','$body')";
     $result =  mysqli_query($link,$query);
 
     if(!$result){

@@ -1809,6 +1809,10 @@ div#btnApply:hover {
     min-width: 20px;
 }
 
+.info-org-id {
+    min-width: 110px;
+}
+
 * {
     font-family: 'Open Sans';
 }
@@ -1839,11 +1843,13 @@ div#btnApply:hover {
     background-color: orange;
 }
 
-/*MINE*/
-
 .addItem a {
     color: #525252;
     text-decoration: none;
 }
 
-/*ENDOF MINE*/
+#data-tables {
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}

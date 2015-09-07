@@ -18,12 +18,12 @@
 
         session_start();
 
-        //if (!isset($_SESSION['admin'])) { 
-        //    header("Location: index.php");
+            if (!isset($_SESSION['admin'])) { 
+                header("Location: index.php");
     ?>
 
 
-    <?php //} else { ?>
+    <?php } else { ?>
 
         <!-- masthead -->
         
@@ -56,31 +56,21 @@
                         <th>ORG ID </th>
                         <th>Title </th>
                         <th>Category </th>
-                        <th>Address </th>
-                        <th>Street Num </th>
-                        <th>Zipcode </th>
                         <th>Area </th>
                         <th>Day</th>
-                        <th>Time</th>
-                        <th>Agegroup </th>
-                        <th>Skills </th>
+                        <th>Description </th>
                         <th>Actions </th>
                     </tr>
 
                     <tr> 
 
                         <td class="info-id"> <?php echo $row[0]; ?></td>
-                        <td class="info"><?php echo $row[1]; ?> </td>
+                        <td class="info-org-id"><?php echo $row[1]; ?> </td>
                         <td class="info"><?php echo $row[2]; ?> </td>
                         <td class="info"><?php echo $row[3]; ?>  </td>
-                        <td class="info"><?php echo $row[4]; ?> </td>
-                        <td class="info"><?php echo $row[5]; ?> </td>
-                        <td class="info"><?php echo $row[6]; ?>  </td>
                         <td class="info"><?php echo $row[7]; ?> </td>
                         <td class="info"><?php echo $row[8]; ?> </td>
-                        <td class="info"><?php echo $row[9]; ?>  </td>
-                        <td class="info"><?php echo $row[10]; ?> </td>
-                        <td class="info"><?php echo $row[11]; ?> </td>
+                        <td class="link"><a href="../event.php?id=<?php echo $row[0];?>">Link</a></td>
                         <td class='actions'><span onclick="window.location = 'mailto-form.php?mailToOrganization=<?php echo $row[1] ?>'">MailTo</span><span onclick="onEditEvent('approve', <?php echo $row[0]; ?>, '1')">Approve</span> <span onclick="onEditEvent('reject', <?php echo $row[0]; ?>, '-1')">Reject</span></td>
 
                     </tr>
@@ -115,32 +105,22 @@
                         <th>ORG ID </th>
                         <th>Title </th>
                         <th>Category </th>
-                        <th>Address </th>
-                        <th>Street Num </th>
-                        <th>Zipcode </th>
                         <th>Area </th>
                         <th>Day</th>
-                        <th>Time</th>
-                        <th>Agegroup </th>
-                        <th>Skills </th>
+                        <th>Description </th>
                         <th>Actions </th>
                     </tr>
 
                     <tr> 
 
                         <td class="info-id"> <?php echo $row[0]; ?></td>
-                        <td class="info"><?php echo $row[1]; ?> </td>
+                        <td class="info-org-id"><?php echo $row[1]; ?> </td>
                         <td class="info"><?php echo $row[2]; ?> </td>
                         <td class="info"><?php echo $row[3]; ?>  </td>
-                        <td class="info"><?php echo $row[4]; ?> </td>
-                        <td class="info"><?php echo $row[5]; ?> </td>
-                        <td class="info"><?php echo $row[6]; ?>  </td>
                         <td class="info"><?php echo $row[7]; ?> </td>
                         <td class="info"><?php echo $row[8]; ?> </td>
-                        <td class="info"><?php echo $row[9]; ?>  </td>
-                        <td class="info"><?php echo $row[10]; ?> </td>
-                        <td class="info"><?php echo $row[11]; ?> </td>
-                        <td class='actions'><span onclick="window.location = 'mailto-form.php?mailToOrganization=<?php echo $row[1] ?>'">MailTo</span><span onclick="onEditEvent('suspend', <?php echo $row[0]; ?>, '0')">Suspend</span><span>Edit</span><span onclick="ondelete('events', <?php echo $row[0]; ?>)">Delete</span>   </td>
+                        <td class="link"><a href="../event.php?id=<?php echo $row[0];?>">Link</a></td>
+                        <td class='actions'><span onclick="window.location = 'mailto-form.php?mailToOrganization=<?php echo $row[1] ?>'">MailTo</span><span onclick="onEditEvent('suspend', <?php echo $row[0]; ?>, '0')">Suspend</span><span>Edit</span>   </td>
 
                     </tr>
 
@@ -174,30 +154,21 @@
                         <th>ORG ID </th>
                         <th>Title </th>
                         <th>Category </th>
-                        <th>Address </th>
-                        <th>Street Num </th>
-                        <th>Zipcode </th>
                         <th>Area </th>
                         <th>Day</th>
-                        <th>Time</th>
-                        <th>Agegroup </th>
-                        <th>Skills </th>
+                        <th>Description </th>
+                        <th>Actions </th>
                     </tr>
 
                     <tr> 
 
                         <td class="info-id"> <?php echo $row[0]; ?></td>
-                        <td class="info"><?php echo $row[1]; ?> </td>
+                        <td class="info-org-id"><?php echo $row[1]; ?> </td>
                         <td class="info"><?php echo $row[2]; ?> </td>
                         <td class="info"><?php echo $row[3]; ?>  </td>
-                        <td class="info"><?php echo $row[4]; ?> </td>
-                        <td class="info"><?php echo $row[5]; ?> </td>
-                        <td class="info"><?php echo $row[6]; ?>  </td>
                         <td class="info"><?php echo $row[7]; ?> </td>
                         <td class="info"><?php echo $row[8]; ?> </td>
-                        <td class="info"><?php echo $row[9]; ?>  </td>
-                        <td class="info"><?php echo $row[10]; ?> </td>
-                        <td class="info"><?php echo $row[11]; ?> </td>
+                        <td class="link"><a href="../event.php?id=<?php echo $row[0];?>">Link</a></td>
 
                     </tr>
 
@@ -216,7 +187,7 @@
             </div>
         </div>
 
-    <?php //} ?>
+    <?php } ?>
         
     </body>
 

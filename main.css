@@ -1431,7 +1431,7 @@ ul.tabs {
     width: inherit;
     height: 500px;
     overflow: scroll;
-    margin: 50px;
+    margin-bottom: 50px;
     text-align: left;
     background-color: #ffe8d5;
 }

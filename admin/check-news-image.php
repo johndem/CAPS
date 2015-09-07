@@ -35,7 +35,7 @@
     }
     else {
         if ($fileExists == true) {
-            move_uploaded_file($_FILES['news-picture']['tmp_name'], "images/" . $name);
+            move_uploaded_file($_FILES['news-picture']['tmp_name'], "../images/" . $name);
             $image = "images/" . $name;
         }
         

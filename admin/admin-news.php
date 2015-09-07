@@ -18,12 +18,12 @@
 
         session_start();
 
-        //if (!isset($_SESSION['admin'])) { 
-        //    header("Location: index.php");
+            if (!isset($_SESSION['admin'])) { 
+                header("Location: index.php");
     ?>
 
 
-    <?php //} else { ?>
+    <?php } else { ?>
 
         <!-- masthead -->
         
@@ -65,7 +65,7 @@
                         <td class="info-id"><?php echo $row[0]; ?></td>
                         <td class="info"><?php echo $row[1]; ?> </td>
                         <td class="info"><?php echo $row[2]; ?> </td>
-                        <td class="info"><?php echo $row[4]; ?> </td>
+                        <td class="link"><a href="../news.php?id=<?php echo $row[0];?>">Link</a></td>
                         <td class='actions'><span onclick="ondelete('news', <?php echo $row[0]; ?>)">Delete</span> <span onclick="window.location = 'admin-edit-news-form.php?id='+
                         <?php echo $row[0]; ?>">Edit</span></td>
 
@@ -86,7 +86,7 @@
             </div>
         </div>
 
-    <?php //} ?>
+    <?php } ?>
         
     </body>
 

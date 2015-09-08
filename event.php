@@ -23,44 +23,55 @@
         <script src="https://maps.googleapis.com/maps/api/js"></script>
     </head>
     <body>
-       <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1607915839446072',
-          xfbml      : true,
-          version    : 'v2.4'
-        });
-      };
+        
+        <?php 
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
+            session_start();
+                
+                include 'find-event.php';
 
-    <script type="text/javascript">
-  function share () {
+                if (($row[17] == '0' || $row[17] == '-1') & !isset($_SESSION['admin'])) { 
+                    header("Location: index.php");
+        ?>
+        
+        <?php } else { ?>
+        
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                appId      : '1607915839446072',
+                xfbml      : true,
+                version    : 'v2.4'
+                });
+            };
 
-    FB.ui(
-  {
-    method: 'share',
-    href: 'http://localhost/CAPS/event.php?id=22',
-  },
-  // callback
-  function(response) {
-    if (response && !response.error_code) {
-      alert('Posting completed.');
-    } else {
-      alert('Error while posting.');
-    }
-  }
-);
-}
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            } (document, 'script', 'facebook-jssdk'));
+        </script>
 
-    </script>
+        <script type="text/javascript">
+            function share () {
+                FB.ui(
+                {
+                    method: 'share',
+                    href: 'http://localhost/CAPS/event.php?id=22',
+                },
+                // callback
+                function(response) {
+                    if (response && !response.error_code) {
+                        alert('Posting completed.');
+                    } else {
+                        alert('Error while posting.');
+                    }
+                }
+                );
+            }
+        </script>
 
 
 
@@ -78,7 +89,7 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-                <?php include 'find-event.php'; ?>
+                
                 <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
                 
                 <?php if (isset($_SESSION['vol_id'])) {
@@ -323,6 +334,6 @@
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
-        
+        <?php } ?>
     </body>
 </html>

@@ -15,6 +15,6 @@
     $query = "SELECT skills.skill FROM skills, skill_req WHERE skill_req.event_id='$id' AND skill_req.skill_id = skills.value";
     $skills = mysqli_query($link,$query);
     
-                                    @mysqli_close($link);
+    @mysqli_close($link);
 
 ?>

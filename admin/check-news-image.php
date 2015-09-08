@@ -38,6 +38,9 @@
             move_uploaded_file($_FILES['news-picture']['tmp_name'], "../images/" . $name);
             $image = "images/" . $name;
         }
+        else {
+            $image = "images/vi.png";
+        }
         
         
         $btn = $_POST['button'];

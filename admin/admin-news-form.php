@@ -18,12 +18,12 @@
 
         session_start();
 
-        //if (!isset($_SESSION['admin'])) { 
-        //    header("Location: index.php");
+            if (!isset($_SESSION['admin'])) { 
+                header("Location: index.php");
     ?>
 
 
-    <?php //} else { ?>
+    <?php } else { ?>
 
         <!-- masthead -->
         
@@ -87,7 +87,7 @@
             </div>
         </div>
 
-    <?php //} ?>
+    <?php } ?>
         
     </body>
 

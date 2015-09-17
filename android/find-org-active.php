@@ -4,7 +4,7 @@ include 'create-link.php';
 
 $org_id = $_POST["id"];
 
-$query = "SELECT * FROM events WHERE org_id = '$org_id' AND status = '0' ORDER BY id desc";
+$query = "SELECT * FROM events WHERE org_id = '$org_id' AND status = '1' ORDER BY id desc";
 $results = mysqli_query($link,$query);
 
 //WHERE id = '$id'

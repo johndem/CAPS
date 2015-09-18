@@ -69,14 +69,14 @@
                     </div>
 
                     <div class="label-in">
-                        <div class="h3"> Επαλήθευση password: * </div>
+                        <div class="h3"> Confirm password: * </div>
                         <div id="err-conf" class="error-message"> </div>
                         <div id="conf-span" class="img-span"></div>
                         <input id="con-pass" onkeyup="checkpass()" class="in" minlength="10" name="con-pass" size="30" type="password" value="" required/>
                     </div>
                         
                         <div class="label-in">
-                            <div class="h3"> Όνομα οργανισμού: * </div>
+                            <div class="h3"> Ονομα οργανισμού: * </div>
                             <div id="err-name" class="error-message"> </div>
                             <div id="name-span" class="img-span"></div>
                             <input id="org-name" class="in" maxlength="50" name="name" size="30" type="text" value="" required/>

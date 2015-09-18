@@ -108,7 +108,7 @@
                         </div>
 
                         <div class="label-in">
-                            <div class="h3"> Ταχυδρομικός Κώδικας: * </div>
+                            <div class="h3"> ΤΚ: * </div>
                             <div id="err-zip" class="error-message"> </div>
                             <div id="zip-span" class="img-span"></div>
                             <input id="zip"  class="in" name="zip" type="number" value="" min="10000" max="99999" required/>

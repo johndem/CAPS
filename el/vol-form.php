@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="label-in">
-                        <div class="h3"> Επαλήθευση password: * </div>
+                        <div class="h3"> Confirm password: * </div>
                         <div id="err-conf" class="error-message"> </div>
                         <div id="conf-span" class="img-span"></div>
                         <input id="con-pass" onkeyup="checkpass()" class="in" minlength="10" name="con-pass" size="30" type="password" value="" required/>
@@ -111,7 +111,7 @@
                     </div>
 
                     <div class="label-in">
-                        <div class="h3"> Ταχυδρομικός Κώδικας: </div>
+                        <div class="h3"> ΤΚ: </div>
                         <div id="err-zip" class="error-message"> </div>
                         <div id="zip-span" class="img-span"></div>
                         <input id="zip"  class="in" name="zip" type="number" value="" min="10000" max="99999"/>

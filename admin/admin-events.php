@@ -157,7 +157,6 @@
                         <th>Area </th>
                         <th>Day</th>
                         <th>Description </th>
-                        <th>Actions </th>
                     </tr>
 
                     <tr> 

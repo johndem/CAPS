@@ -2,7 +2,7 @@
 
 include 'create-link.php';
 
-$query = "SELECT * FROM events WHERE status = '0'"; // ORDER BY id desc";
+$query = "SELECT * FROM events WHERE status = '1'"; // ORDER BY id desc";
 
 if (isset($_POST["category"])) { 
 

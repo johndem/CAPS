@@ -52,7 +52,7 @@
 				  <table>
 				  <tbody>
                     <tr> 
-                        <td>Use the keyboard or click the arrows bellow to change months </td>
+                        <td>Click the arrows below to change months </td>
                     </tr>
 					  <tr><td id='loading'>
                         </td> 

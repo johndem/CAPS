@@ -70,7 +70,7 @@
 						<div class="social-container">
 
 							<h4>Twitter</h4>
-							<div class="social-login" onclick="window.location = 'twitter-login2.php'" id="twitter"></div>
+							<div class="social-login" onclick="window.location = 'twitter-login2.php'" id="tweet"></div>
 						</div>
 						
 						<div class="social-container">

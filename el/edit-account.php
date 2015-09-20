@@ -67,14 +67,14 @@
                         </div>
 
                         <div class="label-in">
-                            <div class="h3">Ιστοδελίδα: </div>
+                            <div class="h3"> Ιστοσελίδα: </div>
                             <div id="edit-err-ws" class="error-message"> </div>
                             <div id="edit-ws-span" class="img-span"></div>
                             <input id="edit-website" class="in" name="website" size="30" type="url" value="<?php echo $row[5]; ?>" />
                         </div>
 
                         <div class="label-in">
-                            <div class="h3">  Facebook: </div>
+                            <div class="h3"> Facebook: </div>
                             <div id="edit-err-fb" class="error-message"> </div>
                             <div id="edit-fb-span" class="img-span"></div>
                             <input id="edit-facebook" class="in" name="facebook" size="30" type="url" value="<?php echo $row[6]; ?>" />

@@ -54,7 +54,7 @@
 
 					<div>
 						<p>
-							Δεν έχετε λογαριασμό; Η εγγραφή είναι εύκολη και γρήγορη.<a href="register.php">Κάντε click εδώ για να ξεκινήσετε</a> »
+							Δεν έχετε λογαριασμό; Η εγγραφή είναι εύκολη και γρήγορη.<a href="register.php"> Κάντε click εδώ για να ξεκινήσετε</a> »
 						</p>
 					</div>
 
@@ -147,7 +147,7 @@
 						<div class="social-container">
 
 							<h4>Twitter</h4>
-							<div class="social-login" onclick="window.location = 'twitter-login2.php'" id="twitter"></div>
+							<div class="social-login" onclick="window.location = 'twitter-login2.php'" id="tweet"></div>
 						</div>
 						
 						<div class="social-container">

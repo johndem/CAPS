@@ -291,7 +291,7 @@ margin-top:100px;
     background-image: url('images/fb-logo3.png');
 }
 
-#twitter {
+#tweet {
     background-image: url('images/twitter-logo3.png');
 }
 
@@ -622,7 +622,7 @@ background-image: url("images/thss.jpg");
 
 /*********************************************************** FORMS ********************************************************/
 .submitBtn {
-    width: 100px;
+    width: 150px;
     height: 40px;
     font-size: 20px;
     color: white;

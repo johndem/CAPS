@@ -8,7 +8,7 @@
     border-width: 5px;
     border-color: #DCD7D7;
     background-color: rgba(192,192,192,0.4);
-
+margin-top:100px;
 }
 
 #categories h1 {
@@ -546,6 +546,20 @@ background-image: url("images/thss.jpg");
 .navigation .notif a:hover {
     background-color: #31D100;
     border-bottom: 1px white solid;
+    }
+
+    .logo {
+        /*background-image: url("images/logo.png");
+        background-size: cover;*/
+        width: 30px;  
+        float:left; 
+        padding-left:10px;
+        padding-top: 15px;
+
+    }
+
+    .logo img {
+        width: 280px;
     }
 
 /*************************************************************** WIDGETS **********************************************************/

@@ -3,6 +3,13 @@ session_start();
 $url = $_SERVER["REQUEST_URI"];
 
 echo '<div class="navigation">';
+
+?>
+
+<div class="logo"><img src="images/logo.png" /></div>
+
+<?php
+
     echo '<ul>';
 
 if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {

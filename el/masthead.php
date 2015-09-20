@@ -2,10 +2,10 @@
 
 <?php 
 $url = $_SERVER["REQUEST_URI"];
-	if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
+	if (strpos($url,'el/index') !== false OR trim($url) == "/CAPS/el/") {
 
 echo '<div class="masthead">';
-    echo '<h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>'; ?>
+    // echo '<h1 id="title"></h1>'; ?>
 
 <?php
 
@@ -31,7 +31,7 @@ echo '<div class="masthead">';
 
 <?php }else {
 	echo '<div class="masthead_rest">';
-    echo '<h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>';
+    // echo '<h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>';
 
 } echo '</div>';
 

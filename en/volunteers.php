@@ -51,36 +51,34 @@
                         <div id="search-cat">
                             <div class="h3">Categories:</div>
                             <div>
-                                
-                                <?php
-                                    include 'create-link.php';
-
-                                    $query = "SELECT * FROM categories";
-                                    $results = mysqli_query($link,$query);
-
-                                    $counter = 0;
-                                    echo '<div id="radio-left">';
-                                    while ($counter < 3) {
-                                        $row = mysqli_fetch_row($results);
-                                        echo '<div class="align-left">';
-                                        echo '<input type="radio" name="' . $row[1] . '" value="' . $row[0] . '" />';
-                                        echo $row[1];
-                                        echo '</div>';  
-                                        $counter++;
-                                    }
-                                    echo '</div>';
-
-                                    echo '<div id="radio-right">';
-                                    while ($row = mysqli_fetch_row($results)) {
-                                        echo '<div class="align-left">';
-                                        echo '<input type="radio" name="' . $row[1] . '" value="' . $row[0] . '" />';
-                                        echo $row[1];
-                                        echo '</div>';  
-                                    }
-                                    echo '</div>';
-                                     
-                                ?>
-
+                                <div id="radio-left">
+                                    <div class="align-left">
+                                        <input type="radio" name="category" value="Εκπαίδευση" /> 
+                                        Education    
+                                    </div>
+                                    <div class="align-left">
+                                        <input type="radio" name="category" value="Περίθαλψη" />
+                                        Healthcare      
+                                    </div>
+                                    <div class="align-left">
+                                        <input type="radio" name="category" value="Περιβάλλον" />
+                                        Environment      
+                                    </div>
+                                </div>
+                                <div id="radio-right">
+                                    <div class="align-left">
+                                        <input type="radio" name="category" value="Ζώα" />
+                                        Animals
+                                    </div> 
+                                    <div class="align-left">
+                                        <input type="radio" name="category" value="Έκτακτη Ανάγκη" />
+                                        Emergency
+                                    </div>
+                                    <div class="align-left">
+                                        <input type="radio" name="category" value="Κοινότητες" />
+                                        Communities
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         

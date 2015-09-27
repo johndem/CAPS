@@ -4,6 +4,8 @@ include 'create-link.php';
 
 $vol_id = $_POST["id"];
 
+mysqli_set_charset($link, "utf8");
+
 $query = "SELECT eventID FROM apply WHERE volunteerID = '$vol_id'";
 $results = mysqli_query($link,$query);
 
@@ -24,6 +26,7 @@ if (mysqli_num_rows($results) > 0) {
         
         $jsonRow = array();
         
+        $jsonRow["id"] = $event[0];
         $jsonRow["title"] = $event[2];
         $jsonRow["creator"] = $org[0];
         $jsonRow["category"] = $event[3];

@@ -2,6 +2,8 @@
 
 include 'create-link.php';
 
+mysqli_set_charset($link, "utf8");
+
 $query = "SELECT title FROM categories";
 $results = mysqli_query($link,$query);
 

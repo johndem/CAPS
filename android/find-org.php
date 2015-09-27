@@ -4,7 +4,9 @@ include 'create-link.php';
 
 $org_id = $_POST["id"];
 
-$query = "SELECT * FROM organisations WHERE id = '$org_id'";
+mysqli_set_charset($link, "utf8");
+
+$query = "SELECT * FROM organisations WHERE org_id = '$org_id'";
 $results = mysqli_query($link,$query);
 
 $jsonData = array();
@@ -30,7 +32,7 @@ if (mysqli_num_rows($results) > 0) {
     }
 }
 
-//$fp = fopen('results.json', 'w');
+//$fp = fopen('result.json', 'w');
 //fwrite($fp, json_encode($jsonData));
 //fclose($fp);
 

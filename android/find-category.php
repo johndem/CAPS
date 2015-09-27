@@ -2,6 +2,8 @@
 
 include 'create-link.php';
 
+mysqli_set_charset($link, "utf8");
+
 $query = "SELECT * FROM events WHERE status = '1'"; // ORDER BY id desc";
 
 if (isset($_POST["category"])) { 
@@ -49,6 +51,7 @@ if (mysqli_num_rows($results) > 0) {
     while ($row = mysqli_fetch_row($results)) {
         $jsonRow = array();
         
+        $jsonRow["id"] = $row[0];
         $jsonRow["title"] = $row[2];
         $jsonRow["category"] = $row[3];
         $jsonRow["address"] = $row[4];

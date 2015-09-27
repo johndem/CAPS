@@ -4,6 +4,8 @@ include 'create-link.php';
 
 $org_id = $_POST["id"];
 
+mysqli_set_charset($link, "utf8");
+
 $query = "SELECT * FROM events WHERE org_id = '$org_id' AND status = '1' ORDER BY id desc";
 $results = mysqli_query($link,$query);
 
@@ -20,6 +22,7 @@ if (mysqli_num_rows($results) > 0) {
     while ($row = mysqli_fetch_row($results)) {
         $jsonRow = array();
         
+        $jsonRow["id"] = $row[0];
         $jsonRow["title"] = $row[2];
         $jsonRow["category"] = $row[3];
         $jsonRow["address"] = $row[4];
@@ -40,9 +43,9 @@ if (mysqli_num_rows($results) > 0) {
     }
 }
 
-//$fp = fopen('results.json', 'w');
-//fwrite($fp, json_encode($jsonData));
-//fclose($fp);
+$fp = fopen('results.json', 'w');
+fwrite($fp, json_encode($jsonData));
+fclose($fp);
 
 echo json_encode($jsonData);
 

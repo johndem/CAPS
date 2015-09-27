@@ -5,6 +5,8 @@ include 'create-link.php';
 $id = $_POST["id"];
 $role = $_POST["role"];
 
+mysqli_set_charset($link, "utf8");
+
 $query = "SELECT notifications.date, messages.text ,notifications.id,events.title,events.id FROM notifications, messages, events WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id AND notifications.event_id = events.id ORDER BY notifications.id DESC";
 $results = mysqli_query($link,$query);
 
@@ -28,6 +30,7 @@ if (mysqli_num_rows($results) > 0) {
         $jsonRow["date"] = $row[0];
         $jsonRow["message"] = $row[1];
         $jsonRow["title"] = $row[3];
+        $jsonRow["id"] = $event[0];
         $jsonRow["creator"] = $org[0];
         $jsonRow["category"] = $event[3];
         $jsonRow["address"] = $event[4];

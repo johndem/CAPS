@@ -4,6 +4,8 @@ include 'create-link.php';
 
 $vol_id = $_POST["id"];
 
+mysqli_set_charset($link, "utf8");
+
 $query = "SELECT * FROM user WHERE id = '$vol_id'";
 $results = mysqli_query($link,$query);
 

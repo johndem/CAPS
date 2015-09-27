@@ -2,6 +2,8 @@
 
 include 'create-link.php';
 
+mysqli_set_charset($link, "utf8");
+
 $query = "SELECT skill FROM skills";
 $results = mysqli_query($link,$query);
 

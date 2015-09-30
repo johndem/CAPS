@@ -183,10 +183,12 @@
                     </div>
                 
 
-                    <div id="home-blanket">
+                    
+                </div>
+                
+                <div id="home-blanket">
 
                     </div>
-                </div>
             </div>
         </div>
 

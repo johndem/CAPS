@@ -26,6 +26,15 @@ if (mysqli_num_rows($results) > 0) {
         
         $jsonRow = array();
         
+        $query = "SELECT skills.skill FROM skills, skill_req WHERE skill_req.event_id='$events[0]' AND skill_req.skill_id = skills.value";
+        $result = mysqli_query($link,$query);
+        
+        $skill = mysqli_fetch_row($result);
+        $skills = $skill[0];
+        while ($skill = mysqli_fetch_row($result)) {
+            $skills = $skills . "," . $skill[0];
+        }
+        
         $jsonRow["id"] = $event[0];
         $jsonRow["title"] = $event[2];
         $jsonRow["creator"] = $org[0];
@@ -37,7 +46,7 @@ if (mysqli_num_rows($results) > 0) {
         $jsonRow["day"] = $event[8];
         $jsonRow["time"] = $event[9];
         $jsonRow["agegroup"] = $event[10];
-        $jsonRow["skills"] = $event[11];
+        $jsonRow["skills"] = $skills;
         $jsonRow["sdesc"] = $event[12];
         $jsonRow["ddesc"] = $event[13];
         $jsonRow["image1"] = $event[14];

@@ -2,7 +2,7 @@
 
 <?php 
 $url = $_SERVER["REQUEST_URI"];
-	if (strpos($url,'en/index') !== false OR trim($url) == "/CAPS/en/") {
+	if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
 
 echo '<div class="masthead">';
     echo '<h1 id="title">TEAM THESSALONIKI VOLUNTEER NETWORK</h1>'; ?>

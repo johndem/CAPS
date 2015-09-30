@@ -12,11 +12,6 @@
         <script src="jq.js"></script>
     </head>
     <body>
-        
-        <div>
-        
-         <!-- registration or username -->
-        <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
          <?php include 'navigation.php'; ?>
@@ -30,8 +25,8 @@
             <h1 class="center-title"></h1>
             
             <div class="page-title"> 
-                <div class="main-title"> My Account</div>  
-                <h4>Profile information</h4>
+                <div class="main-title"> My account</div>  
+                <h4>Profile Information</h4>
             </div>
             
                 <?php if(isset($_SESSION['org_id']) || isset($_SESSION['user'])) { 
@@ -56,12 +51,12 @@
                                     <input class="in" maxlength="50" name="pass" id="log-password" size="25" type="text" value="<?php echo $row[2]; ?>" readonly/>
                                 </div>
                                 <div class="account-label-in">
-                                    <div class="h3">  Organisation description:</div>
+                                    <div class="h3"> Organisation description:</div>
                                     <textarea id="description" class="for-text-area" cols="40" name="description" maxlength="500" rows="7" readonly><?php echo $row[9]; ?></textarea>
                                 </div>
                             <?php } else if(isset($_SESSION['user'])) { ?>
                                 <div class="account-label-in">
-                                    <div class="h3">First Name:</div>
+                                    <div class="h3">First Name::</div>
                                     <input class="in" maxlength="50" name="pass" id="log-password" size="25" type="text" value="<?php echo $row[1]; ?>" readonly/>
                                 </div>
                                 <div class="account-label-in">
@@ -98,7 +93,7 @@
                                 $role = 1;
                             }
 
-                            $query = "SELECT notifications.date, messages.text ,notifications.id,events.title,events.id FROM notifications, messages, events WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id AND notifications.event_id = events.id ";
+                            $query = "SELECT notifications.date, messages.text ,notifications.id,events.title,events.id FROM notifications, messages, events WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id AND notifications.event_id = events.id ORDER BY notifications.id DESC";
                              $results = mysqli_query($link,$query);   
                             while ($row = mysqli_fetch_row($results)) { ?>
 
@@ -181,49 +176,6 @@
 
                     </div>
                     
-<!--
-                    <?php if(!isset($_SESSION['org_id'])) { ?>
-                    <div id="account-right">
-                        <div id="achievements">
-                            <h2>Achievements</h2>
-                            <div id="achievement-list">
-                                <div class="achievement">
-                                    <img src="images/achiev-thumb.png" width="70" height="70" />
-                                    <div class="achievement-body">
-                                        <div>My Own Account!</div>
-                                        <div>10 points</div>
-                                    </div>
-                                </div>
-                                <div class="achievement">
-                                    <img src="images/vi.png" width="60" height="60" />
-                                    <div class="achievement-body">
-                                        <div>I Am A Volunteer!</div>
-                                        <div>25 points</div>
-                                    </div>
-                                </div>
-                                <div class="achievement">
-                                    <img src="images/achiev-edu.png" width="70" height="70" />
-                                    <div class="achievement-body">
-                                        <div>Education Apprentice!</div>
-                                        <div>15 points</div>
-                                    </div>
-                                </div>
-                                <div class="achievement">
-                                    <img src="images/achiev-animals.png" width="70" height="70" />
-                                    <div class="achievement-body">
-                                        <div>Animal Carer!</div>
-                                        <div>15 points</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="score">
-                                <h3>Total Points earned: 65</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <?php } ?>
--->
-                    
                         
                 </div>
                 <?php } ?>
@@ -238,9 +190,5 @@
             <!-- footer -->
             <?php include 'footer.php'; ?>
             
-        </div>
-       
     </body>
-    
-   
 </html>

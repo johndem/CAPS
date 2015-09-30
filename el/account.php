@@ -12,11 +12,6 @@
         <script src="jq.js"></script>
     </head>
     <body>
-        
-        <div>
-        
-         <!-- registration or username -->
-        <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
          <?php include 'navigation.php'; ?>
@@ -98,7 +93,7 @@
                                 $role = 1;
                             }
 
-                            $query = "SELECT notifications.date, messages.text ,notifications.id,events.title,events.id FROM notifications, messages, events WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id AND notifications.event_id = events.id ";
+                            $query = "SELECT notifications.date, messages.text ,notifications.id,events.title,events.id FROM notifications, messages, events WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id AND notifications.event_id = events.id ORDER BY notifications.id DESC";
                              $results = mysqli_query($link,$query);   
                             while ($row = mysqli_fetch_row($results)) { ?>
 
@@ -181,49 +176,6 @@
 
                     </div>
                     
-<!--
-                    <?php if(!isset($_SESSION['org_id'])) { ?>
-                    <div id="account-right">
-                        <div id="achievements">
-                            <h2>Achievements</h2>
-                            <div id="achievement-list">
-                                <div class="achievement">
-                                    <img src="images/achiev-thumb.png" width="70" height="70" />
-                                    <div class="achievement-body">
-                                        <div>My Own Account!</div>
-                                        <div>10 points</div>
-                                    </div>
-                                </div>
-                                <div class="achievement">
-                                    <img src="images/vi.png" width="60" height="60" />
-                                    <div class="achievement-body">
-                                        <div>I Am A Volunteer!</div>
-                                        <div>25 points</div>
-                                    </div>
-                                </div>
-                                <div class="achievement">
-                                    <img src="images/achiev-edu.png" width="70" height="70" />
-                                    <div class="achievement-body">
-                                        <div>Education Apprentice!</div>
-                                        <div>15 points</div>
-                                    </div>
-                                </div>
-                                <div class="achievement">
-                                    <img src="images/achiev-animals.png" width="70" height="70" />
-                                    <div class="achievement-body">
-                                        <div>Animal Carer!</div>
-                                        <div>15 points</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="score">
-                                <h3>Total Points earned: 65</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <?php } ?>
--->
-                    
                         
                 </div>
                 <?php } ?>
@@ -238,9 +190,5 @@
             <!-- footer -->
             <?php include 'footer.php'; ?>
             
-        </div>
-       
     </body>
-    
-   
 </html>

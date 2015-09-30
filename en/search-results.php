@@ -13,12 +13,8 @@
     </head>
     <body>
 
-        
-        <!-- registration or username -->
-        <?php// include 'log-state.php'; ?>
-
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -28,9 +24,8 @@
         <div class="content">
             <h1 class="center-title"></h1>
             <div class="page-title"> 
-                    <div class="main-title">Search Results</div>  
-                    <!-- <h4></h4> -->
-                    </div>
+                <div class="main-title">Search Results</div>  
+            </div>
             
             <div class="results">
             
@@ -50,12 +45,9 @@
             $skills = mysqli_real_escape_string($link,$_GET['skills']);
             $skills = htmlspecialchars($skills,ENT_QUOTES);
 
-
             $date = mysqli_real_escape_string($link,$_GET['date']);
             $date = htmlspecialchars($date,ENT_QUOTES);
-
-            //echo $category . $area . $skills . $date;
-                
+ 
             // pagination stuff
             if (!isset($_GET['pagenum'])) {
                 $pagenum = 1;
@@ -89,31 +81,25 @@
             // end of pagination stuff
 
             if ($results) {   
-            
-            
-            $bool = false;
-            while ($row = mysqli_fetch_row($results)) { 
-                $bool = true;
-                $org_q = "SELECT name FROM organisations WHERE org_id = '$row[1]' ";
-                $org_res = mysqli_query($link,$org_q); 
-                $org_name = mysqli_fetch_row($org_res);
+                $bool = false;
+                while ($row = mysqli_fetch_row($results)) { 
+                    $bool = true;
+                    $org_q = "SELECT name FROM organisations WHERE org_id = '$row[1]' ";
+                    $org_res = mysqli_query($link,$org_q); 
+                    $org_name = mysqli_fetch_row($org_res);     
             ?>
                 
-            <div class="single-result">
-            <h3><?php echo $row[2] ?></h3>
-            <p><?php echo $row[12] ?> </p>
-            
-            <h5>Posted by: <?php echo $org_name[0] ?></h5>
-            <h5>Category: <?php echo $row[3]  ?></h5>
-            <h5>Date: <?php echo $row[8] ?> </h5>
-            <h5>Area: <?php echo $row[7] ?></h5>
-            
-            
-            <a href="<?php echo "event.php?id=" . $row[0]; ?>">Read more &raquo;</a>
-                
-            </div> 
+                <div class="single-result">
+                    <h3><?php echo $row[2] ?></h3>
+                    <p><?php echo $row[12] ?> </p>
+                    <h5>From: <?php echo $org_name[0] ?></h5>
+                    <h5>Category: <?php echo $row[3]  ?></h5>
+                    <h5>Date: <?php echo $row[8] ?> </h5>
+                    <h5>District: <?php echo $row[7] ?></h5>
+                    <a href="<?php echo "event.php?id=" . $row[0]; ?>">Read more &raquo;</a>   
+                </div> 
                  
-            <?php    } 
+            <?php } 
                 
             if ($num_results != 0) {
                 
@@ -144,37 +130,30 @@
             } 
   
             if ($bool== false) { ?>
-            <div class="single-result">
-            
-                <h3>There are no volunteering events matching your criteria!</h3>
-                
-            </div> 
-            <a href="volunteers.php">Go back</a>
-            <?php   }
+                <div class="single-result">
+                    <h3>There are no volunteering events matching your criteria!</h3> 
+                </div> 
+                <a href="volunteers.php">Πίσω</a>
+            <?php }
             }
             else {
-    
                 echo '<p> An error occurred while retrieving the results from the database. Please try again later!  </p>';
             } 
-               
-                mysqli_close($link); 
+            mysqli_close($link); 
             
             ?> 
-                
-                
+                   
             </div>    
                 
             
             <div id="home-blanket">
 
             </div>
-
       
         </div>
+        
         <!-- footer -->
         <?php include 'footer.php'; ?>
-
-        
+   
     </body>
-
 </html>

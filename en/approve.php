@@ -31,8 +31,8 @@
         <div class="content">
             <h1 class="center-title"></h1>
 			<div class="page-title"> 
-                <div class="main-title"> Approve page </div>  
-                <h4>Search among the applicants and approve</h4>
+                <div class="main-title"> Volunteer approve page </div>  
+                <h4>Search among the applicants and approve </h4>
             </div>
 
 <div class="aligner"> 
@@ -56,8 +56,6 @@
 
                     <table> 
                     <tr> 
-                        <th>ID</th>
-                        <th>Username </th>
                         <th>Name </th>
                         <th>Email </th>
                         <th>Skill applied for </th>
@@ -65,9 +63,6 @@
                     </tr>
 
                     <tr> 
-
-                        <td class="info-id"> <?php echo $row[0]; ?></td>
-                        <td class="info"><?php echo $row[1]; ?> </td>
                         <td class="info"><?php echo $row[2]. " " . $row[3]; ?> </td>
                         <td class="info"><?php echo $row[4]; ?> </td>     
                          <td class="info"><?php echo $row[5]; ?> </td>     
@@ -92,7 +87,12 @@
         
 
         </div>
+    
+    <div id="account-blanket">
+                
+                </div>
 </div>
+            
 
 <!-- footer -->
 			<?php

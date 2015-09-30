@@ -75,6 +75,10 @@
     margin: 0;
 }
 
+table {
+margin-left: 300px;    
+}
+
 #featured ul li {
     display: table-cell;
     width: auto;
@@ -1849,7 +1853,7 @@ div#btnApply:hover {
 }
 
 #data-tables {
-    width: 900px;
+    width: 1100px;
     margin: 0 auto;
     text-align: center;
 }

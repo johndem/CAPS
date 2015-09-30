@@ -34,7 +34,7 @@
                 <h1 class="center-title"></h1>
                 <div class="page-title"> 
                     <div class="main-title"> Advanced Search</div>  
-                    <h4>Search for a volunteers opportunity and get started! </h4>
+                    <h4> Search for a volunteer opportunity and get started! </h4>
                     </div>
                 <div class="aligner">
                     
@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="align-left">
                                         <input type="radio" name="category" value="Περίθαλψη" />
-                                        Healthcare      
+                                        Healthcare 
                                     </div>
                                     <div class="align-left">
                                         <input type="radio" name="category" value="Περιβάλλον" />
@@ -84,7 +84,7 @@
                         
                         
                         <div class="search-select">
-                            <div class="h3">Area:</div>
+                            <div class="h3">District:</div>
                             <div class="in">
                                 <select name="areas">
                                     <option selected="selected" value="0">Select one</option>
@@ -95,7 +95,7 @@
                                         $results = mysqli_query($link,$query);
 
                                         while ($row = mysqli_fetch_row($results)) {
-                                            echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+                                            echo '<option value="' . $row[1] . '">' . $row[1] . '</option>';
                                         }
                                     ?>
                                 </select>
@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="search-select">
-                            <div class="h3">Age group:</div>
+                            <div class="h3">Agegroup:</div>
                             <div class="in">
                                 <select name="ages">
                                     <option selected="selected" value="0">Select one</option>
@@ -115,7 +115,7 @@
 
                                         $i = 1;
                                         while ($row = mysqli_fetch_row($results)) {
-                                            echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+                                            echo '<option value="' . $row[1] . '">' . $row[1] . '</option>';
                                         }
                                     ?>
                                 </select>
@@ -126,7 +126,7 @@
                             <div class="h3">Optional Skills:</div>
                             <div class="in">
                                 <select id="skills" name="skills" multiple>
-                                    <option disabled selected="selected">- Hold Ctr for multiple selection -</option>
+                                    <option disabled selected="selected">- Hold Ctrl for multiple selection -</option>
                                     <?php
                                         include 'create-link.php';
 
@@ -147,7 +147,7 @@
                         </div>
 
                         <div id="go">
-                            <input type="submit" class="submitBtn" name="submit" value="Search" />
+                            <input type="submit" class="submitBtn" name="submit" value="Αναζήτηση" />
                         </div> 
 
                     </form>

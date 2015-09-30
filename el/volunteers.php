@@ -68,7 +68,7 @@
                                 <div id="radio-right">
                                     <div class="align-left">
                                         <input type="radio" name="category" value="Ζώα" />
-                                        Ζωά
+                                        Ζώα
                                     </div> 
                                     <div class="align-left">
                                         <input type="radio" name="category" value="Έκτακτη Ανάγκη" />
@@ -95,7 +95,7 @@
                                         $results = mysqli_query($link,$query);
 
                                         while ($row = mysqli_fetch_row($results)) {
-                                            echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+                                            echo '<option value="' . $row[1] . '">' . $row[1] . '</option>';
                                         }
                                     ?>
                                 </select>
@@ -115,7 +115,7 @@
 
                                         $i = 1;
                                         while ($row = mysqli_fetch_row($results)) {
-                                            echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+                                            echo '<option value="' . $row[1] . '">' . $row[1] . '</option>';
                                         }
                                     ?>
                                 </select>

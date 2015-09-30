@@ -56,8 +56,6 @@
 
                     <table> 
                     <tr> 
-                        <th>ID</th>
-                        <th>Όνομα χρήστη </th>
                         <th>Όνοματεπώνυμο </th>
                         <th>Email </th>
                         <th>Αιτούντες δεξιότητες </th>
@@ -65,9 +63,6 @@
                     </tr>
 
                     <tr> 
-
-                        <td class="info-id"> <?php echo $row[0]; ?></td>
-                        <td class="info"><?php echo $row[1]; ?> </td>
                         <td class="info"><?php echo $row[2]. " " . $row[3]; ?> </td>
                         <td class="info"><?php echo $row[4]; ?> </td>     
                          <td class="info"><?php echo $row[5]; ?> </td>     
@@ -92,7 +87,12 @@
         
 
         </div>
+    
+    <div id="account-blanket">
+                
+                </div>
 </div>
+            
 
 <!-- footer -->
 			<?php

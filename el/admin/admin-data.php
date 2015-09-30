@@ -37,7 +37,7 @@
             <div class="aligner">
                 <div id="data-tables">
                 <div class="left">
-                    <h1> Κατηγορίες </h1> <span class="addItem" onclick="onAddNew('category')">Προσθήκε Νέας</span>
+                    <h1> Κατηγορίες </h1> <span class="addItem" onclick="onAddNew('category')">Προσθήκη Νέας</span>
                     
                     <div class="listplz" style="width: auto; margin-left: 50px;">   
                     <?php 

@@ -511,6 +511,32 @@ background-image: url("images/thss.jpg");
     letter-spacing: 2px;
 }
 
+.logged-reg-top a {
+    height: 20px;
+    background-color: #FF9639;
+    margin-left: 10px;
+    min-width: 80px;
+    letter-spacing: 2px;
+}
+
+.logged-reg-top a:hover {
+    color: black;
+}
+
+.logged-reg-bottom a {
+    height: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #FF9639;
+    margin-left: 10px;
+    min-width: 80px;
+    letter-spacing: 2px;
+}
+
+.logged-reg-bottom a:hover {
+    color: black;
+}
+
 .nav-user {
     margin-left: 10px;
     color: white;
@@ -2145,4 +2171,13 @@ div#btnApply:hover {
     padding: 5px;
     display: inline-block;
     margin: 5px; 
+}
+
+.listitem {
+    width: 100%;
+    height: 100%;
+}
+
+.listitem table {
+    margin: 0 auto;
 }

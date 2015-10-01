@@ -43,7 +43,7 @@ echo '<table>
 									if ($days < 10) $newDate = $date .'0' . $days;
 									else $newDate = $date . $days;
 									//echo $newDate . "  ";
-									$query = "SELECT id,title FROM events WHERE day = '$newDate'";
+									$query = "SELECT id,title FROM events WHERE day = '$newDate' AND status = '1'";
 								      $results = mysqli_query($link,$query);
 								      //$row = mysqli_fetch_row($results);
 									echo '<td class="td-cells"><div class="cal-num">' . $days . '</div>';

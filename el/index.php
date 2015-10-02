@@ -33,7 +33,7 @@
             <?php
                 include 'create-link.php';
 
-                $query = "SELECT * FROM events ORDER BY id DESC";
+                $query = "SELECT * FROM events WHERE status='1' ORDER BY id DESC";
                 $results = mysqli_query($link,$query);
                 
 

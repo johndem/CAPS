@@ -89,6 +89,9 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
+            <?php 
+                include 'check-org-event.php';
+            ?>
                 
                 <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
                 
@@ -188,9 +191,13 @@
 
                         ?>
 
-                        <?php if(isset($_SESSION['vol_id']) AND $applied == false) { ?>
+                        <?php if($row[17] == 2) { ?>
+                        <div id="btnApply" class="btnGreyout">
+                            COMPLETED
+                        </div>
+                        <?php } elseif(isset($_SESSION['vol_id']) AND $applied == false) { ?>
                          <select id="skills-choose">
-                            <option value="0" disabled selected>Select One </option>
+                            <option value="0" disabled selected>Select one </option>
                             <?php  
                              include 'create-link.php';
                             $query = "SELECT skills.skill, skills.value FROM skills, skill_req WHERE skill_req.event_id='$id' AND skill_req.skill_id = skills.value";
@@ -213,14 +220,27 @@
                         </div>
                         <div id="msgApply">* You have applied for this event! Click CANCEL to remove.</div>
 
+                        <?php } else { 
+                        
+                        if ($flag == true) { ?>
+                        
+                        <div id="btnApply" onclick="window.location='complete-event.php?eventid=<?php echo $eventid; ?>'">
+                            COMPLETE
+                        </div>
+                        <div id="msgApply">* 
+                            <a href="register.php">Press after event completion to verify.                
+                        </div>
+                        
                         <?php } else { ?>
                         
                         <div id="btnApply" class="btnGreyout">
                             APPLY
                         </div>
                         <div id="msgApply">* 
-<a href="register.php">Sign up</a> or <a href="login.php">log in</a> with a volunteer account to apply!</div>
-                        <?php } ?>
+                            <a href="register.php">Sign up</a> or <a href="login.php">log in</a> with a volunteer account to apply.                              
+                        </div>
+                        
+                        <?php } } ?>
                         
                         
                         

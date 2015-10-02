@@ -23,6 +23,20 @@
         <script src="https://maps.googleapis.com/maps/api/js"></script>
     </head>
     <body>
+        
+        <?php 
+
+            session_start();
+                
+                include 'find-event.php';
+
+                if (($row[17] == '0' || $row[17] == '-1') & !isset($_SESSION['admin'])) { 
+                    header("Location: index.php");
+        ?>
+        
+        <?php } else { ?>
+        
+        
        <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -78,7 +92,9 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-                <?php include 'find-event.php'; ?>
+                <?php 
+                    include 'check-org-event.php';
+                ?>
                 <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
                 
                 <?php if (isset($_SESSION['vol_id'])) {
@@ -176,8 +192,12 @@
 
 
                         ?>
-
-                        <?php if(isset($_SESSION['vol_id']) AND $applied == false) { ?>
+                        
+                        <?php if($row[17] == 2) { ?>
+                        <div id="btnApply" class="btnGreyout">
+                            ΟΛΟΚΛΗΡΩΘΗΚΕ
+                        </div>
+                        <?php } elseif(isset($_SESSION['vol_id']) AND $applied == false) { ?>
                          <select id="skills-choose">
                             <option value="0" disabled selected>Επιλέξτε ένα </option>
                             <?php  
@@ -202,14 +222,27 @@
                         </div>
                         <div id="msgApply">* Κάνατε αίτηση συμμετοχής σε αυτή τη δράση. Πατήστε ΑΚΥΡΩΣΗ για διαγραφή.</div>
 
+                        <?php } else { 
+                        
+                        if ($flag == true) { ?>
+                        
+                        <div id="btnApply" onclick="window.location='complete-event.php?eventid=<?php echo $eventid; ?>'">
+                            ΟΛΟΚΛΗΡΩΣΗ
+                        </div>
+                        <div id="msgApply">* 
+                            <a href="register.php">Πατήστε μετά την ολοκλήρωση της δράσης για να επιβεβαιώσετε.                
+                        </div>
+                        
                         <?php } else { ?>
                         
                         <div id="btnApply" class="btnGreyout">
                             ΑΙΤΗΣΗ
                         </div>
                         <div id="msgApply">* 
-<a href="register.php">Εγγραφείτε</a> ή <a href="login.php">κάνετε είσοδο</a> με λογαριασμό εθελοντή για να κάνετε αίτηση.</div>
-                        <?php } ?>
+                            <a href="register.php">Εγγραφείτε</a> ή <a href="login.php">κάνετε είσοδο</a> με λογαριασμό εθελοντή για να κάνετε αίτηση.                              
+                        </div>
+                        
+                        <?php } } ?>
                         
                         
                         
@@ -239,8 +272,6 @@
 
                         <div class="facebook-share" onclick="share()">Κοινoποίηση στο Facebook</div>
                          <?php 
-
-                        include 'check-org-event.php';
 
                         if ($flag == true) { ?>
 
@@ -323,6 +354,6 @@
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
-        
+        <?php } ?>
     </body>
 </html>

@@ -40,6 +40,7 @@ if (mysqli_num_rows($results) > 0) {
         $jsonRow["message"] = $row[1];
         $jsonRow["title"] = $row[3];
         $jsonRow["id"] = $event[0];
+        $jsonRow["poster"] = $event[1];
         $jsonRow["creator"] = $org[0];
         $jsonRow["category"] = $event[3];
         $jsonRow["address"] = $event[4];

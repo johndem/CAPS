@@ -61,6 +61,7 @@ if (mysqli_num_rows($results) > 0) {
         }
         
         $jsonRow["id"] = $row[0];
+        $jsonRow["poster"] = $row[1];
         $jsonRow["title"] = $row[2];
         $jsonRow["category"] = $row[3];
         $jsonRow["address"] = $row[4];

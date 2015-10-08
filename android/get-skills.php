@@ -7,10 +7,6 @@ mysqli_set_charset($link, "utf8");
 $query = "SELECT skill FROM skills";
 $results = mysqli_query($link,$query);
 
-//WHERE id = '$id'
-//$query = "SELECT * FROM agegroups WHERE id='$id'";
-//$results = mysqli_query($link,$query);
-
 $jsonData = array();
 
 if (mysqli_num_rows($results) > 0) {
@@ -25,9 +21,9 @@ if (mysqli_num_rows($results) > 0) {
     }
 }
 
-// $fp = fopen('results.json', 'w');
-// fwrite($fp, json_encode($jsonData));
-// fclose($fp);
+//$fp = fopen('results.json', 'w');
+//fwrite($fp, json_encode($jsonData));
+//fclose($fp);
 
 echo json_encode($jsonData);
 

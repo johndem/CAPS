@@ -36,6 +36,7 @@ if (mysqli_num_rows($results) > 0) {
         }
         
         $jsonRow["id"] = $event[0];
+        $jsonRow["poster"] = $event[1];
         $jsonRow["title"] = $event[2];
         $jsonRow["creator"] = $org[0];
         $jsonRow["category"] = $event[3];

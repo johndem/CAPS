@@ -26,7 +26,7 @@ function checkpass() {
      
     if (conf != pass) {
        
-        puterror("conf-span",'err-conf', 'Passwords do not match!')
+        puterror("conf-span",'err-conf', 'Ο κωδικός πρόσβασης δεν ταιριάζει!')
         //button.disabled = true;
     }
     else {
@@ -39,7 +39,7 @@ function putok(imgid,mspanid) {
     var imgspan = document.getElementById(imgid);
     var span = document.getElementById(mspanid);
     
-    imgspan.innerHTML = "<img class='err-img' src='check.jpg'>";
+    imgspan.innerHTML = "";
     span.innerHTML = "";
 }
 
@@ -59,6 +59,79 @@ function puterror(imgid,mspanid,errmess) {
             span.style.display = 'none';
         }
     
+}
+
+function putOkAll() {
+
+    putok('email-span','err-email');
+    putok('first-span','err-first');
+    putok('last-span','err-last');
+    putok('username-span','err-username');
+    putok('password-span','err-password');
+    putok('dob-span','err-dob');
+    putok('phone-span','err-phone');
+    putok('addr-span','err-addr');
+    putok('str-span','err-str');
+    putok('zip-span','err-zip');
+
+
+}
+
+function checkResponse(text) {
+    if (text.indexOf("email") != -1) {
+        puterror('email-span','err-email', "Υποχρεωτικό πεδίο. Παράδειγμα εισαγωγής: example@example.com");
+    }
+
+    if (text.indexOf("first") != -1) {
+        puterror('first-span','err-first', 'Υποχρεωτικό Πεδίο. Μέχρι 50 χαρακτήρες (α-ζ,Α-Ζ)');
+    }
+
+    if (text.indexOf("last") != -1) {
+       puterror('last-span','err-last', 'Υποχρεωτικό Πεδίο. Μέχρι 50 χαρακτήρες (α-ζ,Α-Ζ)');
+    }
+
+    if (text.indexOf("username") != -1) {
+        puterror('username-span','err-username','Υποχρεωτικό Πεδίο. Από 5 έως 50 χαρακτήρες');
+
+    }
+
+    if (text.indexOf("pass") != -1) {
+                puterror('password-span','err-password', 'Υποχρεωτικό Πεδίο. Από 10 έως 50 χαρακτήρες');
+
+    }
+
+    if (text.indexOf("phone") != -1) {
+                puterror('phone-span','err-phone', 'Πρέπει να αποτελείται από 10 ψηφία και να μην ξεκινάει απο 0');
+
+    }
+
+    if (text.indexOf("address") != -1) {
+                puterror('addr-span','err-addr', 'Μέχρι 50 χαρακτήρες (α-ζ,Α-Ζ)');
+
+    }
+
+    if (text.indexOf("zip") != -1) {
+                puterror('zip-span','err-zip', 'Πρέπει να είναι αριθμός από 10000 έως 99999');
+
+    }
+
+    if (text.indexOf("str") != -1) {
+                puterror('str-span','err-str', 'Πρέπει να είναι αριθμός από 1 έως 9999');
+
+    }
+
+    if (text.indexOf("notuser") != -1) {
+                     puterror('username-span','err-username', 'Το όνομα χρήστη δεν ειναι διαθέσιμο');
+                }
+    if (text.indexOf("notemail") != -1) {
+                    puterror('email-span','err-email', 'Το email χρησιμοποείται ήδη');
+                }
+
+    if (text.indexOf("dob") != -1) {
+        puterror('dob-span','err-dob', 'Υποχρεωτικό Πεδίο. Πρέπει να είναι της μορφής εεεε-μμ-ηη');
+
+    }
+
 }
 
 
@@ -81,7 +154,7 @@ function getVolValidity() {
     var zip = document.getElementById('zip');
    
     if (email.checkValidity() == false ) {
-        puterror('email-span','err-email', email.validationMessage);
+        puterror('email-span','err-email', "Υποχρεωτικό πεδίο. Παράδειγμα εισαγωγής: example@example.com");
         error = true;
     }
     else {
@@ -89,7 +162,7 @@ function getVolValidity() {
     }
     
     if (first.checkValidity() == false ) {
-        puterror('first-span','err-first', first.validationMessage);
+        puterror('first-span','err-first', 'Υποχρεωτικό Πεδίο. Μέχρι 50 χαρακτήρες (α-ζ,Α-Ζ)');
         error = true;
 
     }
@@ -98,7 +171,7 @@ function getVolValidity() {
     }
     
     if (last.checkValidity() == false ) {
-        puterror('last-span','err-last', last.validationMessage);
+        puterror('last-span','err-last', 'Υποχρεωτικό Πεδίο. Μέχρι 50 χαρακτήρες (α-ζ,Α-Ζ)');
          error = true;
 
     }
@@ -107,7 +180,7 @@ function getVolValidity() {
     }
     
     if (username.checkValidity() == false ) {
-        puterror('username-span','err-username', username.validationMessage);
+        puterror('username-span','err-username','Υποχρεωτικό Πεδίο. Από 5 έως 50 χαρακτήρες');
          error = true;
 
     }
@@ -116,7 +189,7 @@ function getVolValidity() {
     }
     
     if (password.checkValidity() == false ) {
-        puterror('password-span','err-password', password.validationMessage);
+        puterror('password-span','err-password', 'Υποχρεωτικό Πεδίο. Από 10 έως 50 χαρακτήρες');
         error = true;
 
     }
@@ -125,7 +198,7 @@ function getVolValidity() {
     }
     
      if (birth.checkValidity() == false ) {
-        puterror('dob-span','err-dob', birth.validationMessage);
+        puterror('dob-span','err-dob', 'Υποχρεωτικό Πεδίο. Πρέπει να είναι της μορφής εεεε-μμ-ηη');
         error = true;
 
      }
@@ -134,7 +207,7 @@ function getVolValidity() {
     }
     
     if (tel.checkValidity() == false ) {
-        puterror('phone-span','err-phone', tel.validationMessage);
+        puterror('phone-span','err-phone', 'Πρέπει να αποτελείται από 10 ψηφία και να μην ξεκινάει απο 0');
         error = true;
 
     } 
@@ -143,7 +216,7 @@ function getVolValidity() {
     }
     
      if (addr.checkValidity() == false ) {
-        puterror('addr-span','err-addr', addr.validationMessage);
+        puterror('addr-span','err-addr', 'Μέχρι 50 χαρακτήρες (α-ζ,Α-Ζ)');
          error = true;
 
     }
@@ -152,7 +225,7 @@ function getVolValidity() {
     }
     
      if (str.checkValidity() == false ) {
-        puterror('str-span','err-str', str.validationMessage);
+        puterror('str-span','err-str', 'Πρέπει να είναι αριθμός από 1 έως 9999');
          error = true;
 
     }
@@ -161,7 +234,7 @@ function getVolValidity() {
     }
     
      if (zip.checkValidity() == false ) {
-        puterror('zip-span','err-zip', zip.validationMessage);
+        puterror('zip-span','err-zip', 'Πρέπει να είναι αριθμός από 10000 έως 99999');
         error = true;
 
     }
@@ -180,7 +253,7 @@ function checkform() {
     var res = "";
     
     if (req === true) {
-        res = res + "<li> Please make sure your input is correct! Mouse over for error message. </li>";
+        res = res + "<li> Παρακαλούμε συμπληρώστε σωστά τα πεδία. Δείτε τα μηνύματα πηγαίνοντας το ποντίκι σας πάνω από την εικόνα λάθους </li>";
         error = true;
     }
     
@@ -188,7 +261,7 @@ function checkform() {
     var elconf = document.getElementById('con-pass').value;
     
     if (elconf != elpass) {
-        res = res + "<li>Passwords do no match!</li>";
+        res = res + "<li>Ο κωδικός πρόσβασης δεν ταιριάζει!</li>";
         error = true;
     }
     
@@ -197,15 +270,17 @@ function checkform() {
     if (!error) {
         getResponse();
     }
+
+    //getResponse();
 }
 
 function getResponse() {
       var myurl = "check-username.php";
-      var first = encodeURIComponent(document.getElementById("first").value);
-      var last = encodeURIComponent(document.getElementById("last-name").value);
+      var first = document.getElementById("first").value;
+      var last = document.getElementById("last-name").value;
       var password = encodeURIComponent(document.getElementById("password").value);
       var phone = encodeURIComponent(document.getElementById("phone").value);
-      var address = encodeURIComponent(document.getElementById("address").value);
+      var address = document.getElementById("address").value;
       var str = encodeURIComponent(document.getElementById("str").value);
       var zip = encodeURIComponent(document.getElementById("zip").value);
       var usernamevalue = encodeURIComponent(document.getElementById("username").value);
@@ -230,7 +305,10 @@ function useHttpResponseVol() {
                 window.location = "confirm.php";   
             }
             else {
-                document.getElementById('res-ul').innerHTML = http.responseText;
+                putOkAll();
+                checkResponse(http.responseText);
+                document.getElementById('res-ul').innerHTML = "<li> Παρακαλούμε συμπληρώστε σωστά τα πεδία. Δείτε τα μηνύματα πηγαίνοντας το ποντίκι σας πάνω από την εικόνα λάθους </li>";
+                
             }
         }
     }

@@ -125,6 +125,10 @@
                     <div id="event-main">
 				  <h2>Λεπτομέρειες</h2>
                         <ul id="event-chars">
+                            <li><?php echo "<strong>Κατάσταση δράσης: </strong>"; if ($row[17]==1) echo '<span class="active_green">Ενεργή</span>';
+                                                                            else if ($row[17]==2) echo '<span class="completed_red">Ολοκληρωμένη</span>'; 
+                                                                            else if ($row[17]==0) echo '<span class="completed_red">Υπό εξέταση</span>';
+                                                                            else if ($row[17]==-1) echo '<span class="completed_red">ΑΚΥΡΩΜΕΝΗ</span>';?></li>
                             <li><?php echo "<strong>Κατηγορία: </strong>" . $row[3]; ?></li>
                             <li><?php echo "<strong>Διεύθυνση:  </strong>" . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
                             <li><?php echo "<strong>Ημερομηνία:  </strong>" . $row[8] . ", " . $row[9]; ?></li>

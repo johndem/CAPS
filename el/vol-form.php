@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="el">
     
     <head>
         <meta charset="utf-8">
@@ -43,20 +43,20 @@
                     <ul id="res-ul"></ul>
                 </div>
 
-                <form id="form" name="vol-form">
+                <form id="form" name="vol-form" lang="el">
 
                     <div class="label-in">
                         <div class="h3"> Όνομα: * </div>
                         <div id="err-first" class="error-message"> </div>
                         <div id="first-span" class="img-span"></div>
-                        <input id="first" class="in" maxlength="50" name="first" size="30" type="text" value="" required/>
+                        <input id="first" class="in" maxlength="50" name="first" size="30" type="text" value="" pattern="[^0-9]+" required/>
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Επώνυμο: * </div>
                          <div id="err-last" class="error-message"> </div>
                         <div id="last-span" class="img-span"></div>
-                        <input id="last-name" class="in" maxlength="50" name="last" size="30" type="text" value="" required/>
+                        <input id="last-name" class="in" maxlength="50" name="last" size="30" type="text" value=""  pattern="[^0-9]+" required/>
                     </div>
 
                     <div class="label-in">
@@ -86,35 +86,35 @@
                         <div class="h3"> Confirm password: * </div>
                         <div id="err-conf" class="error-message"> </div>
                         <div id="conf-span" class="img-span"></div>
-                        <input id="con-pass" onkeyup="checkpass()" class="in" minlength="10" name="con-pass" size="30" type="password" value="" required/>
+                        <input id="con-pass" onkeyup="checkpass()" class="in" minlength="10" maxlength="50" name="con-pass" size="30" type="password" value="" required/>
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Τηλέφωνο: </div>
                         <div id="err-phone" class="error-message"> </div>
                         <div id="phone-span" class="img-span"></div>
-                        <input id="phone"  class="in" minlength="10" maxlength="10" name="phone" size="30" type="tel" value="" />
+                        <input id="phone"  class="in" minlength="10" maxlength="10" name="phone" size="30" type="tel" pattern="[1-9]+[0-9]+"  value="" />
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Διεύθυνση-Οδός: </div>
                         <div id="err-addr" class="error-message"> </div>
                         <div id="addr-span" class="img-span"></div>
-                        <input id="address" class="in" maxlength="50" name="address" size="30" type="text" value="" />
+                        <input id="address" class="in" maxlength="50" name="address" size="30" type="text" pattern="[a-zA-Z]+" value="" />
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> Αριθμός οδού: </div>
                         <div id="err-str" class="error-message"> </div>
                         <div id="str-span" class="img-span"></div>
-                        <input id="str"  class="in" min="1" max="9999" name="str"  type="number" value="" />
+                        <input id="str"  class="in" min="1" max="9999" name="str" pattern="[0-9]+"  type="number" value="" />
                     </div>
 
                     <div class="label-in">
                         <div class="h3"> ΤΚ: </div>
                         <div id="err-zip" class="error-message"> </div>
                         <div id="zip-span" class="img-span"></div>
-                        <input id="zip"  class="in" name="zip" type="number" value="" min="10000" max="99999"/>
+                        <input id="zip"  class="in" name="zip" type="number" value="" pattern="[0-9]+" min="10000" max="99999"/>
                     </div>
 
                     <div class="label-in">
@@ -123,6 +123,8 @@
                         <div id="dob-span" class="img-span"></div>
                         <input id="dob" class="in" name="date" required/>
                     </div>
+
+                    
                     
                 </form>
 
@@ -145,7 +147,7 @@
        
        $(document).ready(function() {
            $("#dob").datepicker({
-               dateFormat: "dd-mm-yy"
+               dateFormat: "yy-mm-dd"
            });
        });
         

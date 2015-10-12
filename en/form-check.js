@@ -39,7 +39,7 @@ function putok(imgid,mspanid) {
     var imgspan = document.getElementById(imgid);
     var span = document.getElementById(mspanid);
     
-    imgspan.innerHTML = "<img class='err-img' src='check.jpg'>";
+    imgspan.innerHTML = "";
     span.innerHTML = "";
 }
 
@@ -62,6 +62,79 @@ function puterror(imgid,mspanid,errmess) {
 }
 
 
+function putOkAll() {
+
+    putok('email-span','err-email');
+    putok('first-span','err-first');
+    putok('last-span','err-last');
+    putok('username-span','err-username');
+    putok('password-span','err-password');
+    putok('dob-span','err-dob');
+    putok('phone-span','err-phone');
+    putok('addr-span','err-addr');
+    putok('str-span','err-str');
+    putok('zip-span','err-zip');
+
+}
+
+
+function checkResponse(text) {
+    if (text.indexOf("email") != -1) {
+        puterror('email-span','err-email', "Required field. Input example: example@example.com");
+    }
+
+    if (text.indexOf("first") != -1) {
+        puterror('first-span','err-first', 'Required field. No more than 50 characters');
+    }
+
+    if (text.indexOf("last") != -1) {
+       puterror('last-span','err-last', 'Required field. No more than 50 characters');
+    }
+
+    if (text.indexOf("username") != -1) {
+        puterror('username-span','err-username','Required field. From 5 to 50 characters');
+
+    }
+
+    if (text.indexOf("pass") != -1) {
+                puterror('password-span','err-password', 'Required field. From 10 to 50 characters');
+
+    }
+
+    if (text.indexOf("phone") != -1) {
+                puterror('phone-span','err-phone', 'Requires 10 digits and should not start from 0');
+
+    }
+
+    if (text.indexOf("address") != -1) {
+                puterror('addr-span','err-addr', 'At most 50 characters');
+
+    }
+
+    if (text.indexOf("zip") != -1) {
+                puterror('zip-span','err-zip', 'Number between 10000 to 99999');
+
+    }
+
+    if (text.indexOf("str") != -1) {
+                puterror('str-span','err-str', 'Number between 1 to 9999');
+
+    }
+
+    if (text.indexOf("notuser") != -1) {
+                     puterror('username-span','err-username', 'This username is not available');
+                }
+    if (text.indexOf("notemail") != -1) {
+                    puterror('email-span','err-email', 'This email is already being used');
+                }
+
+    if (text.indexOf("dob") != -1) {
+        puterror('dob-span','err-dob', 'Required field. Must be of this form: yyyy/mm/dd');
+
+    }
+
+}
+
 /********************* VOLUNTEER REGISTER **************************/
 
 
@@ -81,7 +154,7 @@ function getVolValidity() {
     var zip = document.getElementById('zip');
    
     if (email.checkValidity() == false ) {
-        puterror('email-span','err-email', email.validationMessage);
+        puterror('email-span','err-email', "Required field. Input example: example@example.com");
         error = true;
     }
     else {
@@ -89,7 +162,7 @@ function getVolValidity() {
     }
     
     if (first.checkValidity() == false ) {
-        puterror('first-span','err-first', first.validationMessage);
+        puterror('first-span','err-first', 'Required field. No more than 50 characters');
         error = true;
 
     }
@@ -98,7 +171,7 @@ function getVolValidity() {
     }
     
     if (last.checkValidity() == false ) {
-        puterror('last-span','err-last', last.validationMessage);
+       puterror('last-span','err-last', 'Required field. No more than 50 characters');
          error = true;
 
     }
@@ -107,7 +180,7 @@ function getVolValidity() {
     }
     
     if (username.checkValidity() == false ) {
-        puterror('username-span','err-username', username.validationMessage);
+        puterror('username-span','err-username','Required field. From 5 to 50 characters');
          error = true;
 
     }
@@ -116,7 +189,7 @@ function getVolValidity() {
     }
     
     if (password.checkValidity() == false ) {
-        puterror('password-span','err-password', password.validationMessage);
+                puterror('password-span','err-password', 'Required field. From 10 to 50 characters');
         error = true;
 
     }
@@ -125,7 +198,7 @@ function getVolValidity() {
     }
     
      if (birth.checkValidity() == false ) {
-        puterror('dob-span','err-dob', birth.validationMessage);
+        puterror('dob-span','err-dob', 'Required field. Must be of this form: yyyy/mm/dd');
         error = true;
 
      }
@@ -134,7 +207,7 @@ function getVolValidity() {
     }
     
     if (tel.checkValidity() == false ) {
-        puterror('phone-span','err-phone', tel.validationMessage);
+                puterror('phone-span','err-phone', 'Requires 10 digits and should not start from 0');
         error = true;
 
     } 
@@ -143,7 +216,7 @@ function getVolValidity() {
     }
     
      if (addr.checkValidity() == false ) {
-        puterror('addr-span','err-addr', addr.validationMessage);
+                puterror('addr-span','err-addr', 'At most 50 characters');
          error = true;
 
     }
@@ -152,7 +225,7 @@ function getVolValidity() {
     }
     
      if (str.checkValidity() == false ) {
-        puterror('str-span','err-str', str.validationMessage);
+                puterror('str-span','err-str', 'Number between 1 to 9999');
          error = true;
 
     }
@@ -161,7 +234,7 @@ function getVolValidity() {
     }
     
      if (zip.checkValidity() == false ) {
-        puterror('zip-span','err-zip', zip.validationMessage);
+                puterror('zip-span','err-zip', 'Number between 10000 to 99999');
         error = true;
 
     }
@@ -201,11 +274,11 @@ function checkform() {
 
 function getResponse() {
       var myurl = "check-username.php";
-      var first = encodeURIComponent(document.getElementById("first").value);
-      var last = encodeURIComponent(document.getElementById("last-name").value);
+      var first = document.getElementById("first").value;
+      var last =document.getElementById("last-name").value;
       var password = encodeURIComponent(document.getElementById("password").value);
       var phone = encodeURIComponent(document.getElementById("phone").value);
-      var address = encodeURIComponent(document.getElementById("address").value);
+      var address = document.getElementById("address").value;
       var str = encodeURIComponent(document.getElementById("str").value);
       var zip = encodeURIComponent(document.getElementById("zip").value);
       var usernamevalue = encodeURIComponent(document.getElementById("username").value);
@@ -230,7 +303,10 @@ function useHttpResponseVol() {
                 window.location = "confirm.php";   
             }
             else {
-                document.getElementById('res-ul').innerHTML = http.responseText;
+                putOkAll();
+                checkResponse(http.responseText);
+                document.getElementById('res-ul').innerHTML = "<li>Please make sure your input is correct! Mouse over for error message.</li>";
+                
             }
         }
     }

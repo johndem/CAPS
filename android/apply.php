@@ -6,6 +6,8 @@ $eventId = $_POST["event_id"];
 $skill = $_POST["skill"];
 $volID = $_POST["vol_id"];
 
+mysqli_set_charset($link, "utf8");
+
 $jsonData = '0';
 
 $query = "SELECT value FROM skills WHERE skill = '$skill'";

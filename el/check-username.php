@@ -1,134 +1,136 @@
 <?php
 
-    include 'create-link.php';
+include 'create-link.php';
 
-    $results = "";
-    $error = false;
-	
-	$username = mysqli_real_escape_string($link,$_POST['username']);
-	$username = htmlspecialchars($username, ENT_QUOTES);
-	$username = trim($username);
+$results = "";
+$error = false;
 
-
-	if (!ctype_alnum($username) OR strlen($username)<5 OR strlen($username)>50) {
-		$results = $results . "username ";
-        $error = true;
-	}
+$username = mysqli_real_escape_string($link,$_POST['username']);
+$username = htmlspecialchars($username, ENT_QUOTES);
+$username = trim($username);
 
 
-	$email = mysqli_real_escape_string($link,$_POST['email']);
-   	$email = htmlspecialchars($email, ENT_QUOTES);
-   	$email = trim($email);
-
-   	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-   		$results = $results . "email ";
-        $error = true;
-   	}
-
-   	 $first = mysqli_real_escape_string($link,$_POST['first']);
-    $first = htmlspecialchars($first, ENT_QUOTES);
-    $first = trim($first);
+if (!ctype_alnum($username) OR strlen($username)<5 OR strlen($username)>50) {
+    $results = $results . "username ";
+    $error = true;
+}
 
 
-    if (preg_match('[^0-9]+', $first) OR strlen($first) < 1 OR strlen($first) > 50 ) {
-    	$results = $results . "first ";
-        $error = true;
-    }
+$email = mysqli_real_escape_string($link,$_POST['email']);
+$email = htmlspecialchars($email, ENT_QUOTES);
+$email = trim($email);
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $results = $results . "email ";
+    $error = true;
+}
+
+$first = mysqli_real_escape_string($link,$_POST['first']);
+$first = htmlspecialchars($first, ENT_QUOTES);
+$first = trim($first);
 
 
-    $last = mysqli_real_escape_string($link,$_POST['last']);
-    $last = htmlspecialchars($last, ENT_QUOTES);
-    $last = trim($last);
-
-    if (preg_match('[^0-9]+', $last) OR strlen($last) < 1 OR strlen($last) > 50 ) {
-    	$results = $results . "last ";
-        $error = true;
-    }
+if (preg_match('[^0-9]+', $first) OR strlen($first) < 1 OR strlen($first) > 50 ) {
+    $results = $results . "first ";
+    $error = true;
+}
 
 
-    $pass = mysqli_real_escape_string($link,$_POST['password']);
-    $pass = htmlspecialchars($pass, ENT_QUOTES);
-    $pass= trim($pass);
+$last = mysqli_real_escape_string($link,$_POST['last']);
+$last = htmlspecialchars($last, ENT_QUOTES);
+$last = trim($last);
 
-    if (strlen($pass)<10 OR strlen($pass) > 50) {
-    	$results = $results . "pass ";
-        $error = true;
-    }
-
-    $phone = mysqli_real_escape_string($link,$_POST['phone']);
-    $phone = htmlspecialchars($phone, ENT_QUOTES);
-    $phone = trim($phone);
-
-    if ($phone!='' AND (!is_numeric($phone) OR substr($phone, 0, 1) == '0')){
-    	$results = $results . "phone ";
-        $error = true;
-    }
-
-    $address = mysqli_real_escape_string($link,$_POST['address']);
-    $address = htmlspecialchars($address, ENT_QUOTES);
-    $address = trim($address);
-
-    if ($address!='' AND (preg_match('[^0-9]+', $first) OR strlen($address)>50)) {
-    	$results = $results . "address ";
-        $error = true;
-    }
+if (preg_match('[^0-9]+', $last) OR strlen($last) < 1 OR strlen($last) > 50 ) {
+    $results = $results . "last ";
+    $error = true;
+}
 
 
-    $str = mysqli_real_escape_string($link,$_POST['str']);
-    $str = htmlspecialchars($str, ENT_QUOTES);
-    $str = trim($str);
+$pass = mysqli_real_escape_string($link,$_POST['password']);
+$pass = htmlspecialchars($pass, ENT_QUOTES);
+$pass= trim($pass);
 
-    if ($str!='' AND (!is_numeric($str) OR strlen($str) > 4)) {
-    	$results = $results . "str ";
-        $error = true;
-    }
+if (strlen($pass)<10 OR strlen($pass) > 50) {
+    $results = $results . "pass ";
+    $error = true;
+}
 
-    $zip = mysqli_real_escape_string($link,$_POST['zip']);
-    $zip = htmlspecialchars($zip, ENT_QUOTES);
+$phone = mysqli_real_escape_string($link,$_POST['phone']);
+$phone = htmlspecialchars($phone, ENT_QUOTES);
+$phone = trim($phone);
 
-    if ($zip!='' AND (!is_numeric($zip) OR !(strlen($zip)==5))) {
-    	$results = $results . "zip ";
-        $error = true;
-    }
+if ($phone!='' AND (!is_numeric($phone) OR substr($phone, 0, 1) == '0')){
+    $results = $results . "phone ";
+    $error = true;
+}
 
-    $date = mysqli_real_escape_string($link,$_POST['birth']);
-    $date = htmlspecialchars($date, ENT_QUOTES);
+$address = mysqli_real_escape_string($link,$_POST['address']);
+$address = htmlspecialchars($address, ENT_QUOTES);
+$address = trim($address);
 
-    if ($date == "") {
-    	$results = $results . "dob ";
-        $error = true;
-    }
+if ($address!='' AND (preg_match('[^0-9]+', $first) OR strlen($address)>50)) {
+    $results = $results . "address ";
+    $error = true;
+}
 
 
-    if ($error) {
-        echo $results;
-    }
-    else {
+$str = mysqli_real_escape_string($link,$_POST['str']);
+$str = htmlspecialchars($str, ENT_QUOTES);
+$str = trim($str);
 
-      $query = "SELECT username FROM user WHERE username = '$username'";
-	   
-		$result = mysqli_query($link, $query);
+if ($str!='' AND (!is_numeric($str) OR strlen($str) > 4)) {
+    $results = $results . "str ";
+    $error = true;
+}
 
-	if (mysqli_num_rows($result) >= 1) {
+$zip = mysqli_real_escape_string($link,$_POST['zip']);
+$zip = htmlspecialchars($zip, ENT_QUOTES);
+
+if ($zip!='' AND (!is_numeric($zip) OR !(strlen($zip)==5))) {
+    $results = $results . "zip ";
+    $error = true;
+}
+
+$date = mysqli_real_escape_string($link,$_POST['birth']);
+$date = htmlspecialchars($date, ENT_QUOTES);
+
+if ($date == "") {
+    $results = $results . "dob ";
+    $error = true;
+}
+
+
+if ($error) {
+    echo $results;
+}
+else {
+
+    mysqli_set_charset($link, "utf8");
+
+    $query = "SELECT username FROM user WHERE username = '$username'";
+
+    $result = mysqli_query($link, $query);
+
+    if (mysqli_num_rows($result) >= 1) {
         mysqli_free_result($result);
         $results = $results . "notuser ";
         $error = true;
-	}
-	
-	
-	$query = "SELECT email FROM user WHERE email = '$email'";
+    }
 
-	$result = mysqli_query($link, $query);
 
-	if (mysqli_num_rows($result) >= 1) {
+    $query = "SELECT email FROM user WHERE email = '$email'";
+
+    $result = mysqli_query($link, $query);
+
+    if (mysqli_num_rows($result) >= 1) {
         mysqli_free_result($result);
         $results = $results . "notemail ";
         $error = true;
-	}
+    }
 
-	mysqli_close($link);
-    
-    
+    mysqli_close($link);
+
+
     if ($error) {
         echo $results;
     }

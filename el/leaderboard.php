@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,11 +13,11 @@
     </head>
     <body>
         
-         <!-- registration or username -->
+        <!-- registration or username -->
         <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -32,16 +31,13 @@
                 <div class="main-title">Στατιστικά κατάταξης</div>  
                 <h4>Μία λίστα με τους/τις εθελοντές/τριες που συγκέντρωσαν τους περισσότερους πόντους</h4>
             </div>
-            
-            
-                
-                
+              
             <div id="leaderboard-statistics">
                 
                 <?php
-                    echo '<div class="side-widgets">';
-                    include 'recent-events-widget.php'; 
-                    echo '</div>';
+                echo '<div class="side-widgets">';
+                include 'recent-events-widget.php'; 
+                echo '</div>';
                 ?>
                 
                 <div id="leaderboard">
@@ -62,6 +58,4 @@
         <?php include 'footer.php'; ?>
 
     </body>
-    
-   
 </html>

@@ -32,9 +32,12 @@
                 </div>
                 
                 <form>
-                <?php include '../find-news.php';
+                    
+                <?php 
+                include '../find-news.php';
                 session_start();
-                $_SESSION['news_id'] = $row[0];    
+                $_SESSION['news_id'] = $row[0];
+                mysqli_set_charset($link, "utf8");
                 ?>
                     <div class="label-in">
                         <div class="h3"> Τίτλος: * </div>

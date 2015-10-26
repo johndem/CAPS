@@ -1,64 +1,66 @@
 <?php 
 
-	session_start();
+session_start();
 
-	if (isset($_SESSION['admin'])) {
+mysqli_set_charset($link, "utf8");
 
-		include "create-link.php";
+if (isset($_SESSION['admin'])) {
 
-		$type = $_POST['type'];
-		$new_value = $_POST['value'];
+    include "create-link.php";
 
-		if ($type == 'category') {
-			$query = "INSERT INTO categories (title) VALUES ('$new_value') ";
+    $type = $_POST['type'];
+    $new_value = $_POST['value'];
 
-			if (mysqli_query($link, $query)) {
-   				 echo "OK";
-			} else {
-  				 echo "Error";
-			}
+    if ($type == 'category') {
+        $query = "INSERT INTO categories (title) VALUES ('$new_value') ";
 
-			mysqli_close($link);
-		}
-		elseif ($type == 'dist') {
-			$query = "INSERT INTO districts (title) VALUES ('$new_value')";
+        if (mysqli_query($link, $query)) {
+             echo "OK";
+        } else {
+             echo "Error";
+        }
 
-			if (mysqli_query($link, $query)) {
-   				 echo "OK";
-			} else {
-  				 echo "Error";
-			}
+        mysqli_close($link);
+    }
+    elseif ($type == 'dist') {
+        $query = "INSERT INTO districts (title) VALUES ('$new_value')";
 
-			mysqli_close($link);
-		}
-		elseif ($type == 'skill') {
-			$query = "INSERT INTO skills (skill, value) VALUES ('$new_value', 15)";
+        if (mysqli_query($link, $query)) {
+             echo "OK";
+        } else {
+             echo "Error";
+        }
 
-			if (mysqli_query($link, $query)) {
-   				 echo "OK";
-			} else {
-  				 echo "Error";
-			}
+        mysqli_close($link);
+    }
+    elseif ($type == 'skill') {
+        $query = "INSERT INTO skills (skill, value) VALUES ('$new_value', 15)";
 
-			mysqli_close($link);
-		}
-		elseif ($type == 'agegroup') {
-			$query = "INSERT INTO agegroups (title) VALUES ('$new_value')";
+        if (mysqli_query($link, $query)) {
+             echo "OK";
+        } else {
+             echo "Error";
+        }
 
-			if (mysqli_query($link, $query)) {
-   				 echo "OK";
-			} else {
-  				 echo "Error";
-			}
+        mysqli_close($link);
+    }
+    elseif ($type == 'agegroup') {
+        $query = "INSERT INTO agegroups (title) VALUES ('$new_value')";
 
-			mysqli_close($link);
-		}
+        if (mysqli_query($link, $query)) {
+             echo "OK";
+        } else {
+             echo "Error";
+        }
 
-	}
+        mysqli_close($link);
+    }
 
-	else {
-		echo "Permission denied";
-	}
+}
+
+else {
+    echo "Permission denied";
+}
 
 
 ?>

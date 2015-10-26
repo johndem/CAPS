@@ -2,6 +2,8 @@
 
 include 'create-link.php';
 
+mysqli_set_charset($link, "utf8");
+
 $query = "SELECT id,firstname,lastname,picture,points FROM user ORDER BY points desc LIMIT 10";
 $results = mysqli_query($link,$query);
 

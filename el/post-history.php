@@ -4,6 +4,8 @@ include 'create-link.php';
 
 $org_id = $_SESSION['org_id'];
 
+mysqli_set_charset($link, "utf8");
+
 $query = "SELECT * FROM events WHERE org_id = '$org_id'";
 $results = mysqli_query($link,$query);
 

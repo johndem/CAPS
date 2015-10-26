@@ -1,20 +1,23 @@
 <?php
 
-    include 'create-link.php';
+include 'create-link.php';
 
-    $query = "INSERT INTO user (firstname,lastname,username,email,password,phone,address,str_number,zip,city,date,picture) VALUES ('$first', '$last','$username','$email','$pass','$phone','$address','$str','$zip','Thessaloniki', '$date', 'images/profile.png')";
-    mysqli_query($link,$query);
+mysqli_set_charset($link, "utf8");
 
-    $query = "SELECT id FROM user WHERE username = '$user'";
-    $results = mysqli_query($link,$query);
-    $row = mysqli_fetch_row($results);
-    $user_id = $row[0];
-    $not_id = '1';
+$query = "INSERT INTO user (firstname,lastname,username,email,password,phone,address,str_number,zip,city,date,picture) VALUES ('$first', '$last','$username','$email','$pass','$phone','$address','$str','$zip','Thessaloniki', '$date', 'images/profile.png')";
+mysqli_query($link,$query);
 
-    $query = "INSERT INTO notifications (user_id,not_id,role) VALUES ('$user_id','$not_id','0')";
-    mysqli_query($link,$query);
+$query = "SELECT id FROM user WHERE username = '$user'";
+$results = mysqli_query($link,$query);
+$row = mysqli_fetch_row($results);
+$user_id = $row[0];
+$not_id = '1';
 
-    @mysqli_close($link); 
+$query = "INSERT INTO notifications (user_id,not_id,role) VALUES ('$user_id','$not_id','0')";
+mysqli_query($link,$query);
 
-    echo "OK";
+@mysqli_close($link); 
+
+echo "OK";
+
 ?>

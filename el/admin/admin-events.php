@@ -16,12 +16,14 @@
 
     <?php 
 
-        session_start();
+    session_start();
 
-            if (!isset($_SESSION['admin'])) { 
-                header("Location: index.php");
+    mysqli_set_charset($link, "utf8");
+
+    if (!isset($_SESSION['admin'])) { 
+        header("Location: index.php");
+    
     ?>
-
 
     <?php } else { ?>
 

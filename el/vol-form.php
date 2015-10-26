@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="el">
-    
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -17,13 +16,11 @@
     </head>
     <body>
 	
-        
-        
-      <!-- registration or username -->
+        <!-- registration or username -->
         <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -33,9 +30,9 @@
         <div class="content">
             <h1 class="center-title"></h1>
             <div class="page-title"> 
-                    <div class="main-title">Φόρμα εγγραφής εθελοντή</div>  
-                    <h4> Παρακαλούμε συμπληρώστε τις απαραίτητες πληροφορίες</h4>
-                    </div>
+                <div class="main-title">Φόρμα εγγραφής εθελοντή</div>  
+                <h4> Παρακαλούμε συμπληρώστε τις απαραίτητες πληροφορίες</h4>
+            </div>
 
             <div class="aligner">
 
@@ -124,8 +121,6 @@
                         <input id="dob" class="in" name="date" required/>
                     </div>
 
-                    
-                    
                 </form>
 
                 <p id="required">* Αυτό το πεδίο είναι απαραίτητο </p>
@@ -143,7 +138,7 @@
         <!-- footer -->
         <?php include 'footer.php'; ?>
 
-   <script>     
+    <script>     
        
        $(document).ready(function() {
            $("#dob").datepicker({

@@ -53,7 +53,4 @@ if (! isset($_SESSION['oauth_token'])) {
 // assign access token on each page load
 $cb->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
 
-
-
-
 ?>

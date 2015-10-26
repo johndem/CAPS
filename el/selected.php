@@ -5,6 +5,8 @@ $volid = $_POST['volid'];
 
 include 'create-link.php';
 
+mysqli_set_charset($link, "utf8");
+
 $query = "UPDATE apply SET selected=1 WHERE eventID='$eventid' AND volunteerID='$volid'";
 
 if (mysqli_query($link, $query)) {

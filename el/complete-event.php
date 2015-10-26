@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="el">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,13 +14,14 @@
 		<script src="complete-event.js"></script>
 	</head>
 	<body>
- <?php session_start(); ?>
+        
+        <?php session_start(); ?>
 
 		<!-- registration or username -->
 		<?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -45,6 +45,8 @@
 
                     $org_id = $_SESSION["org_id"];
                     $eventid = $_GET["eventid"];
+
+                    mysqli_set_charset($link, "utf8");
 
                     include "create-link.php";
 
@@ -106,5 +108,4 @@
         ?>
         
 	</body>
-
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,7 +13,7 @@
     <body>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -29,7 +28,9 @@
                 <h4>Πληροφορίες προφίλ</h4>
             </div>
             
-                <?php if(isset($_SESSION['org_id']) || isset($_SESSION['user'])) { 
+                <?php 
+                mysqli_set_charset($link, "utf8");
+                if(isset($_SESSION['org_id']) || isset($_SESSION['user'])) { 
                     include 'find-user.php';
                 ?>
                 
@@ -81,21 +82,23 @@
                     <div class="notification-box"> 
                         <?php
 
-                            include 'create-link.php';
-                            $id = 0;
-                            $role = 0;
+                        include 'create-link.php';
+                        $id = 0;
+                        $role = 0;
 
-                            if (isset($_SESSION['vol_id'])) {
-                                $id = $_SESSION['vol_id'];
-                            }
-                            else {
-                                $id = $_SESSION['org_id'];
-                                $role = 1;
-                            }
+                        if (isset($_SESSION['vol_id'])) {
+                            $id = $_SESSION['vol_id'];
+                        }
+                        else {
+                            $id = $_SESSION['org_id'];
+                            $role = 1;
+                        }
 
-                            $query = "SELECT notifications.date, messages.text ,notifications.id,events.title,events.id FROM notifications, messages, events WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id AND notifications.event_id = events.id ORDER BY notifications.id DESC";
-                             $results = mysqli_query($link,$query);   
-                            while ($row = mysqli_fetch_row($results)) { ?>
+                        $query = "SELECT notifications.date, messages.text ,notifications.id,events.title,events.id FROM notifications, messages, events WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id AND notifications.event_id = events.id ORDER BY notifications.id DESC";
+                         $results = mysqli_query($link,$query);   
+                        while ($row = mysqli_fetch_row($results)) { 
+                        
+                        ?>
 
                             <div class="notification"> 
                                 <div class="image"> </div>

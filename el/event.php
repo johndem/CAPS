@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="el">
     <head>
-    <meta property="og:title" content="Share this event!" />
-    <meta property="og:site_name" content="Thessaloniki Volunteer Network"/>
-    <meta property="og:url" content="http://localhost/CAPS/index.php"/>
-    <meta property="og:description" content="The Volunteer netowrk of Thessaloniki is a place where you can easily find volunteering oppurtunities." />
-    <meta property="fb:app_id" content="1607915839446072" />
-    <meta property="og:type" content="article" />
-    <meta property="article:author" content="TVN" />
-    <meta property="article:publisher" content="TVN" />
-    <meta property="og:image"  content="https://www.facebook.com/images/fb_icon_325x325.png" />
+        <meta property="og:title" content="Share this event!" />
+        <meta property="og:site_name" content="Thessaloniki Volunteer Network"/>
+        <meta property="og:url" content="http://localhost/CAPS/index.php"/>
+        <meta property="og:description" content="The Volunteer netowrk of Thessaloniki is a place where you can easily find volunteering oppurtunities." />
+        <meta property="fb:app_id" content="1607915839446072" />
+        <meta property="og:type" content="article" />
+        <meta property="article:author" content="TVN" />
+        <meta property="article:publisher" content="TVN" />
+        <meta property="og:image"  content="https://www.facebook.com/images/fb_icon_325x325.png" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>GETTING STARTED WITH BRACKETS</title>
@@ -26,64 +25,63 @@
         
         <?php 
 
-            session_start();
-                
-                include 'find-event.php';
+        session_start();
 
-                if (($row[17] == '0' || $row[17] == '-1') & !isset($_SESSION['admin'])) { 
-                    header("Location: index.php");
+        mysqli_set_charset($link, "utf8");
+                
+        include 'find-event.php';
+
+        if (($row[17] == '0' || $row[17] == '-1') & !isset($_SESSION['admin'])) { 
+            header("Location: index.php");
+        
         ?>
         
         <?php } else { ?>
         
         
-       <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1607915839446072',
-          xfbml      : true,
-          version    : 'v2.4'
-        });
-      };
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId      : '1607915839446072',
+                    xfbml      : true,
+                    version    : 'v2.4'
+                });
+            };
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            } (document, 'script', 'facebook-jssdk'));
+        </script>
 
-    <script type="text/javascript">
-  function share () {
-
-    FB.ui(
-  {
-    method: 'share',
-    href: 'http://localhost/CAPS/event.php?id=22',
-  },
-  // callback
-  function(response) {
-    if (response && !response.error_code) {
-      alert('Posting completed.');
-    } else {
-      alert('Error while posting.');
-    }
-  }
-);
-}
-
-    </script>
+        <script type="text/javascript">
+            function share () {
+                FB.ui(
+                {
+                    method: 'share',
+                    href: 'http://localhost/CAPS/event.php?id=22',
+                },
+                // callback
+                function(response) {
+                    if (response && !response.error_code) {
+                        alert('Posting completed.');
+                    } else {
+                        alert('Error while posting.');
+                    }
+                }
+                );
+            }
+        </script>
 
 
-
-        
-           <!-- registration or username -->
+        <!-- registration or username -->
         <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -92,12 +90,12 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-                <?php 
-                    include 'check-org-event.php';
-                ?>
+                <?php include 'check-org-event.php'; ?>
                 <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
                 
-                <?php if (isset($_SESSION['vol_id'])) {
+                <?php 
+                      
+                if (isset($_SESSION['vol_id'])) {
 
                     include 'create-link.php';
                     $vol_id = $_SESSION['vol_id'];
@@ -107,23 +105,22 @@
 
                     if (mysqli_num_rows($results) > 0) {
 
-                        ?>
-                        <div class="selected-msg"> Επιλεχθήκατε ως εθελοντής/τρια για αυτή τη δράση! </div>
+                ?>
+                
+                    <div class="selected-msg"> Επιλεχθήκατε ως εθελοντής/τρια για αυτή τη δράση! </div>
+                    
                     <?php }
-
-
-                    } ?>
+                } ?>
                 
 
                 <div class="page-title"> 
                     <div class="main-title"> <?php echo "$row[2]"; ?></div>  
                     <h4>Πληροφορίες εθελοντικής δράσης</h4>
-                    </div>
+                </div>
+            
                 <div id="event-page">
-                    
-                    
                     <div id="event-main">
-				  <h2>Λεπτομέρειες</h2>
+				        <h2>Λεπτομέρειες</h2>
                         <ul id="event-chars">
                             <li><?php echo "<strong>Κατάσταση δράσης: </strong>"; if ($row[17]==1) echo '<span class="active_green">Ενεργή</span>';
                                                                             else if ($row[17]==2) echo '<span class="completed_red">Ολοκληρωμένη</span>'; 
@@ -139,32 +136,34 @@
                             echo $skill[0];
 
                             while ($skill = mysqli_fetch_row($skills)) {
-
                                  echo  ",  " . $skill[0];
-                                }
-                                    @mysqli_close($link);
+                            }
+                            @mysqli_close($link);
+                      
                             ?>
-                             </li>
+                            </li>
+                            
                             <?php $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ"); ?>
                         </ul>
-				  <div><h2>Περιγραφή</h3></div>
+				        <div><h2>Περιγραφή</h3></div>
                         <div id="event-body"><?php echo nl2br($row[13]); ?></div>
                         
                         <div id="event-gallery">
                         <?php
-                            if ($row[14] != '' && $row[15] != '') {
-                                echo '<div id="carousel">';
-                                    echo '<ul>';
-                                        echo '<li><img src="' . $row[14] . '" /></li>';
-                                        echo '<li><img src="' . $row[15] . '" /></li>';
-                                        if ($row[16] != '')
-                                            echo '<li><img src="' . $row[16] . '" /></li>';
-                                    echo '</ul>';
-                                echo '</div>';
-                            }
-                            else if ($row[14] != '') {
-                                echo '<img src="' . $row[14] . '" />';
-                            }
+                      
+                        if ($row[14] != '' && $row[15] != '') {
+                            echo '<div id="carousel">';
+                                echo '<ul>';
+                                    echo '<li><img src="' . $row[14] . '" /></li>';
+                                    echo '<li><img src="' . $row[15] . '" /></li>';
+                                    if ($row[16] != '')
+                                        echo '<li><img src="' . $row[16] . '" /></li>';
+                                echo '</ul>';
+                            echo '</div>';
+                        }
+                        else if ($row[14] != '') {
+                            echo '<img src="' . $row[14] . '" />';
+                        }
                                 
                         ?>
                         </div>
@@ -188,12 +187,8 @@
 
                         $applied = false;
                         if (mysqli_num_rows($result) >= 1) {
-
                             $applied= true;
-
                         }
-
-
 
                         ?>
                         
@@ -258,55 +253,57 @@
                                 <h3>Επικοινωνία:</h3>
                                 <?php echo '<h5>' . $org[2] . '</h5>'; ?>
                                 <?php 
-                                    if ($org[5] != "") {
-                                        echo '<h3><a href="' . $org[5] . '">Επίσκεψη ιστοχώρου</a></h3>';
-                                    }
-                                    if ($org[6] != "") {
-                                        echo '<h3><a href="' . $org[6] . '">H σελίδα μας στο Facebook</a></h3>';
-                                    }
-                                    if ($org[7] != "") {
-                                        echo '<h3><a href="' . $org[7] . '">O λογαριασμός μας στο Twitter</a></h3>';
-                                    }
-                                    if ($org[8] != "") {
-                                        echo '<h3><a href="' . $org[8] . '">Άλλο</a></h3>';
-                                    }
+                                if ($org[5] != "") {
+                                    echo '<h3><a href="' . $org[5] . '">Επίσκεψη ιστοχώρου</a></h3>';
+                                }
+                                if ($org[6] != "") {
+                                    echo '<h3><a href="' . $org[6] . '">H σελίδα μας στο Facebook</a></h3>';
+                                }
+                                if ($org[7] != "") {
+                                    echo '<h3><a href="' . $org[7] . '">O λογαριασμός μας στο Twitter</a></h3>';
+                                }
+                                if ($org[8] != "") {
+                                    echo '<h3><a href="' . $org[8] . '">Άλλο</a></h3>';
+                                }
                                 ?>
                             </div>
                         </div>
 
                         <div class="facebook-share" onclick="share()">Κοινoποίηση στο Facebook</div>
-                         <?php 
+                        <?php 
 
                         if ($flag == true) { ?>
 
-                           <h3 style="text-align: center;">Χρήστες που έκαναν αίτηση</h3>
-                           <div class="applied-content"> 
+                            <h3 style="text-align: center;">Χρήστες που έκαναν αίτηση</h3>
+                            <div class="applied-content"> 
                             <?php 
 
-                                include 'create-link.php';
-                                $eventid = $_GET['id'];
+                            include 'create-link.php';
+                            $eventid = $_GET['id'];
 
-                                $query = "SELECT user.firstname, user.lastname, user.username FROM user,apply WHERE user.id = apply.volunteerID AND apply.eventID = $eventid ";
-                                $result = mysqli_query($link,$query);
+                            $query = "SELECT user.firstname, user.lastname, user.username FROM user,apply WHERE user.id = apply.volunteerID AND apply.eventID = $eventid ";
+                            $result = mysqli_query($link,$query);
 
-                                while ($row = mysqli_fetch_row($result)) { ?>
+                            while ($row = mysqli_fetch_row($result)) { ?>
 
-                                <div class="applicant"> 
+                            <div class="applicant"> 
 
-                                    <?php echo $row[0] . " " . $row[1] . " (" . $row[2] . ")";  ?>
+                                <?php echo $row[0] . " " . $row[1] . " (" . $row[2] . ")";  
+                                
+                            ?>
 
-                                </div>
+                            </div>
 
-                          <?php      }
-                          @mysqli_close($link);
+                            <?php      
+                            }
+                            @mysqli_close($link);
                             ?>
                             
-                           </div>
+                            </div>
 
-                           <div class="approve-btn" onclick="window.location='approve.php?eventid=<?php echo $eventid; ?>'">Επιλογή</div>
+                            <div class="approve-btn" onclick="window.location='approve.php?eventid=<?php echo $eventid; ?>'">Επιλογή</div>
 
-                       <?php }
-                        ?>
+                        <?php } ?>
                         
 
                     </div>
@@ -317,10 +314,10 @@
                 
                 </div>
 
-            </div>
+        </div>
 
-            <!-- footer -->
-            <?php include 'footer.php'; ?>
+        <!-- footer -->
+        <?php include 'footer.php'; ?>
             
         
         <script>
@@ -358,6 +355,9 @@
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
+            
+            
         <?php } ?>
+            
     </body>
 </html>

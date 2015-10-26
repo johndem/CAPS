@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,10 +15,10 @@
 
         
         <!-- registration or username -->
-		 <?php //include 'log-state.php'; ?>
+        <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -29,38 +28,41 @@
         <div class="content">
             <h1 class="center-title" style="margin-bottom: 0;"></h1>
 
-            
             <?php
-                include 'create-link.php';
 
-                $query = "SELECT * FROM events WHERE status='1' ORDER BY id DESC";
-                $results = mysqli_query($link,$query);
-                
+            include 'create-link.php';
 
-                $rowsFound = 0;
+            mysqli_set_charset($link, "utf8");
 
-                $featured = array
-                (
-                    array(0, 0, 0, 0),
-                    array(0, 0, 0, 0),
-                    array(0, 0, 0, 0),
-                );
+            $query = "SELECT * FROM events WHERE status='1' ORDER BY id DESC";
+            $results = mysqli_query($link,$query);
 
-                while ($row = mysqli_fetch_row($results)) {
-                    if ($row[14] != '') {
-                        $featured[$rowsFound][0] = $row[0];
-                        $featured[$rowsFound][1] = $row[2];
-                        $featured[$rowsFound][2] = $row[12];
-                        $featured[$rowsFound][3] = $row[14];
-                        
-                        $rowsFound++;
-                    }
-                    if ($rowsFound >= 3) {
-                        break;    
-                    }
+
+            $rowsFound = 0;
+
+            $featured = array
+            (
+                array(0, 0, 0, 0),
+                array(0, 0, 0, 0),
+                array(0, 0, 0, 0),
+            );
+
+            while ($row = mysqli_fetch_row($results)) {
+                if ($row[14] != '') {
+                    $featured[$rowsFound][0] = $row[0];
+                    $featured[$rowsFound][1] = $row[2];
+                    $featured[$rowsFound][2] = $row[12];
+                    $featured[$rowsFound][3] = $row[14];
+
+                    $rowsFound++;
                 }
+                if ($rowsFound >= 3) {
+                    break;    
+                }
+            }
 
-                if ($rowsFound == 3) {    
+            if ($rowsFound == 3) { 
+                    
             ?>
             
             <div id="featured">
@@ -70,8 +72,8 @@
                             <img src="<?php echo $featured[0][3]; ?>" />
                             <div class="featured-image-text">
                                 <?php 
-                                    echo '<h2>' . $featured[0][1] . '</h2>';
-                                    echo '<h4>' . $featured[0][2] . '</h4>'; 
+                                echo '<h2>' . $featured[0][1] . '</h2>';
+                                echo '<h4>' . $featured[0][2] . '</h4>'; 
                                 ?>
                                 <div class="btnLearn">
                                     <h3><a href="<?php echo "event.php?id=" . $featured[0][0]; ?>">Περισσότερα</a></h3>
@@ -84,8 +86,8 @@
                             <img src="<?php echo $featured[1][3]; ?>" />
                             <div class="featured-image-text">
                                 <?php 
-                                    echo '<h2>' . $featured[1][1] . '</h2>';
-                                    echo '<h4>' . $featured[1][2] . '</h4>';  
+                                echo '<h2>' . $featured[1][1] . '</h2>';
+                                echo '<h4>' . $featured[1][2] . '</h4>';  
                                 ?>
                                 <div class="btnLearn">
                                     <h3><a href="<?php echo "event.php?id=" . $featured[1][0]; ?>">Περισσότερα</a></h3>
@@ -98,8 +100,8 @@
                             <img src="<?php echo $featured[2][3]; ?>" />
                             <div class="featured-image-text">
                                 <?php 
-                                    echo '<h2>' . $featured[2][1] . '</h2>';
-                                    echo '<h4>' . $featured[2][2] . '</h4>';  
+                                echo '<h2>' . $featured[2][1] . '</h2>';
+                                echo '<h4>' . $featured[2][2] . '</h4>';  
                                 ?>
                                 <div class="btnLearn">
                                     <h3><a href="<?php echo "event.php?id=" . $featured[2][0]; ?>">Περισσότερα</a></h3>
@@ -111,16 +113,10 @@
             </div>
             
             <?php } ?>
-            
-            
-            
-            
-            
 
            <!--  <div id="btnOpp">
                 <h3><a href="volunteers.php">More Opportunities!</a></h3>
             </div> -->
-
 
             <div id="news"> 
                 <div class="page-title"> 
@@ -128,9 +124,7 @@
                 </div>
              
                 
-                <?php 
-                    include 'display-latest-news.php';
-                ?>    
+                <?php include 'display-latest-news.php'; ?>    
             </div>
 
             <div id="home-blanket">
@@ -142,7 +136,5 @@
         <!-- footer -->
         <?php include 'footer.php'; ?>
 
-        
     </body>
-
 </html>

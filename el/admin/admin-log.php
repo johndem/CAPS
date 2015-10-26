@@ -1,32 +1,34 @@
 <?php
 
-	session_start();
-	
-    include 'create-link.php';
+session_start();
 
-    $user = mysqli_real_escape_string($link,$_POST['username']);
-    $user = htmlspecialchars($user, ENT_QUOTES);
+mysqli_set_charset($link, "utf8");
 
-    $pass = mysqli_real_escape_string($link,$_POST['password']);
-    $pass = htmlspecialchars($pass, ENT_QUOTES);
+include 'create-link.php';
 
-    $query = "SELECT * FROM admin WHERE username='$user' AND password=$pass";
+$user = mysqli_real_escape_string($link,$_POST['username']);
+$user = htmlspecialchars($user, ENT_QUOTES);
 
-    $results = mysqli_query($link, $query);
+$pass = mysqli_real_escape_string($link,$_POST['password']);
+$pass = htmlspecialchars($pass, ENT_QUOTES);
 
-    if (mysqli_num_rows($results) >= 1) {
+$query = "SELECT * FROM admin WHERE username='$user' AND password=$pass";
 
-            $row = mysqli_fetch_row($results);        
-   
-            $_SESSION['admin'] = $row[0];
-			//$_SESSION['user'] = $row[1];
-            echo "OK";
-      
-    }
-    else {
-        echo "<li> Τα στοιχεία σας δεν είναι σωστά! </li>";
-    }
+$results = mysqli_query($link, $query);
 
-    @mysqli_close($link); 
+if (mysqli_num_rows($results) >= 1) {
+
+    $row = mysqli_fetch_row($results);        
+
+    $_SESSION['admin'] = $row[0];
+    //$_SESSION['user'] = $row[1];
+    echo "OK";
+
+}
+else {
+    echo "<li> Τα στοιχεία σας δεν είναι σωστά! </li>";
+}
+
+@mysqli_close($link); 
 
 ?>

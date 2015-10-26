@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,11 +13,11 @@
     </head>
     <body>
         
-         <!-- registration or username -->
+        <!-- registration or username -->
         <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -34,6 +33,8 @@
             </div>
             
             <?php
+
+            mysqli_set_charset($link, "utf8");
 
             if (isset($_GET["fromdate"]) && isset($_GET["todate"])) {
                 $fromdate = $_GET["fromdate"];
@@ -53,7 +54,6 @@
                     }
                 }
             }
-
 
             ?>
             
@@ -144,6 +144,4 @@
             
        
     </body>
-    
-   
 </html>

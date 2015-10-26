@@ -1,48 +1,50 @@
 <?php
 
-    session_start();
+session_start();
 
-	$results = " ";
-    $error = false;
+$results = " ";
+$error = false;
 
-    $tmp_name = $_FILES['picture']['tmp_name'];
-    $title = $_FILES['picture']['name'];
-    $size = $_FILES['picture']['size'];
-    $type = $_FILES['picture']['type'];
+$tmp_name = $_FILES['picture']['tmp_name'];
+$title = $_FILES['picture']['name'];
+$size = $_FILES['picture']['size'];
+$type = $_FILES['picture']['type'];
 
-    $fileExists = false;
-    if (is_uploaded_file($tmp_name)) {
-        //A file was selected for upload
-        $fileExists = true;
-        $whitelist = array(".jpg", ".jpeg", ".png");
-        $black = true;
-        foreach ($whitelist as $item) {
-            if (substr($title, strrpos($title, ".")) == $item) {
-                $black = false;
-                break;
-           }
-        }
+mysqli_set_charset($link, "utf8");
 
-        if ($black == true) {
-            $results = $results . "<li> Δεν επιτρέπεται η χρήση τέτοιου τύπου εικόνας </li>";
-            $error = true;
-        }
+$fileExists = false;
+if (is_uploaded_file($tmp_name)) {
+    //A file was selected for upload
+    $fileExists = true;
+    $whitelist = array(".jpg", ".jpeg", ".png");
+    $black = true;
+    foreach ($whitelist as $item) {
+        if (substr($title, strrpos($title, ".")) == $item) {
+            $black = false;
+            break;
+       }
     }
 
-    if ($error) {
-        echo $results;
+    if ($black == true) {
+        $results = $results . "<li> Δεν επιτρέπεται η χρήση τέτοιου τύπου εικόνας </li>";
+        $error = true;
     }
-    else {
-        if ($fileExists == true) {
-            move_uploaded_file($_FILES['picture']['tmp_name'], "images/" . $title);
-        }
-        
-        if (isset($_SESSION['org_id'])){
-            include "edit-org.php";
-        }
-        else if (isset($_SESSION['user'])){
-            include "edit-vol.php";
-        }
+}
+
+if ($error) {
+    echo $results;
+}
+else {
+    if ($fileExists == true) {
+        move_uploaded_file($_FILES['picture']['tmp_name'], "images/" . $title);
     }
+
+    if (isset($_SESSION['org_id'])){
+        include "edit-org.php";
+    }
+    else if (isset($_SESSION['user'])){
+        include "edit-vol.php";
+    }
+}
 
 ?>

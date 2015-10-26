@@ -1,6 +1,9 @@
 <?php
+
 session_start();
 $url = $_SERVER["REQUEST_URI"];
+
+mysqli_set_charset($link, "utf8");
 
 echo '<div class="navigation">';
 

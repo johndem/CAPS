@@ -8,6 +8,8 @@ $participants = $_POST['participant'];
 
 include 'create-link.php';
 
+mysqli_set_charset($link, "utf8");
+
 foreach ($participants as $participant) {
     $query = "INSERT INTO participation (event_id,volunteer_id) VALUES ('$eventid','$participant')";
     mysqli_query($link, $query);

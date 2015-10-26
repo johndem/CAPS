@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="el">
 	<head>
 		<meta charset="utf-8">
 		<!-- <meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login" />
@@ -22,6 +21,7 @@
 		<script src="form-check.js"></script>
 	</head>
 	<body>
+        
         <?php 
         session_start();
 		if (isset($_SESSION['user'])) {
@@ -33,7 +33,7 @@
 		<?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
 
         <!-- masthead -->
         <?php include 'masthead.php'; ?>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -47,6 +46,8 @@
 
             $date = mysqli_real_escape_string($link,$_GET['date']);
             $date = htmlspecialchars($date,ENT_QUOTES);
+
+            mysqli_set_charset($link, "utf8");
  
             // pagination stuff
             if (!isset($_GET['pagenum'])) {

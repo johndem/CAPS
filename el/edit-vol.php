@@ -1,47 +1,50 @@
 <?php
 
-    include 'create-link.php';
+include 'create-link.php';
 
-    $first = urldecode($_POST['first']);
-    $first = mysqli_real_escape_string($link,$first);
-    $first = htmlspecialchars($first, ENT_QUOTES);
+$first = urldecode($_POST['first']);
+$first = mysqli_real_escape_string($link,$first);
+$first = htmlspecialchars($first, ENT_QUOTES);
 
-    $last = urldecode($_POST['last']);
-    $last = mysqli_real_escape_string($link,$last);
-    $last = htmlspecialchars($last, ENT_QUOTES);
+$last = urldecode($_POST['last']);
+$last = mysqli_real_escape_string($link,$last);
+$last = htmlspecialchars($last, ENT_QUOTES);
 
-    $phone = urldecode($_POST['phone']);
-    $phone = mysqli_real_escape_string($link,$phone);
-    $phone = htmlspecialchars($phone, ENT_QUOTES);
+$phone = urldecode($_POST['phone']);
+$phone = mysqli_real_escape_string($link,$phone);
+$phone = htmlspecialchars($phone, ENT_QUOTES);
 
-    $address = urldecode($_POST['address']);
-    $address = mysqli_real_escape_string($link,$address);
-    $address = htmlspecialchars($address, ENT_QUOTES);
+$address = urldecode($_POST['address']);
+$address = mysqli_real_escape_string($link,$address);
+$address = htmlspecialchars($address, ENT_QUOTES);
 
-    $str = urldecode($_POST['str']);
-    $str = mysqli_real_escape_string($link,$str);
-    $str = htmlspecialchars($str, ENT_QUOTES);
+$str = urldecode($_POST['str']);
+$str = mysqli_real_escape_string($link,$str);
+$str = htmlspecialchars($str, ENT_QUOTES);
 
-    $zip = urldecode($_POST['zip']);
-    $zip = mysqli_real_escape_string($link,$zip);
-    $zip = htmlspecialchars($zip, ENT_QUOTES);
+$zip = urldecode($_POST['zip']);
+$zip = mysqli_real_escape_string($link,$zip);
+$zip = htmlspecialchars($zip, ENT_QUOTES);
 
-    $date = urldecode($_POST['date']);
-    $date = mysqli_real_escape_string($link,$date);
-    $date = htmlspecialchars($date, ENT_QUOTES);
+$date = urldecode($_POST['date']);
+$date = mysqli_real_escape_string($link,$date);
+$date = htmlspecialchars($date, ENT_QUOTES);
 
-    $user = $_SESSION['user'];
+$user = $_SESSION['user'];
 
-    if ($fileExists == true) {
-        $image = "images/" . $title;
-        $query = "UPDATE user SET firstname = '$first', lastname = '$last', phone = '$phone', address = '$address', str_number = '$str', zip = '$zip', date = '$date', picture = '$image' WHERE username = '$user'";
-    }
-    else {
-        $query = "UPDATE user SET firstname = '$first', lastname = '$last', phone = '$phone', address = '$address', str_number = '$str', zip = '$zip', date = '$date' WHERE username = '$user'";
-    }
+mysqli_set_charset($link, "utf8");
 
-	$result = mysqli_query($link, $query);
-    @mysqli_close($link); 
+if ($fileExists == true) {
+    $image = "images/" . $title;
+    $query = "UPDATE user SET firstname = '$first', lastname = '$last', phone = '$phone', address = '$address', str_number = '$str', zip = '$zip', date = '$date', picture = '$image' WHERE username = '$user'";
+}
+else {
+    $query = "UPDATE user SET firstname = '$first', lastname = '$last', phone = '$phone', address = '$address', str_number = '$str', zip = '$zip', date = '$date' WHERE username = '$user'";
+}
 
-    echo "OK";
+$result = mysqli_query($link, $query);
+@mysqli_close($link); 
+
+echo "OK";
+
 ?>

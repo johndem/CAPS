@@ -1,31 +1,32 @@
 <?php 
-	session_start();
 
-	include 'create-link.php';
-     $id = 0;
-     $role = 0;
+session_start();
 
-     if (isset($_SESSION['vol_id'])) {
-           $id = $_SESSION['vol_id'];
-      }
-     else {
-            $id = $_SESSION['org_id'];
-            $role = 1;
-     }
+mysqli_set_charset($link, "utf8");
 
-     $query = "UPDATE notifications SET ok=1 WHERE user_id='$id' AND role='$role'";
+include 'create-link.php';
+$id = 0;
+$role = 0;
 
-     $result = mysqli_query($link,$query);
+if (isset($_SESSION['vol_id'])) {
+    $id = $_SESSION['vol_id'];
+}
+else {
+    $id = $_SESSION['org_id'];
+    $role = 1;
+}
 
-     if ($result) {
-     	echo "OK";
-     }
-     else {
-     	echo "NOTOK";
-     }
+$query = "UPDATE notifications SET ok=1 WHERE user_id='$id' AND role='$role'";
 
-     @mysqli_close($link);
+$result = mysqli_query($link,$query);
 
+if ($result) {
+    echo "OK";
+}
+else {
+    echo "NOTOK";
+}
 
+@mysqli_close($link);
 
 ?>

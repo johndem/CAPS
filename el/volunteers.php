@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,158 +13,154 @@
     </head>
     <body>
         
-		
         <div>
         
-             <!-- registration or username -->
+        <!-- registration or username -->
         <?php// include 'log-state.php'; ?>
 
-        
-        
-
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
         <?php include 'masthead.php'; ?>
-            <!-- content -->
-            <div class="content">
-                <h1 class="center-title"></h1>
-                <div class="page-title"> 
-                    <div class="main-title"> Εκτενής Αναζήτηση</div>  
-                    <h4> Αναζητείστε εθελοντικές δράσεις και ξεκινήστε τον εθελοντισμό! </h4>
-                    </div>
-                <div class="aligner">
-                    
-                    
-                    <?php
-                        echo '<div class="side-widgets">';
-                        include 'recent-events-widget.php'; 
-                        echo '</div>';
-                        ?>
-                    
-                    <form action="search-results.php" method="get" id="volunteers-form">
-                       
-
-                        <div id="search-cat">
-                            <div class="h3">Κατηγορίες:</div>
-                            <div>
-                                <div id="radio-left">
-                                    <div class="align-left">
-                                        <input type="radio" name="category" value="Εκπαίδευση" /> 
-                                        Εκπαίδευση    
-                                    </div>
-                                    <div class="align-left">
-                                        <input type="radio" name="category" value="Περίθαλψη" />
-                                        Περίθαλψη 
-                                    </div>
-                                    <div class="align-left">
-                                        <input type="radio" name="category" value="Περιβάλλον" />
-                                        Περιβάλλον      
-                                    </div>
-                                </div>
-                                <div id="radio-right">
-                                    <div class="align-left">
-                                        <input type="radio" name="category" value="Ζώα" />
-                                        Ζώα
-                                    </div> 
-                                    <div class="align-left">
-                                        <input type="radio" name="category" value="Έκτακτη Ανάγκη" />
-                                        Έκτακτη Ανάγκη
-                                    </div>
-                                    <div class="align-left">
-                                        <input type="radio" name="category" value="Κοινότητες" />
-                                        Κοινότητες
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="search-select">
-                            <div class="h3">Περιοχή:</div>
-                            <div class="in">
-                                <select name="areas">
-                                    <option selected="selected" value="0">Επιλέξτε ένα</option>
-                                    <?php
-                                        include 'create-link.php';
-
-                                        $query = "SELECT * FROM districts";
-                                        $results = mysqli_query($link,$query);
-
-                                        while ($row = mysqli_fetch_row($results)) {
-                                            echo '<option value="' . $row[1] . '">' . $row[1] . '</option>';
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="search-select">
-                            <div class="h3">Ηλικιακή ομάδα:</div>
-                            <div class="in">
-                                <select name="ages">
-                                    <option selected="selected" value="0">Επιλέξτε ένα</option>
-                                    <?php
-                                        include 'create-link.php';
-
-                                        $query = "SELECT * FROM agegroups";
-                                        $results = mysqli_query($link,$query);
-
-                                        $i = 1;
-                                        while ($row = mysqli_fetch_row($results)) {
-                                            echo '<option value="' . $row[1] . '">' . $row[1] . '</option>';
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="search-select">
-                            <div class="h3">Προαιρετικές δεξιότητες:</div>
-                            <div class="in">
-                                <select id="skills" name="skills" multiple>
-                                    <option disabled selected="selected">- Κρατήστε πατημένο το Ctrl για πολλαπλές επιλογές -</option>
-                                    <?php
-                                        include 'create-link.php';
-
-                                        $query = "SELECT * FROM skills";
-                                        $results = mysqli_query($link,$query);
-
-                                        while ($row = mysqli_fetch_row($results)) {
-                                            echo '<option label="' . $row[2] . '" value="' . $row[1] . '">' . $row[2] . '</option>';
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="search-select">
-                            <div class="h3">Ημερομηνία:</div>
-                            <input id="dob" class="in" maxlength="50" name="date" size="30" type="date" value="" />
-                        </div>
-
-                        <div id="go">
-                            <input type="submit" class="submitBtn" name="submit" value="Αναζήτηση" />
-                        </div> 
-
-                    </form>
-                    
-                </div>
-                
-                <div id="reg-blanket">
-                
-                </div>
-                
-            </div>
             
-            <!-- footer -->
-            <?php include 'footer.php'; ?>
+        <!-- content -->
+        <div class="content">
+            <h1 class="center-title"></h1>
+            <div class="page-title"> 
+                <div class="main-title"> Εκτενής Αναζήτηση</div>  
+                <h4> Αναζητείστε εθελοντικές δράσεις και ξεκινήστε τον εθελοντισμό! </h4>
+            </div>
+
+            <div class="aligner">
+
+                <?php
+                mysqli_set_charset($link, "utf8");
+                echo '<div class="side-widgets">';
+                include 'recent-events-widget.php'; 
+                echo '</div>';
+                ?>
+
+                <form action="search-results.php" method="get" id="volunteers-form">
+
+
+                    <div id="search-cat">
+                        <div class="h3">Κατηγορίες:</div>
+                        <div>
+                            <div id="radio-left">
+                                <div class="align-left">
+                                    <input type="radio" name="category" value="Εκπαίδευση" /> 
+                                    Εκπαίδευση    
+                                </div>
+                                <div class="align-left">
+                                    <input type="radio" name="category" value="Περίθαλψη" />
+                                    Περίθαλψη 
+                                </div>
+                                <div class="align-left">
+                                    <input type="radio" name="category" value="Περιβάλλον" />
+                                    Περιβάλλον      
+                                </div>
+                            </div>
+                            <div id="radio-right">
+                                <div class="align-left">
+                                    <input type="radio" name="category" value="Ζώα" />
+                                    Ζώα
+                                </div> 
+                                <div class="align-left">
+                                    <input type="radio" name="category" value="Έκτακτη Ανάγκη" />
+                                    Έκτακτη Ανάγκη
+                                </div>
+                                <div class="align-left">
+                                    <input type="radio" name="category" value="Κοινότητες" />
+                                    Κοινότητες
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="search-select">
+                        <div class="h3">Περιοχή:</div>
+                        <div class="in">
+                            <select name="areas">
+                                <option selected="selected" value="0">Επιλέξτε ένα</option>
+                                <?php
+                                    include 'create-link.php';
+
+                                    $query = "SELECT * FROM districts";
+                                    $results = mysqli_query($link,$query);
+
+                                    while ($row = mysqli_fetch_row($results)) {
+                                        echo '<option value="' . $row[1] . '">' . $row[1] . '</option>';
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search-select">
+                        <div class="h3">Ηλικιακή ομάδα:</div>
+                        <div class="in">
+                            <select name="ages">
+                                <option selected="selected" value="0">Επιλέξτε ένα</option>
+                                <?php
+                                    include 'create-link.php';
+
+                                    $query = "SELECT * FROM agegroups";
+                                    $results = mysqli_query($link,$query);
+
+                                    $i = 1;
+                                    while ($row = mysqli_fetch_row($results)) {
+                                        echo '<option value="' . $row[1] . '">' . $row[1] . '</option>';
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search-select">
+                        <div class="h3">Προαιρετικές δεξιότητες:</div>
+                        <div class="in">
+                            <select id="skills" name="skills" multiple>
+                                <option disabled selected="selected">- Κρατήστε πατημένο το Ctrl για πολλαπλές επιλογές -</option>
+                                <?php
+                                    include 'create-link.php';
+
+                                    $query = "SELECT * FROM skills";
+                                    $results = mysqli_query($link,$query);
+
+                                    while ($row = mysqli_fetch_row($results)) {
+                                        echo '<option label="' . $row[2] . '" value="' . $row[1] . '">' . $row[2] . '</option>';
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search-select">
+                        <div class="h3">Ημερομηνία:</div>
+                        <input id="dob" class="in" maxlength="50" name="date" size="30" type="date" value="" />
+                    </div>
+
+                    <div id="go">
+                        <input type="submit" class="submitBtn" name="submit" value="Αναζήτηση" />
+                    </div> 
+
+                </form>
+
+            </div>
+
+            <div id="reg-blanket">
+
+            </div>
+
+        </div>
+
+        <!-- footer -->
+        <?php include 'footer.php'; ?>
             
         </div>
        
     </body>
-    
-   
 </html>

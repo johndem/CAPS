@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,11 +13,11 @@
     </head>
     <body>
         
-         <!-- registration or username -->
+        <!-- registration or username -->
         <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -37,22 +36,18 @@
             <div id="news-stories">
                 
                 <?php
-                    echo '<div class="side-widgets">';
-                    include 'recent-events-widget.php'; 
-                    include 'quick-search-widget.php';
-            //include 'most-recent-event-widget.php';
-                    echo '</div>';
+                echo '<div class="side-widgets">';
+                include 'recent-events-widget.php'; 
+                include 'quick-search-widget.php';
+                echo '</div>';
                 ?>
-                
-                
+                 
                 <div id="news-list">
                     <?php include 'display-news.php'; ?>     
                 </div>
-                
-                    
+                     
             </div>
-                    
-                
+                     
             <div id="account-blanket">
 
             </div>
@@ -62,7 +57,5 @@
         <!-- footer -->
         <?php include 'footer.php'; ?>
 
-    </body>
-    
-   
+    </body> 
 </html>

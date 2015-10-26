@@ -16,176 +16,167 @@
 
         <?php 
 
-                session_start();
+        session_start();
 
-                if (!isset($_SESSION['admin'])) { ?>
+        mysqli_set_charset($link, "utf8");
 
+        if (!isset($_SESSION['admin'])) { 
+        
+        ?>
 
-            <div class="aligner">
-           <form id="admin-form" name="log-form">
+        <div class="aligner">
+            <form id="admin-form" name="log-form">
 
-                        <div class="label-in">
-                            <div class="h3">
-                                Username:
-                            </div>
-                            <input class="in" maxlength="50" name="user" id="log-username" size="25" type="text" value="" />
-                        </div>
-
-                        <div class="label-in">
-                            <div class="h3">
-                                Password:
-                            </div>
-                            <input class="in" maxlength="50" name="pass" id="log-password" size="25" type="password" required value="" />
-                        </div>
-
-                        <!--<div id="go">
-                        <input type="submit" class="submitBtn" name="submit" value="Go" />
-                        </div> -->
-                    </form>
-
-                    <div id="go">
-                        <input type="submit" class="submitBtn" onclick="getLogResponse()" id="sButton" name="submit" value="Είσοδος" />
+                <div class="label-in">
+                    <div class="h3">
+                        Username:
                     </div>
+                    <input class="in" maxlength="50" name="user" id="log-username" size="25" type="text" value="" />
+                </div>
 
-                    <div id="results">
-                        <ul id="res-ul"></ul>
+                <div class="label-in">
+                    <div class="h3">
+                        Password:
                     </div>
+                    <input class="in" maxlength="50" name="pass" id="log-password" size="25" type="password" required value="" />
+                </div>
 
-</div>
+            </form>
 
-<?php } else { ?>
+            <div id="go">
+                <input type="submit" class="submitBtn" onclick="getLogResponse()" id="sButton" name="submit" value="Είσοδος" />
+            </div>
+
+            <div id="results">
+                <ul id="res-ul"></ul>
+            </div>
+
+        </div>
+
+        <?php } else { ?>
 
         <!-- masthead -->
         
         <div class="center-title"> <h3>ADMIN CONTROL PANEL</h3> </div>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
 
         <!-- content -->
         <div class="content">
-        <div class="aligner">
-        <h1> Οργανισμοί </h1>
+            <div class="aligner">
+                <h1> Οργανισμοί </h1>
 
-        <div class="listplz">   
-        <?php 
+                <div class="listplz">  
 
-            include "create-link.php";
+                    <?php 
 
-            $query =" SELECT * FROM organisations";
-            $results = mysqli_query($link,$query);
+                    include "create-link.php";
 
-            while ($row = mysqli_fetch_row($results)) { ?>
+                    $query =" SELECT * FROM organisations";
+                    $results = mysqli_query($link,$query);
+
+                    while ($row = mysqli_fetch_row($results)) { 
+
+                    ?>
 
                     <div class="listitem"> 
 
-                    <table> 
-                    <tr> 
-                        <th>ID</th>
-                        <th>Username </th>
-                        <th>Email </th>
-                        <th>Όνομα </th>
-                        <th>Website </th>
-                        <th>Facebook </th>
-                        <th>Twitter </th>
-                        <th>Άλλο </th>
-                        <th>Περιγραφή</th>
-                        <th>Actions</th>
-                    </tr>
+                        <table> 
+                            <tr> 
+                                <th>ID</th>
+                                <th>Username </th>
+                                <th>Email </th>
+                                <th>Όνομα </th>
+                                <th>Website </th>
+                                <th>Facebook </th>
+                                <th>Twitter </th>
+                                <th>Άλλο </th>
+                                <th>Περιγραφή</th>
+                                <th>Actions</th>
+                            </tr>
 
-                    <tr> 
+                            <tr> 
+                                <td class="info-id"> <?php echo $row[0]; ?></td>
+                                <td class="info"><?php echo $row[1]; ?> </td>
+                                <td class="info"><?php echo $row[2]; ?> </td>
+                                <td class="info"><?php echo $row[4]; ?>  </td>
+                                <td class="link"><a href="<?php echo $row[5];?>">Link</a></td>
+                                <td class="link"><a href="<?php echo $row[6];?>">Link</a> </td>
+                                <td class="link"><a href="<?php echo $row[7];?>">Link</a></td>
+                                <td class="link"><a href="<?php echo $row[8];?>">Link</a></td>
+                                <td class="link"><a href="../organization.php?id=<?php echo $row[0];?>">Link</a></td>
+                                <td class='actions'><span onclick="ondelete('org', <?php echo $row[0]; ?>)">Διαγραφή</span> <span onclick="window.location = 'mailto-form.php?mailToOrganization=<?php echo $row[0] ?>'">Mailto</span></td>
+                            </tr>
 
-                        <td class="info-id"> <?php echo $row[0]; ?></td>
-                        <td class="info"><?php echo $row[1]; ?> </td>
-                        <td class="info"><?php echo $row[2]; ?> </td>
-                        <td class="info"><?php echo $row[4]; ?>  </td>
-                        <td class="link"><a href="<?php echo $row[5];?>">Link</a></td>
-                        <td class="link"><a href="<?php echo $row[6];?>">Link</a> </td>
-                        <td class="link"><a href="<?php echo $row[7];?>">Link</a></td>
-                        <td class="link"><a href="<?php echo $row[8];?>">Link</a></td>
-                        <td class="link"><a href="../organization.php?id=<?php echo $row[0];?>">Link</a></td>
-                        <td class='actions'><span onclick="ondelete('org', <?php echo $row[0]; ?>)">Διαγραφή</span> <span onclick="window.location = 'mailto-form.php?mailToOrganization=<?php echo $row[0] ?>'">Mailto</span></td>
-
-                    </tr>
-
-                    </table>
+                        </table>
 
                     </div>
 
 
-<?php            }
+                    <?php } ?>
 
+                </div>
 
+                <h1> Εθελοντές </h1>
 
+                <div class="listplz">   
 
-        ?>
-        
+                    <?php 
 
-        </div>
+                    include "create-link.php";
 
-        <h1> Εθελοντές </h1>
+                    $query =" SELECT * FROM user";
+                    $results = mysqli_query($link,$query);
 
-        <div class="listplz">   
-        <?php 
+                    while ($row = mysqli_fetch_row($results)) { 
 
-            include "create-link.php";
-
-            $query =" SELECT * FROM user";
-            $results = mysqli_query($link,$query);
-
-            while ($row = mysqli_fetch_row($results)) { ?>
+                    ?>
 
                     <div class="listitem"> 
 
-                    <table> 
-                    <tr> 
-                        <th>ID</th>
-                        <th>Όνομα </th>
-                        <th>Επώνυμο </th>
-                        <th>Username </th>
-                        <th>Email </th>
-                        <th>Τηλέφωνο </th>
-                        <th>Διεύθυνση </th>
-                        <th>Ημ/νία γέννησης </th>
-                        <th>Actions</th>
-                    </tr>
+                        <table>
 
-                    <tr> 
+                            <tr> 
+                                <th>ID</th>
+                                <th>Όνομα </th>
+                                <th>Επώνυμο </th>
+                                <th>Username </th>
+                                <th>Email </th>
+                                <th>Τηλέφωνο </th>
+                                <th>Διεύθυνση </th>
+                                <th>Ημ/νία γέννησης </th>
+                                <th>Actions</th>
+                            </tr>
 
-                        <td class="info-id"> <?php echo $row[0]; ?></td>
-                        <td class="info"><?php echo $row[1]; ?> </td>
-                        <td class="info"><?php echo $row[2]; ?> </td>
-                        <td class="info"><?php echo $row[3]; ?>  </td>
-                        <td class="info"><?php echo $row[4];?></td>
-                        <td class="info"><?php echo $row[6];?></td>
-                        <td class="info"><?php echo $row[7] . " " . $row[8] . ", " . $row[9]; ?></td>
-                        <td class="info"><?php echo $row[11];?></td>
-                        <td class='actions'><span onclick="ondelete('vol', <?php echo $row[0]; ?>)">Διαγραφή</span> <span onclick="window.location = 'mailto-form.php?mailToVolunteer=<?php echo $row[0] ?>'">Mailto</span></td>
+                            <tr> 
+                                <td class="info-id"> <?php echo $row[0]; ?></td>
+                                <td class="info"><?php echo $row[1]; ?> </td>
+                                <td class="info"><?php echo $row[2]; ?> </td>
+                                <td class="info"><?php echo $row[3]; ?>  </td>
+                                <td class="info"><?php echo $row[4];?></td>
+                                <td class="info"><?php echo $row[6];?></td>
+                                <td class="info"><?php echo $row[7] . " " . $row[8] . ", " . $row[9]; ?></td>
+                                <td class="info"><?php echo $row[11];?></td>
+                                <td class='actions'><span onclick="ondelete('vol', <?php echo $row[0]; ?>)">Διαγραφή</span> <span onclick="window.location = 'mailto-form.php?mailToVolunteer=<?php echo $row[0] ?>'">Mailto</span></td>
+                            </tr>
 
-                    </tr>
-
-                    </table>
+                        </table>
 
                     </div>
 
 
-<?php            }
+                    <?php } ?>
 
+                </div>
 
+                <div id="home-blanket">
 
-
-        ?>
-        
-
-        </div>
-            
-            <div id="home-blanket">
-
+                </div>
             </div>
-</div>
         </div>
 
-<?php } ?>
+        <?php } ?>
         
     </body>
 

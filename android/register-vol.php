@@ -38,7 +38,7 @@ if (mysqli_num_rows($result) >= 1) {
 }
 
 if ($error == false) {
-    $query = "INSERT INTO user (firstname,lastname,username,email,password,date,picture) VALUES ('$firstname', '$lastname','$username','$email','$password','$birthday','images/profile.png')";
+    $query = "INSERT INTO user (firstname,lastname,username,email,password,date,picture) VALUES ('$firstname', '$lastname','$username','$email','$password','$birthday','../images/profile-pics/profile.png')";
     
     $results = mysqli_query($link,$query);
     $jsonData = '1';

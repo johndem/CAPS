@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
@@ -86,7 +86,7 @@
                             <select name="areas">
                                 <option selected="selected" value="0">Επιλέξτε ένα</option>
                                 <?php
-                                    include 'create-link.php';
+                                    include '../back-end/create-link.php';
 
                                     $query = "SELECT * FROM districts";
                                     $results = mysqli_query($link,$query);
@@ -105,7 +105,7 @@
                             <select name="ages">
                                 <option selected="selected" value="0">Επιλέξτε ένα</option>
                                 <?php
-                                    include 'create-link.php';
+                                    include '../back-end/create-link.php';
 
                                     $query = "SELECT * FROM agegroups";
                                     $results = mysqli_query($link,$query);
@@ -125,7 +125,7 @@
                             <select id="skills" name="skills" multiple>
                                 <option disabled selected="selected">- Κρατήστε πατημένο το Ctrl για πολλαπλές επιλογές -</option>
                                 <?php
-                                    include 'create-link.php';
+                                    include '../back-end/create-link.php';
 
                                     $query = "SELECT * FROM skills";
                                     $results = mysqli_query($link,$query);

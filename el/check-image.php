@@ -36,14 +36,14 @@ if ($error) {
 }
 else {
     if ($fileExists == true) {
-        move_uploaded_file($_FILES['picture']['tmp_name'], "images/" . $title);
+        move_uploaded_file($_FILES['picture']['tmp_name'], "../images/profile-pics/" . $title);
     }
 
     if (isset($_SESSION['org_id'])){
-        include "edit-org.php";
+        include "../back-end/edit-org.php";
     }
     else if (isset($_SESSION['user'])){
-        include "edit-vol.php";
+        include "../back-end/edit-vol.php";
     }
 }
 

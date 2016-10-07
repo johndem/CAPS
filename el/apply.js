@@ -25,7 +25,7 @@ function cancel() {
 
 	var parameters = "eventID=" + eventId;
 
-	http.open("POST", "handleCancel.php", true);
+	http.open("POST", "../back-end/handleCancel.php", true);
     http.onreadystatechange = useHttpResponseVol;
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.send(parameters);
@@ -46,7 +46,7 @@ function volApply() {
 	//alert(parameters);
 	console.log(parameters);
 
-    http.open("POST", "handleApply.php", true);
+    http.open("POST", "../back-end/handleApply.php", true);
     http.onreadystatechange = useHttpResponseVol;
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.send(parameters);

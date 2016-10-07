@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>GETTING STARTED WITH BRACKETS</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
@@ -28,7 +28,7 @@
             
             <h1 class="center-title"></h1>
             
-            <?php include 'find-org.php'; ?>
+            <?php include '../back-end/find-org.php'; ?>
             <!-- <h1 class="center-title"><?php echo "$org[4]"; ?></h1> -->
             
             <div class="page-title"> 

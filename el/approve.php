@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+		<title>Vol4All</title>
 		<meta name="description" content="An interactive getting started guide for Brackets.">
-		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="../main.css">
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 		<!-- <script src="https://apis.google.com/js/client:platform.js?onload=api" async defer></script> -->
 		<script src="googleplus2.js"></script>
@@ -49,7 +49,7 @@
 
                 mysqli_set_charset($link, "utf8");
 
-                include "create-link.php";
+                include "../back-end/create-link.php";
 
                 $query ="SELECT user.id, user.username, user.firstname, user.lastname, user.email, skills.skill, apply.selected FROM user, apply, skills,events WHERE user.id = apply.volunteerID AND skills.value = apply.skill_id AND apply.eventID = '$eventid' AND events.id = '$eventid' AND events.org_id = '$org_id'" ;
                 $results = mysqli_query($link,$query);

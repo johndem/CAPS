@@ -16,7 +16,7 @@ function getXMLHttpRequest() {
 
 function onselected(eventid, volid) {
 
-      var myurl = "selected.php";
+      var myurl = "../back-end/selected.php";
     
       var parameters ="eventid="+eventid+"&volid="+volid;
 

@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -47,7 +47,7 @@
                 <div id="present-orgs">
 
                     <?php
-                    include 'create-link.php';
+                    include '../back-end/create-link.php';
 
                     mysqli_set_charset($link, "utf8");
 
@@ -96,7 +96,7 @@
                         echo '<div class="pagination">';
                         if ($pagenum != 1) {
                             $previous_page = $pagenum - 1;
-                            echo "<a href='{$_SERVER['PHP_SELF']}?pagenum=$previous_page'><img src='images/page-arrow-left.png' /></a>";
+                            echo "<a href='{$_SERVER['PHP_SELF']}?pagenum=$previous_page'><img src='../images/other/page-arrow-left.png' /></a>";
                         }
 
                         for ($i = 1; $i <= $last_page; $i++) {
@@ -108,7 +108,7 @@
 
                         if ($pagenum != $last_page && $last_page != 1) {
                             $next_page = $pagenum + 1;
-                            echo "<a href='{$_SERVER['PHP_SELF']}?pagenum=$next_page'><img src='images/page-arrow-right.png' /></a>";
+                            echo "<a href='{$_SERVER['PHP_SELF']}?pagenum=$next_page'><img src='../images/other/page-arrow-right.png' /></a>";
                         }
                         echo '</div>';
                         // END OF ARROW STUFF

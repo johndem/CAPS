@@ -1,6 +1,6 @@
 <?php
 
-include 'create-link.php';
+include '../back-end/create-link.php';
 
 $username = $_POST['username'];
 $email = $_POST['email'];
@@ -38,7 +38,7 @@ if ($error) {
     echo $results;
 }
 else {
-    include "org-register.php";   
+    include "../back-end/org-register.php";   
 }
 
 ?>

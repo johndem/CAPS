@@ -27,7 +27,7 @@ $results = "" .  '<table>
                             </tr>
                         </thead>';
 
-include 'create-link.php';
+include '../back-end/create-link.php';
 
 
 if ($arrow == 'right') {
@@ -58,6 +58,7 @@ if ($arrow == 'right') {
                 if ($days < 10) $newDate = $date .'0' . $days;
                 else $newDate = $date . $days;
                 //echo $newDate . "  ";
+                mysqli_set_charset($link, "utf8");
                 $query = "SELECT id,title FROM events WHERE day = '$newDate' AND (status = '1' OR status= '2')";
                 $results_sql = mysqli_query($link,$query);
                 //$row = mysqli_fetch_row($results_sql);
@@ -106,6 +107,7 @@ else if ($arrow == 'left') {
                         if ($days < 10) $newDate = $date .'0' . $days;
                         else $newDate = $date . $days;
                         //echo $newDate . "  ";
+                        mysqli_set_charset($link, "utf8");
                         $query = "SELECT id,title FROM events WHERE day = '$newDate' AND (status = '1' OR status= '2')";
                         $results_sql = mysqli_query($link,$query);
                         //$row = mysqli_fetch_row($results_sql);

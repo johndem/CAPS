@@ -14,17 +14,17 @@ if (strpos($url,'el/index') !== false OR trim($url) == "/CAPS/el/") {
 ?>
 
 <div id="categories">
-    <div class="cat"><img onclick="window.location= 'search-results.php?category=Healthcare'" id="hc" class="cat-img" src="images/hc-gray.png"/>
+    <div class="cat"><img onclick="window.location= 'search-results.php?category=Healthcare'" id="hc" class="cat-img" src="../images/masthead/el/hc-gray.png"/>
     </div>
-    <div class="cat"><img onclick="window.location= 'search-results.php?category=Education'" id="edu" class="cat-img" src="images/edu-gray.png"/>
+    <div class="cat"><img onclick="window.location= 'search-results.php?category=Education'" id="edu" class="cat-img" src="../images/masthead/el/edu-gray.png"/>
     </div>
-    <div class="cat"><img onclick="window.location= 'search-results.php?category=Emergency'" id="em" class="cat-img" src="images/em-gray.png"/>
+    <div class="cat"><img onclick="window.location= 'search-results.php?category=Emergency'" id="em" class="cat-img" src="../images/masthead/el/em-gray.png"/>
     </div>
-    <div class="cat"><img onclick="window.location= 'search-results.php?category=Environment'" id="env" class="cat-img" src="images/env-gray.png"/>
+    <div class="cat"><img onclick="window.location= 'search-results.php?category=Environment'" id="env" class="cat-img" src="../images/masthead/el/env-gray.png"/>
     </div>
-    <div class="cat"><img onclick="window.location= 'search-results.php?category=Communities'" id="com" class="cat-img" src="images/com-gray.png"/>
+    <div class="cat"><img onclick="window.location= 'search-results.php?category=Communities'" id="com" class="cat-img" src="../images/masthead/el/com-gray.png"/>
     </div>
-    <div class="cat"><img onclick="window.location= 'search-results.php?category=Animals'" id="an" class="cat-img" src="images/an-gray.png"/>
+    <div class="cat"><img onclick="window.location= 'search-results.php?category=Animals'" id="an" class="cat-img" src="../images/masthead/el/an-gray.png"/>
     </div>
 </div>
 

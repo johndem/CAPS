@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
@@ -41,14 +41,16 @@
                 $fromstrings = explode('-',$fromdate);
                 $todate = $_GET["todate"];
                 $tostrings = explode('-',$todate);
-      
-                include 'create-link.php';
-                $query="SELECT * FROM events WHERE YEAR(day) >= '$fromstrings[0]' AND YEAR(day) <= '$tostrings[0]' AND MONTH(day) >= '$fromstrings[1]' AND MONTH(day) <= '$tostrings[1]'";
+     
+                include '../back-end/create-link.php';
+                mysqli_set_charset($link, "utf8");
+                $query="SELECT * FROM events WHERE YEAR(day) >= '$fromstrings[0]' AND YEAR(day) <= '$tostrings[0]' AND MONTH(day) >= '$fromstrings[1]' AND MONTH(day) <= '$tostrings[1]' AND status=2";
                 $results = mysqli_query($link,$query);
-                
+
                 $locations = array();
                 if (mysqli_num_rows($results) > 0) {
                     while ($row = mysqli_fetch_row($results)) {
+
                         $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ");
                         array_push($locations, $location);
                     }
@@ -98,6 +100,7 @@
         <?php include 'footer.php'; ?>
         
         <script>
+
             function initialize() {
                 var mapCanvas = document.getElementById('stats-map');
                 var mapOptions = {
@@ -112,13 +115,12 @@
                 
                     
                 var js_var = JSON.parse('<?php echo json_encode($locations); ?>');
-
                 
                 for (var i = 0; i < js_var.length; i++) {
                 
                     address = js_var[i];
                     address = address.toString();
-                    //alert(address);
+                    
 
                     geocoder.geocode( { 'address': address}, function(results, status) {
 

@@ -90,16 +90,16 @@ if ($error) {
 }
 else {
     if ($fileExists == true) {
-        move_uploaded_file($_FILES['event-picture']['tmp_name'], "images/" . $name);
-        $image = "images/" . $name;
+        move_uploaded_file($_FILES['event-picture']['tmp_name'], "../images/event-pics/" . $name);
+        $image = "../images/event-pics/" . $name;
     }
     if ($file2Exists == true) {
-        move_uploaded_file($_FILES['event-picture2']['tmp_name'], "images/" . $name2);
-        $image2 = "images/" . $name2;
+        move_uploaded_file($_FILES['event-picture2']['tmp_name'], "../images/event-pics/" . $name2);
+        $image2 = "../images/event-pics/" . $name2;
     }
     if ($file3Exists == true) {
-        move_uploaded_file($_FILES['event-picture3']['tmp_name'], "images/" . $name3);
-        $image3 = "images/" . $name3;
+        move_uploaded_file($_FILES['event-picture3']['tmp_name'], "../images/event-pics/" . $name3);
+        $image3 = "../images/event-pics/" . $name3;
     }
 
 
@@ -107,7 +107,7 @@ else {
 
 
     if ($btn == 'Post')
-        include "add-event.php";
+        include "../back-end/add-event.php";
     else
         include "edit-event.php";
 

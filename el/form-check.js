@@ -48,7 +48,7 @@ function puterror(imgid,mspanid,errmess) {
         var imgspan = document.getElementById(imgid);
         var span = document.getElementById(mspanid);
         
-        imgspan.innerHTML = "<img class='err-img' src='images/exc-mark.png'>";
+        imgspan.innerHTML = "<img class='err-img' src='../images/other/exc-mark.png'>";
         span.innerHTML = errmess;
         
         imgspan.onmouseover = function () {
@@ -275,7 +275,7 @@ function checkform() {
 }
 
 function getResponse() {
-      var myurl = "check-username.php";
+      var myurl = "../back-end/check-username.php";
       var first = document.getElementById("first").value;
       var last = document.getElementById("last-name").value;
       var password = encodeURIComponent(document.getElementById("password").value);

@@ -12,9 +12,9 @@
         <meta property="og:image"  content="https://www.facebook.com/images/fb_icon_325x325.png" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>GETTING STARTED WITH BRACKETS</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
@@ -29,7 +29,7 @@
 
         mysqli_set_charset($link, "utf8");
                 
-        include 'find-event.php';
+        include '../back-end/find-event.php';
 
         if (($row[17] == '0' || $row[17] == '-1') & !isset($_SESSION['admin'])) { 
             header("Location: index.php");
@@ -90,14 +90,14 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-                <?php include 'check-org-event.php'; ?>
+                <?php include '../back-end/check-org-event.php'; ?>
                 <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
                 
                 <?php 
                       
                 if (isset($_SESSION['vol_id'])) {
 
-                    include 'create-link.php';
+                    include '../back-end/create-link.php';
                     $vol_id = $_SESSION['vol_id'];
                     $eventid = $_GET['id'];
                     $query = "SELECT id FROM apply WHERE eventID='$eventid' AND volunteerID = '$vol_id' AND selected = 1";
@@ -176,7 +176,7 @@
                         
                         <?php 
 
-                        include 'create-link.php';
+                        include '../back-end/create-link.php';
                         $eid = $_GET['id'];
                         $vid = $_SESSION['vol_id'];
 
@@ -200,7 +200,7 @@
                          <select id="skills-choose">
                             <option value="0" disabled selected>Επιλέξτε ένα </option>
                             <?php  
-                             include 'create-link.php';
+                            include '../back-end/create-link.php';
                             $query = "SELECT skills.skill, skills.value FROM skills, skill_req WHERE skill_req.event_id='$id' AND skill_req.skill_id = skills.value";
                             $skills = mysqli_query($link,$query);
                             while ($skill = mysqli_fetch_row($skills)) {
@@ -278,9 +278,9 @@
                             <div class="applied-content"> 
                             <?php 
 
-                            include 'create-link.php';
+                            include '../back-end/create-link.php';
                             $eventid = $_GET['id'];
-
+                            mysqli_set_charset($link, "utf8");
                             $query = "SELECT user.firstname, user.lastname, user.username FROM user,apply WHERE user.id = apply.volunteerID AND apply.eventID = $eventid ";
                             $result = mysqli_query($link,$query);
 

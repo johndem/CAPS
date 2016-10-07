@@ -9,7 +9,7 @@ echo '<div class="navigation">';
 
 ?>
 
-<div class="logo"><img src="images/logo.png" /></div>
+<div class="logo"><img src="../images/other/logo.png" /></div>
 
 <?php
 
@@ -46,7 +46,7 @@ if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 
@@ -106,7 +106,7 @@ else if ((strpos($url,'volunteers') !== false) || (strpos($url,'search-results')
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 
@@ -164,7 +164,7 @@ else if (strpos($url,'organisations') !== false || strpos($url,'registered-organ
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 
@@ -222,7 +222,7 @@ else if (strpos($url,'calendar') !== false) {
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 
@@ -280,7 +280,7 @@ else if (strpos($url,'statistics') !== false || strpos($url,'leaderboard') !== f
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 
@@ -338,7 +338,7 @@ else {
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 

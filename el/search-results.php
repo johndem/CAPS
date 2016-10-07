@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Team Thessaloniki</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
@@ -30,7 +30,7 @@
             
             <?php 
             
-            include 'create-link.php';
+            include '../back-end/create-link.php';
 
             $category = mysqli_real_escape_string($link,$_GET['category']);
             $category = htmlspecialchars($category,ENT_QUOTES);
@@ -110,7 +110,7 @@
                 echo '<div class="pagination">';
                 if ($pagenum != 1) {
                     $previous_page = $pagenum - 1;
-                    echo "<a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=$previous_page'><img src='images/page-arrow-left.png' /></a>";
+                    echo "<a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=$previous_page'><img src='../images/other/page-arrow-left.png' /></a>";
                 }
 
                 for ($i = 1; $i <= $last_page; $i++) {
@@ -122,7 +122,7 @@
 
                 if ($pagenum != $last_page && $last_page != 1) {
                     $next_page = $pagenum + 1;
-                    echo "<a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=$next_page'><img src='images/page-arrow-right.png' /></a>";
+                    echo "<a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=$next_page'><img src='../images/other/page-arrow-right.png' /></a>";
                 }
                 echo '</div>';
                 // END OF ARROW STUFF

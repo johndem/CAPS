@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -69,8 +69,8 @@
                         <select id="category" class="in" required>
                             <option value="0" disabled selected>Επιλέξτε ένα</option>
                             <?php
-                            include 'create-link.php';
-
+                            include '../back-end/create-link.php';
+                            mysqli_set_charset($link, "utf8");
                             $query = "SELECT * FROM categories";
                             $results = mysqli_query($link,$query);
 
@@ -122,8 +122,8 @@
                         <select id="area" class="in" required>
                             <option value="0" disabled selected>Επιλέξτε ένα</option>
                             <?php
-                            include 'create-link.php';
-
+                            include '../back-end/create-link.php';
+                            mysqli_set_charset($link, "utf8");
                             $query = "SELECT * FROM districts";
                             $results = mysqli_query($link,$query);
 
@@ -192,8 +192,8 @@
                         <select id="agegroup" class="in" required>
                             <option disabled selected="selected" value="0">Επιλέξτε ένα</option>
                             <?php
-                                include 'create-link.php';
-
+                                include '../back-end/create-link.php';
+                                mysqli_set_charset($link, "utf8");
                                 $query = "SELECT * FROM agegroups";
                                 $results = mysqli_query($link,$query);
 
@@ -212,8 +212,8 @@
                         <select id="skills" class="in" multiple required>
                             <option disabled selected value="0">- Κρατήστε πατημένο το Ctrl για πολλαπλές επιλογές -</option>
                             <?php
-                            include 'create-link.php';
-
+                            include '../back-end/create-link.php';
+                            mysqli_set_charset($link, "utf8");
                             $query = "SELECT * FROM skills";
                             $results = mysqli_query($link,$query);
 

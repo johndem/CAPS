@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
@@ -31,7 +31,7 @@
                 <?php 
                 mysqli_set_charset($link, "utf8");
                 if(isset($_SESSION['org_id']) || isset($_SESSION['user'])) { 
-                    include 'find-user.php';
+                    include '../back-end/find-user.php';
                 ?>
                 
                 
@@ -82,7 +82,7 @@
                     <div class="notification-box"> 
                         <?php
 
-                        include 'create-link.php';
+                        include '../back-end/create-link.php';
                         $id = 0;
                         $role = 0;
 

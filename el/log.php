@@ -2,7 +2,7 @@
 
 session_start();
 
-include 'create-link.php';
+include '../back-end/create-link.php';
 
 $user = mysqli_real_escape_string($link,$_POST['username']);
 $user = htmlspecialchars($user, ENT_QUOTES);

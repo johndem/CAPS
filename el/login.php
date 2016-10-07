@@ -7,9 +7,9 @@
 		<meta name="google-signin-cookiepolicy" content="single_host_origin" />
 		<meta name="google-signin-clientid" content="833122714001-dpnlqanm3n5pkeqme6q0tl6pppo5uq67.apps.googleusercontent.com" /> -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+		<title>Vol4All</title>
 		<meta name="description" content="An interactive getting started guide for Brackets.">
-		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="../main.css">
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 		<!-- <script src="https://apis.google.com/js/client:platform.js?onload=api" async defer></script> -->
 		<script src="googleplus2.js"></script>

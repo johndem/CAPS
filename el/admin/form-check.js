@@ -39,7 +39,7 @@ function putok(imgid,mspanid) {
     var imgspan = document.getElementById(imgid);
     var span = document.getElementById(mspanid);
     
-    imgspan.innerHTML = "<img class='err-img' src='check.jpg'>";
+    imgspan.innerHTML = "<img class='err-img' src='../../images/other/check.jpg'>";
     span.innerHTML = "";
 }
 
@@ -48,7 +48,7 @@ function puterror(imgid,mspanid,errmess) {
         var imgspan = document.getElementById(imgid);
         var span = document.getElementById(mspanid);
         
-        imgspan.innerHTML = "<img class='err-img' src='images/exc-mark.png'>";
+        imgspan.innerHTML = "<img class='err-img' src='../../images/other/exc-mark.png'>";
         span.innerHTML = errmess;
         
         imgspan.onmouseover = function () {

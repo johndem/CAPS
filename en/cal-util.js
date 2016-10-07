@@ -106,7 +106,7 @@ function useHttpResponseCal() {
 
     }
     else {
-        	document.getElementById('loading').innerHTML = '<img src="images/loading.gif"/>';
+        	document.getElementById('loading').innerHTML = '<img src="../images/other/loading.gif"/>';
         }
     
 }

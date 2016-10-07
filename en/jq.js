@@ -40,7 +40,7 @@ $(document).ready(function () {
 	$('#logout').click(function() {
 		$.ajax( {
 			type: "POST",
-			url: "logout.php",
+			url: "../back-end/logout.php",
 			data: "action=unsetsession",
 			success: function(msg) {
 				if(msg=="success") {
@@ -61,55 +61,55 @@ $(document).ready(function () {
 
    $("#hc").on({
      "mouseover" : function() {
-        this.src = 'images/hc-green.png';
+        this.src = '../images/masthead/en/hc-green.png';
       },
       "mouseout" : function() {
-        this.src='images/hc-gray.png';
+        this.src='../images/masthead/en/hc-gray.png';
       }
     });
 
     $("#em").on({
      "mouseover" : function() {
-        this.src = 'images/em-green.png';
+        this.src = '../images/masthead/en/em-green.png';
       },
       "mouseout" : function() {
-        this.src='images/em-gray.png';
+        this.src='../images/masthead/en/em-gray.png';
       }
     });
 
     $("#edu").on({
      "mouseover" : function() {
-        this.src = 'images/edu-green.png';
+        this.src = '../images/masthead/en/edu-green.png';
       },
       "mouseout" : function() {
-        this.src ='images/edu-gray.png';
+        this.src ='../images/masthead/en/edu-gray.png';
       }
     });
 
     $("#env").on({
      "mouseover" : function() {
-        this.src = 'images/env-green.png';
+        this.src = '../images/masthead/en/env-green.png';
       },
       "mouseout" : function() {
-        this.src='images/env-gray.png';
+        this.src='../images/masthead/en/env-gray.png';
       }
     });
 
      $("#com").on({
      "mouseover" : function() {
-        this.src = 'images/com-green.png';
+        this.src = '../images/masthead/en/com-green.png';
       },
       "mouseout" : function() {
-        this.src='images/com-gray.png';
+        this.src='../images/masthead/en/com-gray.png';
       }
     });
 
     $("#an").on({
      "mouseover" : function() {
-        this.src = 'images/an-green.png';
+        this.src = '../images/masthead/en/an-green.png';
       },
       "mouseout" : function() {
-        this.src='images/an-gray.png';
+        this.src='../images/masthead/en/an-gray.png';
       }
     });
     
@@ -173,7 +173,7 @@ function notify() {
   //alert(parameters);
   console.log(parameters);
 
-    http.open("POST", "notify.php", true);
+    http.open("POST", "../back-end/notify.php", true);
     http.onreadystatechange = useHttpResponseVol;
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.send(parameters);

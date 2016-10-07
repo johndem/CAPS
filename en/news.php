@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>GETTING STARTED WITH BRACKETS</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
     </head>
     <body>
 		
-        
-            <!-- registration or username -->
+        <!-- registration or username -->
         <?php //include //'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -30,21 +28,20 @@
             
             <div id="new-page">
                 <?php
-                    echo '<div class="side-widgets">';
-                    include 'recent-events-widget.php'; 
-                    include 'quick-search-widget.php';
-            //include 'most-recent-event-widget.php';
-                    echo '</div>';
+                echo '<div class="side-widgets">';
+                include 'recent-events-widget.php'; 
+                include 'quick-search-widget.php';
+                echo '</div>';
                 ?>
 
-                <?php include 'find-news.php'; ?>
+                <?php include '../back-end/find-news.php'; ?>
 
                 <div id="news-body">
                     <h2><?php echo "$row[1]"; ?></h2>
                     <img class="news-img" src="<?php echo "$row[3]"; ?>" />
                     <?php 
-                        echo '<p>' . $row[2] . '</p>'; 
-                        echo '<p>' . nl2br($row[4]) . '</p>'; 
+                    echo '<p>' . $row[2] . '</p>'; 
+                    echo '<p>' . nl2br($row[4]) . '</p>'; 
                     ?>
                 </div>
             </div>
@@ -60,5 +57,4 @@
         <?php include 'footer.php'; ?>
 
     </body>
-
 </html>

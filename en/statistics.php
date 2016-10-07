@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
@@ -14,11 +13,11 @@
     </head>
     <body>
         
-         <!-- registration or username -->
+        <!-- registration or username -->
         <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -29,31 +28,34 @@
             
             <h1 class="center-title"></h1>
             <div class="page-title"> 
-                <div class="main-title">Volunteering statistics</div>  
-                <h4>Volunteering events completed around the city based on time period.</h4>
+                <div class="main-title">Statistics</div>  
+                <h4>Completed volunteering events in a time period </h4>
             </div>
             
             <?php
+
+            mysqli_set_charset($link, "utf8");
 
             if (isset($_GET["fromdate"]) && isset($_GET["todate"])) {
                 $fromdate = $_GET["fromdate"];
                 $fromstrings = explode('-',$fromdate);
                 $todate = $_GET["todate"];
                 $tostrings = explode('-',$todate);
-      
-                include 'create-link.php';
-                $query="SELECT * FROM events WHERE YEAR(day) >= '$fromstrings[0]' AND YEAR(day) <= '$tostrings[0]' AND MONTH(day) >= '$fromstrings[1]' AND MONTH(day) <= '$tostrings[1]'";
+     
+                include '../back-end/create-link.php';
+                mysqli_set_charset($link, "utf8");
+                $query="SELECT * FROM events WHERE YEAR(day) >= '$fromstrings[0]' AND YEAR(day) <= '$tostrings[0]' AND MONTH(day) >= '$fromstrings[1]' AND MONTH(day) <= '$tostrings[1]' AND status=2";
                 $results = mysqli_query($link,$query);
-                
+
                 $locations = array();
                 if (mysqli_num_rows($results) > 0) {
                     while ($row = mysqli_fetch_row($results)) {
-                        $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ");
+
+                        $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "Thessaloniki");
                         array_push($locations, $location);
                     }
                 }
             }
-
 
             ?>
             
@@ -66,7 +68,7 @@
                     <div id="stats-map"></div>
                     
                     <div id="stats-options">
-                        <h2>Pick time period in months:</h2>
+                        <h2>Select time period in months:</h2>
                         <form method="get" action="">
                             <div class="month-picker">
                                 <div>From:</div>
@@ -98,6 +100,7 @@
         <?php include 'footer.php'; ?>
         
         <script>
+
             function initialize() {
                 var mapCanvas = document.getElementById('stats-map');
                 var mapOptions = {
@@ -112,13 +115,12 @@
                 
                     
                 var js_var = JSON.parse('<?php echo json_encode($locations); ?>');
-
                 
                 for (var i = 0; i < js_var.length; i++) {
                 
                     address = js_var[i];
                     address = address.toString();
-                    //alert(address);
+                    
 
                     geocoder.geocode( { 'address': address}, function(results, status) {
 
@@ -131,7 +133,7 @@
                             var marker = new google.maps.Marker({
                                 position: myLatlng,
                                 map: map,
-                                title:"Volunteering Event"
+                                title:"Εθελοντική Δράση"
                             });
                         } 
                     }); 
@@ -144,6 +146,4 @@
             
        
     </body>
-    
-   
 </html>

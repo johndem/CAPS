@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Team Thessaloniki</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
@@ -24,14 +23,14 @@
         <div class="content">
             <h1 class="center-title"></h1>
             <div class="page-title"> 
-                <div class="main-title">Search Results</div>  
+                <div class="main-title">Search results</div>  
             </div>
             
             <div class="results">
             
             <?php 
             
-            include 'create-link.php';
+            include '../back-end/create-link.php';
 
             $category = mysqli_real_escape_string($link,$_GET['category']);
             $category = htmlspecialchars($category,ENT_QUOTES);
@@ -47,6 +46,8 @@
 
             $date = mysqli_real_escape_string($link,$_GET['date']);
             $date = htmlspecialchars($date,ENT_QUOTES);
+
+            mysqli_set_charset($link, "utf8");
  
             // pagination stuff
             if (!isset($_GET['pagenum'])) {
@@ -95,8 +96,8 @@
                     <h5>From: <?php echo $org_name[0] ?></h5>
                     <h5>Category: <?php echo $row[3]  ?></h5>
                     <h5>Date: <?php echo $row[8] ?> </h5>
-                    <h5>District: <?php echo $row[7] ?></h5>
-                    <a href="<?php echo "event.php?id=" . $row[0]; ?>">Read more &raquo;</a>   
+                    <h5>Location: <?php echo $row[7] ?></h5>
+                    <a href="<?php echo "event.php?id=" . $row[0]; ?>">More &raquo;</a>   
                 </div> 
                  
             <?php } 
@@ -109,7 +110,7 @@
                 echo '<div class="pagination">';
                 if ($pagenum != 1) {
                     $previous_page = $pagenum - 1;
-                    echo "<a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=$previous_page'><img src='images/page-arrow-left.png' /></a>";
+                    echo "<a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=$previous_page'><img src='../images/other/page-arrow-left.png' /></a>";
                 }
 
                 for ($i = 1; $i <= $last_page; $i++) {
@@ -121,7 +122,7 @@
 
                 if ($pagenum != $last_page && $last_page != 1) {
                     $next_page = $pagenum + 1;
-                    echo "<a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=$next_page'><img src='images/page-arrow-right.png' /></a>";
+                    echo "<a href='{$_SERVER['PHP_SELF']}?" . $url . "pagenum=$next_page'><img src='../images/other/page-arrow-right.png' /></a>";
                 }
                 echo '</div>';
                 // END OF ARROW STUFF
@@ -131,13 +132,13 @@
   
             if ($bool== false) { ?>
                 <div class="single-result">
-                    <h3>There are no volunteering events matching your criteria!</h3> 
+                    <h3>There are no volunteering oppotrunities that match your criterea.</h3> 
                 </div> 
                 <a href="volunteers.php">Πίσω</a>
             <?php }
             }
             else {
-                echo '<p> An error occurred while retrieving the results from the database. Please try again later!  </p>';
+                echo '<p> There has been a problem retrieving the data for the database. Please try again later!  </p>';
             } 
             mysqli_close($link); 
             

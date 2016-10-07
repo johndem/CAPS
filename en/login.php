@@ -1,43 +1,41 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="el">
 	<head>
 		<meta charset="utf-8">
 		<!-- <meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login" />
 		<meta name="google-signin-requestvisibleactions" content="http://schema.org/AddAction" />
 		<meta name="google-signin-cookiepolicy" content="single_host_origin" />
 		<meta name="google-signin-clientid" content="833122714001-dpnlqanm3n5pkeqme6q0tl6pppo5uq67.apps.googleusercontent.com" /> -->
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+		<title>Vol4All</title>
 		<meta name="description" content="An interactive getting started guide for Brackets.">
-		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="../main.css">
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 		<!-- <script src="https://apis.google.com/js/client:platform.js?onload=api" async defer></script> -->
 		<script src="googleplus2.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://apis.google.com/js/api:client.js?onload=startApp"></script>
-
 		<script src="jq.js"></script>
 		<script src="form-check.js"></script>
 	</head>
 	<body>
-<?php session_start();
+        
+        <?php 
 
-		if (isset($_SESSION['user'])) {
-			header("Location: index.php");
-		}
+        session_start();
 
+        if (isset($_SESSION['user'])) {
+            header("Location: index.php");
+        }
 
-	
- ?>
+        ?>
 		<div>
 
 		<!-- registration or username -->
 		<?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -46,15 +44,14 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-<div class="page-title"> 
-                    <div class="main-title"> Login </div>  
-                    </div>
+            <div class="page-title"> 
+                <div class="main-title"> Login </div>  
+            </div>
 				<div class="aligner">
 					
-
 					<div>
 						<p>
-							Not yet registered? Signing up is easy and takes less than 5 minutes. <a href="register.php">Click here to get started</a> »
+							Dont have an account? Registering is quick and easy.<a href="register.php"> Click here to begin </a> »
 						</p>
 					</div>
 
@@ -81,7 +78,7 @@
 					</form>
 
 					<div id="go">
-						<input type="submit" class="submitBtn" onclick="getLogResponse()" id="sButton" name="submit" value="Go" />
+						<input type="submit" class="submitBtn" onclick="getLogResponse()" id="sButton" name="submit" value="Login" />
 					</div>
 
 					<div>
@@ -135,7 +132,7 @@
 					$loginUrl = $helper -> getLoginUrl();
 					?>
 
-					<h3 style="text-align:center">OR SIGN IN WITH:</h3>
+					<h3 style="text-align:center">OR LOGIN VIA:</h3>
 
 					<div class="social-buttons">
 
@@ -173,5 +170,4 @@
 		</div>
 
 	</body>
-
 </html>

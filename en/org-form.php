@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -17,14 +16,13 @@
     </head>
     <body>
 	
-        
         <div>
         
-          <!-- registration or username -->
+        <!-- registration or username -->
         <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -34,8 +32,8 @@
         <div class="content">
             <h1 class="center-title"></h1>
             <div class="page-title"> 
-                    <div class="main-title">Organisation register form</div>  
-                    <h4>Please fill in the necessary information about your organisation</h4>
+                    <div class="main-title">Organization's register form</div>  
+                    <h4>Please fill in the neccessary information about your organization</h4>
                     </div>
                 
                 <div class="aligner">
@@ -76,7 +74,7 @@
                     </div>
                         
                         <div class="label-in">
-                            <div class="h3"> Organisation name: * </div>
+                            <div class="h3"> Org's name: * </div>
                             <div id="err-name" class="error-message"> </div>
                             <div id="name-span" class="img-span"></div>
                             <input id="org-name" class="in" maxlength="50" name="name" size="30" type="text" value="" required/>
@@ -111,7 +109,7 @@
                         </div>
                          
                         <div class="label-in">
-                            <div class="h3">  Organisation description: * </div>
+                            <div class="h3">  Organization's description: * </div>
                             <div id="err-desc" class="error-message"> </div>
                             <div id="desc-span" class="img-span"></div>
                             <textarea id="description" class="for-text-area" cols="55" name="description" maxlength="500" rows="10" required></textarea>
@@ -137,6 +135,4 @@
         </div>
        
     </body>
-    
-   
 </html>

@@ -1,12 +1,15 @@
 <?php
+
 session_start();
 $url = $_SERVER["REQUEST_URI"];
+
+mysqli_set_charset($link, "utf8");
 
 echo '<div class="navigation">';
 
 ?>
 
-<div class="logo"><img src="images/logo.png" /></div>
+<div class="logo"><img src="../images/other/logo.png" /></div>
 
 <?php
 
@@ -16,9 +19,9 @@ if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
     echo '<li id="selected"><a href="index.php">HOME</a></li>';
     echo '<li><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li>
-    <a href="organisations.php">ORGANISATIONS</a>
+    <a href="organisations.php">ORGANIZATIONS</a>
         <ul>
-            <li><a href="organisations.php">POST AN EVENT</a></li>
+            <li><a href="organisations.php">REGISTER EVENT</a></li>
             <li><a href="registered-organizations.php">REGISTERED ORGANIZATIONS</a></li>
         </ul>
     </li>';
@@ -26,7 +29,7 @@ if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
     echo '<li>
     <a href="statistics.php">STATISTICS</a>
         <ul>
-            <li><a href="statistics.php">MAP STATS</a></li>
+            <li><a href="statistics.php">MAP STATISTICS</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
@@ -36,14 +39,14 @@ if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong>
+        echo '<li class="nav-user"> Connected as: <strong>' . $_SESSION['user']  .'</strong>
             <ul>
-                <li class="logged-reg-top"><a href="account.php">Profile</a></li>
+                <li class="logged-reg-top"><a href="account.php">Account</a></li>
                 <li class="logged-reg-bottom"><a id="logout" href="index.php">Logout</a></li>
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 
@@ -76,9 +79,9 @@ else if ((strpos($url,'volunteers') !== false) || (strpos($url,'search-results')
     echo '<li><a href="index.php">HOME</a></li>';
     echo '<li  id="selected"><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li>
-    <a href="organisations.php">ORGANISATIONS</a>
+    <a href="organisations.php">ORGANIZATIONS</a>
         <ul>
-            <li><a href="organisations.php">POST AN EVENT</a></li>
+            <li><a href="organisations.php">REGISTER EVENT</a></li>
             <li><a href="registered-organizations.php">REGISTERED ORGANIZATIONS</a></li>
         </ul>
     </li>';
@@ -86,7 +89,7 @@ else if ((strpos($url,'volunteers') !== false) || (strpos($url,'search-results')
     echo '<li>
     <a href="statistics.php">STATISTICS</a>
         <ul>
-            <li><a href="statistics.php">MAP STATS</a></li>
+            <li><a href="statistics.php"> MAP STATISTICS</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
@@ -96,14 +99,14 @@ else if ((strpos($url,'volunteers') !== false) || (strpos($url,'search-results')
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong>
+        echo '<li class="nav-user"> Connected as: <strong>' . $_SESSION['user']  .'</strong>
             <ul>
-                <li class="logged-reg-top"><a href="account.php">Profile</a></li>
+                <li class="logged-reg-top"><a href="account.php">Account</a></li>
                 <li class="logged-reg-bottom"><a id="logout" href="index.php">Logout</a></li>
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 
@@ -134,9 +137,9 @@ else if (strpos($url,'organisations') !== false || strpos($url,'registered-organ
     echo '<li><a href="index.php">HOME</a></li>';
     echo '<li><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li id="selected">
-    <a href="organisations.php">ORGANISATIONS</a>
+    <a href="organisations.php">ORGANIZATIONS</a>
         <ul>
-            <li><a href="organisations.php">POST AN EVENT</a></li>
+            <li><a href="organisations.php">REGISTER EVENT</a></li>
             <li><a href="registered-organizations.php">REGISTERED ORGANIZATIONS</a></li>
         </ul>
     </li>';
@@ -144,7 +147,7 @@ else if (strpos($url,'organisations') !== false || strpos($url,'registered-organ
     echo '<li>
     <a href="statistics.php">STATISTICS</a>
         <ul>
-            <li><a href="statistics.php">MAP STATS</a></li>
+            <li><a href="statistics.php">MAP STATISTICS</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
@@ -154,14 +157,14 @@ else if (strpos($url,'organisations') !== false || strpos($url,'registered-organ
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong>
+        echo '<li class="nav-user"> Connected as: <strong>' . $_SESSION['user']  .'</strong>
             <ul>
-                <li class="logged-reg-top"><a href="account.php">Profile</a></li>
+                <li class="logged-reg-top"><a href="account.php">Account</a></li>
                 <li class="logged-reg-bottom"><a id="logout" href="index.php">Logout</a></li>
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 
@@ -189,20 +192,20 @@ else if (strpos($url,'organisations') !== false || strpos($url,'registered-organ
     }
 }
 else if (strpos($url,'calendar') !== false) {
-    echo '<li ><a href="index.php">HOME</a></li>';
+    echo '<li><a href="index.php">HOME</a></li>';
     echo '<li><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li>
-    <a href="organisations.php">ORGANISATIONS</a>
+    <a href="organisations.php">ORGANIZATIONS</a>
         <ul>
-            <li><a href="organisations.php">POST AN EVENT</a></li>
+            <li><a href="organisations.php">REGISTER EVENT</a></li>
             <li><a href="registered-organizations.php">REGISTERED ORGANIZATIONS</a></li>
         </ul>
     </li>';
-    echo '<li id="selected" ><a href="calendar.php">CALENDAR</a></li>';
+    echo '<li id="selected"><a href="calendar.php">CALENDAR</a></li>';
     echo '<li>
     <a href="statistics.php">STATISTICS</a>
         <ul>
-            <li><a href="statistics.php">MAP STATS</a></li>
+            <li><a href="statistics.php">MAP STATISTICS</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
@@ -212,14 +215,14 @@ else if (strpos($url,'calendar') !== false) {
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong>
+        echo '<li class="nav-user"> Connected as: <strong>' . $_SESSION['user']  .'</strong>
             <ul>
-                <li class="logged-reg-top"><a href="account.php">Profile</a></li>
+                <li class="logged-reg-top"><a href="account.php">Account</a></li>
                 <li class="logged-reg-bottom"><a id="logout" href="index.php">Logout</a></li>
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 
@@ -250,9 +253,9 @@ else if (strpos($url,'statistics') !== false || strpos($url,'leaderboard') !== f
     echo '<li><a href="index.php">HOME</a></li>';
     echo '<li><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li>
-    <a href="organisations.php">ORGANISATIONS</a>
+    <a href="organisations.php">ORGANIZATIONS</a>
         <ul>
-            <li><a href="organisations.php">POST AN EVENT</a></li>
+            <li><a href="organisations.php">REGISTER EVENT</a></li>
             <li><a href="registered-organizations.php">REGISTERED ORGANIZATIONS</a></li>
         </ul>
     </li>';
@@ -260,7 +263,7 @@ else if (strpos($url,'statistics') !== false || strpos($url,'leaderboard') !== f
     echo '<li id="selected">
     <a href="statistics.php">STATISTICS</a>
         <ul>
-            <li><a href="statistics.php">MAP STATS</a></li>
+            <li><a href="statistics.php">MAP STATISTICS</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
@@ -270,14 +273,14 @@ else if (strpos($url,'statistics') !== false || strpos($url,'leaderboard') !== f
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong>
+        echo '<li class="nav-user"> Connected as: <strong>' . $_SESSION['user']  .'</strong>
             <ul>
-                <li class="logged-reg-top"><a href="account.php">Profile</a></li>
+                <li class="logged-reg-top"><a href="account.php">Account</a></li>
                 <li class="logged-reg-bottom"><a id="logout" href="index.php">Logout</a></li>
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 
@@ -308,9 +311,9 @@ else {
     echo '<li><a href="index.php">HOME</a></li>';
     echo '<li><a href="volunteers.php">VOLUNTEERS</a></li>';
     echo '<li>
-    <a href="organisations.php">ORGANISATIONS</a>
+    <a href="organisations.php">ORGANIZATIONS</a>
         <ul>
-            <li><a href="organisations.php">POST AN EVENT</a></li>
+            <li><a href="organisations.php">REGISTER EVENT</a></li>
             <li><a href="registered-organizations.php">REGISTERED ORGANIZATIONS</a></li>
         </ul>
     </li>';
@@ -318,7 +321,7 @@ else {
     echo '<li>
     <a href="statistics.php">STATISTICS</a>
         <ul>
-            <li><a href="statistics.php">MAP STATS</a></li>
+            <li><a href="statistics.php">MAP STATISTICS</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
@@ -328,14 +331,14 @@ else {
         echo '<li class="log-reg"><a href="register.php">Register</a></li>';
     }
     else {
-        echo '<li class="nav-user"> Logged in as: <strong>' . $_SESSION['user']  .'</strong>
+        echo '<li class="nav-user"> Connected as: <strong>' . $_SESSION['user']  .'</strong>
             <ul>
-                <li class="logged-reg-top"><a href="account.php">Profile</a></li>
+                <li class="logged-reg-top"><a href="account.php">Account</a></li>
                 <li class="logged-reg-bottom"><a id="logout" href="index.php">Logout</a></li>
             </ul>
         </li>';
 
-        include 'create-link.php';
+        include '../back-end/create-link.php';
         $id = 0;
         $role = 0;
 
@@ -354,7 +357,7 @@ else {
         $row_cnt = mysqli_num_rows($results);
 
         if ($row_cnt > 0) {
-            echo '<li class="notif"><a href="account.php" onclick="notify(' . $id . ')"> ' . $row_cnt .  ' new notifications</a></li>';
+            echo '<li class="notif"><a href="account.php" onclick="notify(' . $id . ')"> ' . $row_cnt .  ' NEW notifications</a></li>';
         }
             
 

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
@@ -14,11 +13,11 @@
     </head>
     <body>
         
-         <!-- registration or username -->
+        <!-- registration or username -->
         <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -29,23 +28,20 @@
             
             <h1 class="center-title"></h1>
             <div class="page-title"> 
-                <div class="main-title">Leaderboard statistics</div>  
-                <h4>A list of the 10 highest ranked volunteers based on points accumulated.</h4>
+                <div class="main-title">Leaderboard</div>  
+                <h4>A list with the volunteers with most points collected</h4>
             </div>
-            
-            
-                
-                
+              
             <div id="leaderboard-statistics">
                 
                 <?php
-                    echo '<div class="side-widgets">';
-                    include 'recent-events-widget.php'; 
-                    echo '</div>';
+                echo '<div class="side-widgets">';
+                include 'recent-events-widget.php'; 
+                echo '</div>';
                 ?>
                 
                 <div id="leaderboard">
-                    <?php include 'show-leaderboard.php'; ?>     
+                    <?php include '../back-end/show-leaderboard.php'; ?>     
                 </div>
                 
                     
@@ -62,6 +58,4 @@
         <?php include 'footer.php'; ?>
 
     </body>
-    
-   
 </html>

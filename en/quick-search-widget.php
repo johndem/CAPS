@@ -17,20 +17,20 @@
             </select>
             <h3>...And/Or</h3>
             <select name="areas" id="area">
-                <option value="0" selected>Select area</option>
-                <option>Ανω Τούμπα</option>
-                <option>Αμπελόκηποι Θεσσαλονίκης</option>
-                <option>Ασβεστοχώρι</option>
-                <option>Βάρνα</option>
-                <option>Κωνσταντινοπολίτικα</option>
-                <option>Σαράντα Εκκλησιές</option>
-                <option>Κάτω Τούμπα</option>
-                <option>Καλαμαριά</option>
-                <option>Πυλαία</option>
+                <option value="0" selected>Select district</option>
+                <option>Ano Toumpa</option>
+                <option>Ampelokipi Thessalonikis</option>
+                <option>Asvestohori</option>
+                <option>Varna</option>
+                <option>Konstantinopolitika</option>
+                <option>Saranta Eklisies</option>
+                <option>Kato Toumpa</option>
+                <option>Kalamaria</option>
+                <option>Pilea</option>
             </select>
                 
             <div id="go">
-                <input type="submit" class="submitBtn" id="sButton" name="submit" value="Go" />
+                <input type="submit" class="submitBtn" id="sButton" name="submit" value="Search" />
             </div>    
             
             </form>

@@ -19,7 +19,7 @@ var googleUser = {};
         function(googleUser) {
           $.ajax( {
 			type: "POST",
-			url: "set-session-var.php",
+			url: "../back-end/set-session-var.php",
 			data: "name=" + googleUser.getBasicProfile().getName(),
 			success: function(msg) {
 				 window.location = "http://localhost/CAPS/";

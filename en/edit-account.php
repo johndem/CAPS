@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="el">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -17,13 +16,11 @@
     </head>
     <body>
 	
-        
-        
         <!-- registration or username -->
         <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -39,12 +36,12 @@
                     <ul id="res-ul"></ul>
                 </div>
                 
-                <?php  include 'find-user.php'; ?>
+                <?php  include '../back-end/find-user.php'; ?>
                 
                 <form id="form" name="edit-form">
                     
                     <div class="div-cat">
-                        <h1 class="cats">Picture</h1> 
+                        <h1 class="cats">Image</h1> 
                     </div>
                     
                     <div id="edit-pic">
@@ -54,27 +51,27 @@
                     <input type="file" name="picture" id="prof-pic">
                     
                     <div class="div-cat">
-                        <h1 class="cats">Basic Information</h1> 
+                        <h1 class="cats">Main information</h1> 
                     </div>
                 
                     <?php if(isset($_SESSION['org_id'])) { ?>
                         
                         <div class="label-in">
-                            <div class="h3"> Organisation name: * </div>
+                            <div class="h3"> Organization's name: * </div>
                             <div id="edit-err-name" class="error-message"> </div>
                             <div id="edit-name-span" class="img-span"></div>
                             <input id="edit-org-name" class="in" maxlength="50" name="name" size="30" type="text" value="<?php echo $row[4]; ?>" required/>
                         </div>
 
                         <div class="label-in">
-                            <div class="h3">Website: </div>
+                            <div class="h3"> Website: </div>
                             <div id="edit-err-ws" class="error-message"> </div>
                             <div id="edit-ws-span" class="img-span"></div>
                             <input id="edit-website" class="in" name="website" size="30" type="url" value="<?php echo $row[5]; ?>" />
                         </div>
 
                         <div class="label-in">
-                            <div class="h3">  Facebook: </div>
+                            <div class="h3"> Facebook: </div>
                             <div id="edit-err-fb" class="error-message"> </div>
                             <div id="edit-fb-span" class="img-span"></div>
                             <input id="edit-facebook" class="in" name="facebook" size="30" type="url" value="<?php echo $row[6]; ?>" />
@@ -95,7 +92,7 @@
                         </div>
 
                         <div class="label-in">
-                            <div class="h3">  Organisation description: * </div>
+                            <div class="h3">  Organization's description: * </div>
                             <div id="edit-err-desc" class="error-message"> </div>
                             <div id="edit-desc-span" class="img-span"></div>
                             <textarea id="edit-description" class="for-text-area" cols="55" name="description" maxlength="500" rows="10" required><?php echo $row[9]; ?></textarea>
@@ -107,7 +104,7 @@
 
 
                         <div class="label-in">
-                            <div class="h3"> First name: * </div>
+                            <div class="h3"> First Name: * </div>
                             <div id="edit-err-first" class="error-message"> </div>
                             <div id="edit-first-span" class="img-span"></div>
                             <input id="edit-first" class="in" maxlength="50" name="first" size="30" type="text" value="<?php echo $row[1]; ?>" required/>
@@ -121,35 +118,35 @@
                         </div>
 
                         <div class="label-in">
-                            <div class="h3"> Phone number: </div>
+                            <div class="h3"> Mobile number: </div>
                             <div id="edit-err-phone" class="error-message"> </div>
                             <div id="edit-phone-span" class="img-span"></div>
                             <input id="edit-phone"  class="in" minlength="10" maxlength="10" name="phone" size="30" type="tel" value="<?php echo $row[6]; ?>" />
                         </div>
 
                         <div class="label-in">
-                            <div class="h3"> Address: </div>
+                            <div class="h3">Address: </div>
                             <div id="edit-err-addr" class="error-message"> </div>
                             <div id="edit-addr-span" class="img-span"></div>
                             <input id="edit-address" class="in" maxlength="50" name="address" size="30" type="text" value="<?php echo $row[7]; ?>" />
                         </div>
 
                         <div class="label-in">
-                            <div class="h3"> Street Number: </div>
+                            <div class="h3"> Number: </div>
                             <div id="edit-err-str" class="error-message"> </div>
                             <div id="edit-str-span" class="img-span"></div>
                             <input id="edit-str"  class="in" min="1" max="9999" name="str"  type="number" value="<?php echo $row[8]; ?>" />
                         </div>
 
                         <div class="label-in">
-                            <div class="h3"> Zip Code: </div>
+                            <div class="h3"> Zipcode: </div>
                             <div id="edit-err-zip" class="error-message"> </div>
                             <div id="edit-zip-span" class="img-span"></div>
                             <input id="edit-zip"  class="in" name="zip" type="number" value="<?php echo $row[9]; ?>" min="10000" max="99999"/>
                         </div>
 
                         <div class="label-in">
-                            <div class="h3"> Date of Birth: * </div>
+                            <div class="h3">Birth date: * </div>
                             <div id="edit-err-dob" class="error-message"> </div>
                             <div id="edit-dob-span" class="img-span"></div>
                             <input id="edit-dob" class="in" name="date" value="<?php echo $row[11]; ?>" required/>
@@ -163,7 +160,7 @@
                 <p id="required">* This field is required </p>
                 
                 <div id="go">
-                    <input type="submit" class="submitBtn" onclick="<?php if (isset($_SESSION['org_id'])){echo "checkEditOrgForm()";}else if(isset($_SESSION['user'])){echo "checkEditVolForm()";} ?>" id="sButton" name="submit" value="Edit" />
+                    <input type="submit" class="submitBtn" onclick="<?php if (isset($_SESSION['org_id'])){echo "checkEditOrgForm()";}else if(isset($_SESSION['user'])){echo "checkEditVolForm()";} ?>" id="sButton" name="submit" value="Save" />
                 </div> 
 
             </div>

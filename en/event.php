@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="el">
     <head>
-    <meta property="og:title" content="Share this event!" />
-    <meta property="og:site_name" content="Thessaloniki Volunteer Network"/>
-    <meta property="og:url" content="http://localhost/CAPS/index.php"/>
-    <meta property="og:description" content="The Volunteer netowrk of Thessaloniki is a place where you can easily find volunteering oppurtunities." />
-    <meta property="fb:app_id" content="1607915839446072" />
-    <meta property="og:type" content="article" />
-    <meta property="article:author" content="TVN" />
-    <meta property="article:publisher" content="TVN" />
-    <meta property="og:image"  content="https://www.facebook.com/images/fb_icon_325x325.png" />
+        <meta property="og:title" content="Share this event!" />
+        <meta property="og:site_name" content="Thessaloniki Volunteer Network"/>
+        <meta property="og:url" content="http://localhost/CAPS/index.php"/>
+        <meta property="og:description" content="The Volunteer netowrk of Thessaloniki is a place where you can easily find volunteering oppurtunities." />
+        <meta property="fb:app_id" content="1607915839446072" />
+        <meta property="og:type" content="article" />
+        <meta property="article:author" content="TVN" />
+        <meta property="article:publisher" content="TVN" />
+        <meta property="og:image"  content="https://www.facebook.com/images/fb_icon_325x325.png" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>GETTING STARTED WITH BRACKETS</title>
+        <title>Vol4All</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jq.js"></script>
@@ -26,22 +25,26 @@
         
         <?php 
 
-            session_start();
-                
-                include 'find-event.php';
+        session_start();
 
-                if (($row[17] == '0' || $row[17] == '-1') & !isset($_SESSION['admin'])) { 
-                    header("Location: index.php");
+        mysqli_set_charset($link, "utf8");
+                
+        include '../back-end/find-event.php';
+
+        if (($row[17] == '0' || $row[17] == '-1') & !isset($_SESSION['admin'])) { 
+            header("Location: index.php");
+        
         ?>
         
         <?php } else { ?>
         
+        
         <script>
             window.fbAsyncInit = function() {
                 FB.init({
-                appId      : '1607915839446072',
-                xfbml      : true,
-                version    : 'v2.4'
+                    appId      : '1607915839446072',
+                    xfbml      : true,
+                    version    : 'v2.4'
                 });
             };
 
@@ -74,13 +77,11 @@
         </script>
 
 
-
-        
-           <!-- registration or username -->
+        <!-- registration or username -->
         <?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -89,15 +90,14 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-            <?php 
-                include 'check-org-event.php';
-            ?>
-                
+                <?php include '../back-end/check-org-event.php'; ?>
                 <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
                 
-                <?php if (isset($_SESSION['vol_id'])) {
+                <?php 
+                      
+                if (isset($_SESSION['vol_id'])) {
 
-                    include 'create-link.php';
+                    include '../back-end/create-link.php';
                     $vol_id = $_SESSION['vol_id'];
                     $eventid = $_GET['id'];
                     $query = "SELECT id FROM apply WHERE eventID='$eventid' AND volunteerID = '$vol_id' AND selected = 1";
@@ -105,65 +105,70 @@
 
                     if (mysqli_num_rows($results) > 0) {
 
-                        ?>
-                        <div class="selected-msg"> You have been selected to volunteer for this event by the organisation! </div>
+                ?>
+                
+                    <div class="selected-msg"> You have been selected as a volunteer for this event! </div>
+                    
                     <?php }
-
-
-                    } ?>
+                } ?>
                 
 
                 <div class="page-title"> 
                     <div class="main-title"> <?php echo "$row[2]"; ?></div>  
-                    <h4>Event information page</h4>
-                    </div>
+                    <h4>Event information</h4>
+                </div>
+            
                 <div id="event-page">
-                    
-                    
                     <div id="event-main">
-				  <h2>Details</h2>
+				        <h2>Details</h2>
                         <ul id="event-chars">
+                            <li><?php echo "<strong>Event state: </strong>"; if ($row[17]==1) echo '<span class="active_green">Active</span>';
+                                                                            else if ($row[17]==2) echo '<span class="completed_red">Completed</span>'; 
+                                                                            else if ($row[17]==0) echo '<span class="completed_red">Under evaluation</span>';
+                                                                            else if ($row[17]==-1) echo '<span class="completed_red">CANCELLED</span>';?></li>
                             <li><?php echo "<strong>Category: </strong>" . $row[3]; ?></li>
                             <li><?php echo "<strong>Address:  </strong>" . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
                             <li><?php echo "<strong>Date:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
-                            <li><?php echo "<strong>Recommended age group:  </strong>" . $row[10]; ?></li>
+                            <li><?php echo "<strong>Age group:  </strong>" . $row[10]; ?></li>
                             <li><?php echo "<strong>Skills required:  </strong>"; ?>
                             <?php  
                             $skill = mysqli_fetch_row($skills);
                             echo $skill[0];
 
                             while ($skill = mysqli_fetch_row($skills)) {
-
                                  echo  ",  " . $skill[0];
-                                }
-                                    @mysqli_close($link);
+                            }
+                            @mysqli_close($link);
+                      
                             ?>
-                             </li>
-                            <?php $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ"); ?>
+                            </li>
+                            
+                            <?php $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "Thessaloniki"); ?>
                         </ul>
-				  <div><h2>Description</h3></div>
+				        <div><h2>Description</h3></div>
                         <div id="event-body"><?php echo nl2br($row[13]); ?></div>
                         
                         <div id="event-gallery">
                         <?php
-                            if ($row[14] != '' && $row[15] != '') {
-                                echo '<div id="carousel">';
-                                    echo '<ul>';
-                                        echo '<li><img src="' . $row[14] . '" /></li>';
-                                        echo '<li><img src="' . $row[15] . '" /></li>';
-                                        if ($row[16] != '')
-                                            echo '<li><img src="' . $row[16] . '" /></li>';
-                                    echo '</ul>';
-                                echo '</div>';
-                            }
-                            else if ($row[14] != '') {
-                                echo '<img src="' . $row[14] . '" />';
-                            }
+                      
+                        if ($row[14] != '' && $row[15] != '') {
+                            echo '<div id="carousel">';
+                                echo '<ul>';
+                                    echo '<li><img src="' . $row[14] . '" /></li>';
+                                    echo '<li><img src="' . $row[15] . '" /></li>';
+                                    if ($row[16] != '')
+                                        echo '<li><img src="' . $row[16] . '" /></li>';
+                                echo '</ul>';
+                            echo '</div>';
+                        }
+                        else if ($row[14] != '') {
+                            echo '<img src="' . $row[14] . '" />';
+                        }
                                 
                         ?>
                         </div>
                         
-                        <h2>Where to find us</h2>
+                        <h2>Where you can find us</h2>
                         <div id="map-canvas"></div>
 
                     </div>
@@ -171,7 +176,7 @@
                         
                         <?php 
 
-                        include 'create-link.php';
+                        include '../back-end/create-link.php';
                         $eid = $_GET['id'];
                         $vid = $_SESSION['vol_id'];
 
@@ -182,15 +187,11 @@
 
                         $applied = false;
                         if (mysqli_num_rows($result) >= 1) {
-
                             $applied= true;
-
                         }
 
-
-
                         ?>
-
+                        
                         <?php if($row[17] == 2) { ?>
                         <div id="btnApply" class="btnGreyout">
                             COMPLETED
@@ -199,7 +200,7 @@
                          <select id="skills-choose">
                             <option value="0" disabled selected>Select one </option>
                             <?php  
-                             include 'create-link.php';
+                             include '../back-end/create-link.php';
                             $query = "SELECT skills.skill, skills.value FROM skills, skill_req WHERE skill_req.event_id='$id' AND skill_req.skill_id = skills.value";
                             $skills = mysqli_query($link,$query);
                             while ($skill = mysqli_fetch_row($skills)) {
@@ -218,17 +219,17 @@
                         <div id='btnCancel' onclick="cancel()">
                             CANCEL
                         </div>
-                        <div id="msgApply">* You have applied for this event! Click CANCEL to remove.</div>
+                        <div id="msgApply">* You have applied for this event. Click CANCEL to delete your application</div>
 
                         <?php } else { 
                         
                         if ($flag == true) { ?>
                         
                         <div id="btnApply" onclick="window.location='complete-event.php?eventid=<?php echo $eventid; ?>'">
-                            COMPLETE
+                            COMPLITION
                         </div>
                         <div id="msgApply">* 
-                            <a href="register.php">Press after event completion to verify.                
+                            <a href="register.php">Click here afte the completion of the event.                
                         </div>
                         
                         <?php } else { ?>
@@ -237,7 +238,7 @@
                             APPLY
                         </div>
                         <div id="msgApply">* 
-                            <a href="register.php">Sign up</a> or <a href="login.php">log in</a> with a volunteer account to apply.                              
+                            <a href="register.php">Register</a> or <a href="login.php">login</a> with a volunteer's account to apply for this event                              
                         </div>
                         
                         <?php } } ?>
@@ -247,62 +248,62 @@
                         <div id="org-side">
                             <img src="<?php echo $org[10]; ?>" />
                             <div id="org-info">
-                                <h3>Organisation name:</h3>
+                                <h3>Organization's name:</h3>
                                 <?php echo '<h5><a href="organization.php?id=' . $org[0] . '">' . $org[4] . '</a></h5>'; ?>
-                                <h3>Contact:</h3>
+                                <h3>Contact info:</h3>
                                 <?php echo '<h5>' . $org[2] . '</h5>'; ?>
                                 <?php 
-                                    if ($org[5] != "") {
-                                        echo '<h3><a href="' . $org[5] . '">Visit our Website</a></h3>';
-                                    }
-                                    if ($org[6] != "") {
-                                        echo '<h3><a href="' . $org[6] . '">Find us on Facebook</a></h3>';
-                                    }
-                                    if ($org[7] != "") {
-                                        echo '<h3><a href="' . $org[7] . '">Find us on Twitter</a></h3>';
-                                    }
-                                    if ($org[8] != "") {
-                                        echo '<h3><a href="' . $org[8] . '">Other</a></h3>';
-                                    }
+                                if ($org[5] != "") {
+                                    echo '<h3><a href="' . $org[5] . '">Visit website</a></h3>';
+                                }
+                                if ($org[6] != "") {
+                                    echo '<h3><a href="' . $org[6] . '">Like us on Facebook</a></h3>';
+                                }
+                                if ($org[7] != "") {
+                                    echo '<h3><a href="' . $org[7] . '">Follow us on Twitter</a></h3>';
+                                }
+                                if ($org[8] != "") {
+                                    echo '<h3><a href="' . $org[8] . '">Other</a></h3>';
+                                }
                                 ?>
                             </div>
                         </div>
 
                         <div class="facebook-share" onclick="share()">Share on Facebook</div>
-                         <?php 
-
-                        include 'check-org-event.php';
+                        <?php 
 
                         if ($flag == true) { ?>
 
-                           <h3 style="text-align: center;"> Users applied for this event: </h3>
-                           <div class="applied-content"> 
+                            <h3 style="text-align: center;">Applicants</h3>
+                            <div class="applied-content"> 
                             <?php 
 
-                                include 'create-link.php';
-                                $eventid = $_GET['id'];
+                            include '../back-end/create-link.php';
+                            $eventid = $_GET['id'];
+                            mysqli_set_charset($link, "utf8");
+                            $query = "SELECT user.firstname, user.lastname, user.username FROM user,apply WHERE user.id = apply.volunteerID AND apply.eventID = $eventid ";
+                            $result = mysqli_query($link,$query);
 
-                                $query = "SELECT user.firstname, user.lastname, user.username FROM user,apply WHERE user.id = apply.volunteerID AND apply.eventID = $eventid ";
-                                $result = mysqli_query($link,$query);
+                            while ($row = mysqli_fetch_row($result)) { ?>
 
-                                while ($row = mysqli_fetch_row($result)) { ?>
+                            <div class="applicant"> 
 
-                                <div class="applicant"> 
+                                <?php echo $row[0] . " " . $row[1] . " (" . $row[2] . ")";  
+                                
+                            ?>
 
-                                    <?php echo $row[0] . " " . $row[1] . " (" . $row[2] . ")";  ?>
+                            </div>
 
-                                </div>
-
-                          <?php      }
-                          @mysqli_close($link);
+                            <?php      
+                            }
+                            @mysqli_close($link);
                             ?>
                             
-                           </div>
+                            </div>
 
-                           <div class="approve-btn" onclick="window.location='approve.php?eventid=<?php echo $eventid; ?>'">Approve</div>
+                            <div class="approve-btn" onclick="window.location='approve.php?eventid=<?php echo $eventid; ?>'">Select</div>
 
-                       <?php }
-                        ?>
+                        <?php } ?>
                         
 
                     </div>
@@ -313,10 +314,10 @@
                 
                 </div>
 
-            </div>
+        </div>
 
-            <!-- footer -->
-            <?php include 'footer.php'; ?>
+        <!-- footer -->
+        <?php include 'footer.php'; ?>
             
         
         <script>
@@ -354,6 +355,9 @@
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
+            
+            
         <?php } ?>
+            
     </body>
 </html>

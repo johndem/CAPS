@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="el">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+		<title>Vol4All</title>
 		<meta name="description" content="An interactive getting started guide for Brackets.">
-		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="../main.css">
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 		<!-- <script src="https://apis.google.com/js/client:platform.js?onload=api" async defer></script> -->
 		<script src="googleplus2.js"></script>
@@ -15,13 +14,14 @@
 		<script src="complete-event.js"></script>
 	</head>
 	<body>
- <?php session_start(); ?>
+        
+        <?php session_start(); ?>
 
 		<!-- registration or username -->
 		<?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -31,8 +31,8 @@
         <div class="content">
             <h1 class="center-title"></h1>
 			<div class="page-title"> 
-                <div class="main-title"> Volunteering Event Completion </div>  
-                <h4> Select the volunteers that participated </h4>
+                <div class="main-title"> Volunteering event completion </div>  
+                <h4> Select the volunteers that attended </h4>
             </div>
 
             <div class="aligner"> 
@@ -46,7 +46,9 @@
                     $org_id = $_SESSION["org_id"];
                     $eventid = $_GET["eventid"];
 
-                    include "create-link.php";
+                    mysqli_set_charset($link, "utf8");
+
+                    include "../back-end/create-link.php";
 
                     $query ="SELECT user.id, user.username, user.firstname, user.lastname, user.email, skills.skill, apply.selected FROM user, apply, skills,events WHERE apply.selected = '1' AND user.id = apply.volunteerID AND skills.value = apply.skill_id AND apply.eventID = '$eventid' AND events.id = '$eventid' AND events.org_id = '$org_id'" ;
                     $results = mysqli_query($link,$query); ?>
@@ -60,9 +62,9 @@
                             <table> 
 
                                 <tr> 
-                                    <th>Name </th>
+                                    <th>Full Name </th>
                                     <th>Email </th>
-                                    <th>Skill offered </th>
+                                    <th>Skill </th>
                                     <th>Participation</th>
                                 </tr>
                                 <tr> 
@@ -81,9 +83,9 @@
                         
                         <input type="hidden" name="eventid" value="<?php echo $eventid; ?>">
                         
-                        <h4>By pressing "Complete" you state that the event has been completed. </h4>
+                        <h4> Selecting "Complition" you declare this event completed </h4>
                         <div id="go">
-                            <input type="submit" class="submitBtn" id="sButton" name="submit" value="Complete" />
+                            <input type="submit" class="submitBtn" id="sButton" name="submit" value="Complition" />
                         </div>
                         
                     </form>
@@ -106,5 +108,4 @@
         ?>
         
 	</body>
-
 </html>

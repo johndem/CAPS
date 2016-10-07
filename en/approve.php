@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="el">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>TEAM THESSALONIKI VOLUNTEER NETWORK</title>
+		<title>Vol4All</title>
 		<meta name="description" content="An interactive getting started guide for Brackets.">
-		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="../main.css">
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 		<!-- <script src="https://apis.google.com/js/client:platform.js?onload=api" async defer></script> -->
 		<script src="googleplus2.js"></script>
@@ -15,13 +14,14 @@
 		<script src="approve.js"></script>
 	</head>
 	<body>
- <?php session_start(); ?>
+        
+        <?php session_start(); ?>
 
 		<!-- registration or username -->
 		<?php //include 'log-state.php'; ?>
 
         <!-- navigation -->
-         <?php include 'navigation.php'; ?>
+        <?php include 'navigation.php'; ?>
         <h1 class="center-title"></h1>
 
         <!-- masthead -->
@@ -31,73 +31,71 @@
         <div class="content">
             <h1 class="center-title"></h1>
 			<div class="page-title"> 
-                <div class="main-title"> Volunteer approve page </div>  
-                <h4>Search among the applicants and approve </h4>
+                <div class="main-title"> Volunteer selection page </div>  
+                <h4>Search and select volunteers</h4>
             </div>
 
-<div class="aligner"> 
-             <div class="listplz">   
-        <?php 
-        	if (!isset($_SESSION["org_id"])) {
-        		header ("Location: index.php");
-        	}
+            <div class="aligner"> 
+                <div class="listplz">
+                    
+                <?php
 
-        	$org_id = $_SESSION["org_id"];
-        	$eventid = $_GET["eventid"];
+                if (!isset($_SESSION["org_id"])) {
+                    header ("Location: index.php");
+                }
 
-            include "create-link.php";
+                $org_id = $_SESSION["org_id"];
+                $eventid = $_GET["eventid"];
 
-            $query ="SELECT user.id, user.username, user.firstname, user.lastname, user.email, skills.skill, apply.selected FROM user, apply, skills,events WHERE user.id = apply.volunteerID AND skills.value = apply.skill_id AND apply.eventID = '$eventid' AND events.id = '$eventid' AND events.org_id = '$org_id'" ;
-            $results = mysqli_query($link,$query);
+                mysqli_set_charset($link, "utf8");
 
-            while ($row = mysqli_fetch_row($results)) { ?>
+                include "../back-end/create-link.php";
+
+                $query ="SELECT user.id, user.username, user.firstname, user.lastname, user.email, skills.skill, apply.selected FROM user, apply, skills,events WHERE user.id = apply.volunteerID AND skills.value = apply.skill_id AND apply.eventID = '$eventid' AND events.id = '$eventid' AND events.org_id = '$org_id'" ;
+                $results = mysqli_query($link,$query);
+
+                while ($row = mysqli_fetch_row($results)) { 
+                    
+                ?>
 
                     <div class="listitem"> 
 
-                    <table> 
-                    <tr> 
-                        <th>Name </th>
-                        <th>Email </th>
-                        <th>Skill applied for </th>
-                        <th>Actions</th>
-                    </tr>
+                        <table> 
 
-                    <tr> 
-                        <td class="info"><?php echo $row[2]. " " . $row[3]; ?> </td>
-                        <td class="info"><?php echo $row[4]; ?> </td>     
-                         <td class="info"><?php echo $row[5]; ?> </td>     
-                         <?php if ($row[6] == 0 ) { ?>
-                        <td class='actions'><span onclick="onselected(<?php echo $eventid; ?>,<?php echo $row[0]; ?>)">Select</span></td>
-                        <?php }else { ?>
-                        <td class='actions-selected'><span >Selected</span></td>
-<?php } ?>
-                    </tr>
+                            <tr> 
+                                <th>Full Name </th>
+                                <th>Email </th>
+                                <th>Skills applied for </th>
+                                <th>Actions</th>
+                            </tr>
+                            <tr> 
+                                <td class="info"><?php echo $row[2]. " " . $row[3]; ?> </td>
+                                <td class="info"><?php echo $row[4]; ?> </td>     
+                                 <td class="info"><?php echo $row[5]; ?> </td>     
+                                 <?php if ($row[6] == 0 ) { ?>
+                                <td class='actions'><span onclick="onselected(<?php echo $eventid; ?>,<?php echo $row[0]; ?>)">Select</span></td>
+                                <?php } else { ?>
+                                <td class='actions-selected'><span >Selected</span></td>
+                                <?php } ?>
+                            </tr>
 
-                    </table>
+                        </table>
 
                     </div>
-
-
-<?php            }
-
-
-
-
-        ?>
+                    
+                <?php } ?>
         
-
-        </div>
-    
-    <div id="account-blanket">
+                </div>
+                
+                <div id="account-blanket">
                 
                 </div>
-</div>
+            </div>
             
-
-<!-- footer -->
-			<?php
-			include 'footer.php';
-			?>
+        </div>
+            
+        <!-- footer -->
+        <?php include 'footer.php'; ?>
+        
 	</body>
-
 </html>

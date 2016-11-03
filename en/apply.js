@@ -36,14 +36,36 @@ function cancel() {
 
 function volApply() {
 
+
+    // Get the modal
+var modal = document.getElementById('myModal');
+modal.style.display = "block";
+
+// Get the button that opens the modal
+var btn = document.getElementById("vol-sub");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+btn.onclick = function() {
 	var eventId = encodeURIComponent(getParameterByName('id'));
-    var skill = document.getElementById("skills-choose");
-    var skill_value = skill.options[skill.selectedIndex].value;
-    //alert(skill_value);
+    var skill_value = document.getElementById("vol-input").value;
 
 	var parameters = "eventID=" + eventId + "&skill=" + skill_value;
 
-	//alert(parameters);
 	console.log(parameters);
 
     http.open("POST", "../back-end/handleApply.php", true);
@@ -51,7 +73,7 @@ function volApply() {
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.send(parameters);
 }
-
+}
 /****** MAKE REQUEST *******/
 
 function useHttpResponseVol() {

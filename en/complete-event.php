@@ -50,10 +50,10 @@
 
                     include "../back-end/create-link.php";
 
-                    $query ="SELECT user.id, user.username, user.firstname, user.lastname, user.email, skills.skill, apply.selected FROM user, apply, skills,events WHERE apply.selected = '1' AND user.id = apply.volunteerID AND skills.value = apply.skill_id AND apply.eventID = '$eventid' AND events.id = '$eventid' AND events.org_id = '$org_id'" ;
+                    $query ="SELECT user.id, user.username, user.firstname, user.lastname, user.email, apply.selected FROM user, apply,events WHERE apply.selected = '1' AND user.id = apply.volunteerID AND apply.eventID = '$eventid' AND events.id = '$eventid' AND events.org_id = '$org_id'" ;
                     $results = mysqli_query($link,$query); ?>
                     
-                    <form action="finish-event.php" method="post" id="participation-form">
+                    <form action="..back-end/finish-event.php" method="post" id="participation-form">
                             
                         <?php while ($row = mysqli_fetch_row($results)) { ?>
 
@@ -64,13 +64,11 @@
                                 <tr> 
                                     <th>Full Name </th>
                                     <th>Email </th>
-                                    <th>Skill </th>
                                     <th>Participation</th>
                                 </tr>
                                 <tr> 
                                     <td class="info"><?php echo $row[2]. " " . $row[3]; ?> </td>
                                     <td class="info"><?php echo $row[4]; ?> </td>     
-                                    <td class="info"><?php echo $row[5]; ?> </td>     
                                     <td class='actions'><input type="checkbox" name="participant[]" value="<?php echo $row[0]; ?>" /></td>
                                 </tr>
 

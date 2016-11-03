@@ -89,6 +89,25 @@
 
         <!-- content -->
         <div class="content">
+        <!-- Trigger/Open The Modal -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">×</span>
+    <div class="modal-header">
+    <h2>Volunteering Application</h2>
+  </div>
+    <p>You chose to apply for this event. Please write a small paragraph as to why you are suitable for this event.</p>
+    <p>The organization will review your application. If you get selected an email will be send to you. You can aslo check your profile page.</p>
+    <p> Note: Leaving this empty will get you disqualified immediately!
+    <textarea id="vol-input" cols="55" name="vol-input" maxlength="1000" rows="10" required></textarea>
+    <input type="submit" class="submitBtn" id="vol-sub" name="submit" value="Submit" />
+  </div>
+
+</div>
             <h1 class="center-title"></h1>
                 <?php include '../back-end/check-org-event.php'; ?>
                 <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
@@ -197,19 +216,6 @@
                             COMPLETED
                         </div>
                         <?php } elseif(isset($_SESSION['vol_id']) AND $applied == false) { ?>
-                         <select id="skills-choose">
-                            <option value="0" disabled selected>Select one </option>
-                            <?php  
-                             include '../back-end/create-link.php';
-                            $query = "SELECT skills.skill, skills.value FROM skills, skill_req WHERE skill_req.event_id='$id' AND skill_req.skill_id = skills.value";
-                            $skills = mysqli_query($link,$query);
-                            while ($skill = mysqli_fetch_row($skills)) {
-
-                                 echo "<option value='" . $skill[1] . "'>" . $skill[0] . "</option>";
-                                }
-                                  @mysqli_close($link);
-                            ?>
-                        </select>
                         <div id="btnApply" onclick="volApply()">
                             APPLY
                         </div>

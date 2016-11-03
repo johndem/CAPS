@@ -51,7 +51,7 @@
 
                 include "../back-end/create-link.php";
 
-                $query ="SELECT user.id, user.username, user.firstname, user.lastname, user.email, skills.skill, apply.selected FROM user, apply, skills,events WHERE user.id = apply.volunteerID AND skills.value = apply.skill_id AND apply.eventID = '$eventid' AND events.id = '$eventid' AND events.org_id = '$org_id'" ;
+                $query ="SELECT user.id, user.username, user.firstname, user.lastname, user.email, apply.selected, apply.skill_id FROM user, apply, events WHERE user.id = apply.volunteerID AND apply.eventID = '$eventid' AND events.id = '$eventid' AND events.org_id = '$org_id'" ;
                 $results = mysqli_query($link,$query);
 
                 while ($row = mysqli_fetch_row($results)) { 
@@ -65,14 +65,14 @@
                             <tr> 
                                 <th>Full Name </th>
                                 <th>Email </th>
-                                <th>Skills applied for </th>
+                                <th>Message </th>
                                 <th>Actions</th>
                             </tr>
                             <tr> 
                                 <td class="info"><?php echo $row[2]. " " . $row[3]; ?> </td>
                                 <td class="info"><?php echo $row[4]; ?> </td>     
-                                 <td class="info"><?php echo $row[5]; ?> </td>     
-                                 <?php if ($row[6] == 0 ) { ?>
+                                 <td class="info"><?php echo $row[6]; ?> </td>     
+                                 <?php if ($row[5] == 0 ) { ?>
                                 <td class='actions'><span onclick="onselected(<?php echo $eventid; ?>,<?php echo $row[0]; ?>)">Select</span></td>
                                 <?php } else { ?>
                                 <td class='actions-selected'><span >Selected</span></td>

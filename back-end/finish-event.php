@@ -31,14 +31,14 @@ foreach ($participants as $participant) {
 
 $query = "UPDATE events SET status='2' WHERE id='$eventid'";
 mysqli_query($link, $query);
-    
+
 $query = "INSERT INTO notifications (user_id,not_id,role,event_id) VALUES ('$orgid','12','1','$eventid')";
 mysqli_query($link,$query);
 
 $query = "DELETE FROM apply WHERE eventID=$eventid";
 mysqli_query($link,$query);
 
-header('Location: index.php');
+header('Location: en/index.php');
 
 mysqli_close($link);
 

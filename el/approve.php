@@ -14,7 +14,7 @@
 		<script src="approve.js"></script>
 	</head>
 	<body>
-        
+
         <?php session_start(); ?>
 
 		<!-- registration or username -->
@@ -30,14 +30,14 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-			<div class="page-title"> 
-                <div class="main-title"> Σελίδα επιλογής εθελοντών </div>  
+			<div class="page-title">
+                <div class="main-title"> Σελίδα επιλογής εθελοντών </div>
                 <h4>Αναζητήστε εθελοντές/τριες και επιλέξτε </h4>
             </div>
 
-            <div class="aligner"> 
+            <div class="aligner">
                 <div class="listplz">
-                    
+
                 <?php
 
                 if (!isset($_SESSION["org_id"])) {
@@ -51,51 +51,51 @@
 
                 include "../back-end/create-link.php";
 
-                $query ="SELECT user.id, user.username, user.firstname, user.lastname, user.email, skills.skill, apply.selected FROM user, apply, skills,events WHERE user.id = apply.volunteerID AND skills.value = apply.skill_id AND apply.eventID = '$eventid' AND events.id = '$eventid' AND events.org_id = '$org_id'" ;
-                $results = mysqli_query($link,$query);
+								$query ="SELECT user.id, user.username, user.firstname, user.lastname, user.email, apply.selected, apply.skill_id FROM user, apply, events WHERE user.id = apply.volunteerID AND apply.eventID = '$eventid' AND events.id = '$eventid' AND events.org_id = '$org_id'" ;
+								$results = mysqli_query($link,$query);
 
-                while ($row = mysqli_fetch_row($results)) { 
-                    
-                ?>
+								while ($row = mysqli_fetch_row($results)) {
 
-                    <div class="listitem"> 
+								?>
 
-                        <table> 
+										<div class="listitem">
 
-                            <tr> 
-                                <th>Όνοματεπώνυμο </th>
-                                <th>Email </th>
-                                <th>Αιτούντες δεξιότητες </th>
-                                <th>Ενέργειες</th>
-                            </tr>
-                            <tr> 
-                                <td class="info"><?php echo $row[2]. " " . $row[3]; ?> </td>
-                                <td class="info"><?php echo $row[4]; ?> </td>     
-                                 <td class="info"><?php echo $row[5]; ?> </td>     
-                                 <?php if ($row[6] == 0 ) { ?>
-                                <td class='actions'><span onclick="onselected(<?php echo $eventid; ?>,<?php echo $row[0]; ?>)">Επιλογή</span></td>
-                                <?php } else { ?>
-                                <td class='actions-selected'><span >Επιλέχθηκε</span></td>
-                                <?php } ?>
-                            </tr>
+												<table>
 
-                        </table>
+														<tr>
+																<th>Ονοματεπώνυμο </th>
+																<th>Email </th>
+																<th>Μήνυμα </th>
+																<th>Ενέργειες</th>
+														</tr>
+														<tr>
+																<td class="info"><?php echo $row[2]. " " . $row[3]; ?> </td>
+																<td class="info"><?php echo $row[4]; ?> </td>
+																 <td class="info"><?php echo $row[6]; ?> </td>
+																 <?php if ($row[5] == 0 ) { ?>
+																<td class='actions'><span onclick="onselected(<?php echo $eventid; ?>,<?php echo $row[0]; ?>)">Επιλογή</span></td>
+																<?php } else { ?>
+																<td class='actions-selected'><span >Επιλέχθει</span></td>
+																<?php } ?>
+														</tr>
 
-                    </div>
-                    
-                <?php } ?>
-        
+												</table>
+
+										</div>
+
+								<?php } ?>
+
                 </div>
-                
+
                 <div id="account-blanket">
-                
+
                 </div>
             </div>
-            
+
         </div>
-            
+
         <!-- footer -->
         <?php include 'footer.php'; ?>
-        
+
 	</body>
 </html>

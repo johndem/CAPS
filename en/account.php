@@ -22,24 +22,24 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-            
-            <div class="page-title"> 
-                <div class="main-title"> My Account </div>  
+
+            <div class="page-title">
+                <div class="main-title"> My Account </div>
                 <h4>Profile Information</h4>
             </div>
-            
-                <?php 
+
+                <?php
                 mysqli_set_charset($link, "utf8");
-                if(isset($_SESSION['org_id']) || isset($_SESSION['user'])) { 
+                if(isset($_SESSION['org_id']) || isset($_SESSION['user'])) {
                     include '../back-end/find-user.php';
                 ?>
-                
-                
-                <div id="account"> 
-                    
+
+
+                <div id="account">
+
                     <div id="info">
                         <div id="pic">
-                            <img src="<?php if(isset($_SESSION['org_id'])) { echo $row[10]; } else { echo $row[12]; } ?>" width="200" height="200" />
+                            <img src="<?php if(isset($_SESSION['org_id'])) { echo $row[10]; } else { echo $row[12]; } ?>" />
                         </div>
                         <div id="personal-info">
                             <?php if(isset($_SESSION['org_id'])) { ?>
@@ -56,22 +56,24 @@
                                     <textarea id="description" class="for-text-area" cols="40" name="description" maxlength="500" rows="7" readonly><?php echo $row[9]; ?></textarea>
                                 </div>
                             <?php } else if(isset($_SESSION['user'])) { ?>
-                                <div class="account-label-in">
-                                    <div class="h3">First Name:</div>
-                                    <input class="in" maxlength="50" name="pass" id="log-password" size="25" type="text" value="<?php echo $row[1]; ?>" readonly/>
-                                </div>
-                                <div class="account-label-in">
-                                    <div class="h3">Last Name:</div>
-                                    <input class="in" maxlength="50" name="pass" id="log-password" size="25" type="text" value="<?php echo $row[2]; ?>" readonly/>
-                                </div>
-                                <div class="account-label-in">
-                                    <div class="h3">Email:</div>
-                                    <input class="in" maxlength="50" name="pass" id="log-password" size="25" type="text" value="<?php echo $row[4]; ?>" readonly/>
-                                </div>
-                                <div class="account-label-in">
-                                    <div class="h3">Birth date:</div>
-                                    <input class="in" maxlength="50" name="pass" id="log-password" size="25" type="date" value="<?php echo $row[11]; ?>" readonly/>
-                                </div>
+                              <table>
+                                <tr>
+                                  <th>First Name</th>
+                                  <td><?php echo $row[1]; ?></td>
+                                </tr>
+                                <tr>
+                                  <th>Last Name</th>
+                                  <td><?php echo $row[2]; ?></td>
+                                </tr>
+                                <tr>
+                                  <th>Email</th>
+                                  <td><?php echo $row[4]; ?></td>
+                                </tr>
+                                <tr>
+                                  <th>Birth date</th>
+                                  <td><?php echo $row[11]; ?></td>
+                                </tr>
+                              </table>
                             <?php } ?>
 
                         </div>
@@ -79,7 +81,7 @@
                     </div>
 
                     <h2>Notifications</h2>
-                    <div class="notification-box"> 
+                    <div class="notification-box">
                         <?php
 
                         include '../back-end/create-link.php';
@@ -95,22 +97,22 @@
                         }
 
                         $query = "SELECT notifications.date, messages.text ,notifications.id,events.title,events.id FROM notifications, messages, events WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id AND notifications.event_id = events.id ORDER BY notifications.id DESC";
-                         $results = mysqli_query($link,$query);   
-                        while ($row = mysqli_fetch_row($results)) { 
-                        
+                         $results = mysqli_query($link,$query);
+                        while ($row = mysqli_fetch_row($results)) {
+
                         ?>
 
-                            <div class="notification"> 
+                            <div class="notification">
                                 <div class="image"> </div>
                                 <div class="message">
                                     <?php echo $row[1]; ?>
-                                </div> 
+                                </div>
                                 <?php if($row[4] != 0)  {?>
                                 <div class="event-link">Event page: <a href="event.php?id=<?php echo $row[4]; ?>"> <?php echo $row[3]; ?></a> </div>
                                 <?php } ?>
                                 <div class="date">
                                     <?php echo $row[0]; ?>
-                                </div> 
+                                </div>
                             </div>
 
                            <?php } ?>
@@ -119,7 +121,7 @@
                     <?php if(!isset($_SESSION['org_id'])) { ?>
                         <div id="points">Overall points: 75</div>
                     <?php } ?>
-                    
+
                     <div id="history">
 
                         <div id="tabbed_box_1" class="tabbed_box">
@@ -178,20 +180,20 @@
                         </div>
 
                     </div>
-                    
-                        
+
+
                 </div>
                 <?php } ?>
-                    
-                
+
+
                 <div id="account-blanket">
-                
+
                 </div>
-                
+
             </div>
-            
+
             <!-- footer -->
             <?php include 'footer.php'; ?>
-            
+
     </body>
 </html>

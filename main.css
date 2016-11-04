@@ -61,7 +61,7 @@
 
 
 @-webkit-keyframes animatetop {
-    from {top: -500px; opacity: 0} 
+    from {top: -500px; opacity: 0}
     to {top: 0; opacity: 1}
 }
 
@@ -156,14 +156,14 @@
 }
 
 .featured-image {
-    position: relative; 
+    position: relative;
     width: 100%; /* for IE 6 */
     margin: 1px;
 }
 
 .featured-image-text {
-    position: absolute; 
-    bottom: 5px; 
+    position: absolute;
+    bottom: 5px;
     left: 0;
     text-align: left;
     padding: 15px;
@@ -177,11 +177,11 @@
 }
 
 .featured-image-text h2{
-    color: white; 
+    color: white;
 }
 
 .featured-image-text h4 {
-    color: white; 
+    color: white;
 }
 
 .btnLearn {
@@ -508,7 +508,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4036cc00', e
     font-size: 50px;
     padding: 10px;
     background-color: rgba(192,192,192,0.3);
-    
+
 }
 
 .back {
@@ -615,14 +615,14 @@ background-image: url("images/other/thss.jpg");
 }
 
 .navigation li ul li {
-    float: none; 
-    width: 200px; 
-    text-align: left; 
+    float: none;
+    width: 200px;
+    text-align: left;
 }
 
 .navigation li ul {
-    position: absolute; 
-    left: 0; 
+    position: absolute;
+    left: 0;
     visibility: hidden;
 }
 
@@ -648,8 +648,8 @@ background-image: url("images/other/thss.jpg");
     .logo {
         /*background-image: url("images/other/logo.png");
         background-size: cover;*/
-        width: auto;  
-        float:left; 
+        width: auto;
+        float:left;
         padding-left:10px;
         padding-top: 15px;
 
@@ -779,7 +779,7 @@ height: 50px;
     width: 450px;
     margin-bottom: 50px;
 }
- 
+
 select {
     width: 220px;
 }
@@ -791,14 +791,14 @@ select {
     font-size: 15px;
     border-radius: 5px;
 }
- 
- 
+
+
 /************************************************************ VOLUNTEERS.PHP *********************************************/
 
 .aligner {
     width: 1200px;
     margin: 0 auto;
-    text-align: center;  
+    text-align: center;
 }
 
 .aligner div a {
@@ -887,7 +887,7 @@ select {
     clear: both;
     margin: 0 auto;
     text-align: center;
-    width: 450px; 
+    width: 450px;
     border-bottom: solid 2px black;
     margin-bottom: 50px;
 }
@@ -1046,14 +1046,14 @@ input#event-pic3 {
 
 #calendar {
     margin: 0 auto;
-    text-align: center; 
+    text-align: center;
     width: 1200px;
     margin-bottom: 100px;
     margin-top: 50px;
     float: left;
 }
 
-th {
+#calendar th {
     background-color: #ff9639;
 }
 
@@ -1072,7 +1072,7 @@ th {
 
 table {
     width: 1000px;
-    table-layout: fixed;  
+    table-layout: fixed;
 }
 
 #manasou {
@@ -1256,18 +1256,48 @@ table {
 }
 
 #pic {
-    float: left;
-    width: 200px;
-    height: 200px;
-    margin: 10px;
+  float: left;
+width: 200px;
+height: 200px;
+margin: 10px;
+justify-content: center;
+display: flex;
+overflow: hidden;
+flex-direction: row;
+border: 5px solid #31D100;
+border-radius: 5px;
+}
+
+#pic img {
+    flex: 1;
+    height: 100%;
 }
 
 #personal-info {
-    float: right;
-    text-align: center;
-    margin-top: 20px;
-    margin-right: 20px;
+  /* float: right; */
+text-align: left;
+margin-top: 20px;
+margin-right: 20px;
+/* margin: 0 auto; */
 }
+
+#personal-info table {
+  width: auto;
+float: left;
+border-collapse: separate;
+border-spacing: 10px;
+margin-left: 20px;
+}
+
+#personal-info th {
+  padding: 5px;
+  background-color: none;
+  }
+
+  #personal-info td {
+    text-align: left;
+}
+
 
 .account-label-in {
     border-color: white;
@@ -1312,7 +1342,7 @@ table {
 */
 
 .tabbed_area {
-    padding:8px;    
+    padding:8px;
 }
 
 ul.tabs {
@@ -1333,7 +1363,7 @@ ul.tabs li a {
     font-family:Verdana, Arial, Helvetica, sans-serif;
     font-weight:bold;
     text-transform:uppercase;
-    border:1px solid #464c54; 
+    border:1px solid #464c54;
 }
 
 ul.tabs li a:hover {
@@ -1344,7 +1374,7 @@ ul.tabs li a:hover {
 ul.tabs li a.active {
     background-color:#FF9639;
     color:white;
-    border:1px solid #464c54; 
+    border:1px solid #464c54;
     border-bottom: 1px solid #ffffff;
 }
 
@@ -1366,7 +1396,7 @@ ul.tabs {
 .tab-content {
     background-color: #ffffff;
     padding: 10px;
-    border: 1px solid #464c54; 
+    border: 1px solid #464c54;
     height: 525px;
     overflow: scroll;
 }
@@ -1410,7 +1440,7 @@ ul.tabs {
 }
 
 #achievements {
-    
+
 }
 
 #achievement-list {
@@ -1616,14 +1646,14 @@ ul.tabs {
 }
 
 #event-chars {
-    background-color:#ffe8d5; 
+    background-color:#ffe8d5;
     box-shadow: 5px 5px 5px #999;
     list-style:url("images/other/bullet.png");
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-#event-chars li{ 
+#event-chars li{
     margin-top: 5px;
 }
 
@@ -1686,7 +1716,7 @@ ul.tabs {
 }
 
 #map-caption {
-    color: white; 
+    color: white;
 }
 
 #event-side {
@@ -1783,7 +1813,7 @@ div#btnApply:hover {
     border: solid grey 2px;
 }
 
-#org-side img { 
+#org-side img {
     width: 280px;
     height: 250px;
     margin-top: 10px;
@@ -1853,7 +1883,7 @@ div#btnApply:hover {
     cursor: pointer;
     width: inherit;
     background-color: #33D900;
-    border-radius: 10px;    
+    border-radius: 10px;
     margin-top: 10px;
     text-align: center;
     color: white;
@@ -1866,7 +1896,7 @@ div#btnApply:hover {
     background-color: #ffc18b;
     text-align: center;
     padding: 5px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 
 }
 
@@ -2070,7 +2100,7 @@ div#btnApply:hover {
     text-decoration: none;
     font-size: 17px;
     font-weight: bold;
-    
+
 }
 
 .username {
@@ -2205,7 +2235,7 @@ div#btnApply:hover {
 #orgs-side {
     width: 250px;
     height: auto;
-    background-color: #E2E6E1; 
+    background-color: #E2E6E1;
     box-shadow: 5px 5px 5px #999;
     float: right;
     margin: 0 auto;
@@ -2233,7 +2263,7 @@ div#btnApply:hover {
     border-radius: 5px;
     padding: 5px;
     display: inline-block;
-    margin: 5px; 
+    margin: 5px;
     cursor: pointer;
 }
 
@@ -2242,7 +2272,7 @@ div#btnApply:hover {
     border-radius: 5px;
     padding: 5px;
     display: inline-block;
-    margin: 5px; 
+    margin: 5px;
 }
 
 .listitem {

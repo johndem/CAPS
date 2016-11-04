@@ -22,23 +22,23 @@
         <script src="https://maps.googleapis.com/maps/api/js"></script>
     </head>
     <body>
-        
-        <?php 
+
+        <?php
 
         session_start();
 
         mysqli_set_charset($link, "utf8");
-                
+
         include '../back-end/find-event.php';
 
-        if (($row[17] == '0' || $row[17] == '-1') & !isset($_SESSION['admin'])) { 
+        if (($row[17] == '0' || $row[17] == '-1') & !isset($_SESSION['admin'])) {
             header("Location: index.php");
-        
+
         ?>
-        
+
         <?php } else { ?>
-        
-        
+
+
         <script>
             window.fbAsyncInit = function() {
                 FB.init({
@@ -89,12 +89,29 @@
 
         <!-- content -->
         <div class="content">
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">×</span>
+              <div class="modal-header">
+              <h2>Δήλωση Συμμετοχής</h2>
+            </div>
+              <p>Επιλέξατε να δηλώσετε συμμετοχή για εθελοντική δουλειά σε αυτή τη δράση. Παρακαλούμε γράψτε μία μιρκή παράγραφο αναφέροντας τους λόγους που σας καθιστούν κατάλληλο/η. </p>
+              <p>Ο οργανισμός θα ελέγξει την αίτηση. Αν επιλεχθείτε θα σας σταλθεί ένα email. Μπορείτε να δείτε και το προφίλ σας για ενημέρωση.</p>
+              <p> Σημείωση: Αφήνοντας κενό το παρακάτω, θα έχει ως επίπτωση τον αποκλισμό σας από τη δράση.
+              <textarea id="vol-input" cols="55" name="vol-input" maxlength="1000" rows="10" required></textarea>
+              <input type="submit" class="submitBtn" id="vol-sub" name="submit" value="Δήλωση" />
+            </div>
+
+          </div>
             <h1 class="center-title"></h1>
                 <?php include '../back-end/check-org-event.php'; ?>
                 <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
-                
-                <?php 
-                      
+
+                <?php
+
                 if (isset($_SESSION['vol_id'])) {
 
                     include '../back-end/create-link.php';
@@ -106,24 +123,24 @@
                     if (mysqli_num_rows($results) > 0) {
 
                 ?>
-                
+
                     <div class="selected-msg"> Επιλεχθήκατε ως εθελοντής/τρια για αυτή τη δράση! </div>
-                    
+
                     <?php }
                 } ?>
-                
 
-                <div class="page-title"> 
-                    <div class="main-title"> <?php echo "$row[2]"; ?></div>  
+
+                <div class="page-title">
+                    <div class="main-title"> <?php echo "$row[2]"; ?></div>
                     <h4>Πληροφορίες εθελοντικής δράσης</h4>
                 </div>
-            
+
                 <div id="event-page">
                     <div id="event-main">
 				        <h2>Λεπτομέρειες</h2>
                         <ul id="event-chars">
                             <li><?php echo "<strong>Κατάσταση δράσης: </strong>"; if ($row[17]==1) echo '<span class="active_green">Ενεργή</span>';
-                                                                            else if ($row[17]==2) echo '<span class="completed_red">Ολοκληρωμένη</span>'; 
+                                                                            else if ($row[17]==2) echo '<span class="completed_red">Ολοκληρωμένη</span>';
                                                                             else if ($row[17]==0) echo '<span class="completed_red">Υπό εξέταση</span>';
                                                                             else if ($row[17]==-1) echo '<span class="completed_red">ΑΚΥΡΩΜΕΝΗ</span>';?></li>
                             <li><?php echo "<strong>Κατηγορία: </strong>" . $row[3]; ?></li>
@@ -131,7 +148,7 @@
                             <li><?php echo "<strong>Ημερομηνία:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
                             <li><?php echo "<strong>Ηλικιακή ομάδα:  </strong>" . $row[10]; ?></li>
                             <li><?php echo "<strong>Απαιτούμενες Δεξιότητες:  </strong>"; ?>
-                            <?php  
+                            <?php
                             $skill = mysqli_fetch_row($skills);
                             echo $skill[0];
 
@@ -139,18 +156,18 @@
                                  echo  ",  " . $skill[0];
                             }
                             @mysqli_close($link);
-                      
+
                             ?>
                             </li>
-                            
+
                             <?php $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "ΘΕΣΣΑΛΟΝΙΚΗΣ"); ?>
                         </ul>
 				        <div><h2>Περιγραφή</h3></div>
                         <div id="event-body"><?php echo nl2br($row[13]); ?></div>
-                        
+
                         <div id="event-gallery">
                         <?php
-                      
+
                         if ($row[14] != '' && $row[15] != '') {
                             echo '<div id="carousel">';
                                 echo '<ul>';
@@ -164,17 +181,17 @@
                         else if ($row[14] != '') {
                             echo '<img src="' . $row[14] . '" />';
                         }
-                                
+
                         ?>
                         </div>
-                        
+
                         <h2>Που θα μας βρείτε</h2>
                         <div id="map-canvas"></div>
 
                     </div>
                     <div id="event-side">
-                        
-                        <?php 
+
+                        <?php
 
                         include '../back-end/create-link.php';
                         $eid = $_GET['id'];
@@ -183,7 +200,7 @@
                         $query = "SELECT id FROM apply WHERE eventID = '$eid' AND volunteerID = '$vid' ";
 
                         $result = mysqli_query($link,$query);
-                        @mysqli_close($link); 
+                        @mysqli_close($link);
 
                         $applied = false;
                         if (mysqli_num_rows($result) >= 1) {
@@ -191,60 +208,48 @@
                         }
 
                         ?>
-                        
+
                         <?php if($row[17] == 2) { ?>
                         <div id="btnApply" class="btnGreyout">
                             ΟΛΟΚΛΗΡΩΘΗΚΕ
                         </div>
                         <?php } elseif(isset($_SESSION['vol_id']) AND $applied == false) { ?>
-                         <select id="skills-choose">
-                            <option value="0" disabled selected>Επιλέξτε ένα </option>
-                            <?php  
-                            include '../back-end/create-link.php';
-                            $query = "SELECT skills.skill, skills.value FROM skills, skill_req WHERE skill_req.event_id='$id' AND skill_req.skill_id = skills.value";
-                            $skills = mysqli_query($link,$query);
-                            while ($skill = mysqli_fetch_row($skills)) {
-
-                                 echo "<option value='" . $skill[1] . "'>" . $skill[0] . "</option>";
-                                }
-                                  @mysqli_close($link);
-                            ?>
-                        </select>
+                        
                         <div id="btnApply" onclick="volApply()">
                             ΑΙΤΗΣΗ
                         </div>
 
-                        <?php 
+                        <?php
                         }elseif(isset($_SESSION['vol_id']) AND $applied) { ?>
                         <div id='btnCancel' onclick="cancel()">
                             ΑΚΥΡΩΣΗ
                         </div>
                         <div id="msgApply">* Κάνατε αίτηση συμμετοχής σε αυτή τη δράση. Πατήστε ΑΚΥΡΩΣΗ για διαγραφή.</div>
 
-                        <?php } else { 
-                        
+                        <?php } else {
+
                         if ($flag == true) { ?>
-                        
+
                         <div id="btnApply" onclick="window.location='complete-event.php?eventid=<?php echo $eventid; ?>'">
                             ΟΛΟΚΛΗΡΩΣΗ
                         </div>
-                        <div id="msgApply">* 
-                            <a href="register.php">Πατήστε μετά την ολοκλήρωση της δράσης για να επιβεβαιώσετε.                
+                        <div id="msgApply">*
+                            <a href="register.php">Πατήστε μετά την ολοκλήρωση της δράσης για να επιβεβαιώσετε.
                         </div>
-                        
+
                         <?php } else { ?>
-                        
+
                         <div id="btnApply" class="btnGreyout">
                             ΑΙΤΗΣΗ
                         </div>
-                        <div id="msgApply">* 
-                            <a href="register.php">Εγγραφείτε</a> ή <a href="login.php">κάνετε είσοδο</a> με λογαριασμό εθελοντή για να κάνετε αίτηση.                              
+                        <div id="msgApply">*
+                            <a href="register.php">Εγγραφείτε</a> ή <a href="login.php">κάνετε είσοδο</a> με λογαριασμό εθελοντή για να κάνετε αίτηση.
                         </div>
-                        
+
                         <?php } } ?>
-                        
-                        
-                        
+
+
+
                         <div id="org-side">
                             <img src="<?php echo $org[10]; ?>" />
                             <div id="org-info">
@@ -252,7 +257,7 @@
                                 <?php echo '<h5><a href="organization.php?id=' . $org[0] . '">' . $org[4] . '</a></h5>'; ?>
                                 <h3>Επικοινωνία:</h3>
                                 <?php echo '<h5>' . $org[2] . '</h5>'; ?>
-                                <?php 
+                                <?php
                                 if ($org[5] != "") {
                                     echo '<h3><a href="' . $org[5] . '">Επίσκεψη ιστοχώρου</a></h3>';
                                 }
@@ -270,13 +275,13 @@
                         </div>
 
                         <div class="facebook-share" onclick="share()">Κοινoποίηση στο Facebook</div>
-                        <?php 
+                        <?php
 
                         if ($flag == true) { ?>
 
                             <h3 style="text-align: center;">Χρήστες που έκαναν αίτηση</h3>
-                            <div class="applied-content"> 
-                            <?php 
+                            <div class="applied-content">
+                            <?php
 
                             include '../back-end/create-link.php';
                             $eventid = $_GET['id'];
@@ -286,40 +291,40 @@
 
                             while ($row = mysqli_fetch_row($result)) { ?>
 
-                            <div class="applicant"> 
+                            <div class="applicant">
 
-                                <?php echo $row[0] . " " . $row[1] . " (" . $row[2] . ")";  
-                                
+                                <?php echo $row[0] . " " . $row[1] . " (" . $row[2] . ")";
+
                             ?>
 
                             </div>
 
-                            <?php      
+                            <?php
                             }
                             @mysqli_close($link);
                             ?>
-                            
+
                             </div>
 
                             <div class="approve-btn" onclick="window.location='approve.php?eventid=<?php echo $eventid; ?>'">Επιλογή</div>
 
                         <?php } ?>
-                        
+
 
                     </div>
-                
+
                 </div>
-                
+
                 <div id="event-blanket">
-                
+
                 </div>
 
         </div>
 
         <!-- footer -->
         <?php include 'footer.php'; ?>
-            
-        
+
+
         <script>
             function initialize() {
                 var mapCanvas = document.getElementById('map-canvas');
@@ -329,7 +334,7 @@
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
                 var map = new google.maps.Map(mapCanvas, mapOptions);
-                
+
                 var geocoder = new google.maps.Geocoder();
                 var address = <?php echo json_encode($location, JSON_UNESCAPED_UNICODE); ?>;
                 address = address.toString();
@@ -348,16 +353,16 @@
                             map: map,
                             title:"Volunteering Event"
                         });
-                    } 
-                }); 
-                
-                
+                    }
+                });
+
+
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
-            
-            
+
+
         <?php } ?>
-            
+
     </body>
 </html>

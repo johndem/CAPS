@@ -22,23 +22,23 @@
         <script src="https://maps.googleapis.com/maps/api/js"></script>
     </head>
     <body>
-        
-        <?php 
+
+        <?php
 
         session_start();
 
         mysqli_set_charset($link, "utf8");
-                
+
         include '../back-end/find-event.php';
 
-        if (($row[17] == '0' || $row[17] == '-1') & !isset($_SESSION['admin'])) { 
+        if (($row[17] == '0' || $row[17] == '-1') & !isset($_SESSION['admin'])) {
             header("Location: index.php");
-        
+
         ?>
-        
+
         <?php } else { ?>
-        
-        
+
+
         <script>
             window.fbAsyncInit = function() {
                 FB.init({
@@ -91,29 +91,29 @@
         <div class="content">
         <!-- Trigger/Open The Modal -->
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">×</span>
-    <div class="modal-header">
-    <h2>Volunteering Application</h2>
-  </div>
-    <p>You chose to apply for this event. Please write a small paragraph as to why you are suitable for this event.</p>
-    <p>The organization will review your application. If you get selected an email will be send to you. You can aslo check your profile page.</p>
-    <p> Note: Leaving this empty will get you disqualified immediately!
-    <textarea id="vol-input" cols="55" name="vol-input" maxlength="1000" rows="10" required></textarea>
-    <input type="submit" class="submitBtn" id="vol-sub" name="submit" value="Submit" />
-  </div>
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">×</span>
+              <div class="modal-header">
+              <h2>Volunteering Application</h2>
+            </div>
+              <p>You chose to apply for this event. Please write a small paragraph as to why you are suitable for this event.</p>
+              <p>The organization will review your application. If you get selected an email will be send to you. You can aslo check your profile page.</p>
+              <p> Note: Leaving this empty will get you disqualified immediately!
+              <textarea id="vol-input" cols="55" name="vol-input" maxlength="1000" rows="10" required></textarea>
+              <input type="submit" class="submitBtn" id="vol-sub" name="submit" value="Submit" />
+            </div>
 
-</div>
+          </div>
             <h1 class="center-title"></h1>
                 <?php include '../back-end/check-org-event.php'; ?>
                 <!-- <h1 class="center-title"><?php echo "$row[2]"; ?></h1> -->
-                
-                <?php 
-                      
+
+                <?php
+
                 if (isset($_SESSION['vol_id'])) {
 
                     include '../back-end/create-link.php';
@@ -125,24 +125,24 @@
                     if (mysqli_num_rows($results) > 0) {
 
                 ?>
-                
+
                     <div class="selected-msg"> You have been selected as a volunteer for this event! </div>
-                    
+
                     <?php }
                 } ?>
-                
 
-                <div class="page-title"> 
-                    <div class="main-title"> <?php echo "$row[2]"; ?></div>  
+
+                <div class="page-title">
+                    <div class="main-title"> <?php echo "$row[2]"; ?></div>
                     <h4>Event information</h4>
                 </div>
-            
+
                 <div id="event-page">
                     <div id="event-main">
 				        <h2>Details</h2>
                         <ul id="event-chars">
                             <li><?php echo "<strong>Event state: </strong>"; if ($row[17]==1) echo '<span class="active_green">Active</span>';
-                                                                            else if ($row[17]==2) echo '<span class="completed_red">Completed</span>'; 
+                                                                            else if ($row[17]==2) echo '<span class="completed_red">Completed</span>';
                                                                             else if ($row[17]==0) echo '<span class="completed_red">Under evaluation</span>';
                                                                             else if ($row[17]==-1) echo '<span class="completed_red">CANCELLED</span>';?></li>
                             <li><?php echo "<strong>Category: </strong>" . $row[3]; ?></li>
@@ -150,7 +150,7 @@
                             <li><?php echo "<strong>Date:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
                             <li><?php echo "<strong>Age group:  </strong>" . $row[10]; ?></li>
                             <li><?php echo "<strong>Skills required:  </strong>"; ?>
-                            <?php  
+                            <?php
                             $skill = mysqli_fetch_row($skills);
                             echo $skill[0];
 
@@ -158,18 +158,18 @@
                                  echo  ",  " . $skill[0];
                             }
                             @mysqli_close($link);
-                      
+
                             ?>
                             </li>
-                            
+
                             <?php $location = array("$row[4]", "$row[5]", "$row[7]", "$row[6]", "Thessaloniki"); ?>
                         </ul>
 				        <div><h2>Description</h3></div>
                         <div id="event-body"><?php echo nl2br($row[13]); ?></div>
-                        
+
                         <div id="event-gallery">
                         <?php
-                      
+
                         if ($row[14] != '' && $row[15] != '') {
                             echo '<div id="carousel">';
                                 echo '<ul>';
@@ -183,17 +183,17 @@
                         else if ($row[14] != '') {
                             echo '<img src="' . $row[14] . '" />';
                         }
-                                
+
                         ?>
                         </div>
-                        
+
                         <h2>Where you can find us</h2>
                         <div id="map-canvas"></div>
 
                     </div>
                     <div id="event-side">
-                        
-                        <?php 
+
+                        <?php
 
                         include '../back-end/create-link.php';
                         $eid = $_GET['id'];
@@ -202,7 +202,7 @@
                         $query = "SELECT id FROM apply WHERE eventID = '$eid' AND volunteerID = '$vid' ";
 
                         $result = mysqli_query($link,$query);
-                        @mysqli_close($link); 
+                        @mysqli_close($link);
 
                         $applied = false;
                         if (mysqli_num_rows($result) >= 1) {
@@ -210,7 +210,7 @@
                         }
 
                         ?>
-                        
+
                         <?php if($row[17] == 2) { ?>
                         <div id="btnApply" class="btnGreyout">
                             COMPLETED
@@ -220,37 +220,37 @@
                             APPLY
                         </div>
 
-                        <?php 
+                        <?php
                         }elseif(isset($_SESSION['vol_id']) AND $applied) { ?>
                         <div id='btnCancel' onclick="cancel()">
                             CANCEL
                         </div>
                         <div id="msgApply">* You have applied for this event. Click CANCEL to delete your application</div>
 
-                        <?php } else { 
-                        
+                        <?php } else {
+
                         if ($flag == true) { ?>
-                        
+
                         <div id="btnApply" onclick="window.location='complete-event.php?eventid=<?php echo $eventid; ?>'">
                             COMPLITION
                         </div>
-                        <div id="msgApply">* 
-                            <a href="register.php">Click here afte the completion of the event.                
+                        <div id="msgApply">*
+                            <a href="register.php">Click here afte the completion of the event.
                         </div>
-                        
+
                         <?php } else { ?>
-                        
+
                         <div id="btnApply" class="btnGreyout">
                             APPLY
                         </div>
-                        <div id="msgApply">* 
-                            <a href="register.php">Register</a> or <a href="login.php">login</a> with a volunteer's account to apply for this event                              
+                        <div id="msgApply">*
+                            <a href="register.php">Register</a> or <a href="login.php">login</a> with a volunteer's account to apply for this event
                         </div>
-                        
+
                         <?php } } ?>
-                        
-                        
-                        
+
+
+
                         <div id="org-side">
                             <img src="<?php echo $org[10]; ?>" />
                             <div id="org-info">
@@ -258,7 +258,7 @@
                                 <?php echo '<h5><a href="organization.php?id=' . $org[0] . '">' . $org[4] . '</a></h5>'; ?>
                                 <h3>Contact info:</h3>
                                 <?php echo '<h5>' . $org[2] . '</h5>'; ?>
-                                <?php 
+                                <?php
                                 if ($org[5] != "") {
                                     echo '<h3><a href="' . $org[5] . '">Visit website</a></h3>';
                                 }
@@ -276,13 +276,13 @@
                         </div>
 
                         <div class="facebook-share" onclick="share()">Share on Facebook</div>
-                        <?php 
+                        <?php
 
                         if ($flag == true) { ?>
 
                             <h3 style="text-align: center;">Applicants</h3>
-                            <div class="applied-content"> 
-                            <?php 
+                            <div class="applied-content">
+                            <?php
 
                             include '../back-end/create-link.php';
                             $eventid = $_GET['id'];
@@ -292,40 +292,40 @@
 
                             while ($row = mysqli_fetch_row($result)) { ?>
 
-                            <div class="applicant"> 
+                            <div class="applicant">
 
-                                <?php echo $row[0] . " " . $row[1] . " (" . $row[2] . ")";  
-                                
+                                <?php echo $row[0] . " " . $row[1] . " (" . $row[2] . ")";
+
                             ?>
 
                             </div>
 
-                            <?php      
+                            <?php
                             }
                             @mysqli_close($link);
                             ?>
-                            
+
                             </div>
 
                             <div class="approve-btn" onclick="window.location='approve.php?eventid=<?php echo $eventid; ?>'">Select</div>
 
                         <?php } ?>
-                        
+
 
                     </div>
-                
+
                 </div>
-                
+
                 <div id="event-blanket">
-                
+
                 </div>
 
         </div>
 
         <!-- footer -->
         <?php include 'footer.php'; ?>
-            
-        
+
+
         <script>
             function initialize() {
                 var mapCanvas = document.getElementById('map-canvas');
@@ -335,7 +335,7 @@
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
                 var map = new google.maps.Map(mapCanvas, mapOptions);
-                
+
                 var geocoder = new google.maps.Geocoder();
                 var address = <?php echo json_encode($location, JSON_UNESCAPED_UNICODE); ?>;
                 address = address.toString();
@@ -354,16 +354,16 @@
                             map: map,
                             title:"Volunteering Event"
                         });
-                    } 
-                }); 
-                
-                
+                    }
+                });
+
+
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
-            
-            
+
+
         <?php } ?>
-            
+
     </body>
 </html>

@@ -29,7 +29,7 @@ if (strpos($url,'index') !== false OR trim($url) == "/CAPS/") {
     echo '<li>
     <a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ</a>
         <ul>
-            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΧΑΡΤΗ</a></li>
+            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΠΛΑΤΦΟΡΜΑΣ</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
@@ -89,7 +89,7 @@ else if ((strpos($url,'volunteers') !== false) || (strpos($url,'search-results')
     echo '<li>
     <a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ</a>
         <ul>
-            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΧΑΡΤΗ</a></li>
+            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΠΛΑΤΦΟΡΜΑΣ</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
@@ -147,7 +147,7 @@ else if (strpos($url,'organisations') !== false || strpos($url,'registered-organ
     echo '<li>
     <a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ</a>
         <ul>
-            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΧΑΡΤΗ</a></li>
+            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΠΛΑΤΦΟΡΜΑΣ</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
@@ -205,7 +205,7 @@ else if (strpos($url,'calendar') !== false) {
     echo '<li>
     <a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ</a>
         <ul>
-            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΧΑΡΤΗ</a></li>
+            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΠΛΑΤΦΟΡΜΑΣ</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
@@ -263,7 +263,7 @@ else if (strpos($url,'statistics') !== false || strpos($url,'leaderboard') !== f
     echo '<li id="selected">
     <a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ</a>
         <ul>
-            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΧΑΡΤΗ</a></li>
+            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΠΛΑΤΦΟΡΜΑΣ</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';
@@ -321,7 +321,7 @@ else {
     echo '<li>
     <a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ</a>
         <ul>
-            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΧΑΡΤΗ</a></li>
+            <li><a href="statistics.php">ΣΤΑΤΙΣΤΙΚΑ ΠΛΑΤΦΟΡΜΑΣ</a></li>
             <li><a href="leaderboard.php">LEADERBOARD</a></li>
         </ul>
     </li>';

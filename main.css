@@ -1163,12 +1163,16 @@ table {
     margin-top: 50px;
 }
 
-#stats {
+#numberstats {
+    text-align: left;
+}
+
+#mapstats {
     width: inherit;
     height: auto;
 }
 
-#stats-map {
+#mapstats-map {
     width: 700px;
     height: 500px;
     margin-top: 10px;
@@ -1176,10 +1180,20 @@ table {
     float: left;
 }
 
-#stats-options {
+#mapstats-options {
     width: 250px;
     height: inherit;
     float: right;
+}
+
+#prefstats {
+    clear: both;
+}
+
+#piechart_3d {
+    clear: both;
+    width: 70%;
+    height: 450px;
 }
 
 #leaderboard-statistics {

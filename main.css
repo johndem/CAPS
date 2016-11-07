@@ -412,7 +412,7 @@ textarea {
     color: #525252;
     background-color: white;
     width: auto;
-    background-color: #efffeb;
+    /*background-color: #efffeb;*/
 }
 
 .center-title {
@@ -1576,7 +1576,6 @@ ul.tabs {
     display: none;
     margin: 0 auto;
     width: inherit;
-    height: 500px;
     /*overflow: scroll;*/
     margin-bottom: 50px;
     text-align: left;
@@ -1605,19 +1604,19 @@ ul.tabs {
 }
 
 .notification {
-    background-color: #ffc18b;
-    padding: 5px;
-    min-height: 50px;
-    border-bottom: 2px orange solid;
+  background-color: white;
+  padding: 5px;
+  min-height: 50px;
+  border-bottom: 2px orange solid;
 }
 
 .notification .event-link a {
-    font-size: 16px;
-    color:white;
+    font-size: 13px;
+    color:black;
 }
 
 .notification .event-link a:visited {
-    color:white ;
+    color:black ;
 }
 
 .achievements {
@@ -1656,6 +1655,8 @@ padding-bottom: 10px;
 width: 50px;
 background-size: cover;
 cursor:pointer;
+display: inline-block;
+
 
 }
 
@@ -1664,12 +1665,13 @@ cursor:pointer;
 }
 
 #see-all {
-  background-color: #ffc18b;
+  background-color: #FF9639;
   text-decoration: none;
   text-align: center;
   padding: 5px;
   color: black;
 }
+
 
 
 

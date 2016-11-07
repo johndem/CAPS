@@ -444,6 +444,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4036cc00', e
 .main-title {
     font-size: 30px;
     font-weight: bold;
+    border-bottom: 1px black solid;
+padding-bottom: 10px;
 }
 
 .page-title h4 {
@@ -1568,11 +1570,14 @@ ul.tabs {
     margin-bottom: 15px;
 }
 
-.notification-box {
+#notification-box {
+  position: absolute;
+  z-index: 1;
+    display: none;
     margin: 0 auto;
     width: inherit;
     height: 500px;
-    overflow: scroll;
+    /*overflow: scroll;*/
     margin-bottom: 50px;
     text-align: left;
     background-color: #ffe8d5;
@@ -1615,7 +1620,56 @@ ul.tabs {
     color:white ;
 }
 
+.achievements {
+  width: auto;
+}
 
+.achievement {
+  width: 100px;
+  height: auto;
+  border: none;
+  display: inline-block;
+}
+
+.badge {
+  background-size: cover;
+  height: 100px;
+}
+
+.badge-text {
+  font-weight: bold;
+}
+
+#points {
+  font-size: 25px;
+
+}
+
+#account h2 {
+  border-bottom: solid #33d900 1px;
+padding-bottom: 10px;
+}
+
+.notification-button {
+  background-image: url('../CAPS/images/other/not-icon.png');
+  height: 50px;
+width: 50px;
+background-size: cover;
+cursor:pointer;
+
+}
+
+.notification-button:hover {
+  background-image: url('../CAPS/images/other/not-icon-2.png');
+}
+
+#see-all {
+  background-color: #ffc18b;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  color: black;
+}
 
 
 

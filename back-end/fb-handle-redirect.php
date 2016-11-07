@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 require_once 'facebook-php-sdk-v4/src/Facebook/FacebookSession.php';
@@ -30,8 +30,8 @@ use Facebook\GraphSessionInfo;
 use Facebook\FacebookHttpable;
 use Facebook\FacebookCurlHttpClient;
 use Facebook\FacebookCurl;
-FacebookSession::setDefaultApplication('1607915839446072','a226b6be97f59c0f31461d5fb4bfe62f');
-$helper = new FacebookRedirectLoginHelper('http://localhost/CAPS/fb-handle-redirect.php');
+FacebookSession::setDefaultApplication('1647764365516493', 'f23411f11c859c3657f90f1bd83f31e4');
+$helper = new FacebookRedirectLoginHelper('http://oswinds.csd.auth.gr/vol4all/back-end/fb-habdle-redirect.php');
 try {
     $session = $helper->getSessionFromRedirect();
 } catch(FacebookRequestException $ex) {
@@ -49,20 +49,23 @@ if ($session) {
 
     $user = $response->getGraphObject(GraphUser::className());
     $userID = $user->getId();
+    $first_name = $user->getFirstName();
+    $last_name = $user->getLastName();
+    $email = $user-> getEmail();
 
     include 'create-link.php';
 
     mysqli_set_charset($link, "utf8");
 
-    $query = "INSERT INTO fb_users (id) VALUES ('$userID')";
+    $query = "INSERT INTO user (firstname,lastname,username,email,password,phone,address,str_number,zip,city,date,picture) VALUES ('$first_name', '$last_name','-','$email','$userID','-','-','-','$-','Thessaloniki', '-', '../images/profile-pics/profile.png')";
 
     mysqli_query($link,$query);
 
     $_SESSION['user'] = $user->getFirstName();
 
-    header('Location: http://localhost/CAPS2/');
+    header('Location: http://oswinds.csd.auth.gr/vol4all');
 
 }
-	
+
 
 ?>

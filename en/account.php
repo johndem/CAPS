@@ -80,8 +80,47 @@
                         <div class="account-label-in"><a href="edit-account.php">Edit profile &raquo;</a></div>
                     </div>
 
-                    <h2>Notifications</h2>
-                    <div class="notification-box">
+                      <h2> Achievements and Points </h2>
+                      <h5> Hover to see which ones you got! </h5>
+                      <div class="achievements">
+                    <?php
+
+                    include '../back-end/create-link.php';
+
+                    mysqli_set_charset($link, "utf8");
+                    session_start();
+                    if(isset($_SESSION['user'])) {
+                       $user = $_SESSION['user'];
+                       $query = "SELECT achievments.text, achievments.badge FROM achievments,earnedachievements,user WHERE achievments.id = earnedachievements.achiev_id AND earnedachievements.user_id = user.id AND user.username = '$user'";
+                   }
+
+                   $results = mysqli_query($link,$query);
+                   $row = mysqli_fetch_row($results);
+
+                   @mysqli_close($link);
+                    while ($row = mysqli_fetch_row($results)) {
+
+                    ?>
+
+
+
+                      <div class="achievement">
+                        <div class="badge" style="background-image: url('../images/badges/<?php echo $row[1]; ?>')" title="<?php echo $row[0]?>">
+
+                        </div>
+                        <!-- <div class="badge-text">
+                            <?php echo $row[0]; ?>
+                        </div> -->
+                      </div>
+
+
+
+                    <?php } ?>
+                     <div id="points">You have earned 75 points!</div>
+</div>
+                    <h2>Notifications</h2>                       <div class=notification-button onclick="notifications()"></div>
+
+                    <div id="notification-box">
                         <?php
 
                         include '../back-end/create-link.php';
@@ -96,7 +135,7 @@
                             $role = 1;
                         }
 
-                        $query = "SELECT notifications.date, messages.text ,notifications.id,events.title,events.id FROM notifications, messages, events WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id AND notifications.event_id = events.id ORDER BY notifications.id DESC";
+                        $query = "SELECT notifications.date, messages.text ,notifications.id,events.title,events.id FROM notifications, messages, events WHERE notifications.user_id='$id' AND notifications.role='$role' AND notifications.not_id = messages.id AND notifications.event_id = events.id ORDER BY notifications.id DESC LIMIT 5";
                          $results = mysqli_query($link,$query);
                         while ($row = mysqli_fetch_row($results)) {
 
@@ -116,10 +155,11 @@
                             </div>
 
                            <?php } ?>
+                           <a id="see-all" href=""> See All Notifications </a>
                     </div>
 
                     <?php if(!isset($_SESSION['org_id'])) { ?>
-                        <div id="points">Overall points: 75</div>
+
                     <?php } ?>
 
                     <div id="history">

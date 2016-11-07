@@ -1,12 +1,12 @@
 $(document).ready(function () {
-    
+
 //    $(function() {
 //        $('.jcarousel').jcarousel({
 //            // Configuration goes here
 //
 //        });
 //    });
-    
+
     // Set the interval to be 5 seconds
 	var t = setInterval(function(){
 		$("#carousel ul").animate({marginLeft:-480},1000,function(){
@@ -14,11 +14,11 @@ $(document).ready(function () {
 			$(this).css({marginLeft:0});
 		})
 	},5000);
-    
+
     $('.submitBtn').hover(function () {
         $(this).toggleClass("button-hover");
     });
-    
+
     $(".username").on({
      "mouseover" : function() {
         $('#dropdownlist').css("display","block");
@@ -27,7 +27,7 @@ $(document).ready(function () {
         $('#dropdownlist').css("display","none");
       }
     });
-    
+
     $("#dropdownlist").on({
      "mouseover" : function() {
         $(this).css("display","block");
@@ -36,7 +36,7 @@ $(document).ready(function () {
         $(this).css("display","none");
       }
     });
-	
+
 	$('#logout').click(function() {
 		$.ajax( {
 			type: "POST",
@@ -57,7 +57,7 @@ $(document).ready(function () {
 			}
 		});
 	});
-    
+
 
    $("#hc").on({
      "mouseover" : function() {
@@ -112,26 +112,26 @@ $(document).ready(function () {
         this.src='../images/masthead/en/an-gray.png';
       }
     });
-    
-    
-    
+
+
+
     $("#event-pic").change(function() {
         $("#event-pic2").css("display", "inline");
     });
-    
+
     $("#event-pic2").change(function() {
         $("#event-pic3").css("display", "inline");
     });
-    
-    
-    
+
+
+
     $("#log-password,#log-username").keyup(function(event){
         if(event.keyCode == 13){
             $("#sButton").click();
         }
     });
-    
-    
+
+
     // When a link is clicked
    $("a.tab").click(function () {
 
@@ -147,7 +147,7 @@ $(document).ready(function () {
        // Now figure out what the 'title' attribute value is and find the element with that id.  Then slide that down.
        var content_show = $(this).attr("title");
        $("#"+content_show).show();
-       
+
        return false;
    });
 
@@ -157,7 +157,7 @@ var http = getXMLHttpRequest();
 function getXMLHttpRequest() {
     if (window.XMLHttpRequest) {
         request = new XMLHttpRequest();
-    } 
+    }
     else {
         request = new ActiveXObject("Microsoft.XMLHTTP");
     }
@@ -187,4 +187,17 @@ function useHttpResponseVol() {
             console.log(http.responseText);
         }
     }
+}
+
+function notifications() {
+  var box = document.getElementById('notification-box');
+
+  var what = box.style.display;
+  if (what == 'none') {
+    box.style.display = 'block';
+  }
+  else {
+    box.style.display = 'none';
+
+  }
 }

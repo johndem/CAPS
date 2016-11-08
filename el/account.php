@@ -98,9 +98,7 @@
 
 
                    $results = mysqli_query($link,$query);
-                   $row = mysqli_fetch_row($results);
 
-                   @mysqli_close($link);
                     while ($row = mysqli_fetch_row($results)) {
 
                     ?>
@@ -119,7 +117,9 @@
                     <?php } ?>
                      <div id="points">Έχεις συγκεντρώσει 75 πόντους!</div>
                      </div>
-                     <?php } ?>
+                     <?php }
+                     @mysqli_close($link);
+?>
 
                     <h2>Ειδοποιήσεις</h2>
                      <div class=notification-button onclick="notifications()"></div>

@@ -514,7 +514,7 @@ padding-bottom: 10px;
 }
 
 .back {
-background-image: url("images/other/thss.jpg");
+background-image: url("images/other/thess.png");
     background-size: cover;
 }
 
@@ -1586,7 +1586,7 @@ ul.tabs {
 
 #notification-box {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
     display: none;
     margin: 0 auto;
     width: inherit;
@@ -1594,6 +1594,7 @@ ul.tabs {
     margin-bottom: 50px;
     text-align: left;
     background-color: #ffe8d5;
+    border: 1px solid orange;
 }
 
 .notification .date {
@@ -1684,6 +1685,10 @@ display: inline-block;
   text-align: center;
   padding: 5px;
   color: black;
+}
+
+#orgs-desc {
+  width: 300px;
 }
 
 

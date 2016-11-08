@@ -43,18 +43,21 @@
                         </div>
                         <div id="personal-info">
                             <?php if(isset($_SESSION['org_id'])) { ?>
-                                <div class="account-label-in">
-                                    <div class="h3">Name:</div>
-                                    <input class="in" maxlength="50" name="pass" id="log-password" size="25" type="text" value="<?php echo $row[4]; ?>" readonly/>
-                                </div>
-                                <div class="account-label-in">
-                                    <div class="h3">Email:</div>
-                                    <input class="in" maxlength="50" name="pass" id="log-password" size="25" type="text" value="<?php echo $row[2]; ?>" readonly/>
-                                </div>
-                                <div class="account-label-in">
-                                    <div class="h3">  Organization's description:</div>
-                                    <textarea id="description" class="for-text-area" cols="40" name="description" maxlength="500" rows="7" readonly><?php echo $row[9]; ?></textarea>
-                                </div>
+                              <table>
+                                <tr>
+                                  <th>Name</th>
+                                  <td><?php echo $row[4]; ?></td>
+                                </tr>
+                                <tr>
+                                  <th>Email</th>
+                                  <td><?php echo $row[2]; ?></td>
+                                </tr>
+                                <tr>
+                                  <th>Description</th>
+                                  <td id="orgs-desc"><?php echo $row[9]; ?></td>
+                                </tr>
+                              </table>
+
                             <?php } else if(isset($_SESSION['user'])) { ?>
                               <table>
                                 <tr>
@@ -79,9 +82,9 @@
                         </div>
                         <div class="account-label-in"><a href="edit-account.php">Edit profile &raquo;</a></div>
                     </div>
-
+                    <?php  if(isset($_SESSION['vol_id'])) {  ?>
                       <h2> Achievements and Points </h2>
-                      <h5> Hover to see which ones you got! </h5>
+                      <h5> Mouse over the badges to see which ones you got! </h5>
                       <div class="achievements">
                     <?php
 
@@ -89,10 +92,10 @@
 
                     mysqli_set_charset($link, "utf8");
                     session_start();
-                    if(isset($_SESSION['user'])) {
+
                        $user = $_SESSION['user'];
                        $query = "SELECT achievments.text, achievments.badge FROM achievments,earnedachievements,user WHERE achievments.id = earnedachievements.achiev_id AND earnedachievements.user_id = user.id AND user.username = '$user'";
-                   }
+
 
                    $results = mysqli_query($link,$query);
                    $row = mysqli_fetch_row($results);
@@ -101,8 +104,6 @@
                     while ($row = mysqli_fetch_row($results)) {
 
                     ?>
-
-
 
                       <div class="achievement">
                         <div class="badge" style="background-image: url('../images/badges/<?php echo $row[1]; ?>')" title="<?php echo $row[0]?>">
@@ -117,8 +118,11 @@
 
                     <?php } ?>
                      <div id="points">You have earned 75 points!</div>
-</div>
-                    <h2>Notifications</h2>                       <div class=notification-button onclick="notifications()"></div>
+                     </div>
+                     <?php } ?>
+
+                    <h2>Notifications</h2>
+                     <div class=notification-button onclick="notifications()"></div>
 
                     <div id="notification-box">
                         <?php

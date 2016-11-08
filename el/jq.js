@@ -193,12 +193,12 @@ function useHttpResponseVol() {
 function notifications() {
   var box = document.getElementById('notification-box');
 
-  var what = box.style.display; 
+  var what = box.style.display;
   if (what == 'none') {
-    box.style.display = block;
+    box.style.display =" block";
   }
   else {
-    box.style.display = none;
+    box.style.display = "none";
 
   }
 }

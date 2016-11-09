@@ -336,7 +336,7 @@
                 var map = new google.maps.Map(mapCanvas, mapOptions);
 
                 var geocoder = new google.maps.Geocoder();
-                var address = <?php echo json_encode($location, JSON_UNESCAPED_UNICODE); ?>;
+                var address = <?php echo json_encode($location); ?>;
                 address = address.toString();
                 //alert(address);
 

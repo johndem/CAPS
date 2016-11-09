@@ -45,10 +45,12 @@
                 $tostrings = explode('-',$todate);
                 
                 $query="SELECT * FROM events WHERE YEAR(day) >= '$fromstrings[0]' AND YEAR(day) <= '$tostrings[0]' AND MONTH(day) >= '$fromstrings[1]' AND MONTH(day) <= '$tostrings[1]' AND status=2";
+                mysqli_set_charset($link, "utf8");
                 $results = mysqli_query($link,$query); 
             }
             else {
                 $query="SELECT * FROM events WHERE status=2";
+                mysqli_set_charset($link, "utf8");
                 $results = mysqli_query($link,$query);
             }
 

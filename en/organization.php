@@ -28,7 +28,7 @@
             
             <h1 class="center-title"></h1>
             
-            <?php include 'find-org.php'; ?>
+            <?php include '../back-end/find-org.php'; ?>
             <!-- <h1 class="center-title"><?php echo "$org[4]"; ?></h1> -->
             
             <div class="page-title"> 

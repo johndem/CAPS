@@ -98,7 +98,8 @@
 
 						<div class="social-container">
 							<h4>Facebook</h4>
-							<div class="social-login" onclick="window.location = '<?php echo $loginUrl ?>'" id="fb"></div>
+							<?php include '../back-end/fb-login.php'; ?>
+							<div class="social-login" onclick="window.location = '<?php echo  htmlspecialchars($loginUrl); ?>'" id="fb"></div>
 						</div>
 
 						<div class="social-container">

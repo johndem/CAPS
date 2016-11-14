@@ -19,8 +19,8 @@
 		<script src="form-check.js"></script>
 	</head>
 	<body>
-        
-        <?php 
+
+        <?php
 
         session_start();
 
@@ -44,11 +44,11 @@
         <!-- content -->
         <div class="content">
             <h1 class="center-title"></h1>
-            <div class="page-title"> 
-                <div class="main-title"> Είσοδος </div>  
+            <div class="page-title">
+                <div class="main-title"> Είσοδος </div>
             </div>
 				<div class="aligner">
-					
+
 					<div>
 						<p>
 							Δεν έχετε λογαριασμό; Η εγγραφή είναι εύκολη και γρήγορη.<a href="register.php"> Κάντε click εδώ για να ξεκινήσετε</a> »
@@ -91,54 +91,15 @@
 
 					<!-- SOCIAL MEDIA LOGIN -->
 
-					<?php
 
-					session_start();
-					//define('FACEBOOK_SDK_V4_SRC_DIR', '/facebook-php-sdk-v4/src/Facebook/');
-					//require __DIR__ . '/facebook-php-sdk-v4/autoload.php';
-
-					require_once 'facebook-php-sdk-v4/src/Facebook/FacebookSession.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/FacebookSession.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/FacebookRequest.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/FacebookResponse.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/FacebookSDKException.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/FacebookRequestException.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/FacebookRedirectLoginHelper.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/FacebookAuthorizationException.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/GraphObject.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/GraphUser.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/GraphSessionInfo.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/Entities/AccessToken.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/HttpClients/FacebookCurl.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/HttpClients/FacebookHttpable.php';
-					require_once 'facebook-php-sdk-v4/src/Facebook/HttpClients/FacebookCurlHttpClient.php';
-
-					use Facebook\FacebookSession;
-					use Facebook\FacebookRedirectLoginHelper;
-					use Facebook\FacebookRequest;
-					use Facebook\FacebookResponse;
-					use Facebook\FacebookSDKException;
-					use Facebook\FacebookRequestException;
-					use Facebook\FacebookAuthorizationException;
-					use Facebook\GraphObject;
-					use Facebook\GraphUser;
-					use Facebook\GraphSessionInfo;
-					use Facebook\FacebookHttpable;
-					use Facebook\FacebookCurlHttpClient;
-					use Facebook\FacebookCurl;
-
-					FacebookSession::setDefaultApplication('1607915839446072', 'a226b6be97f59c0f31461d5fb4bfe62f');
-					$helper = new FacebookRedirectLoginHelper('http://localhost/CAPS2/fb-handle-redirect.php');
-					$loginUrl = $helper -> getLoginUrl();
-					?>
 
 					<h3 style="text-align:center">Ή ΕΙΣΕΛΘΕΤΕ ΜΕΣΩ:</h3>
 
 					<div class="social-buttons">
 
 						<div class="social-container">
-							<h4>Facebook</h4>
-							<div class="social-login" onclick="window.location = '<?php echo $loginUrl ?>'" id="fb"></div>
+							<h4>Facebook</h4>	<?php include '../back-end/fb-login.php'; ?>
+								<div class="social-login" onclick="window.location = '<?php echo  htmlspecialchars($loginUrl); ?>'" id="fb"></div>
 						</div>
 
 						<div class="social-container">
@@ -146,7 +107,7 @@
 							<h4>Twitter</h4>
 							<div class="social-login" onclick="window.location = 'twitter-login2.php'" id="tweet"></div>
 						</div>
-						
+
 						<div class="social-container">
 
 							<h4>Google+</h4>

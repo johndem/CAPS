@@ -93,8 +93,8 @@
                     mysqli_set_charset($link, "utf8");
                     session_start();
 
-                       $user = $_SESSION['user'];
-                       $query = "SELECT achievments.text, achievments.badge FROM achievments,earnedachievements,user WHERE achievments.id = earnedachievements.achiev_id AND earnedachievements.user_id = user.id AND user.username = '$user'";
+                       $user = $_SESSION['vol_id'];
+                       $query = "SELECT achievments.text, achievments.badge FROM achievments,earnedachievements,user WHERE achievments.id = earnedachievements.achiev_id AND earnedachievements.user_id = user.id AND user.id = $user";
 
 
                    $results = mysqli_query($link,$query);

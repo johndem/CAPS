@@ -12,6 +12,6 @@
 $helper = $fb->getRedirectLoginHelper();
 
 $permissions = ['email']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('http://oswinds.csd.atuh.gr/vol4all/back-end/fb-callback.php', $permissions);
+$loginUrl = $helper->getLoginUrl('http://oswinds.csd.auth.gr/vol4all/back-end/fb-callback.php', $permissions);
 
 ?>

@@ -111,7 +111,8 @@
 						<div class="social-container">
 
 							<h4>Google+</h4>
-							<div class="social-login" id="googleplus"></div>
+							<?php include "../back-end/google-login.php";?>
+							<div class="social-login" onclick="window.location = '<?php echo  $authUrl; ?>'" id="googleplus"></div>
 						</div>
 
 					</div>

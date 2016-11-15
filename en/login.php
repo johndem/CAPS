@@ -11,10 +11,6 @@
 		<meta name="description" content="An interactive getting started guide for Brackets.">
 		<link rel="stylesheet" href="../main.css">
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-		<!-- <script src="https://apis.google.com/js/client:platform.js?onload=api" async defer></script> -->
-		<script src="googleplus2.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="https://apis.google.com/js/api:client.js?onload=startApp"></script>
 		<script src="jq.js"></script>
 		<script src="form-check.js"></script>
 	</head>
@@ -111,7 +107,8 @@
 						<div class="social-container">
 
 							<h4>Google+</h4>
-							<div class="social-login" id="googleplus"></div>
+							<?php include '../back-end/google-login.php'; ?>
+							<div class="social-login" onclick="window.location = '<?php echo  $authUrl; ?>'" id="googleplus"></div>
 						</div>
 
 					</div>

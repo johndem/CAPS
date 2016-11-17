@@ -26,7 +26,7 @@
                   <meta property="og:type" content="article" />
                   <meta property="article:author" content="vol4all" />
                   <meta property="article:publisher" content="vol4all" />
-                  <meta property="og:image"  content="<?php echo "http://oswinds.csd.auth.gr/vol4all/images/event-pics" . substr($row[14],2); ?>" />
+                  <meta property="og:image"  content="<?php echo "http://oswinds.csd.auth.gr/vol4all" . substr($row[14],2); ?>" />
                   <meta charset="utf-8">
                   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
                   <title>Vol4All</title>

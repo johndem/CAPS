@@ -1,27 +1,4 @@
 <!DOCTYPE html>
-<html lang="el">
-    <head>
-        <meta property="og:title" content="Share this event!" />
-        <meta property="og:site_name" content="Thessaloniki Volunteer Network"/>
-        <meta property="og:url" content="http://localhost/CAPS/index.php"/>
-        <meta property="og:description" content="The Volunteer netowrk of Thessaloniki is a place where you can easily find volunteering oppurtunities." />
-        <meta property="fb:app_id" content="1607915839446072" />
-        <meta property="og:type" content="article" />
-        <meta property="article:author" content="TVN" />
-        <meta property="article:publisher" content="TVN" />
-        <meta property="og:image"  content="https://www.facebook.com/images/fb_icon_325x325.png" />
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Vol4All</title>
-        <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="../main.css">
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="jq.js"></script>
-        <script src="apply.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js"></script>
-    </head>
-    <body>
 
         <?php
 
@@ -38,11 +15,35 @@
 
         <?php } else { ?>
 
+          <html lang="el">
+              <head>
+                  <meta property="og:title" content="<?php echo $row[2]; ?>" />
+                  <meta property="og:site_name" content="Vol4All"/>
+                  <meta property="og:url" content=""/>
+                  <meta property="og:description" content="<?php echo $row[12]; ?>" />
+                  <meta property="fb:app_id" content="1647764365516493" />
+                  <meta property="og:type" content="article" />
+                  <meta property="article:author" content="vol4all" />
+                  <meta property="article:publisher" content="vol4all" />
+                  <meta property="og:image"  content="<?php echo "http://oswinds.csd.auth.gr/vol4all" . substr($row[14],2); ?>" />
+                  <meta charset="utf-8">
+                  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+                  <title>Vol4All</title>
+                  <meta name="description" content="">
+                  <link rel="stylesheet" href="../main.css">
+                  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+                  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                  <script src="jq.js"></script>
+                  <script src="apply.js"></script>
+                  <script src="https://maps.googleapis.com/maps/api/js"></script>
+              </head>
+              <body>
+
 
         <script>
             window.fbAsyncInit = function() {
                 FB.init({
-                    appId      : '1607915839446072',
+                    appId      : '1647764365516493',
                     xfbml      : true,
                     version    : 'v2.4'
                 });
@@ -62,7 +63,7 @@
                 FB.ui(
                 {
                     method: 'share',
-                    href: 'http://localhost/CAPS/event.php?id=22',
+                    href: 'http://oswinds.csd.auth.gr/vol4all/en/event.php?id=<?php if (isset($_GET["id"])) {echo $_GET['id'];}?>',
                 },
                 // callback
                 function(response) {
@@ -139,15 +140,15 @@
                     <div id="event-main">
 				        <h2>Λεπτομέρειες</h2>
                         <ul id="event-chars">
-                            <li><?php echo "<strong>Κατάσταση δράσης: </strong>"; if ($row[17]==1) echo '<span class="active_green">Ενεργή</span>';
+                            <li id="state-bul"><?php echo "<strong>Κατάσταση δράσης: </strong>"; if ($row[17]==1) echo '<span class="active_green">Ενεργή</span>';
                                                                             else if ($row[17]==2) echo '<span class="completed_red">Ολοκληρωμένη</span>';
                                                                             else if ($row[17]==0) echo '<span class="completed_red">Υπό εξέταση</span>';
                                                                             else if ($row[17]==-1) echo '<span class="completed_red">ΑΚΥΡΩΜΕΝΗ</span>';?></li>
-                            <li><?php echo "<strong>Κατηγορία: </strong>" . $row[3]; ?></li>
-                            <li><?php echo "<strong>Διεύθυνση:  </strong>" . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
-                            <li><?php echo "<strong>Ημερομηνία:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
-                            <li><?php echo "<strong>Ηλικιακή ομάδα:  </strong>" . $row[10]; ?></li>
-                            <li><?php echo "<strong>Απαιτούμενες Δεξιότητες:  </strong>"; ?>
+                            <li id="cat-bul"><?php echo "<strong>Κατηγορία: </strong>" . $row[3]; ?></li>
+                            <li id="ad-bul"><?php echo "<strong>Διεύθυνση:  </strong>" . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
+                            <li id="date-bul"><?php echo "<strong>Ημερομηνία:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
+                            <li id="age-bul"><?php echo "<strong>Ηλικιακή ομάδα:  </strong>" . $row[10]; ?></li>
+                            <li id="skill-bul"><?php echo "<strong>Απαιτούμενες Δεξιότητες:  </strong>"; ?>
                             <?php
                             $skill = mysqli_fetch_row($skills);
                             echo $skill[0];
@@ -214,7 +215,7 @@
                             ΟΛΟΚΛΗΡΩΘΗΚΕ
                         </div>
                         <?php } elseif(isset($_SESSION['vol_id']) AND $applied == false) { ?>
-                        
+
                         <div id="btnApply" onclick="volApply()">
                             ΑΙΤΗΣΗ
                         </div>

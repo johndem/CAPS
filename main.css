@@ -1974,6 +1974,25 @@ div#btnApply:hover {
     margin-bottom: 10px;
 
 }
+#state-bul{
+  list-style: url("images/other/state-bul.png");
+}
+#cat-bul {
+  list-style: url("images/other/cat-bul.png");
+}
+#ad-bul {
+  list-style: url("images/other/add-bul.png");
+}
+#date-bul{
+  list-style: url("images/other/date-bul.png");
+}
+#age-bul {
+  list-style: url("images/other/age-bul.png");
+}
+#skill-bul{
+  list-style: url("images/other/skill-bul.png");
+
+}
 
 
 /****************************************************************** NEWS.PHP ****************************************************/

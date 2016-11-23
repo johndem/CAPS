@@ -143,15 +143,15 @@
                     <div id="event-main">
 				        <h2>Details</h2>
                         <ul id="event-chars">
-                            <li id="state-bul"><?php echo "<strong>Event state: </strong>"; if ($row[17]==1) echo '<span class="active_green">Active</span>';
+                            <li id="state-bul">&nbsp;<?php echo "<strong>Event state: </strong>"; if ($row[17]==1) echo '<span class="active_green">Active</span>';
                                                                             else if ($row[17]==2) echo '<span class="completed_red">Completed</span>';
                                                                             else if ($row[17]==0) echo '<span class="completed_red">Under evaluation</span>';
                                                                             else if ($row[17]==-1) echo '<span class="completed_red">CANCELLED</span>';?></li>
-                            <li id="cat-bul"><?php echo "<strong>Category: </strong>" . $row[3]; ?></li>
-                            <li id="ad-bul"><?php echo "<strong>Address:  </strong>" . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
-                            <li id="date-bul"><?php echo "<strong>Date:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
-                            <li id="age-bul"><?php echo "<strong>Age group:  </strong>" . $row[10]; ?></li>
-                            <li id="skill-bul"><?php echo "<strong>Skills required:  </strong>"; ?>
+                            <li id="cat-bul">&nbsp;<?php echo "<strong>Category: </strong>" . $row[3]; ?></li>
+                            <li id="ad-bul">&nbsp;<?php echo "<strong>Address:  </strong>" . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
+                            <li id="date-bul">&nbsp;<?php echo "<strong>Date:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
+                            <li id="age-bul">&nbsp;<?php echo "<strong>Age group:  </strong>" . $row[10]; ?></li>
+                            <li id="skill-bul">&nbsp;<?php echo "<strong>Skills required:  </strong>"; ?>
                             <?php
                             $skill = mysqli_fetch_row($skills);
                             echo $skill[0];

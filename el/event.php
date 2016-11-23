@@ -140,15 +140,15 @@
                     <div id="event-main">
 				        <h2>Λεπτομέρειες</h2>
                         <ul id="event-chars">
-                            <li id="state-bul"><?php echo "<strong>Κατάσταση δράσης: </strong>"; if ($row[17]==1) echo '<span class="active_green">Ενεργή</span>';
+                            <li id="state-bul">&nbsp;<?php echo "<strong>Κατάσταση δράσης: </strong>"; if ($row[17]==1) echo '<span class="active_green">Ενεργή</span>';
                                                                             else if ($row[17]==2) echo '<span class="completed_red">Ολοκληρωμένη</span>';
                                                                             else if ($row[17]==0) echo '<span class="completed_red">Υπό εξέταση</span>';
                                                                             else if ($row[17]==-1) echo '<span class="completed_red">ΑΚΥΡΩΜΕΝΗ</span>';?></li>
-                            <li id="cat-bul"><?php echo "<strong>Κατηγορία: </strong>" . $row[3]; ?></li>
-                            <li id="ad-bul"><?php echo "<strong>Διεύθυνση:  </strong>" . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
-                            <li id="date-bul"><?php echo "<strong>Ημερομηνία:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
-                            <li id="age-bul"><?php echo "<strong>Ηλικιακή ομάδα:  </strong>" . $row[10]; ?></li>
-                            <li id="skill-bul"><?php echo "<strong>Απαιτούμενες Δεξιότητες:  </strong>"; ?>
+                            <li id="cat-bul">&nbsp;<?php echo "<strong>Κατηγορία: </strong>" . $row[3]; ?></li>
+                            <li id="ad-bul">&nbsp;<?php echo "<strong>Διεύθυνση:  </strong>" . $row[4] . " " . $row[5] . ", " . $row[7] . ", " . $row[6]; ?></li>
+                            <li id="date-bul">&nbsp;<?php echo "<strong>Ημερομηνία:  </strong>" . $row[8] . ", " . $row[9]; ?></li>
+                            <li id="age-bul">&nbsp;<?php echo "<strong>Ηλικιακή ομάδα:  </strong>" . $row[10]; ?></li>
+                            <li id="skill-bul">&nbsp;<?php echo "<strong>Απαιτούμενες Δεξιότητες:  </strong>"; ?>
                             <?php
                             $skill = mysqli_fetch_row($skills);
                             echo $skill[0];
